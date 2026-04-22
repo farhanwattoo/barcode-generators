@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【完全無料】倉庫管理 Barcode | オンラインで簡単生成</title>
+    <meta name="description" content="オンラインで瞬時に倉庫管理 Barcodeを作成・ダウンロード。Logistics Barcodeにも対応。PNG、SVG、PDF形式で無料で保存できます。商用利用も可能です。">
+    <meta name="keywords" content="倉庫管理 Barcode, Logistics Barcode, 無料, オンライン, 作成, ツール, ジェネレーター">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- bwip-js for actual barcode generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bwip-js/3.4.2/bwip-js-min.js"></script>
+    <style>
+        :root { --primary: #2b6cb0; --primary-hover: #2c5282; --bg: #f7fafc; --text: #2d3748; --border: #e2e8f0; }
+        body { font-family: 'Noto Sans JP', sans-serif; line-height: 1.8; color: var(--text); margin: 0; padding: 0; background: var(--bg); }
+        header { background: #fff; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center; border-bottom: 3px solid var(--primary); }
+        .header-title { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 2.2rem; color: #1a202c; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; color: #4a5568; }
+        
+        .tool-container { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid var(--border); }
+        .tool-interface { background: var(--bg); padding: 25px; border-radius: 8px; border: 1px solid var(--border); }
+        
+        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #4a5568; }
+        .input-group input[type="text"], .input-group select, .input-group input[type="color"] { width: 100%; padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 1rem; box-sizing: border-box; }
+        
+        .settings-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        .btn { display: inline-block; padding: 12px 24px; border: none; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; text-align: center; transition: all 0.2s; }
+        .btn-primary { background: var(--primary); color: #fff; width: 100%; font-size: 1.1rem; padding: 15px; }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-download { background: #edf2f7; color: var(--primary); border: 1px solid #cbd5e0; margin: 5px; }
+        .btn-download:hover { background: #e2e8f0; }
+        
+        .output-container { text-align: center; padding: 20px; border: 2px dashed #cbd5e0; border-radius: 8px; background: #fff; }
+        
+        .content-section { background: #fff; padding: 35px; border-radius: 12px; margin-bottom: 30px; border: 1px solid var(--border); box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        h2 { color: #2d3748; border-bottom: 2px solid #edf2f7; padding-bottom: 10px; margin-top: 0; font-size: 1.6rem; }
+        h3 { color: #4a5568; font-size: 1.25rem; margin-top: 25px; border-left: 4px solid var(--primary); padding-left: 10px; }
+        ul li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/barcode-generator.html" class="header-title">バーコード作成ツール プロ</a>
+    </header>
+    <main class="container">
+        <section class="hero">
+            <h1>倉庫管理 Barcode</h1>
+            <p>高品質なバーコードをオンラインで瞬時に作成。Logistics Barcodeに完全対応し、商用利用も無料です。</p>
+        </section>
+        
+        
+        <section class="tool-container">
+            <h2><span class="icon">⚙️</span> 倉庫管理 Barcode</h2>
+            <p style="color: #718096; margin-bottom: 25px;">以下のフォームにデータを入力するだけで、瞬時にバーコードが生成されます。</p>
+            
+            <div class="tool-interface" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                <div class="controls" style="flex: 1; min-width: 300px;">
+                    <div class="input-group">
+                        <label for="barcode-data">バーコードのデータ（テキスト・数字）:</label>
+                        <input type="text" id="barcode-data" value="123456789012" placeholder="例: 123456789012" />
+                    </div>
+                    
+                    <div class="settings-group">
+                        <div class="input-group">
+                            <label for="barcode-type">フォーマット / 種類:</label>
+                            <select id="barcode-type">
+                                <option value="code128">Code 128 (標準)</option>
+                                <option value="ean13">EAN-13 / JAN</option>
+                                <option value="upca">UPC-A</option>
+                                <option value="code39">Code 39</option>
+                                <option value="itf14">ITF-14</option>
+                                <option value="qrcode">QR Code (2D)</option>
+                                <option value="datamatrix">Data Matrix</option>
+                                <option value="pdf417">PDF417</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="barcode-color">バーコードの色:</label>
+                            <input type="color" id="barcode-color" value="#000000" style="height: 40px;" />
+                        </div>
+                    </div>
+                    <button id="generate-btn" class="btn btn-primary">バーコードを生成する</button>
+                </div>
+
+                <div class="output-container" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <p style="margin-top: 0;"><strong>プレビュー:</strong></p>
+                    <div class="canvas-box" style="background: white; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; min-height: 150px; display: flex; align-items: center; justify-content: center;">
+                        <canvas id="barcode-canvas"></canvas>
+                    </div>
+                    <div class="download-buttons" style="margin-top: 15px;">
+                        <button id="download-png" class="btn btn-download">PNG保存</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+
+        
+        <section class="content-section">
+            <h2>倉庫管理 Barcode の重要性とは？</h2>
+            <p>現代のビジネスにおいて、<strong>倉庫管理 Barcode</strong>の導入は業務効率化に不可欠です。特に、<strong>Logistics Barcode</strong>のプロセスにおいて、手作業による入力ミスを防ぎ、リアルタイムで正確なデータ追跡を可能にします。</p>
+            <h3>最適な活用シーン</h3>
+            <p>例えば、商品の棚卸し、倉庫での在庫追跡、オンラインストア（ShopifyやAmazonなど）への出品時など、バーコードを活用することでピッキング作業や会計処理の時間が劇的に短縮されます。Logistics Barcodeの最適化には、読み取りエラーのない正確なバーコード生成が鍵となります。</p>
+        </section>
+        <section class="content-section">
+            <h2>プロフェッショナルな 倉庫管理 Barcode をオンラインで作成</h2>
+            <p>専用のラベルプリンターや有料ソフトは不要です。当ツールのオンラインジェネレーターを使えば、自社のビジネス要件に合わせた<strong>倉庫管理 Barcode</strong>を誰でも数秒で作成できます。</p>
+            <ul>
+                <li><strong>一括生成のサポート:</strong> 多数の商品や資産を一括で管理するためのバーコードを高速に生成。</li>
+                <li><strong>様々なフォーマット対応:</strong> Logistics Barcodeに応じて、Code 128やQRコードなど最適なシンボルを選択可能です。</li>
+                <li><strong>スマホ・ハンディスキャナ対応:</strong> レジのスキャナはもちろん、iPhoneやAndroidのバーコードリーダーアプリでも確実に読み取れる設計です。</li>
+            </ul>
+        </section>
+        
+        <section class="content-section faq">
+            <h2>よくあるご質問 (FAQ)</h2>
+            <div style="margin-bottom: 20px;">
+                <h3 style="margin-bottom: 5px;">Q. 倉庫管理 Barcode の使い方は？</h3>
+                <p style="margin-top: 0;">A. 上部のツールフォームにテキストや数字（Logistics Barcodeなど）を入力し、「バーコードを生成」ボタンをクリックするだけです。プレビューが表示されたら、お好きな画像形式（PNG / SVG）でダウンロードしてください。</p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h3 style="margin-bottom: 5px;">Q. 生成したバーコードは商用利用可能ですか？</h3>
+                <p style="margin-top: 0;">A. はい、完全に無料で商用利用が可能です。商品パッケージ、チラシ、社内管理システムなど、制限なくご自由にお使いいただけます。</p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h3 style="margin-bottom: 5px;">Q. どのバーコードタイプを選べばいいですか？</h3>
+                <p style="margin-top: 0;">A. 用途によります。汎用的な英数字なら「Code 128」、市販の小売商品なら「EAN-13 / UPC-A」、大容量データやURLなら「QRコード（2D）」を推奨します。</p>
+            </div>
+        </section>
+    
+
+    </main>
+
+    
+    <footer style="background: #2d3748; color: #cbd5e0; padding: 40px 20px; font-size: 0.85rem; margin-top: 50px;">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+
+            <div class="footer-col">
+                <h4 style="color: #fff; border-bottom: 1px solid #4a5568; padding-bottom: 10px; margin-bottom: 15px;">基本ツール</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator.html" style="color: #a0aec0; text-decoration: none;">バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/online-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">Onlineバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/free-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">Freeバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-maker.html" style="color: #a0aec0; text-decoration: none;">バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-creator.html" style="color: #a0aec0; text-decoration: none;">バーコード生成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-label-generator.html" style="color: #a0aec0; text-decoration: none;">バーコードラベル作成</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-image-generator.html" style="color: #a0aec0; text-decoration: none;">バーコード画像生成</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 style="color: #fff; border-bottom: 1px solid #4a5568; padding-bottom: 10px; margin-bottom: 15px;">種類別バーコード</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><a href="/code-128-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">Code 128バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/code-39-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">Code 39バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/ean-13-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">EAN-13 (JANコード)バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/ean-8-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">EAN-8 (JANコード)バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/upc-a-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">UPC-Aバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/upc-e-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">UPC-Eバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/itf-14-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">ITF-14バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/codabar-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">Codabarバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/gs1-128-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">GS1-128バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/isbn-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">Isbn (書籍JAN)バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/issn-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">Issn (雑誌コード)バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/pdf417-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">PDF417バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/data-matrix-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">データマトリックスバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/aztec-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">アステカコードバーコード作成ツール</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 style="color: #fff; border-bottom: 1px solid #4a5568; padding-bottom: 10px; margin-bottom: 15px;">用途・ケース別</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><a href="/product-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">商品・製品バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/inventory-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">在庫管理バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/sku-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">Skuバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/warehouse-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">倉庫管理 Barcode</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/shipping-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">配送・出荷バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/package-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">パッケージ Barcode</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/asset-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">資産管理バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/book-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">書籍バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/library-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">図書館 Barcode</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/ticket-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">チケットバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/event-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">イベントバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/coupon-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">クーポンバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/id-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">IDカードバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/serial-number-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">Serial Barcode</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 style="color: #fff; border-bottom: 1px solid #4a5568; padding-bottom: 10px; margin-bottom: 15px;">出力形式別</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-png.html" style="color: #a0aec0; text-decoration: none;">Barcode PNG形式 Generator</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-svg.html" style="color: #a0aec0; text-decoration: none;">Barcode SVG形式 Generator</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-jpg.html" style="color: #a0aec0; text-decoration: none;">Barcode JPG形式 Generator</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-pdf.html" style="color: #a0aec0; text-decoration: none;">Barcode PDF形式 Generator</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-vector.html" style="color: #a0aec0; text-decoration: none;">ベクターバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/high-resolution-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">高解像度 Barcode</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/printable-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">印刷用 Barcode</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 style="color: #fff; border-bottom: 1px solid #4a5568; padding-bottom: 10px; margin-bottom: 15px;">機能・オプション</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><a href="/bulk-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">一括作成バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/multiple-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">Generate 複数作成 Barcodes</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/custom-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">カスタムバーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-with-text.html" style="color: #a0aec0; text-decoration: none;">Barcode テキスト付き</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-with-number.html" style="color: #a0aec0; text-decoration: none;">Numeric Barcode</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-with-logo.html" style="color: #a0aec0; text-decoration: none;">Branded Barcode</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/scannable-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">スキャン可能 Barcode</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/1d-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">1次元バーコード作成ツール</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/2d-barcode-generator.html" style="color: #a0aec0; text-decoration: none;">2次元 (QR等)バーコード作成ツール</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 style="color: #fff; border-bottom: 1px solid #4a5568; padding-bottom: 10px; margin-bottom: 15px;">システム連携</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-for-excel.html" style="color: #a0aec0; text-decoration: none;">Barcode Excel Generator</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-for-word.html" style="color: #a0aec0; text-decoration: none;">Barcode Word Generator</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-for-shopify.html" style="color: #a0aec0; text-decoration: none;">Shopify Barcode</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-for-woocommerce.html" style="color: #a0aec0; text-decoration: none;">Woocommerce Barcode</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-for-amazon.html" style="color: #a0aec0; text-decoration: none;">Amazon Barcode</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-generator-for-pos.html" style="color: #a0aec0; text-decoration: none;">Pos Barcode</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 style="color: #fff; border-bottom: 1px solid #4a5568; padding-bottom: 10px; margin-bottom: 15px;">ガイド・解説</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><a href="/barcode-types.html" style="color: #a0aec0; text-decoration: none;">バーコードの種類</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/ean-vs-upc.html" style="color: #a0aec0; text-decoration: none;">EANとUPCの違い</a></li>
+                    <li style="margin-bottom: 8px;"><a href="/code128-vs-code39.html" style="color: #a0aec0; text-decoration: none;"></a></li>
+                    <li style="margin-bottom: 8px;"><a href="/what-is-barcode.html" style="color: #a0aec0; text-decoration: none;"></a></li>
+                    <li style="margin-bottom: 8px;"><a href="/how-to-create-barcode.html" style="color: #a0aec0; text-decoration: none;"></a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-size-guide.html" style="color: #a0aec0; text-decoration: none;"></a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-format-guide.html" style="color: #a0aec0; text-decoration: none;"></a></li>
+                    <li style="margin-bottom: 8px;"><a href="/barcode-use-cases.html" style="color: #a0aec0; text-decoration: none;"></a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #4a5568;">
+            &copy; 2026 バーコード作成ツール プロ. All rights reserved.
+        </div>
+    </footer>
+
+
+    <script>
+        function generateBarcode() {
+            const text = document.getElementById('barcode-data').value || '123456789012';
+            const btype = document.getElementById('barcode-type').value;
+            const color = document.getElementById('barcode-color').value.replace('#', '');
+            
+            try {
+                bwipjs.toCanvas('barcode-canvas', {
+                    bcid:        btype,       // Barcode type
+                    text:        text,        // Text to encode
+                    scale:       3,           // 3x scaling factor
+                    height:      10,          // Bar height, in millimeters
+                    includetext: true,        // Show human-readable text
+                    textxalign:  'center',    // Always good to set this
+                    barcolor:    color,       // Bar color
+                    textcolor:   color        // Text color
+                });
+            } catch (e) {
+                // Older browsers or error
+                const canvas = document.getElementById('barcode-canvas');
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "red";
+                ctx.font = "14px Arial";
+                ctx.fillText("エラー: 無効なデータ形式です", 10, 50);
+            }
+        }
+
+        document.getElementById('generate-btn').addEventListener('click', generateBarcode);
+        
+        // Auto generate on load
+        window.onload = generateBarcode;
+
+        // Download functionality
+        document.getElementById('download-png').addEventListener('click', function() {
+            const canvas = document.getElementById('barcode-canvas');
+            const link = document.createElement('a');
+            link.download = 'barcode.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+    </script>
+</body>
+</html>
