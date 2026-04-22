@@ -482,14 +482,14 @@
             background-color: var(--surface);
             border-top: 1px solid var(--border-color);
             padding: 4rem 5% 2rem;
-            margin-top: 4rem;
+            margin-top: 4rem; padding: 4rem 2% 2rem;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-columns: 2fr repeat(auto-fit, minmax(180px, 1fr));
             gap: 3rem;
             margin-bottom: 3rem;
         }
@@ -769,24 +769,92 @@
                 </a>
                 <p>無劣化のベクター生成と一括印刷に対応した完全無料オンラインバーコードジェネレーター。高速かつローカル環境で安全に動作します。</p>
             </div>
-            
             <div class="link-col">
-                <h4>機能早見表 (Features)</h4>
-                <a href="#">JANコード / EAN-13 無料作成</a>
-                <a href="#">物流向け ITF-14 生成</a>
-                <a href="#">QRコード カスタマイズ</a>
-                <a href="#">Barcode Bulk 一括出力機能</a>
+                <h4>基本ツール</h4>
+                <a href="/pages/barcode-generator.html">バーコード作成ツール</a>
+                <a href="/pages/online-barcode-generator.html">Onlineバーコード作成ツール</a>
+                <a href="/pages/free-barcode-generator.html">Freeバーコード作成ツール</a>
+                <a href="/pages/barcode-maker.html">バーコード作成ツール</a>
+                <a href="/pages/barcode-creator.html">バーコード生成ツール</a>
+                <a href="/pages/barcode-label-generator.html">バーコードラベル作成</a>
+                <a href="/pages/barcode-image-generator.html">バーコード画像生成</a>
             </div>
-            
             <div class="link-col">
-                <h4>法的情報とサポート</h4>
-                <a href="#">当プラットフォームについて</a>
-                <a href="privacy.html">プライバシーポリシー (Privacy)</a>
-                <a href="terms.html">利用規約 (Terms)</a>
-                <a href="#">よくある質問 (FAQ)</a>
+                <h4>種類別</h4>
+                <a href="/pages/code-128-barcode-generator.html">Code 128バーコード作成ツール</a>
+                <a href="/pages/code-39-barcode-generator.html">Code 39バーコード作成ツール</a>
+                <a href="/pages/ean-13-barcode-generator.html">EAN-13 (JANコード)バーコード作成ツール</a>
+                <a href="/pages/ean-8-barcode-generator.html">EAN-8 (JANコード)バーコード作成ツール</a>
+                <a href="/pages/upc-a-barcode-generator.html">UPC-Aバーコード作成ツール</a>
+                <a href="/pages/upc-e-barcode-generator.html">UPC-Eバーコード作成ツール</a>
+                <a href="/pages/itf-14-barcode-generator.html">ITF-14バーコード作成ツール</a>
+                <a href="/pages/codabar-barcode-generator.html">Codabarバーコード作成ツール</a>
+                <a href="/pages/gs1-128-barcode-generator.html">GS1-128バーコード作成ツール</a>
+                <a href="/pages/isbn-barcode-generator.html">Isbn (書籍JAN)バーコード作成ツール</a>
+                <a href="/pages/issn-barcode-generator.html">Issn (雑誌コード)バーコード作成ツール</a>
+                <a href="/pages/pdf417-barcode-generator.html">PDF417バーコード作成ツール</a>
+                <a href="/pages/data-matrix-barcode-generator.html">データマトリックスバーコード作成ツール</a>
+                <a href="/pages/aztec-barcode-generator.html">アステカコードバーコード作成ツール</a>
             </div>
-        </div>
-        <div class="footer-bottom">
+            <div class="link-col">
+                <h4>用途・ケース別</h4>
+                <a href="/pages/product-barcode-generator.html">商品・製品バーコード作成ツール</a>
+                <a href="/pages/inventory-barcode-generator.html">在庫管理バーコード作成ツール</a>
+                <a href="/pages/sku-barcode-generator.html">Skuバーコード作成ツール</a>
+                <a href="/pages/warehouse-barcode-generator.html">倉庫管理 Barcode</a>
+                <a href="/pages/shipping-barcode-generator.html">配送・出荷バーコード作成ツール</a>
+                <a href="/pages/package-barcode-generator.html">パッケージ Barcode</a>
+                <a href="/pages/asset-barcode-generator.html">資産管理バーコード作成ツール</a>
+                <a href="/pages/book-barcode-generator.html">書籍バーコード作成ツール</a>
+                <a href="/pages/library-barcode-generator.html">図書館 Barcode</a>
+                <a href="/pages/ticket-barcode-generator.html">チケットバーコード作成ツール</a>
+                <a href="/pages/event-barcode-generator.html">イベントバーコード作成ツール</a>
+                <a href="/pages/coupon-barcode-generator.html">クーポンバーコード作成ツール</a>
+                <a href="/pages/id-barcode-generator.html">IDカードバーコード作成ツール</a>
+                <a href="/pages/serial-number-barcode-generator.html">Serial Barcode</a>
+            </div>
+            <div class="link-col">
+                <h4>出力形式別</h4>
+                <a href="/pages/barcode-generator-png.html">Barcode PNG形式 Generator</a>
+                <a href="/pages/barcode-generator-svg.html">Barcode SVG形式 Generator</a>
+                <a href="/pages/barcode-generator-jpg.html">Barcode JPG形式 Generator</a>
+                <a href="/pages/barcode-generator-pdf.html">Barcode PDF形式 Generator</a>
+                <a href="/pages/barcode-generator-vector.html">ベクターバーコード作成ツール</a>
+                <a href="/pages/high-resolution-barcode-generator.html">高解像度 Barcode</a>
+                <a href="/pages/printable-barcode-generator.html">印刷用 Barcode</a>
+            </div>
+            <div class="link-col">
+                <h4>機能・オプション</h4>
+                <a href="/pages/bulk-barcode-generator.html">一括作成バーコード作成ツール</a>
+                <a href="/pages/multiple-barcode-generator.html">Generate 複数作成 Barcodes</a>
+                <a href="/pages/custom-barcode-generator.html">カスタムバーコード作成ツール</a>
+                <a href="/pages/barcode-generator-with-text.html">Barcode テキスト付き</a>
+                <a href="/pages/barcode-generator-with-number.html">Numeric Barcode</a>
+                <a href="/pages/barcode-generator-with-logo.html">Branded Barcode</a>
+                <a href="/pages/scannable-barcode-generator.html">スキャン可能 Barcode</a>
+                <a href="/pages/1d-barcode-generator.html">1次元バーコード作成ツール</a>
+                <a href="/pages/2d-barcode-generator.html">2次元 (QR等)バーコード作成ツール</a>
+            </div>
+            <div class="link-col">
+                <h4>システム連携</h4>
+                <a href="/pages/barcode-generator-for-excel.html">Barcode Excel Generator</a>
+                <a href="/pages/barcode-generator-for-word.html">Barcode Word Generator</a>
+                <a href="/pages/barcode-generator-for-shopify.html">Shopify Barcode</a>
+                <a href="/pages/barcode-generator-for-woocommerce.html">Woocommerce Barcode</a>
+                <a href="/pages/barcode-generator-for-amazon.html">Amazon Barcode</a>
+                <a href="/pages/barcode-generator-for-pos.html">Pos Barcode</a>
+            </div>
+            <div class="link-col">
+                <h4>ガイド・解説</h4>
+                <a href="/pages/barcode-types.html">バーコードの種類</a>
+                <a href="/pages/ean-vs-upc.html">EANとUPCの違い</a>
+                <a href="/pages/code128-vs-code39.html"></a>
+                <a href="/pages/what-is-barcode.html"></a>
+                <a href="/pages/how-to-create-barcode.html"></a>
+                <a href="/pages/barcode-size-guide.html"></a>
+                <a href="/pages/barcode-format-guide.html"></a>
+                <a href="/pages/barcode-use-cases.html"></a>
+            </div><div class="footer-bottom">
             <p>&copy; 2026 Barcode-Generators.com. All Rights Reserved. Designed with absolute precision.</p>
         </div>
     </footer>
