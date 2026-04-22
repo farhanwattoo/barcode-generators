@@ -41,5 +41,21 @@
 
         <p style="margin-top:2rem;"><b>お問い合わせ:</b> 当サイトのプライバシーポリシーに関するご質問は、Contactページよりご連絡ください。</p>
     </div>
+
+    <!-- Footer Accordion JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cols = document.querySelectorAll('.modern-footer .link-col h4');
+            cols.forEach(col => {
+                col.addEventListener('click', function() {
+                    if(window.innerWidth <= 768) {
+                        const parent = this.parentElement;
+                        parent.classList.toggle('active');
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
