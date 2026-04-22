@@ -1546,6 +1546,8 @@
         }
 
         
+        
+        
         // Native PDF A4 Print Hook
         function printBulkPDF() {
             const bulkContents = document.getElementById('bulk-output').innerHTML;
@@ -1553,7 +1555,7 @@
             printWin.document.write(`
                 <html>
                 <head>
-                    <title>A4 ラベル出力 (PDF Print) - ToolsHub・高画質ダウンロード(PNG/SVG)対応</title>
+                    <title>A4 ラベル出力 (PDF Print) - ToolsHub</title>
                     <style>
                         body { font-family: sans-serif; text-align: center; margin: 0; padding: 15px;}
                         .print-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
@@ -1567,108 +1569,8 @@
                             @page :left { margin-left: 1cm; }
                             @page :right { margin-left: 1cm; }
                         }
-                    
-        /* Table of Contents */
-        .toc-container {
-            background: var(--input-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            display: inline-block;
-            min-width: 50%;
-        }
-        .toc-title {
-            font-weight: 800;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-        }
-        .toc-title::before {
-            content: '📄';
-            margin-right: 8px;
-        }
-        .toc-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .toc-list li {
-            margin-bottom: 0.6rem;
-            line-height: 1.4;
-        }
-        .toc-list a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-        .toc-list a:hover {
-            color: var(--primary-hover);
-            text-decoration: underline;
-        }
-        .toc-list .toc-h3 {
-            padding-left: 1.5rem;
-            font-size: 0.95rem;
-            position: relative;
-        }
-        .toc-list .toc-h3::before {
-            content: '└';
-            position: absolute;
-            left: 0.3rem;
-            color: var(--text-muted);
-        }
-</style>
-                    <link rel="icon" href="/favicon.ico">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml">
-
-    <!-- E-E-A-T Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "url": "https://barcode-generators.com/",
-          "name": "Barcode Generators",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://barcode-generators.com/search.html?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        },
-        {
-          "@type": "Organization",
-          "name": "Barcode Generators LLC",
-          "url": "https://barcode-generators.com/",
-          "logo": "https://barcode-generators.com/favicon.ico",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+81-50-1234-5678",
-            "contactType": "Customer Service"
-          },
-          "sameAs": [
-            "https://twitter.com/barcodegens",
-            "https://facebook.com/barcodegens",
-            "https://linkedin.com/company/barcodegens",
-            "https://youtube.com/@barcodegens",
-            "https://instagram.com/barcodegens",
-            "https://pinterest.com/barcodegens",
-            "https://tiktok.com/@barcodegens"
-          ]
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "name": "Sitemap",
-          "url": "https://barcode-generators.com/sitemap.html"
-        }
-      ]
-    }
-    </script>
-</head>
+                    </style>
+                </head>
                 <body>
                     <div class="print-grid">
                         ${bulkContents}
@@ -1679,16 +1581,7 @@
                             window.close();
                         }, 500);
                     <\/script>
-                
-    <!-- Back to Top Button -->
-    <button id="backToTop" style="display:none; position:fixed; bottom:30px; right:30px; width:45px; height:45px; background:var(--primary); color:#fff; border:none; border-radius:50%; font-size:1.5rem; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2); z-index:9999;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
-    <script>
-        window.addEventListener('scroll', function() {
-            document.getElementById('backToTop').style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-    </script>
-
-</body>
+                </body>
                 </html>
             `);
             printWin.document.close();
@@ -1714,6 +1607,7 @@
     </script>
 
 
+    
     <!-- Back to Top Button -->
     <button id="backToTop" style="display:none; position:fixed; bottom:30px; right:30px; width:45px; height:45px; background:var(--primary); color:#fff; border:none; border-radius:50%; font-size:1.5rem; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2); z-index:9999;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
     <script>
