@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GS1 Company Prefix Guide — Registration Steps & Prefix Calculation</title>
+  <meta name="description" content="Step-by-step GS1 registration, prefix sizing, SKU planning, and cost considerations for GTIN assignments.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/compliance/gs1-company-prefix-guide/" />
+  <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
+</head>
+<body>
+  <article>
+    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+    <h1>GS1 Company Prefix Guide — Registration Steps & Prefix Calculation</h1>
+    <section>
+      <h2>Overview: What is a GS1 Company Prefix?</h2>
+      <p>A GS1 Company Prefix is a unique numeric identifier issued by a national GS1 Member Organization. The prefix forms the leading digits of GTINs you assign to products and determines how many item reference numbers you can generate. Choosing the correct prefix length is a strategic decision: short prefixes cost more but allow more SKUs; longer prefixes are cheaper but limit SKU capacity.</p>
+    </section>
+
+    <section>
+      <h2>Choosing the correct prefix length</h2>
+      <p>GS1 allocates prefixes of varying lengths; the shorter the prefix, the more item references you can append. Example: a 6-digit company prefix leaves fewer digits for item reference than a 4-digit prefix. Consider your SKU roadmap for 3–5 years and account for SKU proliferation from packaging variants, bundles, and marketplace-specific SKUs.</p>
+      <ul>
+        <li>Estimate total SKUs (including color/size variants).</li>
+        <li>Apply a 20–30% buffer for future growth.</li>
+        <li>Choose a prefix length that accommodates the buffered SKU count.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Registration process by country</h2>
+      <p>Registration is handled by your national GS1 office (e.g., GS1 US, GS1 UK, GS1 Japan). Process steps are similar globally: create an account, select your prefix package, submit business documentation, and pay membership and prefix fees. Some countries offer tiered pricing based on company size; international brands should select the correct GS1 office for legal domicile and VAT purposes.</p>
+    </section>
+
+    <section>
+      <h2>Allocating GTINs and managing GS1 metadata</h2>
+      <p>After receiving a prefix, allocate GTINs systematically. Use a deterministic scheme for item references (e.g., category-based blocks) and record the mappings in a central registry. For distribution partners, integrate with GDSN (Global Data Synchronization Network) or maintain a managed master data file with attributes, dimensions, and packaging hierarchy.</p>
+      <p>Maintain versioned spreadsheets and change control when updating GTIN attributes to avoid accidental re-use.</p>
+    </section>
+
+    <section>
+      <h2>Common mistakes and how to avoid them</h2>
+      <ul>
+        <li>Buying reused GTINs: always get GTINs from your GS1 account to avoid ownership conflicts.</li>
+        <li>Not planning for variants: account for pack sizes, colors, and bundle SKUs in your prefix sizing.</li>
+        <li>Mismatch between human-readable GTIN and encoded symbol: implement validation checks in your generator.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Checklist & Resources</h2>
+      <ol>
+        <li>Estimate SKUs with a 3-year horizon and add 20% buffer.</li>
+        <li>Choose GS1 Member Organization and desired prefix package.</li>
+        <li>Register account, submit docs, and pay fees.</li>
+        <li>Implement GTIN allocation policy and master data registry.</li>
+      </ol>
+      <p>Resources: link to GS1 member pages, GTIN calculators, and sample allocation spreadsheets.</p>
+    </section>
+  </article>
+  <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/compliance/gs1-company-prefix-guide/"
+  },
+  "headline": "GS1 Company Prefix Guide — Registration Steps & Prefix Calculation",
+  "description": "Step-by-step GS1 registration, prefix sizing, SKU planning, and cost considerations for GTIN assignments.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+</body>
+</html>

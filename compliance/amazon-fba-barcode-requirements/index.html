@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Amazon FBA Barcode Requirements — FNSKU Generation & Label Placement Policy</title>
+  <meta name="description" content="Full FNSKU generation, label layout, dimensions, and prevention of ASIN co-mingling for Amazon FBA.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/compliance/amazon-fba-barcode-requirements/" />
+  <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
+</head>
+<body>
+  <article>
+    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+    <h1>Amazon FBA Barcode Requirements — FNSKU Generation & Label Placement Policy</h1>
+    <section>
+      <h2>Introduction</h2>
+      <p>This guide explains exactly when Amazon requires an FNSKU label, how to generate compliant FNSKU barcodes, and how to layout, print, and verify labels to avoid inbound rejections and chargebacks. It is written for operations teams, small brand owners, and contract packagers preparing product shipments to Amazon fulfillment centers.</p>
+    </section>
+
+    <section>
+      <h2>When is an FNSKU required?</h2>
+      <p>Amazon uses FNSKUs as seller-specific inventory identifiers. Use an FNSKU when:</p>
+      <ul>
+        <li>Your offer is not linked to a manufacturer-provided GTIN that Amazon accepts for that ASIN.</li>
+        <li>Your account or listing requires Amazon-level tracking to prevent co-mingling (commonly for private label or used goods).</li>
+        <li>Amazon explicitly requests seller-applied FNSKU labels during shipment creation or removal packaging instructions.</li>
+      </ul>
+      <p>Note: Even when GTINs are used, Amazon may still accept or require a seller-applied label in certain programs or categories. Always check the Shipment Creation Workflow in Seller Central for the most current instructions.</p>
+    </section>
+
+    <section>
+      <h2>FNSKU label layout and dimensions</h2>
+      <h3>Required elements</h3>
+      <ul>
+        <li>Machine-readable barcode (FNSKU) using a supported symbology (usually Code 128 or UPC as specified per workflow).</li>
+        <li>Human-readable FNSKU string printed directly beneath the barcode.</li>
+        <li>Optional: Product title and condition text if Amazon requires it for the category.</li>
+        <li>Appropriate quiet zones around the barcode (see sizing below).</li>
+      </ul>
+
+      <h3>Barcode symbology and sizing</h3>
+      <p>Amazon accepts common linear symbologies; many sellers use Code 128 for FNSKU outputs because it supports alphanumeric strings and compact widths. Recommended default X-dimension for Code 128 FNSKU labels is 0.254 mm (0.010 in) for reliable scanning. Minimum recommended barcode height is 0.5 inches for small labels, but follow the category-specific guidance in Seller Central.</p>
+
+      <h3>Quiet zones, margins, and print tolerances</h3>
+      <p>Maintain a quiet zone of at least 10 × X on both left and right sides for Code 128 outputs. For example, with X=0.254 mm, the quiet zone should be about 2.54 mm (~0.1 in). Avoid placing labels across edges, curves, seams, or over folds. Use vector output (SVG/EPS) at the exact physical size required by Amazon to prevent raster scaling artifacts.</p>
+    </section>
+
+    <section>
+      <h2>Export presets and vector outputs</h2>
+      <p>Always export FNSKU labels as vector files (SVG or EPS) when possible to guarantee line-width fidelity across printers. Recommended export presets:</p>
+      <ul>
+        <li>SVG: no rasterization, units in millimeters, exact X-dimension encoded in CSS or comments.</li>
+        <li>PDF (vector): embed fonts and set page size to final sticker dimensions.</li>
+        <li>PNG: only for proofs; export at 600–1200 DPI at final physical size to avoid scaling errors.</li>
+      </ul>
+      <p>Include a human-readable control string and a unique job ID in the printable area outside the barcode quiet zones to help trace label production batches.</p>
+    </section>
+
+    <section>
+      <h2>Preventing co-mingling and brand controls</h2>
+      <p>To avoid co-mingling and protect inventory integrity:</p>
+      <ul>
+        <li>Use unique FNSKUs per seller if you want to prevent pooling under a shared ASIN.</li>
+        <li>Enroll in Amazon Brand Registry when possible to gain more control over listing content and brand protections.</li>
+        <li>Keep strict chain-of-custody documentation for printed labels and apply secure batch numbers to label prints.</li>
+      </ul>
+      <p>If your product already has a manufacturer GTIN, verify ownership and resolve any conflicting listings in Seller Central before shipping to minimize the need for FNSKUs.</p>
+    </section>
+
+    <section>
+      <h2>Checklist & Verification</h2>
+      <ol>
+        <li>Confirm whether Amazon requires an FNSKU per ASIN in the Shipment Creation workflow.</li>
+        <li>Generate FNSKU as an exact string from Seller Central (do not transcribe manually).</li>
+        <li>Export label as SVG/PDF at the exact physical dimensions required.</li>
+        <li>Print proof at target printer and perform handheld and fixed-mount scans with representative scanners.</li>
+        <li>Verify quiet zones, barcode height, and human-readable text alignment.</li>
+        <li>Pack and apply labels avoiding seams, curves, and heat-sealed areas.</li>
+      </ol>
+      <p>Common failures: low contrast prints from thermal transfer on glossy coated surfaces, truncated quiet zones due to bleed, and incorrect FNSKU values typed manually.</p>
+    </section>
+  </article>
+  <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/compliance/amazon-fba-barcode-requirements/"
+  },
+  "headline": "Amazon FBA Barcode Requirements — FNSKU Generation & Label Placement Policy",
+  "description": "Full FNSKU generation, label layout, dimensions, and prevention of ASIN co-mingling for Amazon FBA.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+</body>
+</html>

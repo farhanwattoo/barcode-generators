@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Data Matrix: ECC 200, the L-Shaped Finder Pattern, and Small-Part Marking</title>
+  <meta name="description" content="Data Matrix deep dive covering ECC 200, the L-shaped finder pattern, direct part marking, and industrial sizing choices." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/symbologies/data-matrix/" />
+<style>
+    body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}
+    h1,h2,h3{color:#0f3d6e}
+    .eyebrow{font-size:.9rem;font-weight:700;color:#0f3d6e;text-transform:uppercase;letter-spacing:.04em}
+    .crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}
+    .tool{background:#eef6ff;border:1px solid #cfe0f6;border-radius:12px;padding:16px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin:14px 0}
+    th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}
+    th{background:#f2f7fc}
+    pre{background:#0f172a;color:#eef2ff;padding:14px;border-radius:12px;overflow:auto}
+    code{font-family:Consolas,monospace}
+    svg{max-width:100%;height:auto;display:block;margin:12px 0}
+    a{color:#0b4a7a;text-decoration:none}
+    a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <article>
+    <p class="eyebrow">Supporting Guide</p>
+    <div class="crumbs"><a href="/symbologies/ultimate-barcode-type-guide/">Barcode Symbologies Guide</a></div>
+    <h1>Data Matrix: ECC 200, the L-Shaped Finder Pattern, and Small-Part Marking</h1>
+
+    <p>Data Matrix is one of the most important industrial 2D symbologies because it stays readable at very small sizes and survives real manufacturing abuse. The standard most teams mean when they say “Data Matrix” today is ECC 200. That matters because ECC 200 defines the modern error-correction model and is the variant expected by most current industrial scanners and software workflows.</p>
+    <p>One of the easiest visual signatures to verify is the solid L-shaped finder pattern. Two sides of the symbol form that solid border, while the opposite sides use alternating timing cells. If a page describing Data Matrix never mentions ECC 200 or the L-shaped finder pattern, it is missing the two fastest ways to distinguish the symbology technically.</p>
+    <table>
+      <tr><th>Attribute</th><th>Data Matrix note</th></tr>
+      <tr><td>Error correction</td><td>ECC 200</td></tr>
+      <tr><td>Finder</td><td>Solid L-shaped border</td></tr>
+      <tr><td>Strength</td><td>Very small symbols and direct part marking</td></tr>
+      <tr><td>Typical use</td><td>Medical, aerospace, electronics, serialized parts</td></tr>
+    </table>
+    <h2>Why it wins in tight spaces</h2>
+    <p>Because the symbol stores data in two dimensions and is backed by strong error correction, it can carry serialized identifiers in footprints that would be impractical for most linear codes. That makes it especially attractive on surgical tools, electronics housings, and other space-constrained surfaces.</p>
+    <div class="tool"><strong>Tool handoff:</strong> Use the <a href="/data-matrix-barcode-generator.html">Data Matrix generator</a> to test serialized payloads, then compare production constraints against the parent symbology guide.</div>
+
+<section id="faq"><h2>FAQ</h2><h3>Can a laser line scanner read Data Matrix?</h3><p>No. Data Matrix requires a 2D imager because the symbol is a matrix, not a linear reflectance pattern.</p></section>
+<div class="related"><strong>Related:</strong> <a href="/symbologies/ultimate-barcode-type-guide/">Ultimate Barcode Symbology Guide</a> | <a href="/data-matrix-barcode-generator.html">Data Matrix Generator</a></div>
+  </article>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/symbologies/data-matrix/"
+  },
+  "headline": "Data Matrix: ECC 200, the L-Shaped Finder Pattern, and Small-Part Marking",
+  "description": "Data Matrix deep dive covering ECC 200, the L-shaped finder pattern, direct part marking, and industrial sizing choices.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can a laser line scanner read Data Matrix?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Data Matrix requires a 2D imager because the symbol is a matrix, not a linear reflectance pattern."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+</html>

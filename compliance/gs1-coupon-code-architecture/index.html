@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GS1 Coupon Code Architecture — Implementing North American Retail Coupon Layouts</title>
+  <meta name="description" content="Designing GS1-compliant coupon barcodes, coupon limits, and redemption data structures for retailers.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/compliance/gs1-coupon-code-architecture/" />
+  <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
+</head>
+<body>
+  <article>
+    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+    <h1>GS1 Coupon Code Architecture — Implementing North American Retail Coupon Layouts</h1>
+    <section>
+      <h2>Coupon barcode types and use-cases</h2>
+      <p>Retail coupons use a mix of linear and 2D barcodes depending on retailer requirements. In North America, UPC-A and GS1-128 are common for printed coupons; some retailers also accept or require 2D codes for mobile coupons to carry more complex redemption metadata. Choose the symbology that matches the retailer integration plan and supports required data fields.</p>
+    </section>
+
+    <section>
+      <h2>Data fields and AI mapping for coupons</h2>
+      <p>Coupon payloads commonly include these elements:</p>
+      <ul>
+        <li>Offer identifier (unique coupon ID)</li>
+        <li>Expiration date</li>
+        <li>Discount amount or percentage</li>
+        <li>Redemption rules (one-time use, SKU restrictions)</li>
+        <li>Issuing company ID (GS1 Company Prefix)</li>
+      </ul>
+      <p>When using GS1-128, map these into Application Identifiers (AIs) or into a structured internal format agreed with the retailer. For variable-length fields, ensure proper FNC1 placement and, where necessary, use AI wrappers so back-office systems can parse redemption data reliably.</p>
+    </section>
+
+    <section>
+      <h2>Retailer-specific constraints and integration</h2>
+      <p>Each retailer may enforce different barcode dimensions, verification checks, and data format expectations. For example, grocery chains often require coupons to include an offer code that links to a specific SKU with a fixed-length field. Drugstores may require manufacturer IDs and specific expiration formatting. Work with your retail partners to obtain sample payloads and verification criteria.</p>
+    </section>
+
+    <section>
+      <h2>Testing and fraud prevention</h2>
+      <p>Implement these controls to limit coupon fraud:</p>
+      <ol>
+        <li>Use unique, non-sequential offer IDs per campaign.</li>
+        <li>Include expiration and usage counters encoded where supported.</li>
+        <li>Maintain redemption logs and reconcile POS scans against issued offer lists.</li>
+        <li>Consider 2D signatures or cryptographic tokens inside 2D payloads for high-value coupons.</li>
+      </ol>
+      <p>Verify coupons with both simulated POS and actual retailer test environments before distribution.</p>
+    </section>
+  </article>
+  <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/compliance/gs1-coupon-code-architecture/"
+  },
+  "headline": "GS1 Coupon Code Architecture — Implementing North American Retail Coupon Layouts",
+  "description": "Designing GS1-compliant coupon barcodes, coupon limits, and redemption data structures for retailers.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <rect width="800" height="200" fill="#fff"/>
+  <text x="20" y="30" font-size="18" fill="#000">Code 128: Start | Data | Check | Stop (diagram placeholder)</text>
+  <g transform="translate(20,50)">
+    <rect x="0" y="0" width="40" height="100" fill="#000"/>
+    <rect x="50" y="0" width="10" height="100" fill="#ccc"/>
+    <rect x="70" y="0" width="30" height="100" fill="#000"/>
+    <rect x="110" y="0" width="10" height="100" fill="#ccc"/>
+    <rect x="130" y="0" width="60" height="100" fill="#000"/>
+  </g>
+</svg>

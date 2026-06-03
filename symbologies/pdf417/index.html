@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PDF417: Stacked 2D Transport for IDs, Documents, and Long Payloads</title>
+  <meta name="description" content="PDF417 guide covering stacked rows, error-correction choices, and document-oriented payload design." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/symbologies/pdf417/" />
+<style>
+    body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}
+    h1,h2,h3{color:#0f3d6e}
+    .eyebrow{font-size:.9rem;font-weight:700;color:#0f3d6e;text-transform:uppercase;letter-spacing:.04em}
+    .crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}
+    .tool{background:#eef6ff;border:1px solid #cfe0f6;border-radius:12px;padding:16px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin:14px 0}
+    th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}
+    th{background:#f2f7fc}
+    pre{background:#0f172a;color:#eef2ff;padding:14px;border-radius:12px;overflow:auto}
+    code{font-family:Consolas,monospace}
+    svg{max-width:100%;height:auto;display:block;margin:12px 0}
+    a{color:#0b4a7a;text-decoration:none}
+    a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <article>
+    <p class="eyebrow">Supporting Guide</p>
+    <div class="crumbs"><a href="/symbologies/ultimate-barcode-type-guide/">Barcode Symbologies Guide</a></div>
+    <h1>PDF417: Stacked 2D Transport for IDs, Documents, and Long Payloads</h1>
+
+    <p>PDF417 sits between compact matrix codes and long linear formats. It uses stacked rows of codewords, which makes it useful for transport documents, IDs, boarding passes, and situations where a lot of structured data must be carried in a printable symbol without moving to a full database lookup.</p>
+    <p>Because PDF417 can be tuned by row and column counts, the design conversation is usually about balancing density, aspect ratio, and scanner compatibility. It is powerful, but it is rarely the right answer when a shorter identifier and backend lookup would do the job more cleanly.</p>
+    <table>
+      <tr><th>Best fit</th><th>Watch out for</th></tr>
+      <tr><td>Long document payloads</td><td>Oversized symbols on small labels</td></tr>
+      <tr><td>Travel and credentialing</td><td>Aspect ratio mistakes</td></tr>
+      <tr><td>Readable with imagers</td><td>Inconsistent printer scaling</td></tr>
+    </table>
+    <div class="tool"><strong>Tool handoff:</strong> Use the <a href="/pdf417-barcode-generator.html">PDF417 generator</a> for document-style payload experiments, then validate output size before print deployment.</div>
+
+<section id="faq"><h2>FAQ</h2><h3>Is PDF417 smaller than QR Code for the same data?</h3><p>Not always. PDF417 is flexible for long structured data, but QR or Data Matrix can be more compact for many payloads.</p></section>
+<div class="related"><strong>Related:</strong> <a href="/symbologies/ultimate-barcode-type-guide/">Ultimate Barcode Symbology Guide</a> | <a href="/pdf417-barcode-generator.html">PDF417 Generator</a></div>
+  </article>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/symbologies/pdf417/"
+  },
+  "headline": "PDF417: Stacked 2D Transport for IDs, Documents, and Long Payloads",
+  "description": "PDF417 guide covering stacked rows, error-correction choices, and document-oriented payload design.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is PDF417 smaller than QR Code for the same data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always. PDF417 is flexible for long structured data, but QR or Data Matrix can be more compact for many payloads."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+</html>

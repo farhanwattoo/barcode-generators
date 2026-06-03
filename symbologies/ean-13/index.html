@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EAN-13: International Retail Numbering and Parity Structure</title>
+  <meta name="description" content="EAN-13 guide covering the 13-digit retail structure, parity behavior, and practical print rules." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/symbologies/ean-13/" />
+<style>
+    body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}
+    h1,h2,h3{color:#0f3d6e}
+    .eyebrow{font-size:.9rem;font-weight:700;color:#0f3d6e;text-transform:uppercase;letter-spacing:.04em}
+    .crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}
+    .tool{background:#eef6ff;border:1px solid #cfe0f6;border-radius:12px;padding:16px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin:14px 0}
+    th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}
+    th{background:#f2f7fc}
+    pre{background:#0f172a;color:#eef2ff;padding:14px;border-radius:12px;overflow:auto}
+    code{font-family:Consolas,monospace}
+    svg{max-width:100%;height:auto;display:block;margin:12px 0}
+    a{color:#0b4a7a;text-decoration:none}
+    a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <article>
+    <p class="eyebrow">Supporting Guide</p>
+    <div class="crumbs"><a href="/symbologies/ultimate-barcode-type-guide/">Barcode Symbologies Guide</a></div>
+    <h1>EAN-13: International Retail Numbering and Parity Structure</h1>
+
+    <p>EAN-13 extends the retail numbering model used by UPC-A into the broader international ecosystem. It encodes 13 numeric digits and uses a weighted Modulo-10 check digit, but the left-side parity structure also carries information that helps the scanner interpret the leading digit correctly.</p>
+    <p>For packaging teams, EAN-13 is often less about theory and more about disciplined execution: correct digit count, correct checksum, predictable magnification, and quiet zones that survive prepress scaling. It is highly interoperable, but only when the numeric structure and print geometry are treated as fixed rules.</p>
+    <table>
+      <tr><th>Characteristic</th><th>EAN-13 behavior</th></tr>
+      <tr><td>Length</td><td>13 digits</td></tr>
+      <tr><td>Character set</td><td>Numeric only</td></tr>
+      <tr><td>Check digit</td><td>Modulo-10</td></tr>
+      <tr><td>Common use</td><td>International retail packaging</td></tr>
+    </table>
+    <h2>Why parity matters</h2>
+    <p>The first digit is not printed inside the main bar structure in the same way as the following digits. Instead, the encoder uses left-side parity patterns to signal it. That is one reason hand-built or poorly implemented encoders create bad retail symbols even when the human-readable digits look right.</p>
+    <div class="tool"><strong>Tool handoff:</strong> Compare international retail payloads in the <a href="/ean-13-barcode-generator.html">EAN-13 generator</a> before exporting final packaging artwork.</div>
+
+<section id="faq"><h2>FAQ</h2><h3>Can EAN-13 and UPC-A coexist on the same package?</h3><p>Yes, but the artwork should be intentional so one retail identifier remains primary and scanner confusion is avoided.</p></section>
+<div class="related"><strong>Related:</strong> <a href="/symbologies/ultimate-barcode-type-guide/">Ultimate Barcode Symbology Guide</a> | <a href="/ean-13-barcode-generator.html">EAN-13 Generator</a></div>
+  </article>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/symbologies/ean-13/"
+  },
+  "headline": "EAN-13: International Retail Numbering and Parity Structure",
+  "description": "EAN-13 guide covering the 13-digit retail structure, parity behavior, and practical print rules.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can EAN-13 and UPC-A coexist on the same package?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but the artwork should be intentional so one retail identifier remains primary and scanner confusion is avoided."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+</html>

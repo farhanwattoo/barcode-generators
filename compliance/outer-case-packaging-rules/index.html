@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Outer Case Packaging Rules — ITF-14 Calibration for Master Shipping Cartons</title>
+  <meta name="description" content="ITF-14 formatting, bearer bars, print tolerances, and verification for corrugated master cartons.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/compliance/outer-case-packaging-rules/" />
+  <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
+</head>
+<body>
+  <article>
+    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+    <h1>Outer Case Packaging Rules — ITF-14 Calibration for Master Shipping Cartons</h1>
+    <section>
+      <h2>ITF-14 structure and use-cases</h2>
+      <p>ITF-14 encodes GTIN-14 values for outer case identification and is optimized for printing on corrugated board. It uses Interleaved 2 of 5 encoding to pack numeric digits efficiently and typically includes bearer bars to protect against partial scans. Use ITF-14 for master cartons and pallet-level packaging where an omnidirectional 2D code is not required.</p>
+    </section>
+
+    <section>
+      <h2>Bearer bar design and placement</h2>
+      <p>Bearer bars are thick horizontal bars printed above and below the ITF-14 symbol that ensure the scanner reads the full height of the code and prevent short scanning. Typical bearer bar width should be at least 2–3 times the height of the code's nominal bar height and extend beyond the code by a stable margin to prevent edge truncation. On corrugated, increase bearer bar thickness to compensate for surface irregularities.</p>
+    </section>
+
+    <section>
+      <h2>Printing processes: flexo, digital, thermal</h2>
+      <p>Corrugated printing methods differ in dot gain, ink spread, and registry accuracy. Flexographic printing can achieve high throughput but requires compensating for ink spread; thermal transfer provides sharp edges but adhesive labels can shift. When planning ITF-14 runs:</p>
+      <ul>
+        <li>Specify larger X-dimensions than for retail codes to tolerate substrate roughness.</li>
+        <li>Validate print density and contrast on actual corrugated stock.</li>
+        <li>Use overprinting and test sampling on production lines to confirm fidelity.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Verification workflows</h2>
+      <p>Implement on-line verifiers where possible to reject prints outside specification before palletization. Use off-line verifier sampling to ensure continued compliance — sample sizes should reflect production volume and risk. Record verifier outputs and maintain a corrective action log for out-of-spec batches.</p>
+    </section>
+  </article>
+  <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/compliance/outer-case-packaging-rules/"
+  },
+  "headline": "Outer Case Packaging Rules — ITF-14 Calibration for Master Shipping Cartons",
+  "description": "ITF-14 formatting, bearer bars, print tolerances, and verification for corrugated master cartons.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+</body>
+</html>

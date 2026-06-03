@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GS1-128: Application Identifiers, FNC1, and Structured Supply-Chain Data</title>
+  <meta name="description" content="GS1-128 guide covering AI syntax, FNC1 handling, and structured logistics payloads such as SSCC and expiry data." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/symbologies/gs1-128/" />
+<style>
+    body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}
+    h1,h2,h3{color:#0f3d6e}
+    .eyebrow{font-size:.9rem;font-weight:700;color:#0f3d6e;text-transform:uppercase;letter-spacing:.04em}
+    .crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}
+    .tool{background:#eef6ff;border:1px solid #cfe0f6;border-radius:12px;padding:16px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin:14px 0}
+    th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}
+    th{background:#f2f7fc}
+    pre{background:#0f172a;color:#eef2ff;padding:14px;border-radius:12px;overflow:auto}
+    code{font-family:Consolas,monospace}
+    svg{max-width:100%;height:auto;display:block;margin:12px 0}
+    a{color:#0b4a7a;text-decoration:none}
+    a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <article>
+    <p class="eyebrow">Supporting Guide</p>
+    <div class="crumbs"><a href="/symbologies/ultimate-barcode-type-guide/">Barcode Symbologies Guide</a></div>
+    <h1>GS1-128: Application Identifiers, FNC1, and Structured Supply-Chain Data</h1>
+
+    <p>GS1-128 is not a separate bar pattern from Code 128 so much as a structured data discipline layered on top of it. The important implementation detail is that the payload uses GS1 Application Identifiers and FNC1 handling rules so scanners know where each field starts and ends.</p>
+    <p>That is why teams implementing healthcare, warehouse, or carton labels usually spend more time validating field structure than choosing a rendering library. The bars are only half the problem. The data syntax is the other half.</p>
+    <table>
+      <tr><th>Component</th><th>Role</th></tr>
+      <tr><td>Application Identifier</td><td>Declares the meaning and length behavior of each field</td></tr>
+      <tr><td>FNC1</td><td>Separates variable-length fields when needed</td></tr>
+      <tr><td>Code 128 engine</td><td>Provides the actual bar/space encoding</td></tr>
+    </table>
+    <div class="tool"><strong>Tool handoff:</strong> Use the <a href="/gs1-128-barcode-generator.html">GS1-128 generator</a> for AI payload trials and compare examples against the <a href="/compliance/healthcare-hibcc-gs1-standards/">healthcare compliance guide</a>.</div>
+
+<section id="faq"><h2>FAQ</h2><h3>Why does GS1-128 need FNC1?</h3><p>Because variable-length GS1 fields must be separated clearly so scanners can parse the structured payload correctly.</p></section>
+<div class="related"><strong>Related:</strong> <a href="/symbologies/ultimate-barcode-type-guide/">Ultimate Barcode Symbology Guide</a> | <a href="/gs1-128-barcode-generator.html">GS1-128 Generator</a></div>
+  </article>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/symbologies/gs1-128/"
+  },
+  "headline": "GS1-128: Application Identifiers, FNC1, and Structured Supply-Chain Data",
+  "description": "GS1-128 guide covering AI syntax, FNC1 handling, and structured logistics payloads such as SSCC and expiry data.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does GS1-128 need FNC1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because variable-length GS1 fields must be separated clearly so scanners can parse the structured payload correctly."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+</html>

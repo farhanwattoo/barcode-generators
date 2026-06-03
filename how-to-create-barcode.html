@@ -1,2015 +1,230 @@
 <!DOCTYPE html>
-<html lang="ja" data-theme="light">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【2026年最新・完全無料】 | オンラインで即座に作成・一括印刷・高画質ダウンロード(PNG/SVG)対応</title>
-    <meta name="description" content="プロフェッショナル向け 。にも対応し、PNG・SVG・PDFでの高画質ダウンロードや一括出力がブラウザ上で完結します。">
-    <meta name="keywords" content=", , バーコード作成, 無料, 一括">
-    <meta name="author" content="バーコード作成 プロ">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://barcode-generators.com/how-to-create-barcode.html">
-    
-    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
-    <meta property="og:title" content="【2026年最新・完全無料】 | オンラインで即座に作成・一括印刷・高画質ダウンロード(PNG/SVG)対応">
-    <meta property="og:description" content="プロフェッショナル向け 。にも対応し、PNG・SVG・PDFでの高画質ダウンロードや一括出力がブラウザ上で完結します。">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://barcode-generators.com/">
-    <meta property="og:image" content="https://barcode-generators.com/og-image.jpg">
-    <meta property="og:site_name" content="バーコード作成 プロ">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="【2026年最新・完全無料】 | オンラインで即座に作成・一括印刷・高画質ダウンロード(PNG/SVG)対応">
-    <meta name="twitter:description" content="プロフェッショナル向け 。にも対応し、PNG・SVG・PDFでの高画質ダウンロードや一括出力がブラウザ上で完結します。">
-    <meta name="twitter:image" content="https://barcode-generators.com/og-image.jpg">
-
-    <!-- Preconnect & CDNs -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-    <style>
-        :root {
-            /* Premium Color Palette */
-            --primary: #4f46e5;       /* Indigo */
-            --primary-hover: #4338ca;
-            --primary-light: #e0e7ff;
-            --bg-color: #f8fafc;
-            --surface: #ffffff;
-            --surface-glass: rgba(255, 255, 255, 0.85); /* Glassmorphism */
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --input-bg: #f8fafc;
-            --input-border: #cbd5e1;
-            --error: #ef4444;
-            --success: #10b981;
-            
-            /* Shadows & Radii */
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --shadow-glow: 0 0 15px rgba(79, 70, 229, 0.4);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-        }
-
-        [data-theme="dark"] {
-            --primary: #6366f1;
-            --primary-hover: #818cf8;
-            --primary-light: rgba(99, 102, 241, 0.15);
-            --bg-color: #0b1120;
-            --surface: #1e293b;
-            --surface-glass: rgba(30, 41, 59, 0.85);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --input-bg: #0f172a;
-            --input-border: #334155;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            transition: background-color 0.4s ease, color 0.4s ease;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Glass Header */
-        header {
-            background-color: var(--surface-glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            letter-spacing: -0.5px;
-        }
-
-        button.toggle-btn {
-            background: var(--surface);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            padding: 8px 16px;
-            cursor: pointer;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-        }
-
-        button.toggle-btn:hover { 
-            background: var(--input-bg);
-            border-color: var(--primary); 
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 5%;
-        }
-
-        /* Hero Styling */
-        .hero-section {
-            text-align: center;
-            margin-bottom: 4rem;
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-        .hero-section h1 { 
-            font-size: 3.5rem; 
-            font-weight: 800; 
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            background: linear-gradient(135deg, #4f46e5, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-        }
-        .hero-section p { 
-            color: var(--text-muted); 
-            font-size: 1.25rem; 
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .hero-section h1 { font-size: 2.2rem; }
-            .hero-section p { font-size: 1rem; }
-        }
-
-        /* Premium Tool Container */
-        
-
-        /* Tabs (Single / Bulk) */
-        
-        
-        
-        
-        .tab:hover {
-            color: var(--primary-hover);
-        }
-
-        
-
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        @media (max-width: 850px) {
-            .grid-layout { grid-template-columns: 1fr; gap: 2rem;}
-        }
-
-        .input-panel {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .input-group label { 
-            display: block; 
-            margin-bottom: 0.5rem; 
-            font-weight: 600; 
-            font-size: 0.95rem;
-            color: var(--text-main);
-        }
-        
-        input[type="text"], textarea, select {
-            width: 100%;
-            padding: 14px 18px;
-            border: 2px solid var(--input-border);
-            background-color: var(--input-bg);
-            color: var(--text-main);
-            border-radius: var(--radius-md);
-            font-size: 16px;
-            font-family: inherit;
-            transition: all 0.3s ease;
-        }
-
-        input[type="text"]:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: var(--primary);
-            background-color: var(--surface);
-            box-shadow: 0 0 0 4px var(--primary-light);
-        }
-        
-        textarea {
-            resize: vertical;
-            min-height: 140px;
-        }
-
-        .advanced-options {
-            display: flex;
-            gap: 15px;
-            background: var(--input-bg);
-            padding: 1.25rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-        }
-
-        
-
-        
-        
-        input[type="color"]::-webkit-color-swatch-wrapper {
-            padding: 0; 
-        }
-        input[type="color"]::-webkit-color-swatch {
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .error-message {
-            color: var(--error);
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: none;
-            background: rgba(239, 68, 68, 0.1);
-            padding: 12px 16px;
-            border-radius: var(--radius-md);
-            border-left: 4px solid var(--error);
-        }
-
-        .button-group {
-            display: flex;
-            gap: 15px;
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        
-
-        .btn:active { transform: scale(0.97); }
-        
-        
-        
-        
-        
-        .btn-secondary:hover { 
-            background-color: var(--input-bg);
-            border-color: var(--primary);
-        }
-
-        /* Preview Canvas */
-        .preview-section {
-            background-color: var(--surface);
-            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
-            background-size: 24px 24px;
-            border-radius: var(--radius-lg);
-            border: 2px dashed var(--border-color);
-            padding: 2.5rem;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .preview-placeholder { 
-            color: var(--text-muted); 
-            text-align: center; 
-            font-weight: 500;
-        }
-
-        #barcode-canvas-container {
-            display: none;
-            padding: 1.5rem;
-            background: white;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-lg);
-            animation: fadeIn 0.4s ease;
-        }
-
-        /* Bulk Grid output */
-        #bulk-output {
-            display: none;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 15px;
-            width: 100%;
-            max-height: 450px;
-            overflow-y: auto;
-            padding: 15px;
-            background: white;
-            border-radius: var(--radius-md);
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .bulk-item {
-            border: 1px solid var(--border-color);
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            border-radius: var(--radius-md);
-            background: #fff;
-            transition: transform 0.2s;
-        }
-        .bulk-item:hover {
-            transform: scale(1.02);
-            box-shadow: var(--shadow-sm);
-        }
-        .bulk-item svg, .bulk-item canvas { width: 100%; max-height: 70px;}
-
-        .actions-group {
-            display: none;
-            margin-top: 2rem;
-            width: 100%;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeIn 0.5s ease;
-        }
-
-        /* History Section */
-        
-        .history-title { 
-            font-size: 1.1rem; 
-            font-weight: 700;
-            margin-bottom: 1rem; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-        
-        
-        
-        
-        
-        .history-desc { display: flex; gap: 12px; align-items: center;}
-        
-
-        /* Content Section */
-        .content-section {
-            background-color: var(--surface);
-            border-radius: var(--radius-lg);
-            padding: 3.5rem;
-            box-shadow: var(--shadow-md);
-            margin-bottom: 4rem;
-        }
-        .content-section h2 { 
-            font-size: 2rem; 
-            font-weight: 800;
-            margin-bottom: 1.5rem; 
-            border-bottom: 3px solid var(--primary-light); 
-            padding-bottom: 0.5rem; 
-            display: inline-block;
-        }
-        .content-section h3 { font-size: 1.4rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; }
-        .content-section p, .content-section ul { margin-bottom: 1.2rem; color: var(--text-muted); font-size: 1.05rem; }
-        .content-section ul { margin-left: 2rem; }
-        .content-section li { margin-bottom: 0.5rem; }
-
-        
-        
-        
-        
-        
-        /* Professional Clean SaaS Footer */
-        .modern-footer {
-            background-color: var(--surface);
-            border-top: 1px solid var(--border-color);
-            padding: 5rem 5% 3rem;
-            margin-top: 5rem;
-            font-size: 14px;
-            color: var(--text-muted);
-            font-family: inherit;
-        }
-
-        .footer-top {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 4rem;
-        }
-
-        .footer-brand {
-            flex: 1 1 250px;
-        }
-
-        .footer-brand .logo {
-            color: var(--text-main) !important;
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-        }
-
-        .footer-brand p {
-            margin-top: 1.25rem;
-            line-height: 1.6;
-            color: var(--text-muted);
-        }
-
-        .footer-nav {
-            flex: 3 1 600px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 2rem 1.5rem;
-        }
-
-        .link-col h4 {
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-            color: var(--text-main);
-        }
-
-        .link-col {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .link-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.85rem;
-        }
-
-        .link-col a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.15s ease;
-            font-weight: 500;
-        }
-
-        .link-col a:hover {
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 4rem auto 0;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-legal a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.15s ease;
-            font-weight: 500;
-        }
-
-        .footer-legal a:hover {
-            color: var(--text-main);
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 850px) {
-            .footer-top { gap: 3rem; }
-            .footer-nav { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        @media (max-width: 600px) {
-            .footer-top { flex-direction: column; gap: 2rem; }
-            .footer-nav { display: block; }
-            .link-col {
-                border-bottom: 1px solid var(--border-color);
-                margin-bottom: 0;
-            }
-            .link-col h4 {
-                cursor: pointer;
-                position: relative;
-                padding: 16px 0;
-                margin-bottom: 0;
-            }
-            .link-col h4::after {
-                content: '+';
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 1.2rem;
-                font-weight: 400;
-            }
-            .link-col.active h4::after { content: '−'; }
-            .link-list {
-                display: none;
-                padding-bottom: 16px;
-                padding-left: 4px;
-            }
-            .link-col.active .link-list { display: flex; }
-            .footer-bottom { flex-direction: column; text-align: center; justify-content: center; margin-top: 2rem;}
-            .footer-legal a { margin: 0 1rem; }
-        }
-
-        /* Toast */
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--success);
-            color: white;
-            padding: 14px 24px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-lg);
-            font-weight: 600;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            z-index: 2000;
-        }
-        .toast.show { opacity: 1; transform: translateY(0); }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    
-        /* Table of Contents */
-        .toc-container {
-            background: var(--input-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            display: inline-block;
-            min-width: 50%;
-        }
-        .toc-title {
-            font-weight: 800;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-        }
-        .toc-title::before {
-            content: '📄';
-            margin-right: 8px;
-        }
-        .toc-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .toc-list li {
-            margin-bottom: 0.6rem;
-            line-height: 1.4;
-        }
-        .toc-list a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-        .toc-list a:hover {
-            color: var(--primary-hover);
-            text-decoration: underline;
-        }
-        .toc-list .toc-h3 {
-            padding-left: 1.5rem;
-            font-size: 0.95rem;
-            position: relative;
-        }
-        .toc-list .toc-h3::before {
-            content: '└';
-            position: absolute;
-            left: 0.3rem;
-            color: var(--text-muted);
-        }
-
-        /* Premium SaaS Tool UI Redesign */
-        .tool-container {
-            background: var(--surface);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.03);
-            border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            margin-top: 2rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Segmented Control Tabs */
-        .tabs {
-            display: inline-flex;
-            background: var(--input-bg);
-            padding: 6px;
-            border-radius: 14px;
-            margin-bottom: 2.5rem;
-            border: 1px solid var(--border-color);
-        }
-        .tab {
-            background: transparent;
-            border: none;
-            padding: 0.75rem 1.75rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .tab.active {
-            background: var(--surface);
-            color: var(--text-main);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .tab:not(.active):hover {
-            color: var(--text-main);
-        }
-
-        .tool-grid {
-            display: grid;
-            grid-template-columns: 360px 1fr;
-            gap: 3.5rem;
-        }
-        @media (max-width: 900px) {
-            .tool-grid { grid-template-columns: 1fr; }
-            .tool-container { padding: 1.5rem; }
-        }
-
-        /* Premium Form Controls */
-        .form-group {
-            margin-bottom: 1.75rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.6rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--text-main);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .form-group select,
-        .form-group input[type="text"],
-        .form-group textarea {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            background: var(--input-bg);
-            color: var(--text-main);
-            font-size: 0.95rem;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.2s;
-            box-sizing: border-box;
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.01);
-        }
-        .form-group select:focus,
-        .form-group input[type="text"]:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-            background: var(--surface);
-        }
-        
-        /* Sleek Color Pickers */
-        .color-pickers {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            background: var(--input-bg);
-            padding: 1rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-        .color-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-        .color-group label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin: 0;
-            font-weight: 600;
-        }
-        
-        input[type="color"]::-webkit-color-swatch-wrapper {
-            padding: 0;
-        }
-        input[type="color"]::-webkit-color-swatch {
-            border: 2px solid var(--border-color);
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Modern Buttons */
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .btn {
-            padding: 0.85rem 1.5rem;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-        }
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-            flex: 1;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-        }
-        .btn-primary:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
-        }
-        .btn-secondary {
-            background: var(--input-bg);
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-        }
-        .btn-secondary:hover {
-            background: #e2e8f0;
-            color: #0f172a;
-        }
-
-        /* Beautiful Preview Area */
-        .preview-area {
-            background: var(--surface);
-            border: 2px dashed var(--border-color);
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 400px;
-            position: relative;
-            padding: 2rem;
-            overflow: hidden;
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.02);
-            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-        
-        .placeholder {
-            color: var(--text-muted);
-            text-align: center;
-            font-weight: 500;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-        .placeholder svg {
-            color: #cbd5e1;
-            width: 48px;
-            height: 48px;
-        }
-        
-        /* History Section Refined */
-        .history-section {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-        .history-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        .history-header h3 {
-            font-size: 1rem;
-            color: var(--text-main);
-            margin: 0;
-            font-weight: 700;
-        }
-        .history-list {
-            display: grid;
-            gap: 0.75rem;
-        }
-        .history-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.85rem 1.25rem;
-            background: var(--input-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .history-item:hover {
-            border-color: var(--primary);
-            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.1);
-            transform: translateX(4px);
-        }
-        .badge {
-            background: #e0e7ff;
-            color: var(--primary);
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-
-</style>
-    
-    <!-- JSON-LD WebApplication Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "無料バーコードジェネレーター (日本)",
-      "url": "https://barcode-generators.com/",
-      "description": "JANコード、EAN-13、Code 128、QRコードをオンラインで即座に作成します。日本の小売・物流向けに最適化されています。",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "JPY",
-        "availability": "https://schema.org/InStock"
-      }
-    }
-    </script>
-
-    <!-- JSON-LD FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "JANコードとは何ですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "JAN（Japanese Article Number）コードは、主に日本で使用されている小売用のバーコード規格です。世界的なEAN-13規格と構造的に同一で、日本の小売店で販売するために必要不可欠です。"
-        }
-      }, {
-        "@type": "Question",
-        "name": "JANコードとEAN-13は同じですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "はい。JANコードはEAN-13と完全に互換性があります。主な違いは、JANコードが日本の国コード（45または49）で始まることです。"
-        }
-      }, {
-        "@type": "Question",
-        "name": "このバーコードは日本で使用できますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "はい。45または49で始まるJAN/EAN-13コードやITF-14コードなら、日本の物流・小売店のシステムでスキャン可能です。"
-        }
-      }, {
-        "@type": "Question",
-        "name": "このツールは無料ですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "はい。このオンラインツールは完全無料で商用利用も可能です。隠れた費用やサブスクリプションは一切ありません。"
-        }
-      }, {
-        "@type": "Question",
-        "name": "バーコードの一括ダウンロードや印刷は可能ですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "はい。「一括印刷モード」を使用することで、最大500件までのバーコードを一度に生成し、直ちにA4サイズのPDFとして印刷・出力することが可能です。"
-        }
-      }]
-    }
-    </script>
-    <link rel="icon" href="/favicon.ico">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml">
-
-    <!-- E-E-A-T Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "url": "https://barcode-generators.com/",
-          "name": "Barcode Generators",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://barcode-generators.com/search.html?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        },
-        {
-          "@type": "Organization",
-          "name": "Barcode Generators LLC",
-          "url": "https://barcode-generators.com/",
-          "logo": "https://barcode-generators.com/favicon.ico",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+81-50-1234-5678",
-            "contactType": "Customer Service"
-          },
-          "sameAs": [
-            "https://twitter.com/barcodegens",
-            "https://facebook.com/barcodegens",
-            "https://linkedin.com/company/barcodegens",
-            "https://youtube.com/@barcodegens",
-            "https://instagram.com/barcodegens",
-            "https://pinterest.com/barcodegens",
-            "https://tiktok.com/@barcodegens"
-          ]
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "name": "Sitemap",
-          "url": "https://barcode-generators.com/sitemap.html"
-        }
-      ]
-    }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Create a Barcode: Step-by-Step Guide (2026)</title>
+  <meta name="description" content="Learn how to create a barcode in 5 simple steps. Covers UPC, EAN-13, Code 128, QR codes, and more. Free online tool, no software needed.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://barcode-generators.com/how-to-create-barcode.html">
+  <meta property="og:title" content="How to Create a Barcode: Step-by-Step Guide (2026)">
+  <meta property="og:description" content="Learn how to create a barcode in 5 simple steps. Covers UPC, EAN-13, Code 128, QR codes, and more.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://barcode-generators.com/how-to-create-barcode.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#1a3c5e;--accent:#0e7c5b;--accent-light:#e6f7f2;--bg:#f9fafb;--surface:#fff;--text:#1a202c;--muted:#5a6a7e;--border:#e2e8f0;--radius:10px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:16px}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+    header{background:var(--primary);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+    header .logo{color:#fff;font-size:1.1rem;font-weight:600}
+    header nav a{color:rgba(255,255,255,.8);margin-left:1.5rem;font-size:14px}
+    .hero{background:linear-gradient(135deg,#1a3c5e 0%,#0e4d38 100%);color:#fff;padding:4rem 2rem 3rem;text-align:center}
+    .hero .eyebrow{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;margin-bottom:.75rem}
+    .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:400;line-height:1.2;margin-bottom:1rem}
+    .hero p{font-size:1.1rem;opacity:.85;max-width:640px;margin:0 auto 1.5rem}
+    .hero .cta{display:inline-block;background:#fff;color:var(--primary);font-weight:600;padding:.75rem 1.75rem;border-radius:var(--radius);font-size:15px}
+    .container{max-width:860px;margin:0 auto;padding:0 1.5rem}
+    .breadcrumb{font-size:13px;color:var(--muted);padding:1rem 0}
+    .breadcrumb a{color:var(--muted)}
+    .toc{background:var(--accent-light);border:1px solid #b2ddd1;border-radius:var(--radius);padding:1.25rem 1.5rem;margin:2rem 0}
+    .toc h2{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:.75rem}
+    .toc ol{padding-left:1.25rem}
+    .toc li{font-size:14px;margin-bottom:.35rem}
+    .toc a{color:var(--primary)}
+    article h2{font-family:'DM Serif Display',serif;font-size:1.7rem;font-weight:400;color:var(--primary);margin:2.5rem 0 1rem;padding-top:.5rem;border-top:2px solid var(--accent-light)}
+    article h3{font-size:1.05rem;font-weight:600;color:var(--text);margin:1.75rem 0 .6rem}
+    article p{margin-bottom:1rem;color:#2d3748}
+    article ul,article ol{padding-left:1.4rem;margin-bottom:1rem}
+    article li{margin-bottom:.4rem;color:#2d3748}
+    .step{display:flex;gap:1.25rem;margin-bottom:1.75rem;align-items:flex-start}
+    .step-num{width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1rem;flex-shrink:0;margin-top:.2rem}
+    .step-content h3{margin:0 0 .5rem;font-size:1.05rem;font-weight:600;color:var(--primary)}
+    .step-content p{margin:0;font-size:14px;color:#2d3748;line-height:1.65}
+    .callout{background:var(--accent-light);border-left:4px solid var(--accent);padding:1rem 1.25rem;margin:1.5rem 0}
+    .callout strong{color:var(--accent)}
+    .warn{background:#fff7ed;border-left:4px solid #f97316;padding:1rem 1.25rem;margin:1.5rem 0}
+    .warn strong{color:#c2410c}
+    table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:14px}
+    th{background:var(--primary);color:#fff;text-align:left;padding:.65rem 1rem;font-weight:500}
+    td{padding:.6rem 1rem;border-bottom:1px solid var(--border)}
+    tr:nth-child(even) td{background:#f7fafc}
+    .faq-item{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.6rem;overflow:hidden}
+    .faq-q{font-weight:600;font-size:15px;padding:1rem 1.25rem;background:var(--surface);display:flex;justify-content:space-between;align-items:center}
+    .faq-q::after{content:"+";font-size:1.2rem;color:var(--accent)}
+    .faq-a{padding:0 1.25rem 1rem;font-size:14px;color:var(--muted);line-height:1.65}
+    .cta-box{background:var(--primary);color:#fff;border-radius:var(--radius);padding:2rem;text-align:center;margin:3rem 0}
+    .cta-box h3{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;margin-bottom:.6rem}
+    .cta-box p{opacity:.85;margin-bottom:1.25rem;font-size:15px}
+    .cta-box a{background:#fff;color:var(--primary);font-weight:600;padding:.75rem 1.75rem;border-radius:var(--radius);font-size:15px;display:inline-block}
+    footer{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:1.5rem;font-size:13px;margin-top:3rem}
+    footer a{color:rgba(255,255,255,.7);margin:0 .5rem}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Create a Barcode","description":"A step-by-step guide to creating a barcode online for retail, shipping, or any other purpose.","step":[{"@type":"HowToStep","name":"Choose the right barcode type","text":"Select the barcode symbology that matches your use case: UPC-A or EAN-13 for retail products, Code 128 for shipping labels, QR Code for URLs and consumer scanning."},{"@type":"HowToStep","name":"Enter your data","text":"Type the data you want to encode. Each barcode type has specific data format requirements."},{"@type":"HowToStep","name":"Set size and format options","text":"Choose the output format (PNG, SVG, PDF), set the minimum required size, and select bar and background colours."},{"@type":"HowToStep","name":"Generate and preview","text":"Click Generate to create your barcode. Preview it on screen and verify the data is correct before downloading."},{"@type":"HowToStep","name":"Download and use","text":"Download the barcode file. Embed it in your label design, product packaging, or document. Test-scan it before printing at scale."}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I create a barcode for free?","acceptedAnswer":{"@type":"Answer","text":"Use a free online barcode generator. Choose your barcode type, enter your data, click Generate, and download as PNG, SVG, or PDF. No software or account required."}},{"@type":"Question","name":"What data do I put in a barcode?","acceptedAnswer":{"@type":"Answer","text":"For UPC and EAN barcodes, encode your product's GTIN. For Code 128 shipping barcodes, encode your order or tracking number. For QR codes, encode a URL, contact details, WiFi credentials, or any text."}},{"@type":"Question","name":"Can I create a barcode for my product to sell in stores?","acceptedAnswer":{"@type":"Answer","text":"Yes, but for retail barcodes (UPC-A or EAN-13) you must first obtain a GS1 company prefix and register your product's GTIN with GS1. Once you have a valid GTIN, generate the barcode image free using an online tool."}},{"@type":"Question","name":"What file format should I download my barcode in?","acceptedAnswer":{"@type":"Answer","text":"SVG is best for print as it scales to any size without pixelation. PNG is best for digital use and documents. PDF is convenient for direct printing. Always use SVG or high-resolution PNG at at least 300 DPI for physical labels."}}]}</script>
 </head>
 <body>
+<header>
+  <span class="logo">Barcode Generators</span>
+  <nav><a href="/barcode-generator.html">Generator</a><a href="/barcode-types.html">Barcode Types</a><a href="/what-is-barcode.html">What Is a Barcode?</a></nav>
+</header>
 
-    <header>
-        <a href="/" class="logo">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5v14"/><path d="M8 5v14"/><path d="M12 5v14"/><path d="M17 5v14"/><path d="M21 5v14"/></svg>
-            バーコード作成 プロ
-        </a>
-        <button class="toggle-btn" id="theme-toggle">🌙 ダークモード</button>
-    </header>
-
-    <main>
-        
-        <section class="hero-section">
-            <h1></h1>
-            <p>エンタープライズ品質の鮮明なレンダリング。に対応し、一括A4印刷やベクターデータのエクスポートがブラウザ上で完結します。</p>
-        </section>
-
-
-        <section class="tool-container">
-            <div class="tabs">
-                <div class="tab active" data-mode="single" id="tab-single">単一作成モード</div>
-                <div class="tab" data-mode="bulk" id="tab-bulk">一括印刷モード</div>
-
-            <div class="grid-layout">
-                <!-- Input Panel -->
-                <div class="input-panel">
-                    <div class="input-group">
-                        <label>バーコード形式</label>
-                        <select id="barcode-type">
-                            <option value="EAN13">JANコード / EAN-13</option>
-                            <option value="ITF14">ITF-14</option>
-                            <option value="UPC">UPC-A</option>
-                            <option value="CODE128">Code 128</option>
-                            <option value="QR">QRコード</option>
-                        </select>
-                    </div>
-
-                    <!-- Single Mode Input -->
-                    <div class="input-group" id="container-single">
-                        <label>値 / データ</label>
-                        <input type="text" id="barcode-input" placeholder="例: 4901234567894" value="4901234567894">
-                    </div>
-
-                    <!-- Bulk Mode Input -->
-                    <div class="input-group" id="container-bulk" style="display: none;">
-                        <label>一括データ (1行に1つの値を入力)</label>
-                        <textarea id="barcode-textarea" placeholder="4901234567894&#10;4901234567895&#10;4901234567896"></textarea>
-                    </div>
-
-                    <!-- Advanced Styling Config -->
-                    <div class="advanced-options">
-                        <div class="color-group">
-                            <label>バーの色</label>
-                            <input type="color" id="color-bar" value="#000000">
-                        </div>
-                        <div class="color-group">
-                            <label>背景色</label>
-                            <input type="color" id="color-bg" value="#ffffff">
-                        </div>
-                    </div>
-
-                    <div id="error-msg" class="error-message"></div>
-
-                    <div class="button-group">
-                        <button class="btn btn-primary" id="btn-generate">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                            バーコードを生成
-                        </button>
-                        <button class="btn btn-secondary" id="btn-clear">クリア</button>
-                    </div>
-
-                    <!-- History Section -->
-                    <div class="history-section" id="history-section">
-                        <div class="history-title">
-                            <span>最近の履歴</span>
-                            <button class="toggle-btn" style="padding: 4px 12px; font-size: 13px;" onclick="clearHistory()">履歴リセット</button>
-                        </div>
-                        <div class="history-list" id="history-list">
-                            <p style="color:var(--text-muted); font-size:14px; padding: 10px 0;">履歴はありません。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Preview Panel -->
-                <div class="preview-section" id="preview-section">
-                    <div id="preview-placeholder" class="preview-placeholder">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity: 0.3; margin-bottom: 15px;"><path d="M3 5v14"/><path d="M8 5v14"/><path d="M12 5v14"/><path d="M17 5v14"/><path d="M21 5v14"/></svg>
-                        <p>ここに美しくレンダリングされた<br>バーコードが表示されます</p>
-                    </div>
-
-                    <!-- Single Output -->
-                    <div id="barcode-canvas-container">
-                        <svg id="barcode-svg" style="border-radius:4px; max-width:100%;"></svg>
-                        <div id="qrcode-container" style="border-radius:4px; overflow:hidden;"></div>
-                    </div>
-
-                    <!-- Bulk Output Flow -->
-                    <div id="bulk-output" class="bulk-grid"></div>
-
-                    <div class="actions-group" id="actions-group">
-                        <button class="btn btn-secondary" onclick="downloadImage('png')" style="font-size: 14px;" id="btn-png">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            PNG 保存
-                        </button>
-                        <button class="btn btn-secondary" onclick="downloadImage('svg')" style="font-size: 14px;" id="btn-svg">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            SVG (ベクター) 保存
-                        </button>
-                        <button class="btn btn-primary" onclick="printBulkPDF()" style="font-size: 14px; display:none;" id="btn-print">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                            A4一括印刷 (PDF)
-                        </button>
-                    </div>
-                </div>
-        </section>
-
-        
-        
-        
-    
-        <section class="content-section seo-optimized-content" style="margin-top: 3rem;">
-            <h2 id="heading-1">【日本国内向け】の専門的活用と仕様ガイド</h2>
-            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted);">
-                当サイトの<strong></strong>は、日本全国の企業・店舗で利用されるプロフェッショナル仕様のツールです。単なる画像生成ではなく、<strong>JIS規格（日本産業規格）, GS1 Japan, POSレジ, ハンディターミナル, WMS（倉庫管理システム）, DTP入稿</strong>といった日本独自の商慣習や技術規格（セマンティクス）に完全準拠しており、ユーザーの皆様が抱える「商用利用可能で無料の高解像度ツール」という検索意図（インテント）を確実かつ安全に解決します。
-            </p>
-<div class="toc-container">
-<div class="toc-title">目次（2026年版ガイド）</div>
-<ul class="toc-list">
-    <li class="toc-h2"><a href="#heading-1">【日本国内向け】の専門的活用と仕様ガイド</a></li>
-    <li class="toc-h3"><a href="#heading-2">ビジネス要件を満たす圧倒的なカスタマイズ性と印刷品質</a></li>
-    <li class="toc-h3"><a href="#heading-3">高度な検索意図（LSI・エンティティ）に応える3つの強み</a></li>
-</ul>
+<div class="hero">
+  <p class="eyebrow">How-To Guide</p>
+  <h1>How to Create a Barcode</h1>
+  <p>A complete step-by-step guide to creating any barcode type — UPC, EAN-13, Code 128, QR codes, and more — online, in Excel, in Word, or programmatically.</p>
+  <a href="/barcode-generator.html" class="cta">Create a Barcode Now — Free &rarr;</a>
 </div>
 
+<div class="container">
+  <div class="breadcrumb"><a href="/">Home</a> &rsaquo; How to Create a Barcode</div>
+  <div class="toc">
+    <h2>In this guide</h2>
+    <ol>
+      <li><a href="#before-you-start">Before you start: choosing the right barcode type</a></li>
+      <li><a href="#online">How to create a barcode online (5 steps)</a></li>
+      <li><a href="#retail">How to create a retail barcode (UPC / EAN-13)</a></li>
+      <li><a href="#shipping">How to create a shipping barcode (Code 128)</a></li>
+      <li><a href="#qr">How to create a QR code</a></li>
+      <li><a href="#excel">How to create a barcode in Excel</a></li>
+      <li><a href="#word">How to create a barcode in Word</a></li>
+      <li><a href="#print">Printing and size requirements</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </div>
 
-            <div style="background: var(--input-bg); border-left: 4px solid var(--primary); padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
-                <h3 style="margin-top: 0; font-size: 1.25rem;" id="heading-2">ビジネス要件を満たす圧倒的なカスタマイズ性と印刷品質</h3>
-                <p style="margin-bottom: 1rem;">個人事業主から大企業まで、日本国内のあらゆるビジネスシーンで要求される高い基準をクリアしたです。デザインや印刷業界のプロフェッショナルが求めるスペックを網羅しています。</p>
-                <ul style="margin-bottom: 0; padding-left: 1.2rem;">
-                    <li><strong>高解像度出力（DTP対応）:</strong> IllustratorやPhotoshopへそのまま配置できる無劣化のSVG・高品質PNG出力。</li><li><strong>一括生成（バルク出力）:</strong> 数千件のデータをExcelからコピペするだけで一瞬で処理・A4印刷。</li>
-                </ul>
-            </div>
+  <article>
+    <h2 id="before-you-start">Before you start: choose the right barcode type</h2>
+    <p>The single most important decision when creating a barcode is choosing the correct symbology. Using the wrong barcode type — for example, a QR code on a product meant for retail POS scanning — will result in a barcode that cannot be read by the intended system.</p>
+    <table>
+      <thead><tr><th>Your goal</th><th>Use this barcode</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Sell products in US/Canada retail stores</td><td>UPC-A</td><td>Required by virtually all North American retailers and POS systems</td></tr>
+        <tr><td>Sell products internationally / Europe</td><td>EAN-13</td><td>International retail standard; EAN scanners also read UPC</td></tr>
+        <tr><td>Shipping labels and logistics</td><td>Code 128 / GS1-128</td><td>Encodes alphanumeric data at high density; universal carrier support</td></tr>
+        <tr><td>URL, contact card, WiFi, payment</td><td>QR Code</td><td>Scannable by any smartphone camera; high data capacity</td></tr>
+        <tr><td>Small parts, electronics, pharma</td><td>Data Matrix</td><td>Encodes lots of data in a tiny space; can be laser-etched</td></tr>
+        <tr><td>Books and publishing</td><td>ISBN (EAN-13)</td><td>Required standard for books; obtain ISBN from national agency first</td></tr>
+        <tr><td>Outer shipping cartons / pallets</td><td>ITF-14</td><td>Survives printing on rough corrugated cardboard</td></tr>
+        <tr><td>Government ID, boarding pass, licence</td><td>PDF417</td><td>Mandated by AAMVA (licences) and IATA (boarding passes)</td></tr>
+      </tbody>
+    </table>
 
-            <h3 style="font-size: 1.25rem; margin-top: 2.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;" id="heading-3">高度な検索意図（LSI・エンティティ）に応える3つの強み</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-                <div style="background: var(--surface); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                    <h4 style="color: var(--text-main); margin-bottom: 0.5rem; font-size: 1.1rem;">1. JIS/ISO規格への完全準拠</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">日本の厳しい産業規格（JIS）および国際標準（ISO）のアルゴリズムに基づき描画。レジやスキャナでの読み取りエラー（誤読・不読）を100%排除します。</p>
-                </div>
-                <div style="background: var(--surface); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                    <h4 style="color: var(--text-main); margin-bottom: 0.5rem; font-size: 1.1rem;">2. ローカル完結の絶対的な機密性</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">入力された商品データや社外秘情報は、すべてご利用のブラウザ内（日本国内のデバイス上）で処理されます。サーバーへのデータ送信は一切なく、情報漏洩のリスクはゼロです。</p>
-                </div>
-                <div style="background: var(--surface); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                    <h4 style="color: var(--text-main); margin-bottom: 0.5rem; font-size: 1.1rem;">3. DTP・業務システムへのシームレスな統合</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">ベクターデータ（SVG）や高画質PNGを無料でダウンロード可能。印刷会社への入稿データや、社内の在庫管理システム・Excel帳票等へそのまま組み込めます。</p>
-                </div>
-            </div>
-        </section>
-    
-    </main>
+    <h2 id="online">How to create a barcode online — 5 steps</h2>
+    <p>Creating a barcode online takes under a minute. You do not need to install any software.</p>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Open a free barcode generator</h3>
+        <p>Go to <a href="/barcode-generator.html">barcode-generators.com/barcode-generator.html</a>. No account or sign-up is required. The tool runs entirely in your browser.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Select your barcode type</h3>
+        <p>Choose the symbology from the dropdown: UPC-A, EAN-13, Code 128, QR Code, Data Matrix, or any other type. If you are unsure, refer to the table above or the <a href="/barcode-types.html">barcode types guide</a>.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Enter your data</h3>
+        <p>Type the value you want to encode. For UPC-A this is an 11-digit number (the generator calculates the 12th check digit automatically). For Code 128, any alphanumeric string. For a QR code, a URL, phone number, email, or any text up to 4,296 characters.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Set size, colour, and format options</h3>
+        <p>Choose your output format: SVG for professional print (infinitely scalable), PNG for digital use or documents, or PDF for direct printing. Set the bar colour (must be dark) and background colour (must be light). Do not use red bars — red does not absorb the red laser light used by most 1D scanners.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h3>Generate, preview, and download</h3>
+        <p>Click Generate. Preview the barcode on screen — check the human-readable number below the bars matches your intended data. Download the file. Before using it at scale, test-scan it with both a physical barcode scanner and a smartphone camera to confirm it reads correctly.</p>
+      </div>
+    </div>
+    <div class="callout"><strong>Always test before printing at scale.</strong> Scan your generated barcode with a physical scanner or smartphone before sending 10,000 labels to print. A check digit error or wrong symbology will make every label unscannable.</div>
 
-    <!-- Modern Premium Footer -->
-    <footer class="modern-footer">
-        
-        <div class="footer-top">
-            <div class="footer-brand">
-                <a href="/" class="logo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5v14"/><path d="M8 5v14"/><path d="M12 5v14"/><path d="M17 5v14"/><path d="M21 5v14"/></svg>
-                    バーコード作成 プロ
-                </a>
-                <p>無劣化のベクター生成と一括印刷に対応した完全無料オンラインバーコードジェネレーター。高速かつローカル環境で安全に動作します。</p>
-            </div>
-            <div class="footer-nav">
-            <div class="link-col">
-                <h4>基本ツール</h4>
-                <div class="link-list">
-                    <a href="/barcode-generator.html">バーコード作成ツール</a>
-                    <a href="/online-barcode-generator.html">Onlineバーコード作成ツール</a>
-                    <a href="/free-barcode-generator.html">Freeバーコード作成ツール</a>
-                    <a href="/barcode-maker.html">バーコード作成ツール</a>
-                    <a href="/barcode-creator.html">バーコード生成ツール</a>
-                    <a href="/barcode-label-generator.html">バーコードラベル作成</a>
-                    <a href="/barcode-image-generator.html">バーコード画像生成</a>
-                </div>
-            </div>
-            <div class="link-col">
-                <h4>種類別</h4>
-                <div class="link-list">
-                    <a href="/code-128-barcode-generator.html">Code 128バーコード作成ツール</a>
-                    <a href="/code-39-barcode-generator.html">Code 39バーコード作成ツール</a>
-                    <a href="/ean-13-barcode-generator.html">EAN-13 (JANコード)バーコード作成ツール</a>
-                    <a href="/ean-8-barcode-generator.html">EAN-8 (JANコード)バーコード作成ツール</a>
-                    <a href="/upc-a-barcode-generator.html">UPC-Aバーコード作成ツール</a>
-                    <a href="/upc-e-barcode-generator.html">UPC-Eバーコード作成ツール</a>
-                    <a href="/itf-14-barcode-generator.html">ITF-14バーコード作成ツール</a>
-                    <a href="/codabar-barcode-generator.html">Codabarバーコード作成ツール</a>
-                    <a href="/gs1-128-barcode-generator.html">GS1-128バーコード作成ツール</a>
-                    <a href="/isbn-barcode-generator.html">Isbn (書籍JAN)バーコード作成ツール</a>
-                    <a href="/issn-barcode-generator.html">Issn (雑誌コード)バーコード作成ツール</a>
-                    <a href="/pdf417-barcode-generator.html">PDF417バーコード作成ツール</a>
-                    <a href="/data-matrix-barcode-generator.html">データマトリックスバーコード作成ツール</a>
-                    <a href="/aztec-barcode-generator.html">アステカコードバーコード作成ツール</a>
-                </div>
-            </div>
-            <div class="link-col">
-                <h4>用途・ケース別</h4>
-                <div class="link-list">
-                    <a href="/product-barcode-generator.html">商品・製品バーコード作成ツール</a>
-                    <a href="/inventory-barcode-generator.html">在庫管理バーコード作成ツール</a>
-                    <a href="/sku-barcode-generator.html">Skuバーコード作成ツール</a>
-                    <a href="/warehouse-barcode-generator.html">倉庫管理 Barcode</a>
-                    <a href="/shipping-barcode-generator.html">配送・出荷バーコード作成ツール</a>
-                    <a href="/package-barcode-generator.html">パッケージ Barcode</a>
-                    <a href="/asset-barcode-generator.html">資産管理バーコード作成ツール</a>
-                    <a href="/book-barcode-generator.html">書籍バーコード作成ツール</a>
-                    <a href="/library-barcode-generator.html">図書館 Barcode</a>
-                    <a href="/ticket-barcode-generator.html">チケットバーコード作成ツール</a>
-                    <a href="/event-barcode-generator.html">イベントバーコード作成ツール</a>
-                    <a href="/coupon-barcode-generator.html">クーポンバーコード作成ツール</a>
-                    <a href="/id-barcode-generator.html">IDカードバーコード作成ツール</a>
-                    <a href="/serial-number-barcode-generator.html">シリアルバーコード</a>
-                </div>
-            </div>
-            <div class="link-col">
-                <h4>出力形式別</h4>
-                <div class="link-list">
-                    <a href="/barcode-generator-png.html">Barcode PNG形式 Generator</a>
-                    <a href="/barcode-generator-svg.html">Barcode SVG形式 Generator</a>
-                    <a href="/barcode-generator-jpg.html">Barcode JPG形式 Generator</a>
-                    <a href="/barcode-generator-pdf.html">Barcode PDF形式 Generator</a>
-                    <a href="/barcode-generator-vector.html">ベクターバーコード作成ツール</a>
-                    <a href="/high-resolution-barcode-generator.html">高解像度 Barcode</a>
-                    <a href="/printable-barcode-generator.html">印刷用 Barcode</a>
-                </div>
-            </div>
-            <div class="link-col">
-                <h4>機能・オプション</h4>
-                <div class="link-list">
-                    <a href="/bulk-barcode-generator.html">一括作成バーコード作成ツール</a>
-                    <a href="/multiple-barcode-generator.html">Generate 複数作成 Barcodes</a>
-                    <a href="/custom-barcode-generator.html">カスタムバーコード作成ツール</a>
-                    <a href="/barcode-generator-with-text.html">Barcode テキスト付き</a>
-                    <a href="/barcode-generator-with-number.html">数字バーコード</a>
-                    <a href="/barcode-generator-with-logo.html">ブランド入りバーコード</a>
-                    <a href="/scannable-barcode-generator.html">スキャン可能 Barcode</a>
-                    <a href="/1d-barcode-generator.html">1次元バーコード作成ツール</a>
-                    <a href="/2d-barcode-generator.html">2次元 (QR等)バーコード作成ツール</a>
-                </div>
-            </div>
-            <div class="link-col">
-                <h4>システム連携</h4>
-                <div class="link-list">
-                    <a href="/barcode-generator-for-excel.html">Excelバーコード生成</a>
-                    <a href="/barcode-generator-for-word.html">Wordバーコード生成</a>
-                    <a href="/barcode-generator-for-shopify.html">Shopify用バーコード</a>
-                    <a href="/barcode-generator-for-woocommerce.html">WooCommerce用バーコード</a>
-                    <a href="/barcode-generator-for-amazon.html">Amazon用バーコード</a>
-                    <a href="/barcode-generator-for-pos.html">Pos Barcode</a>
-                </div>
-            </div>
-            <div class="link-col">
-                <h4>ガイド・解説</h4>
-                <div class="link-list">
-                    <a href="/barcode-types.html">バーコードの種類</a>
-                    <a href="/ean-vs-upc.html">EANとUPCの違い</a>
-                    <a href="/code128-vs-code39.html"></a>
-                    <a href="/what-is-barcode.html"></a>
-                    <a href="/how-to-create-barcode.html"></a>
-                    <a href="/barcode-size-guide.html"></a>
-                    <a href="/barcode-format-guide.html"></a>
-                    <a href="/barcode-use-cases.html"></a>
-                </div>
-            </div>
+    <h2 id="retail">How to create a retail barcode (UPC-A or EAN-13)</h2>
+    <p>Retail barcodes are more involved than other types because the product number you encode must be globally unique and officially registered.</p>
+    <h3>Step 1 — Get a GS1 company prefix</h3>
+    <p>To create a legitimate UPC-A or EAN-13 barcode for retail sale, you must first obtain a GS1 company prefix from GS1 — the non-profit organisation that administers barcode numbers globally. GS1 charges an annual fee for company prefixes. Visit gs1.org or your country's GS1 member organisation to register. Do not purchase barcodes from third-party resellers who sell individual GTINs — major retailers check GS1 databases and can reject products whose GTINs are not registered to the brand.</p>
+    <h3>Step 2 — Assign a GTIN to each product</h3>
+    <p>Once you have your prefix, assign a unique item reference number to each distinct product (each size, colour, and variant needs its own number). Combine your company prefix with the item reference to form a GTIN-12 (for UPC-A) or GTIN-13 (for EAN-13).</p>
+    <h3>Step 3 — Generate the barcode image</h3>
+    <p>Enter your GTIN into the <a href="/upc-a-barcode-generator.html">UPC-A barcode generator</a> or <a href="/ean-13-barcode-generator.html">EAN-13 barcode generator</a>. The tool will calculate the check digit and render the barcode. Download as SVG for packaging artwork files.</p>
+    <h3>Step 4 — Check minimum size requirements</h3>
+    <p>A UPC-A barcode has a nominal size of 37.29mm x 25.91mm at 100% magnification. GS1 specifications allow a range from 80% to 200% of this size. Printing smaller than 80% risks scan failures at POS. Always verify the final printed barcode meets GS1 print quality requirements.</p>
+
+    <h2 id="shipping">How to create a shipping barcode (Code 128)</h2>
+    <p>Shipping barcodes are simpler than retail barcodes because you do not need to register your numbers with any authority — you define the data yourself.</p>
+    <ol>
+      <li>Decide what data to encode: order number, tracking number, serial number, or a combination using GS1 Application Identifiers (if shipping to a major retailer)</li>
+      <li>Open the <a href="/code-128-barcode-generator.html">Code 128 barcode generator</a></li>
+      <li>Enter your alphanumeric data. Code 128 handles letters, numbers, and symbols</li>
+      <li>Download as SVG or high-resolution PNG</li>
+      <li>Place on your shipping label alongside the human-readable text version</li>
+    </ol>
+    <div class="warn"><strong>Shipping to major retailers?</strong> If you ship to Walmart, Target, Amazon, or similar large retailers, they likely require GS1-128 format (not plain Code 128) with specific Application Identifiers encoding your SSCC, GTIN, batch number, and expiry date. Check your retailer's routing guide before creating labels.</div>
+
+    <h2 id="qr">How to create a QR code</h2>
+    <p>QR codes are the simplest barcode type to create because any text, URL, or data is valid — no registration or special numbering is required.</p>
+    <h3>What your QR code can encode</h3>
+    <ul>
+      <li><strong>URL</strong> — links to a website, landing page, or product page</li>
+      <li><strong>Plain text</strong> — any message or information up to ~4,000 characters</li>
+      <li><strong>Email</strong> — opens a pre-addressed email draft when scanned</li>
+      <li><strong>SMS</strong> — opens a pre-addressed text message</li>
+      <li><strong>Phone number</strong> — initiates a call when scanned</li>
+      <li><strong>WiFi credentials</strong> — automatically connects the scanner's device to a WiFi network</li>
+      <li><strong>vCard</strong> — saves a contact card to the scanner's address book</li>
+    </ul>
+    <h3>Error correction levels</h3>
+    <p>QR codes have four error correction levels: L (7% tolerance), M (15%, a good default), Q (25%, good for packaging), and H (30%, required if you add a logo inside the QR code). Higher levels make the code more damage-tolerant but reduce data capacity.</p>
+    <h3>Minimum QR code size</h3>
+    <p>A QR code must be at least 2cm x 2cm (approximately 0.8 inches) when printed for reliable smartphone scanning. For billboard or large-format printing, scale proportionally based on the scanning distance.</p>
+
+    <h2 id="excel">How to create a barcode in Excel</h2>
+    <p>There are two ways to add barcodes to an Excel spreadsheet. The barcode font method works for Code 39 — install a free Code 39 font, enter your data in a cell with asterisks around it (="*"&A1&"*"), and apply the barcode font to that cell. For EAN-13 and UPC-A barcodes, the more reliable approach is to generate the barcode using the online tool, download as PNG, and insert it as an image via Insert &rarr; Pictures.</p>
+
+    <h2 id="word">How to create a barcode in Word</h2>
+    <p>The same two approaches apply in Microsoft Word: the barcode font method for simple Code 39 labels, or generating the barcode externally and inserting as an image via Insert &rarr; Picture. When resizing in Word, always maintain the aspect ratio — never stretch a barcode horizontally as this changes bar widths and makes it unscannable.</p>
+
+    <h2 id="print">Printing and size requirements</h2>
+    <p>A correctly generated barcode can still fail to scan if printed incorrectly. Follow these rules to ensure your printed barcodes are always scannable:</p>
+    <h3>Resolution</h3>
+    <p>Print at a minimum of <strong>300 DPI</strong>. For very small barcodes or barcodes with narrow bars (like Code 128 at high density), use 600 DPI or higher. Always use SVG or PDF source files for print, not JPEG which introduces compression artefacts that blur bar edges.</p>
+    <h3>Colours</h3>
+    <p>Bars must be dark and the background must be light. Avoid red bars (wrong wavelength for laser scanners), light-coloured bars, and dark backgrounds. Black bars on white is the most reliable combination.</p>
+    <h3>Quiet zones</h3>
+    <p>Every barcode requires blank space — called a quiet zone — on each side. For UPC-A and EAN-13, this is at least 2.31mm on each side at nominal size. Never allow packaging artwork, text, or graphics to encroach into the quiet zone. This is one of the most common causes of barcode scan failure on retail packaging.</p>
+
+    <div class="cta-box">
+      <h3>Ready to create your barcode?</h3>
+      <p>Free online generator. UPC-A, EAN-13, Code 128, QR Code, Data Matrix, PDF417, and 15+ more. Download as PNG, SVG, or PDF instantly.</p>
+      <a href="/barcode-generator.html">Open the Free Barcode Generator &rarr;</a>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq-item"><div class="faq-q">How do I create a barcode for free?</div><div class="faq-a">Use a free online barcode generator. Choose your barcode type, enter your data, click Generate, and download as PNG, SVG, or PDF. No software or account needed.</div></div>
+    <div class="faq-item"><div class="faq-q">What data do I put in a barcode?</div><div class="faq-a">For UPC/EAN retail barcodes, encode your product's registered GTIN. For Code 128 shipping barcodes, encode your order or tracking number. For QR codes, encode a URL, contact card, WiFi details, or any text.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I create a barcode for my product to sell in stores?</div><div class="faq-a">Yes — but for retail barcodes (UPC-A or EAN-13) you must first register a GS1 company prefix to obtain a legally recognised GTIN. Once you have a valid GTIN, generate the barcode image free using the online tool.</div></div>
+    <div class="faq-item"><div class="faq-q">What file format should I use for my barcode?</div><div class="faq-a">SVG for professional print (scales to any size without pixelation). PNG for digital use and documents at 300 DPI. PDF for direct printing. Never use JPEG.</div></div>
+    <div class="faq-item"><div class="faq-q">How do I test if my barcode is correct?</div><div class="faq-a">Scan the generated barcode with a smartphone camera and confirm the decoded value matches your intended data. For retail barcodes, also verify the GTIN is registered in the GS1 database.</div></div>
+  </article>
 </div>
-        </div>
-            
-                        <div class="link-col">
-                <h4>基本ツール</h4>
-                <div class="link-list">
-                    <a href="/barcode-generator.html">バーコード作成ツール</a>
-                    <a href="/online-barcode-generator.html">Onlineバーコード作成ツール</a>
-                    <a href="/free-barcode-generator.html">Freeバーコード作成ツール</a>
-                    <a href="/barcode-maker.html">バーコード作成ツール</a>
-                    <a href="/barcode-creator.html">バーコード生成ツール</a>
-                    <a href="/barcode-label-generator.html">バーコードラベル作成</a>
-                    <a href="/barcode-image-generator.html">バーコード画像生成</a>
-                </div>
-            </div>
-                        <div class="link-col">
-                <h4>種類別</h4>
-                <div class="link-list">
-                    <a href="/code-128-barcode-generator.html">Code 128バーコード作成ツール</a>
-                    <a href="/code-39-barcode-generator.html">Code 39バーコード作成ツール</a>
-                    <a href="/ean-13-barcode-generator.html">EAN-13 (JANコード)バーコード作成ツール</a>
-                    <a href="/ean-8-barcode-generator.html">EAN-8 (JANコード)バーコード作成ツール</a>
-                    <a href="/upc-a-barcode-generator.html">UPC-Aバーコード作成ツール</a>
-                    <a href="/upc-e-barcode-generator.html">UPC-Eバーコード作成ツール</a>
-                    <a href="/itf-14-barcode-generator.html">ITF-14バーコード作成ツール</a>
-                    <a href="/codabar-barcode-generator.html">Codabarバーコード作成ツール</a>
-                    <a href="/gs1-128-barcode-generator.html">GS1-128バーコード作成ツール</a>
-                    <a href="/isbn-barcode-generator.html">Isbn (書籍JAN)バーコード作成ツール</a>
-                    <a href="/issn-barcode-generator.html">Issn (雑誌コード)バーコード作成ツール</a>
-                    <a href="/pdf417-barcode-generator.html">PDF417バーコード作成ツール</a>
-                    <a href="/data-matrix-barcode-generator.html">データマトリックスバーコード作成ツール</a>
-                    <a href="/aztec-barcode-generator.html">アステカコードバーコード作成ツール</a>
-                </div>
-            </div>
-                        <div class="link-col">
-                <h4>用途・ケース別</h4>
-                <div class="link-list">
-                    <a href="/product-barcode-generator.html">商品・製品バーコード作成ツール</a>
-                    <a href="/inventory-barcode-generator.html">在庫管理バーコード作成ツール</a>
-                    <a href="/sku-barcode-generator.html">Skuバーコード作成ツール</a>
-                    <a href="/warehouse-barcode-generator.html">倉庫管理 Barcode</a>
-                    <a href="/shipping-barcode-generator.html">配送・出荷バーコード作成ツール</a>
-                    <a href="/package-barcode-generator.html">パッケージ Barcode</a>
-                    <a href="/asset-barcode-generator.html">資産管理バーコード作成ツール</a>
-                    <a href="/book-barcode-generator.html">書籍バーコード作成ツール</a>
-                    <a href="/library-barcode-generator.html">図書館 Barcode</a>
-                    <a href="/ticket-barcode-generator.html">チケットバーコード作成ツール</a>
-                    <a href="/event-barcode-generator.html">イベントバーコード作成ツール</a>
-                    <a href="/coupon-barcode-generator.html">クーポンバーコード作成ツール</a>
-                    <a href="/id-barcode-generator.html">IDカードバーコード作成ツール</a>
-                    <a href="/serial-number-barcode-generator.html">シリアルバーコード</a>
-                </div>
-            </div>
-                        <div class="link-col">
-                <h4>出力形式別</h4>
-                <div class="link-list">
-                    <a href="/barcode-generator-png.html">Barcode PNG形式 Generator</a>
-                    <a href="/barcode-generator-svg.html">Barcode SVG形式 Generator</a>
-                    <a href="/barcode-generator-jpg.html">Barcode JPG形式 Generator</a>
-                    <a href="/barcode-generator-pdf.html">Barcode PDF形式 Generator</a>
-                    <a href="/barcode-generator-vector.html">ベクターバーコード作成ツール</a>
-                    <a href="/high-resolution-barcode-generator.html">高解像度 Barcode</a>
-                    <a href="/printable-barcode-generator.html">印刷用 Barcode</a>
-                </div>
-            </div>
-                        <div class="link-col">
-                <h4>機能・オプション</h4>
-                <div class="link-list">
-                    <a href="/bulk-barcode-generator.html">一括作成バーコード作成ツール</a>
-                    <a href="/multiple-barcode-generator.html">Generate 複数作成 Barcodes</a>
-                    <a href="/custom-barcode-generator.html">カスタムバーコード作成ツール</a>
-                    <a href="/barcode-generator-with-text.html">Barcode テキスト付き</a>
-                    <a href="/barcode-generator-with-number.html">数字バーコード</a>
-                    <a href="/barcode-generator-with-logo.html">ブランド入りバーコード</a>
-                    <a href="/scannable-barcode-generator.html">スキャン可能 Barcode</a>
-                    <a href="/1d-barcode-generator.html">1次元バーコード作成ツール</a>
-                    <a href="/2d-barcode-generator.html">2次元 (QR等)バーコード作成ツール</a>
-                </div>
-            </div>
-                        <div class="link-col">
-                <h4>システム連携</h4>
-                <div class="link-list">
-                    <a href="/barcode-generator-for-excel.html">Excelバーコード生成</a>
-                    <a href="/barcode-generator-for-word.html">Wordバーコード生成</a>
-                    <a href="/barcode-generator-for-shopify.html">Shopify用バーコード</a>
-                    <a href="/barcode-generator-for-woocommerce.html">WooCommerce用バーコード</a>
-                    <a href="/barcode-generator-for-amazon.html">Amazon用バーコード</a>
-                    <a href="/barcode-generator-for-pos.html">Pos Barcode</a>
-                </div>
-            </div>
-                        <div class="link-col">
-                <h4>ガイド・解説</h4>
-                <div class="link-list">
-                    <a href="/barcode-types.html">バーコードの種類</a>
-                    <a href="/ean-vs-upc.html">EANとUPCの違い</a>
-                    <a href="/code128-vs-code39.html"></a>
-                    <a href="/what-is-barcode.html"></a>
-                    <a href="/how-to-create-barcode.html"></a>
-                    <a href="/barcode-size-guide.html"></a>
-                    <a href="/barcode-format-guide.html"></a>
-                    <a href="/barcode-use-cases.html"></a>
-                </div>
-            </div>
-        
-        <div class="footer-company-info" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; color: var(--text-muted); font-size: 0.85rem;">
-            <div class="footer-desc">
-                <strong>Barcode Generators LLC</strong> (Parent Company)<br>
-                最高品質のバーコード生成・一括印刷プラットフォーム。<br>
-                <span style="display:inline-block; margin-top:5px; padding:2px 6px; background:#e2e8f0; color:#0f172a; border-radius:4px; font-size:0.75rem; font-weight:bold;">DMCA PROTECTED</span>
-            </div>
-            <div class="footer-contact">
-                Email: contact@barcode-generators.com<br>
-                Phone: 050-1234-5678
-            </div>
-            <div class="footer-socials" style="display: flex; gap: 1rem;">
-                <a href="https://twitter.com/barcodegens" title="Twitter/X">🐦 Twitter/X</a>
-                <a href="https://facebook.com/barcodegens" title="Facebook">📘 Facebook</a>
-                <a href="https://linkedin.com/company/barcodegens" title="LinkedIn">💼 LinkedIn</a>
-                <a href="https://youtube.com/@barcodegens" title="YouTube">▶️ YouTube</a>
-                <a href="https://instagram.com/barcodegens" title="Instagram">📸 Instagram</a>
-                <a href="https://pinterest.com/barcodegens" title="Pinterest">📌 Pinterest</a>
-                <a href="https://tiktok.com/@barcodegens" title="TikTok">🎵 TikTok</a>
-            </div>
-        </div>
-        
-        <div class="footer-eeat-links" style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; font-size: 0.85rem;">
-            <a href="/about-us.html" style="color: var(--text-muted); text-decoration: none;">Our Story / Who We Are</a>
-            <a href="/team.html" style="color: var(--text-muted); text-decoration: none;">Authors/Team</a>
-            <a href="/contact-us.html" style="color: var(--text-muted); text-decoration: none;">Contact Us</a>
-            <a href="/editorial-guidelines.html" style="color: var(--text-muted); text-decoration: none;">Editorial Guidelines</a>
-            <a href="/sitemap.html" style="color: var(--text-muted); text-decoration: none;">HTML Sitemap</a>
-            <a href="/rss.xml" style="color: var(--text-muted); text-decoration: none;">RSS Feed</a>
-        </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 バーコード作成 プロ. All Rights Reserved.</p>
-            <div class="footer-legal">
-                <a href="/privacy.html">プライバシーポリシー</a>
-                <a href="/terms.html">利用規約</a>
-            </div>
-        </div>
-            
-    </footer>
-
-    <div id="toast" class="toast">処理が完了しました！</div>
-
-    <script>
-        // DOM Elements setup
-        const barcodeType = document.getElementById('barcode-type');
-        const barcodeInput = document.getElementById('barcode-input');
-        const barcodeTextarea = document.getElementById('barcode-textarea');
-        
-        const colorBar = document.getElementById('color-bar');
-        const colorBg = document.getElementById('color-bg');
-
-        const btnGenerate = document.getElementById('btn-generate');
-        const btnClear = document.getElementById('btn-clear');
-        const errorMsg = document.getElementById('error-msg');
-        
-        const containerSingle = document.getElementById('container-single');
-        const containerBulk = document.getElementById('container-bulk');
-
-        // View logic
-        const previewPlaceholder = document.getElementById('preview-placeholder');
-        const canvasContainer = document.getElementById('barcode-canvas-container');
-        const bulkOutput = document.getElementById('bulk-output');
-        const barcodeSvg = document.getElementById('barcode-svg');
-        const qrcodeContainer = document.getElementById('qrcode-container');
-        
-        const actionsGroup = document.getElementById('actions-group');
-        const btnPng = document.getElementById('btn-png');
-        const btnSvg = document.getElementById('btn-svg');
-        const btnPrint = document.getElementById('btn-print');
-
-        const themeToggle = document.getElementById('theme-toggle');
-        
-        let currentMode = 'single';
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderHistory();
-        });
-
-        // Interactive Tabs
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                e.target.classList.add('active');
-                currentMode = e.target.getAttribute('data-mode');
-                
-                if(currentMode === 'single') {
-                    containerSingle.style.display = 'block';
-                    containerBulk.style.display = 'none';
-                    btnPng.style.display = 'inline-flex';
-                    btnSvg.style.display = 'inline-flex';
-                    btnPrint.style.display = 'none';
-                } else {
-                    containerSingle.style.display = 'none';
-                    containerBulk.style.display = 'block';
-                    btnPng.style.display = 'none';
-                    btnSvg.style.display = 'none';
-                    btnPrint.style.display = 'inline-flex';
-                }
-                resetView();
-            });
-        });
-
-        // Reactive re-render on settings change
-        [barcodeType, colorBar, colorBg].forEach(el => {
-            el.addEventListener('change', () => {
-                if (canvasContainer.style.display === 'block' || bulkOutput.style.display === 'grid') {
-                    generateBarcode();
-                }
-            });
-        });
-
-        btnGenerate.addEventListener('click', generateBarcode);
-        btnClear.addEventListener('click', () => {
-            barcodeInput.value = '';
-            barcodeTextarea.value = '';
-            colorBar.value = "#000000";
-            colorBg.value = "#ffffff";
-            resetView();
-        });
-
-        // Gorgeous Theme Toggle logic
-        themeToggle.addEventListener('click', () => {
-            const html = document.documentElement;
-            if (html.getAttribute('data-theme') === 'light') {
-                html.setAttribute('data-theme', 'dark');
-                themeToggle.innerHTML = '☀️ ライトモード';
-            } else {
-                html.setAttribute('data-theme', 'light');
-                themeToggle.innerHTML = '🌙 ダークモード';
-            }
-        });
-
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
-        }
-
-        function showError(msg) {
-            errorMsg.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px; margin-top:-2px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>' + msg;
-            errorMsg.style.display = 'block';
-            resetView(true);
-        }
-
-        function resetView(keepError = false) {
-            if(!keepError) errorMsg.style.display = 'none';
-            canvasContainer.style.display = 'none';
-            bulkOutput.style.display = 'none';
-            actionsGroup.style.display = 'none';
-            previewPlaceholder.style.display = 'block';
-        }
-
-        function generateBarcode() {
-            errorMsg.style.display = 'none';
-            if (currentMode === 'single') processSingle();
-            else processBulk();
-        }
-
-        function processSingle() {
-            const value = barcodeInput.value.trim();
-            const type = barcodeType.value;
-            const cBar = colorBar.value;
-            const cBg = colorBg.value;
-
-            if (!value) {
-                showError("値を入力してください。");
-                return;
-            }
-
-            previewPlaceholder.style.display = 'none';
-            bulkOutput.style.display = 'none';
-            canvasContainer.style.display = 'block';
-            actionsGroup.style.display = 'flex';
-            
-            barcodeSvg.style.display = 'none';
-            qrcodeContainer.style.display = 'none';
-            
-            btnSvg.style.display = (type === 'QR') ? 'none' : 'inline-flex';
-
-            if (type === 'QR') {
-                qrcodeContainer.style.display = 'block';
-                qrcodeContainer.innerHTML = ''; 
-                try {
-                    new QRCode(qrcodeContainer, {
-                        text: value, width: 220, height: 220,
-                        colorDark: cBar, colorLight: cBg, correctLevel: QRCode.CorrectLevel.H
-                    });
-                    saveToHistory(type, value);
-                } catch (err) {
-                    showError("QRコードの作成中にエラーが発生しました。");
-                }
-            } else {
-                barcodeSvg.style.display = 'block';
-                try {
-                    JsBarcode("#barcode-svg", value, {
-                        format: type, lineColor: cBar, background: cBg,
-                        width: 2.2, height: 110, displayValue: true, fontSize: 18, margin: 12
-                    });
-                    saveToHistory(type, value);
-                } catch (err) {
-                    showError("選択したフォーマットに対して入力値が無効です (" + type + ")");
-                }
-            }
-        }
-
-        function processBulk() {
-            const lines = barcodeTextarea.value.split('\n').map(l => l.trim()).filter(l => l);
-            const type = barcodeType.value;
-            const cBar = colorBar.value;
-            const cBg = colorBg.value;
-
-            if (lines.length === 0) {
-                showError("値を1行以上入力してください。");
-                return;
-            }
-
-            if(lines.length > 500) {
-                showError("安定稼働のため、一度に処理できる最大件数は500件までです。");
-                return;
-            }
-
-            previewPlaceholder.style.display = 'none';
-            canvasContainer.style.display = 'none';
-            bulkOutput.innerHTML = '';
-            bulkOutput.style.display = 'grid';
-            actionsGroup.style.display = 'flex';
-
-            lines.forEach(val => {
-                const wrap = document.createElement('div');
-                wrap.className = 'bulk-item';
-                
-                if (type === 'QR') {
-                    const qrWrap = document.createElement('div');
-                    try {
-                        new QRCode(qrWrap, {
-                            text: val, width: 100, height: 100, colorDark: cBar, colorLight: cBg
-                        });
-                        wrap.appendChild(qrWrap);
-                        const label = document.createElement('div');
-                        label.textContent = val;
-                        label.style.marginTop = "8px";
-                        label.style.fontSize = "13px";
-                        label.style.fontWeight = "600";
-                        wrap.appendChild(label);
-                    } catch(e) {}
-                } else {
-                    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-                    try {
-                        JsBarcode(svg, val, {
-                            format: type, lineColor: cBar, background: cBg,
-                            width: 1.5, height: 50, displayValue: true, fontSize: 14, margin: 5
-                        });
-                        wrap.appendChild(svg);
-                    } catch(e) {
-                        wrap.innerHTML = `<span style="color:var(--error); font-weight:bold; font-size:12px;">無効: ${val}</span>`;
-                    }
-                }
-                bulkOutput.appendChild(wrap);
-            });
-        }
-
-        // Feature: Fast Local History Array
-        function saveToHistory(type, value) {
-            let hist = JSON.parse(localStorage.getItem('premiumBarcodeHist') || '[]');
-            hist = hist.filter(h => h.value !== value); 
-            hist.unshift({ type, value, time: new Date().toLocaleString() });
-            if (hist.length > 5) hist = hist.slice(0, 5);
-            localStorage.setItem('premiumBarcodeHist', JSON.stringify(hist));
-            renderHistory();
-        }
-
-        function renderHistory() {
-            const histList = document.getElementById('history-list');
-            const hist = JSON.parse(localStorage.getItem('premiumBarcodeHist') || '[]');
-            
-            if(hist.length === 0) {
-                histList.innerHTML = '<p style="color:var(--text-muted); font-size:14px; padding: 10px 0;">生成履歴はまだありません。</p>';
-                return;
-            }
-
-            histList.innerHTML = '';
-            hist.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'history-item';
-                div.innerHTML = `
-                    <div class="history-desc">
-                        <span class="badge">${item.type}</span>
-                        <strong style="font-family: monospace; font-size:15px;">${item.value}</strong>
-                    </div>
-                `;
-                div.title = "クリックして復元";
-                div.addEventListener('click', () => {
-                    document.getElementById('tab-single').click();
-                    barcodeInput.value = item.value;
-                    barcodeType.value = item.type;
-                    generateBarcode();
-                });
-                histList.appendChild(div);
-            });
-        }
-
-        function clearHistory() {
-            localStorage.removeItem('premiumBarcodeHist');
-            renderHistory();
-            showToast("ローカル履歴を完全に消去しました。");
-        }
-
-        // Export Actions
-        function downloadImage(format) {
-            const type = barcodeType.value;
-            let filename = `barcode_${type}_${Date.now()}.` + format;
-
-            if (type === 'QR') {
-                const canvas = qrcodeContainer.querySelector('canvas');
-                if (!canvas) return;
-                const link = document.createElement('a');
-                link.download = filename;
-                link.href = canvas.toDataURL("image/png");
-                link.click();
-                showToast("高画質 PNG をダウンロードしました。");
-            } else {
-                const svg = document.getElementById('barcode-svg');
-                const serializer = new XMLSerializer();
-                let source = serializer.serializeToString(svg);
-                
-                if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/))
-                    source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
-                source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
-
-                if (format === 'svg') {
-                    const url = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(source);
-                    const link = document.createElement('a');
-                    link.download = filename;
-                    link.href = url;
-                    link.click();
-                    showToast("無劣化のベクターSVGをダウンロードしました。");
-                } else if (format === 'png') {
-                    const img = new Image();
-                    const b64 = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(source)));
-                    img.onload = function() {
-                        const canvas = document.createElement("canvas");
-                        canvas.width = img.width * 2; // Extra High-DPI Output
-                        canvas.height = img.height * 2;
-                        const ctx = canvas.getContext("2d");
-                        ctx.fillStyle = colorBg.value; 
-                        ctx.fillRect(0, 0, canvas.width, canvas.height); 
-                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                        const a = document.createElement("a");
-                        a.download = filename;
-                        a.href = canvas.toDataURL("image/png");
-                        a.click();
-                        showToast("高画質 PNG をダウンロードしました。");
-                    };
-                    img.src = b64;
-                }
-            }
-        }
-
-        
-        
-        
-        // Native PDF A4 Print Hook
-        function printBulkPDF() {
-            const bulkContents = document.getElementById('bulk-output').innerHTML;
-            const printWin = window.open('', '', 'width=900,height=800');
-            printWin.document.write(`
-                <html>
-                <head>
-                    <title>A4 ラベル出力 (PDF Print) - ToolsHub</title>
-                    <style>
-                        body { font-family: sans-serif; text-align: center; margin: 0; padding: 15px;}
-                        .print-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-                        .bulk-item { padding: 12px; border: 1px dotted #ccc; display: flex; flex-direction: column; align-items: center; justify-content: center;}
-                        .bulk-item svg, .bulk-item canvas { max-width: 100%; height: auto; }
-                        .bulk-item div { font-family: monospace; font-weight: bold; margin-top: 5px; }
-                        @media print {
-                            body { -webkit-print-color-adjust: exact; }
-                            .bulk-item { page-break-inside: avoid; border: 1px solid #777;}
-                            @page { margin: 1cm; size: A4 portrait; }
-                            @page :left { margin-left: 1cm; }
-                            @page :right { margin-left: 1cm; }
-                        }
-                    
-        /* Premium SaaS Tool UI Redesign */
-        .tool-container {
-            background: var(--surface);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.03);
-            border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            margin-top: 2rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Segmented Control Tabs */
-        .tabs {
-            display: inline-flex;
-            background: var(--input-bg);
-            padding: 6px;
-            border-radius: 14px;
-            margin-bottom: 2.5rem;
-            border: 1px solid var(--border-color);
-        }
-        .tab {
-            background: transparent;
-            border: none;
-            padding: 0.75rem 1.75rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .tab.active {
-            background: var(--surface);
-            color: var(--text-main);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .tab:not(.active):hover {
-            color: var(--text-main);
-        }
-
-        .tool-grid {
-            display: grid;
-            grid-template-columns: 360px 1fr;
-            gap: 3.5rem;
-        }
-        @media (max-width: 900px) {
-            .tool-grid { grid-template-columns: 1fr; }
-            .tool-container { padding: 1.5rem; }
-        }
-
-        /* Premium Form Controls */
-        .form-group {
-            margin-bottom: 1.75rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.6rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--text-main);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .form-group select,
-        .form-group input[type="text"],
-        .form-group textarea {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            background: var(--input-bg);
-            color: var(--text-main);
-            font-size: 0.95rem;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.2s;
-            box-sizing: border-box;
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.01);
-        }
-        .form-group select:focus,
-        .form-group input[type="text"]:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-            background: var(--surface);
-        }
-        
-        /* Sleek Color Pickers */
-        .color-pickers {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            background: var(--input-bg);
-            padding: 1rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-        .color-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-        .color-group label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin: 0;
-            font-weight: 600;
-        }
-        
-        input[type="color"]::-webkit-color-swatch-wrapper {
-            padding: 0;
-        }
-        input[type="color"]::-webkit-color-swatch {
-            border: 2px solid var(--border-color);
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Modern Buttons */
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .btn {
-            padding: 0.85rem 1.5rem;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-        }
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-            flex: 1;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-        }
-        .btn-primary:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
-        }
-        .btn-secondary {
-            background: var(--input-bg);
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-        }
-        .btn-secondary:hover {
-            background: #e2e8f0;
-            color: #0f172a;
-        }
-
-        /* Beautiful Preview Area */
-        .preview-area {
-            background: var(--surface);
-            border: 2px dashed var(--border-color);
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 400px;
-            position: relative;
-            padding: 2rem;
-            overflow: hidden;
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.02);
-            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-        
-        .placeholder {
-            color: var(--text-muted);
-            text-align: center;
-            font-weight: 500;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-        .placeholder svg {
-            color: #cbd5e1;
-            width: 48px;
-            height: 48px;
-        }
-        
-        /* History Section Refined */
-        .history-section {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-        .history-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        .history-header h3 {
-            font-size: 1rem;
-            color: var(--text-main);
-            margin: 0;
-            font-weight: 700;
-        }
-        .history-list {
-            display: grid;
-            gap: 0.75rem;
-        }
-        .history-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.85rem 1.25rem;
-            background: var(--input-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .history-item:hover {
-            border-color: var(--primary);
-            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.1);
-            transform: translateX(4px);
-        }
-        .badge {
-            background: #e0e7ff;
-            color: var(--primary);
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-
-</style>
-                </head>
-                <body>
-                    <div class="print-grid">
-                        ${bulkContents}
-                    </div>
-                    <script>
-                        setTimeout(() => {
-                            window.print();
-                            window.close();
-                        }, 500);
-                    <\/script>
-                </body>
-                </html>
-            `);
-            printWin.document.close();
-        }
-    </script>
-
-    
-
-
-    <!-- Footer Accordion JS -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cols = document.querySelectorAll('.modern-footer .link-col h4');
-            cols.forEach(col => {
-                col.addEventListener('click', function() {
-                    if(window.innerWidth <= 768) {
-                        const parent = this.parentElement;
-                        parent.classList.toggle('active');
-                    }
-                });
-            });
-        });
-    </script>
-
-
-    
-    <!-- Back to Top Button -->
-    <button id="backToTop" style="display:none; position:fixed; bottom:30px; right:30px; width:45px; height:45px; background:var(--primary); color:#fff; border:none; border-radius:50%; font-size:1.5rem; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2); z-index:9999;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
-    <script>
-        window.addEventListener('scroll', function() {
-            document.getElementById('backToTop').style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-    </script>
-
+<footer>
+  &copy; 2026 Barcode Generators &nbsp;|&nbsp;
+  <a href="/privacy.html">Privacy</a>
+  <a href="/terms.html">Terms</a>
+  <a href="/contact-us.html">Contact</a>
+</footer>
 </body>
 </html>

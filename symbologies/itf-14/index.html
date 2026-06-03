@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ITF-14: Carton-Level GTIN-14 Encoding and Bearer Bar Rules</title>
+  <meta name="description" content="ITF-14 support page covering interleaved pairs, bearer bars, and corrugated print rules for master cartons." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/symbologies/itf-14/" />
+<style>
+    body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}
+    h1,h2,h3{color:#0f3d6e}
+    .eyebrow{font-size:.9rem;font-weight:700;color:#0f3d6e;text-transform:uppercase;letter-spacing:.04em}
+    .crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}
+    .tool{background:#eef6ff;border:1px solid #cfe0f6;border-radius:12px;padding:16px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin:14px 0}
+    th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}
+    th{background:#f2f7fc}
+    pre{background:#0f172a;color:#eef2ff;padding:14px;border-radius:12px;overflow:auto}
+    code{font-family:Consolas,monospace}
+    svg{max-width:100%;height:auto;display:block;margin:12px 0}
+    a{color:#0b4a7a;text-decoration:none}
+    a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <article>
+    <p class="eyebrow">Supporting Guide</p>
+    <div class="crumbs"><a href="/symbologies/ultimate-barcode-type-guide/">Barcode Symbologies Guide</a></div>
+    <h1>ITF-14: Carton-Level GTIN-14 Encoding and Bearer Bar Rules</h1>
+
+    <p>ITF-14 is built for outer-case logistics, not consumer checkout. It encodes GTIN-14 values through paired interleaving and is intentionally tolerant of rougher packaging materials such as corrugated stock. That makes it a practical choice for cartons and distribution handling where retail aesthetics are secondary to scan reliability.</p>
+    <p>The most important visual protection feature is the bearer bar. These thick bars above and below the symbol reduce the risk of partial scans and are especially useful on uneven corrugated surfaces.</p>
+    <table>
+      <tr><th>Core rule</th><th>Why it matters</th></tr>
+      <tr><td>Numeric-only GTIN-14</td><td>Matches carton identification workflows</td></tr>
+      <tr><td>Bearer bars</td><td>Reduce short scans on rough surfaces</td></tr>
+      <tr><td>Larger X-dimensions</td><td>Better tolerance on corrugated stock</td></tr>
+    </table>
+    <div class="tool"><strong>Tool handoff:</strong> Validate carton identifiers in the <a href="/itf-14-barcode-generator.html">ITF-14 generator</a> before applying them to outer-case layouts.</div>
+
+<section id="faq"><h2>FAQ</h2><h3>Should ITF-14 replace UPC on retail products?</h3><p>No. ITF-14 is intended for cartons and outer packaging, while UPC or EAN remains the retail point-of-sale identifier.</p></section>
+<div class="related"><strong>Related:</strong> <a href="/symbologies/ultimate-barcode-type-guide/">Ultimate Barcode Symbology Guide</a> | <a href="/itf-14-barcode-generator.html">ITF-14 Generator</a></div>
+  </article>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/symbologies/itf-14/"
+  },
+  "headline": "ITF-14: Carton-Level GTIN-14 Encoding and Bearer Bar Rules",
+  "description": "ITF-14 support page covering interleaved pairs, bearer bars, and corrugated print rules for master cartons.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should ITF-14 replace UPC on retail products?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. ITF-14 is intended for cartons and outer packaging, while UPC or EAN remains the retail point-of-sale identifier."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+</html>

@@ -1,0 +1,461 @@
+{
+  "summary": {
+    "html_pages_checked": 130,
+    "broken_internal_link_count": 0,
+    "missing_title_count": 0,
+    "pages_with_unlabeled_inputs": 69
+  },
+  "broken_internal_links": [],
+  "missing_titles": [],
+  "unlabeled_inputs": {
+    "1d-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "2d-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "asset-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "aztec-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-creator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-format-guide.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-for-amazon.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-for-excel.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-for-pos.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-for-shopify.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-for-woocommerce.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-for-word.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-jpg.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-pdf.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-png.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-svg.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-vector.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-with-logo.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-with-number.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator-with-text.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-image-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-label-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-maker.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-size-guide.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-types.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "barcode-use-cases.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "book-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "bulk-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "codabar-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "code-128-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "code-39-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "code128-vs-code39.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "compliance/industry-barcode-standards-guide/index.html": [
+      "cv-input"
+    ],
+    "coupon-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "custom-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "data-matrix-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "ean-13-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "ean-8-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "ean-vs-upc.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "enterprise/secure-bulk-barcode-generation/index.html": [
+      "csv-file"
+    ],
+    "event-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "free-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "gs1-128-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "high-resolution-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "how-to-create-barcode.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "id-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "index.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "inventory-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "isbn-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "issn-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "itf-14-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "library-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "multiple-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "online-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "package-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "pdf417-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "printable-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "product-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "scannable-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "serial-number-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "shipping-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "sku-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "symbologies/ultimate-barcode-type-guide/index.html": [
+      "tester-input"
+    ],
+    "ticket-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "upc-a-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "upc-e-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "warehouse-barcode-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
+    "what-is-barcode.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ]
+  },
+  "pillar_audit": {
+    "symbologies": {
+      "hub": "symbologies/ultimate-barcode-type-guide/index.html",
+      "missing_hub_schema": [],
+      "missing_widget_ids": [],
+      "missing_child_links": [],
+      "child_issues": []
+    },
+    "compliance": {
+      "hub": "compliance/industry-barcode-standards-guide/index.html",
+      "missing_hub_schema": [],
+      "missing_widget_ids": [],
+      "missing_child_links": [],
+      "child_issues": []
+    },
+    "developers": {
+      "hub": "developers/barcode-generation-api-sdk-guide/index.html",
+      "missing_hub_schema": [],
+      "missing_widget_ids": [],
+      "missing_child_links": [],
+      "child_issues": []
+    },
+    "production": {
+      "hub": "production/perfect-barcode-print-optimization-guide/index.html",
+      "missing_hub_schema": [],
+      "missing_widget_ids": [],
+      "missing_child_links": [],
+      "child_issues": []
+    },
+    "enterprise": {
+      "hub": "enterprise/secure-bulk-barcode-generation/index.html",
+      "missing_hub_schema": [],
+      "missing_widget_ids": [],
+      "missing_child_links": [],
+      "child_issues": []
+    },
+    "future": {
+      "hub": "future/gs1-sunrise-2027-2d-barcode-migration/index.html",
+      "missing_hub_schema": [],
+      "missing_widget_ids": [],
+      "missing_child_links": [],
+      "child_issues": []
+    }
+  },
+  "technical_truths": {
+    "upc_a_facts": {
+      "file": "symbologies/upc-a/index.html",
+      "missing_terms": []
+    },
+    "code_128_facts": {
+      "file": "symbologies/code-128/index.html",
+      "missing_terms": []
+    },
+    "data_matrix_facts": {
+      "file": "symbologies/data-matrix/index.html",
+      "missing_terms": []
+    },
+    "color_wavelength_facts": {
+      "file": "production/color-contrast-optimization/index.html",
+      "missing_terms": []
+    }
+  },
+  "asset_checks": {
+    "production/perfect-barcode-print-optimization-guide/index.html": {
+      "has_inline_svg": true,
+      "uses_raster_img_tags": false
+    },
+    "production/vector-vs-raster-barcode-formats/index.html": {
+      "has_inline_svg": true,
+      "uses_raster_img_tags": false
+    },
+    "production/color-contrast-optimization/index.html": {
+      "has_inline_svg": true,
+      "uses_raster_img_tags": false
+    }
+  },
+  "legacy_redirects": {
+    "barcode-types-guide.html": {
+      "target": "/symbologies/ultimate-barcode-type-guide/",
+      "is_redirect_or_canonicalized": true
+    },
+    "barcode-standards-guide.html": {
+      "target": "/compliance/industry-barcode-standards-guide/",
+      "is_redirect_or_canonicalized": true
+    },
+    "barcode-printing-guide.html": {
+      "target": "/production/perfect-barcode-print-optimization-guide/",
+      "is_redirect_or_canonicalized": true
+    },
+    "bulk-custom-barcode-guide.html": {
+      "target": "/enterprise/secure-bulk-barcode-generation/",
+      "is_redirect_or_canonicalized": true
+    },
+    "barcode-tech-trends-guide.html": {
+      "target": "/future/gs1-sunrise-2027-2d-barcode-migration/",
+      "is_redirect_or_canonicalized": true
+    },
+    "barcode-usecase-guide.html": {
+      "target": "/barcode-use-cases.html",
+      "is_redirect_or_canonicalized": true
+    },
+    "barcode-generator-guide.html": {
+      "target": "/barcode-generator.html",
+      "is_redirect_or_canonicalized": true
+    },
+    "barcode-basics.html": {
+      "target": "/what-is-barcode.html",
+      "is_redirect_or_canonicalized": true
+    }
+  }
+}

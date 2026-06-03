@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ISBN Publishing Guide — Transforming ISBN into EAN-13 and 5-Digit Price Extensions</title>
+  <meta name="description" content="How to convert ISBN into Bookland EAN-13, generate EAN-5 price extensions, and place barcodes correctly on book jackets.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/compliance/isbn-publishing-guide/" />
+  <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
+</head>
+<body>
+  <article>
+    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+    <h1>ISBN Publishing Guide — Transforming ISBN into EAN-13 and 5-Digit Price Extensions</h1>
+    <section>
+      <h2>Mapping ISBN-13 to EAN-13</h2>
+      <p>ISBN-13 numbers that begin with the Bookland prefixes (978 or 979) are directly encodable as EAN-13 symbols. The EAN-13 symbol must include the correct check digit for its 13-digit payload. For publishers, the workflow is:</p>
+      <ol>
+        <li>Confirm ISBN-13 assignment from your ISBN agency (Bowker/ISBN Agency).</li>
+        <li>Ensure the ISBN-13 uses a valid Bookland prefix (978/979).</li>
+        <li>Calculate the EAN-13 check digit (Modulo-10 weighted sum) and embed the value in the symbol.</li>
+        <li>Include the human-readable ISBN below the symbol with appropriate spacing.</li>
+      </ol>
+      <p>Common error: using an ISBN-10 without converting to ISBN-13 — always operate with ISBN-13 for EAN encoding.</p>
+    </section>
+
+    <section>
+      <h2>Generating EAN-5 price extensions</h2>
+      <p>EAN-5 is a 5-digit supplemental barcode placed to the right of the main EAN-13 symbol, typically used for price data. The first digit often represents currency or special flags; the remaining digits encode the price in local minor units (e.g., cents). Example: to encode ¥1,200 in a JPY-based market where the prefix convention is known, convert to the expected minor units and follow the publisher's price-encoding table.</p>
+      <p>Use a trusted EAN-5 generator or algorithm that follows local bookstore conventions. Always verify the resulting pattern against a scanner and ensure placement does not infringe on the main symbol's quiet zone.</p>
+    </section>
+
+    <section>
+      <h2>Placement and printing best practices</h2>
+      <p>Place the EAN-13 symbol in the lower-right quadrant of the back cover, with the EAN-5 to its right and slightly elevated. Maintain the recommended clear area (quiet zone) to the left of the main symbol. When printing, use a minimum bar height of 32 mm for standard trade paperbacks at nominal X-dimensions, unless your printer and retailer allow a reduced height validated by test scans.</p>
+      <p>Use vector output for the barcode and ensure the PDF layout aligns the symbol precisely at production size. Avoid raster scaling which can introduce compression artifacts and break decodability.</p>
+    </section>
+
+    <section>
+      <h2>Verification before bulk print</h2>
+      <p>Run the following QA steps before mass production:</p>
+      <ol>
+        <li>Print a control proof at the final size and test with the same retail scanners used by your distributor.</li>
+        <li>Verify both main EAN-13 readability and the EAN-5 supplemental using handheld and fixed-mount imagers.</li>
+        <li>Confirm human-readable ISBN text matches encoded digits exactly.</li>
+        <li>Record verification results and keep sample proofs for at least one production run cycle.</li>
+      </ol>
+      <p>Following these steps reduces return-to-vendor rates and ensures bookstore acceptance during stocking.</p>
+    </section>
+  </article>
+  <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/compliance/isbn-publishing-guide/"
+  },
+  "headline": "ISBN Publishing Guide — Transforming ISBN into EAN-13 and 5-Digit Price Extensions",
+  "description": "How to convert ISBN into Bookland EAN-13, generate EAN-5 price extensions, and place barcodes correctly on book jackets.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+</body>
+</html>

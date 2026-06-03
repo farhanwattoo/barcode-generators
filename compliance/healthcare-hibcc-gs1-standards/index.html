@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Healthcare: HIBCC &amp; GS1 Standards — Building FDA-Compliant Device Tracking Pipelines</title>
+  <meta name="description" content="Guidance for FDA UDI, HIBCC formats, GS1-128 vs Data Matrix choices, and validation for medical device tracking.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/compliance/healthcare-hibcc-gs1-standards/" />
+  <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
+</head>
+<body>
+  <article>
+    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+    <h1>Healthcare: HIBCC &amp; GS1 Standards — Building FDA-Compliant Device Tracking Pipelines</h1>
+    <section>
+      <h2>UDI basics and regulatory scope</h2>
+      <p>The FDA's UDI system requires that most medical devices distributed in the U.S. carry a Unique Device Identifier composed of a Device Identifier (DI) and Production Identifiers (PIs). The DI is usually a GTIN assigned by GS1 or an equivalent allocated under HIBCC. PIs include lot/batch, serial numbers, and expiration dates. Compliance requires both machine-readable and human-readable representations on label and packaging.</p>
+    </section>
+
+    <section>
+      <h2>HIBCC vs GS1 approaches</h2>
+      <p>HIBCC provides a label standard favored by some segments of healthcare, while GS1's approach (using GTINs and Application Identifiers) is widely adopted in global supply chains. Key differences are identifier formats, AI usage, and industry registry practices. Choose the scheme that aligns with your customers and regulatory expectations — some hospitals mandate one or the other.</p>
+    </section>
+
+    <section>
+      <h2>Encoding DI/PI into GS1-128 and Data Matrix</h2>
+      <p>GS1-128 (also called EAN-128) uses Application Identifiers (AIs) to structure data. Example payload: (01)GTIN(17)ExpDate(10)Lot(21)Serial. Variable-length AIs require FNC1 separator handling when they are followed by other fields. Data Matrix is preferred for small items where a compact 2D mark with ECC 200 provides resilience. Ensure encoder libraries output correct FNC1 placements and that human-readable interpretation uses parentheses per GS1 display rules.</p>
+    </section>
+
+    <section>
+      <h2>Validation & sterilization testing</h2>
+      <p>Marks on surgical instruments or sterilized packaging must survive sterilization cycles (autoclave, gamma, EO). Test real-world resilience: heat, steam, chemical exposure, abrasion. Use DPM best practices for material-specific guidance and validate with industry-standard verifiers and the scanners used by your customers.</p>
+    </section>
+
+    <section>
+      <h2>Audit readiness and regulatory documentation</h2>
+      <p>Maintain traceability logs linking production batches to GTINs, encoded payloads, and verification results. Store verification grade reports (ISO/IEC 15416/15415 outputs) and sample images as part of your device history record. This expedites audits and supports corrective actions if a recall is required.</p>
+    </section>
+  </article>
+  <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/compliance/healthcare-hibcc-gs1-standards/"
+  },
+  "headline": "Healthcare: HIBCC &amp; GS1 Standards — Building FDA-Compliant Device Tracking Pipelines",
+  "description": "Guidance for FDA UDI, HIBCC formats, GS1-128 vs Data Matrix choices, and validation for medical device tracking.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+</body>
+</html>

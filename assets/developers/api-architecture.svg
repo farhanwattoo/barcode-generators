@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <rect width="800" height="200" fill="#fff"/>
+  <text x="20" y="30" font-size="18" fill="#000">API Architecture: Stateless Render → Cache → Print (placeholder)</text>
+  <g transform="translate(20,50)">
+    <rect x="0" y="0" width="150" height="40" fill="#8fbcd4"/>
+    <text x="10" y="25" font-size="12">Client</text>
+    <rect x="190" y="0" width="150" height="40" fill="#d4a88f"/>
+    <text x="200" y="25" font-size="12">API / Render</text>
+    <rect x="380" y="0" width="150" height="40" fill="#8fd4b4"/>
+    <text x="390" y="25" font-size="12">Cache / CDN</text>
+    <rect x="570" y="0" width="150" height="40" fill="#d4d48f"/>
+    <text x="580" y="25" font-size="12">Printer / Archive</text>
+  </g>
+</svg>

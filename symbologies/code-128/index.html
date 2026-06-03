@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Code 128: Subsets A, B, and C with Modulo-103 Validation</title>
+  <meta name="description" content="Deep dive into Code 128 subsets, density optimization, and Modulo-103 checksum behavior for enterprise labels." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/symbologies/code-128/" />
+<style>
+    body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}
+    h1,h2,h3{color:#0f3d6e}
+    .eyebrow{font-size:.9rem;font-weight:700;color:#0f3d6e;text-transform:uppercase;letter-spacing:.04em}
+    .crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}
+    .tool{background:#eef6ff;border:1px solid #cfe0f6;border-radius:12px;padding:16px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin:14px 0}
+    th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}
+    th{background:#f2f7fc}
+    pre{background:#0f172a;color:#eef2ff;padding:14px;border-radius:12px;overflow:auto}
+    code{font-family:Consolas,monospace}
+    svg{max-width:100%;height:auto;display:block;margin:12px 0}
+    a{color:#0b4a7a;text-decoration:none}
+    a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <article>
+    <p class="eyebrow">Supporting Guide</p>
+    <div class="crumbs"><a href="/symbologies/ultimate-barcode-type-guide/">Barcode Symbologies Guide</a></div>
+    <h1>Code 128: Subsets A, B, and C with Modulo-103 Validation</h1>
+
+    <p>Code 128 is the workhorse linear symbology for logistics because it packs a lot of information into a relatively narrow footprint while supporting a broad character set. The crucial implementation detail is that Code 128 is really three encoding modes living inside one standard: Subset A, Subset B, and Subset C. A generator that treats it as one undifferentiated alphabet usually leaves density on the table.</p>
+    <p>Subset A is optimized for uppercase characters and control codes, Subset B covers the printable ASCII range most business systems need, and Subset C compresses numeric data by encoding two digits per symbol. That Subset C behavior is why long numeric strings such as SSCC fragments, dates, and shipment IDs become dramatically shorter when the encoder switches modes intelligently.</p>
+    <table>
+      <tr><th>Subset</th><th>Best for</th><th>Notes</th></tr>
+      <tr><td>A</td><td>Uppercase + control characters</td><td>Useful when non-printable controls or scanner commands are involved.</td></tr>
+      <tr><td>B</td><td>Mixed business text</td><td>Common default for names, SKUs, and human-oriented payloads.</td></tr>
+      <tr><td>C</td><td>Dense numeric strings</td><td>Encodes two digits per symbol for maximum compression.</td></tr>
+    </table>
+    <h2>Checksum behavior</h2>
+    <p>Every valid Code 128 symbol ends with a Modulo-103 check digit. The encoder starts with the numeric value of the selected start code, multiplies each following symbol by its position weight, sums the result, and takes the remainder when divided by 103. If your page or API claims to emit Code 128 without recalculating that check digit after subset switches, it is not a reliable encoder.</p>
+    <h2>Implementation guidance</h2>
+    <ul>
+      <li>Prefer vector output so quiet zones and module widths stay exact during print scaling.</li>
+      <li>Reserve at least 10 × X quiet zones on both sides.</li>
+      <li>Switch to Subset C whenever long even-length numeric runs appear.</li>
+      <li>Validate scanner behavior after any logo, label, or BWR change.</li>
+    </ul>
+    <div class="tool"><strong>Tool handoff:</strong> Open the <a href="/code-128-barcode-generator.html">live Code 128 generator</a> to test payload length, human-readable text, and SVG export settings.</div>
+
+<section id="faq"><h2>FAQ</h2><h3>Why is Code 128 shorter than Code 39 for the same payload?</h3><p>Because Code 128 has a denser encoding model and can use Subset C to compress numeric data into paired symbols.</p><h3>When should I force Subset B instead of auto mode?</h3><p>Force Subset B when you know the payload is mixed printable text and you want predictable symbol structure for debugging or validation.</p></section>
+<div class="related"><strong>Related:</strong> <a href="/symbologies/ultimate-barcode-type-guide/">Ultimate Barcode Symbology Guide</a> | <a href="/code-128-barcode-generator.html">Code 128 Generator</a></div>
+  </article>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/symbologies/code-128/"
+  },
+  "headline": "Code 128: Subsets A, B, and C with Modulo-103 Validation",
+  "description": "Deep dive into Code 128 subsets, density optimization, and Modulo-103 checksum behavior for enterprise labels.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is Code 128 shorter than Code 39 for the same payload?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because Code 128 has a denser encoding model and can use Subset C to compress numeric data into paired symbols."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I force Subset B instead of auto mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Force Subset B when you know the payload is mixed printable text and you want predictable symbol structure for debugging or validation."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+</html>

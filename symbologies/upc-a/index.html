@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>UPC-A: 12 Numeric Digits, Modulo-10 Check Digit, and POS Rules</title>
+  <meta name="description" content="UPC-A technical guide covering its exact 12-digit structure, numeric-only constraints, and Modulo-10 check digit logic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://barcode-generators.com/symbologies/upc-a/" />
+<style>
+    body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}
+    h1,h2,h3{color:#0f3d6e}
+    .eyebrow{font-size:.9rem;font-weight:700;color:#0f3d6e;text-transform:uppercase;letter-spacing:.04em}
+    .crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}
+    .tool{background:#eef6ff;border:1px solid #cfe0f6;border-radius:12px;padding:16px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin:14px 0}
+    th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}
+    th{background:#f2f7fc}
+    pre{background:#0f172a;color:#eef2ff;padding:14px;border-radius:12px;overflow:auto}
+    code{font-family:Consolas,monospace}
+    svg{max-width:100%;height:auto;display:block;margin:12px 0}
+    a{color:#0b4a7a;text-decoration:none}
+    a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <article>
+    <p class="eyebrow">Supporting Guide</p>
+    <div class="crumbs"><a href="/symbologies/ultimate-barcode-type-guide/">Barcode Symbologies Guide</a></div>
+    <h1>UPC-A: 12 Numeric Digits, Modulo-10 Check Digit, and POS Rules</h1>
+
+    <p>UPC-A remains the foundational North American retail barcode because checkout lanes are tuned for its strict data model. UPC-A accepts exactly 12 digits, is numeric-only, and uses a Modulo-10 check digit. Those three facts are non-negotiable. If a generator lets you pass letters or the wrong digit count while still presenting the output as UPC-A, the result is not standards-compliant.</p>
+    <p>The 12 digits are typically discussed as number system, manufacturer code, product code, and check digit. Retail systems use those digits to look up pricing and inventory, not to carry free-form text. That is why UPC-A remains extremely interoperable but intentionally narrow in scope.</p>
+    <table>
+      <tr><th>Attribute</th><th>UPC-A rule</th></tr>
+      <tr><td>Character set</td><td>Numeric only</td></tr>
+      <tr><td>Length</td><td>Exactly 12 digits</td></tr>
+      <tr><td>Integrity check</td><td>Modulo-10 weighted checksum</td></tr>
+      <tr><td>Primary use</td><td>Retail point of sale in North America</td></tr>
+    </table>
+    <h2>Check digit reminder</h2>
+    <p>The Modulo-10 calculation multiplies alternating digit groups differently and computes the final digit needed to reach a multiple of ten. This protects against common entry or print errors. It is also the easiest sanity check to run before a barcode ever reaches packaging artwork.</p>
+    <h2>Operational rules</h2>
+    <ul>
+      <li>Do not trim leading zeroes unless you fully understand the numbering-system implications.</li>
+      <li>Protect quiet zones so the scanner can detect the symbol boundary before the guard bars.</li>
+      <li>Use vector exports for packaging and shelf-ready artwork.</li>
+    </ul>
+    <div class="tool"><strong>Tool handoff:</strong> Validate a real 12-digit payload in the <a href="/upc-a-barcode-generator.html">UPC-A generator</a> and compare it with the retail rules in the parent guide.</div>
+
+<section id="faq"><h2>FAQ</h2><h3>Can UPC-A contain letters?</h3><p>No. UPC-A is numeric-only by design and retail scanners expect exactly 12 digits.</p><h3>Is the check digit optional?</h3><p>No. UPC-A symbols are validated with a Modulo-10 check digit and production assets should include the full 12-digit value.</p></section>
+<div class="related"><strong>Related:</strong> <a href="/symbologies/ultimate-barcode-type-guide/">Ultimate Barcode Symbology Guide</a> | <a href="/upc-a-barcode-generator.html">UPC-A Generator</a></div>
+  </article>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://barcode-generators.com/symbologies/upc-a/"
+  },
+  "headline": "UPC-A: 12 Numeric Digits, Modulo-10 Check Digit, and POS Rules",
+  "description": "UPC-A technical guide covering its exact 12-digit structure, numeric-only constraints, and Modulo-10 check digit logic.",
+  "author": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Barcode Generators"
+  },
+  "dateModified": "2026-05-31"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can UPC-A contain letters?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. UPC-A is numeric-only by design and retail scanners expect exactly 12 digits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the check digit optional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. UPC-A symbols are validated with a Modulo-10 check digit and production assets should include the full 12-digit value."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+</html>
