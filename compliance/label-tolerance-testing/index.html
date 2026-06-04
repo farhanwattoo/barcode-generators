@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://barcode-generators.com/compliance/label-tolerance-testing/" />
   <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
+    <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
 </head>
 <body>
   <article>
@@ -30,6 +31,12 @@
     <section>
       <h2>Automated QA integration</h2>
       <p>Integrate verifiers inline with print lines to automatically reject labels outside tolerance. Capture verifier outputs to a central logger and trigger print re-runs when failures exceed thresholds. Maintain retained samples and attach verifier reports to production lots for auditability.</p>
+    </section>
+
+    <section>
+      <h2>How teams should document failures and retest windows</h2>
+      <p>A tolerance-testing plan becomes much stronger when it defines what happens after a failed grade instead of stopping at detection. Record the substrate, printer profile, operator, maintenance state, and exact verifier readings for every failed sample so recurring issues can be traced back to a material or process change rather than treated like random defects. This also makes it easier to prove to auditors or trading partners that the organization has a closed-loop corrective action process.</p>
+      <p>Retest windows should be tied to actual risk events. Requalification is appropriate after a ribbon change, darkness adjustment, platen replacement, new adhesive stock, artwork resize, or shift to a different print line. When teams document those triggers ahead of time, label tolerance testing becomes a repeatable production control instead of an occasional troubleshooting exercise.</p>
     </section>
   </article>
   <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>

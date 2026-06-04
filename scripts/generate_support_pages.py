@@ -22,6 +22,68 @@ BASE_STYLE = """
 """.strip()
 
 
+def support_expansion(parent_url, h1, desc):
+    if "/developers/" in parent_url:
+        return f"""
+    <section>
+      <h2>Implementation review checklist</h2>
+      <p>{h1} becomes genuinely useful when engineering teams treat barcode rendering as one step inside a larger workflow rather than as a stand-alone code sample. In practice that means validating payload shape before rendering, logging failures with actionable context, and confirming that downstream consumers such as printers, pick-ticket builders, or ERP exports can accept the chosen format without lossy conversion.</p>
+      <ul>
+        <li>Define request models that reject bad payload length, unsupported character sets, and mismatched symbology choices before the render call is made.</li>
+        <li>Test at least one real payload from the target workflow so example code is not limited to toy values that never appear in production.</li>
+        <li>Capture structured errors for validation failures, throttling, and export-service timeouts so support teams can diagnose issues quickly.</li>
+        <li>Keep SVG or vector-first output in the pipeline whenever labels may later be resized, merged into PDFs, or reprinted by another system.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Production readiness signals</h2>
+      <p>{desc} Before rollout, teams should confirm authentication handling, retry discipline, job idempotency, and scanner-side acceptance on representative hardware. That combination of API discipline and physical validation is what separates a demo integration from a barcode workflow that survives real warehouse, retail, and fulfillment conditions.</p>
+    </section>
+"""
+
+    if "/production/" in parent_url:
+        return f"""
+    <section>
+      <h2>Operational QA checklist</h2>
+      <p>{h1} should end with a repeatable print-and-verify routine, not a visual guess. Barcode failures often appear only after media changes, printer maintenance, darkness adjustments, or environmental shifts such as humidity and abrasion. A short written checklist keeps teams from re-learning the same lesson on every production run.</p>
+      <ul>
+        <li>Document the target printer, substrate, ribbon or ink setup, and intended scanner family before testing changes.</li>
+        <li>Record the chosen X-dimension, contrast assumptions, and acceptable verifier grade so operators know what “good” looks like.</li>
+        <li>Keep retained samples for each material profile and compare new runs against a known-good output when drift is suspected.</li>
+        <li>Retest after any speed, darkness, artwork scaling, adhesive, or stock change rather than assuming previous settings still apply.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Escalation points for print teams</h2>
+      <p>{desc} If a barcode scans on phone cameras but fails on lasers, if only one shift experiences failures, or if verifier grades degrade over time, treat that as a process-control problem and escalate early. The cheapest fix is almost always the one caught before thousands of labels are printed and applied.</p>
+    </section>
+    <section>
+      <h2>What to log after every production adjustment</h2>
+      <p>Teams should capture the exact setting change, the reason it was made, the operator on duty, and the resulting verifier or scanner outcome after each calibration pass. That simple record turns thermal, flexo, and digital barcode work into a controllable process instead of a trial-and-error routine. It also gives maintenance, quality, and procurement teams enough evidence to spot whether failures are being driven by hardware wear, material variation, or label design choices rather than by operator technique alone.</p>
+    </section>
+"""
+
+    if "/symbologies/" in parent_url:
+        return f"""
+    <section>
+      <h2>How to decide if this symbology fits the job</h2>
+      <p>{h1} is easiest to evaluate when you map it against four operational questions: what character set the payload needs, how much horizontal or square space is available, what scanners are already deployed, and whether the symbol must satisfy a retailer, GS1, or industry-specific standard. That decision frame keeps teams from choosing a familiar code type when a better technical fit exists.</p>
+      <ul>
+        <li>Start with payload rules: numeric-only, mixed text, binary data, or structured identifiers each point toward different symbologies.</li>
+        <li>Check the physical surface early so quiet zones, magnification, and scanner distance are part of the selection process.</li>
+        <li>Verify whether the use case is retail POS, internal logistics, direct part marking, or customer-facing mobile scanning.</li>
+        <li>Pair encoder validation with print validation because a technically correct symbol can still fail if geometry or contrast is poor.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Common validation questions</h2>
+      <p>{desc} Before approving production artwork, confirm the exact character limits, checksum or error-correction behavior, scanner compatibility, and any human-readable formatting rules. Those checks prevent teams from discovering late in the process that the chosen barcode works in software but not in the real channel where it must be scanned.</p>
+    </section>
+"""
+
+    return ""
+
+
 def article_page(title, desc, canonical, h1, parent_url, parent_text, body, related=None, schema_type="Article", faq=None):
     related_html = ""
     if related:
@@ -68,6 +130,8 @@ def article_page(title, desc, canonical, h1, parent_url, parent_text, body, rela
         "dateModified": "2026-05-31",
     }
 
+    expansion_html = support_expansion(parent_url, h1, desc)
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,6 +148,7 @@ def article_page(title, desc, canonical, h1, parent_url, parent_text, body, rela
     <div class="crumbs"><a href="{parent_url}">{parent_text}</a></div>
     <h1>{h1}</h1>
 {body}
+{expansion_html}
 {faq_html}
 {related_html}
   </article>

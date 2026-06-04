@@ -21,6 +21,7 @@
     a{color:#0b4a7a;text-decoration:none}
     a:hover{text-decoration:underline}
   </style>
+    <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
 </head>
 <body>
   <article>
@@ -37,6 +38,22 @@
       <tr><td>Code 128 engine</td><td>Provides the actual bar/space encoding</td></tr>
     </table>
     <div class="tool"><strong>Tool handoff:</strong> Use the <a href="/gs1-128-barcode-generator.html">GS1-128 generator</a> for AI payload trials and compare examples against the <a href="/compliance/healthcare-hibcc-gs1-standards/">healthcare compliance guide</a>.</div>
+
+
+    <section>
+      <h2>How to decide if this symbology fits the job</h2>
+      <p>GS1-128: Application Identifiers, FNC1, and Structured Supply-Chain Data is easiest to evaluate when you map it against four operational questions: what character set the payload needs, how much horizontal or square space is available, what scanners are already deployed, and whether the symbol must satisfy a retailer, GS1, or industry-specific standard. That decision frame keeps teams from choosing a familiar code type when a better technical fit exists.</p>
+      <ul>
+        <li>Start with payload rules: numeric-only, mixed text, binary data, or structured identifiers each point toward different symbologies.</li>
+        <li>Check the physical surface early so quiet zones, magnification, and scanner distance are part of the selection process.</li>
+        <li>Verify whether the use case is retail POS, internal logistics, direct part marking, or customer-facing mobile scanning.</li>
+        <li>Pair encoder validation with print validation because a technically correct symbol can still fail if geometry or contrast is poor.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Common validation questions</h2>
+      <p>GS1-128 guide covering AI syntax, FNC1 handling, and structured logistics payloads such as SSCC and expiry data. Before approving production artwork, confirm the exact character limits, checksum or error-correction behavior, scanner compatibility, and any human-readable formatting rules. Those checks prevent teams from discovering late in the process that the chosen barcode works in software but not in the real channel where it must be scanned.</p>
+    </section>
 
 <section id="faq"><h2>FAQ</h2><h3>Why does GS1-128 need FNC1?</h3><p>Because variable-length GS1 fields must be separated clearly so scanners can parse the structured payload correctly.</p></section>
 <div class="related"><strong>Related:</strong> <a href="/symbologies/ultimate-barcode-type-guide/">Ultimate Barcode Symbology Guide</a> | <a href="/gs1-128-barcode-generator.html">GS1-128 Generator</a></div>

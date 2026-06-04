@@ -3,7 +3,11 @@
     "html_pages_checked": 130,
     "broken_internal_link_count": 0,
     "missing_title_count": 0,
-    "pages_with_unlabeled_inputs": 69
+    "pages_with_unlabeled_inputs": 64,
+    "og_url_mismatch_count": 0,
+    "pages_with_empty_h1": 0,
+    "pages_with_empty_anchors": 0,
+    "pages_missing_hreflang": 130
   },
   "broken_internal_links": [],
   "missing_titles": [],
@@ -29,11 +33,6 @@
       "color-bg"
     ],
     "barcode-creator.html": [
-      "barcode-input",
-      "color-bar",
-      "color-bg"
-    ],
-    "barcode-format-guide.html": [
       "barcode-input",
       "color-bar",
       "color-bg"
@@ -133,16 +132,6 @@
       "color-bar",
       "color-bg"
     ],
-    "barcode-types.html": [
-      "barcode-input",
-      "color-bar",
-      "color-bg"
-    ],
-    "barcode-use-cases.html": [
-      "barcode-input",
-      "color-bar",
-      "color-bg"
-    ],
     "book-barcode-generator.html": [
       "barcode-input",
       "color-bar",
@@ -225,11 +214,6 @@
       "color-bg"
     ],
     "high-resolution-barcode-generator.html": [
-      "barcode-input",
-      "color-bar",
-      "color-bg"
-    ],
-    "how-to-create-barcode.html": [
       "barcode-input",
       "color-bar",
       "color-bg"
@@ -341,11 +325,533 @@
       "barcode-input",
       "color-bar",
       "color-bg"
-    ],
-    "what-is-barcode.html": [
-      "barcode-input",
-      "color-bar",
-      "color-bg"
+    ]
+  },
+  "metadata_audit": {
+    "og_url_mismatches": [],
+    "empty_h1_pages": [],
+    "pages_with_empty_anchors": [],
+    "missing_hreflang_pages": [
+      {
+        "path": "1d-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "2d-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "about-us.html",
+        "lang": "ja"
+      },
+      {
+        "path": "asset-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "aztec-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-basics.html",
+        "lang": "en"
+      },
+      {
+        "path": "barcode-creator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-format-guide.html",
+        "lang": "en"
+      },
+      {
+        "path": "barcode-generator-for-amazon.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-for-excel.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-for-pos.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-for-shopify.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-for-woocommerce.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-for-word.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-guide.html",
+        "lang": "en"
+      },
+      {
+        "path": "barcode-generator-jpg.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-pdf.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-png.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-svg.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-vector.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-with-logo.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-with-number.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator-with-text.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-image-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-label-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-maker.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-printing-guide.html",
+        "lang": "en"
+      },
+      {
+        "path": "barcode-size-guide.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-standards-guide.html",
+        "lang": "en"
+      },
+      {
+        "path": "barcode-tech-trends-guide.html",
+        "lang": "en"
+      },
+      {
+        "path": "barcode-types-guide.html",
+        "lang": "en"
+      },
+      {
+        "path": "barcode-types.html",
+        "lang": "ja"
+      },
+      {
+        "path": "barcode-use-cases.html",
+        "lang": "en"
+      },
+      {
+        "path": "barcode-usecase-guide.html",
+        "lang": "en"
+      },
+      {
+        "path": "book-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "bulk-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "bulk-custom-barcode-guide.html",
+        "lang": "en"
+      },
+      {
+        "path": "codabar-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "code-128-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "code-39-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "code128-vs-code39.html",
+        "lang": "ja"
+      },
+      {
+        "path": "compliance/amazon-fba-barcode-requirements/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "compliance/avoiding-retail-chargebacks/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "compliance/gs1-company-prefix-guide/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "compliance/gs1-coupon-code-architecture/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "compliance/healthcare-hibcc-gs1-standards/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "compliance/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "compliance/industry-barcode-standards-guide/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "compliance/isbn-publishing-guide/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "compliance/label-tolerance-testing/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "compliance/outer-case-packaging-rules/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "contact-us.html",
+        "lang": "ja"
+      },
+      {
+        "path": "coupon-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "custom-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "data-matrix-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "developers/api/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/barcode-generation-api-sdk-guide/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/csharp-datamatrix-generation/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/debugging-invalid-payloads/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/excel-barcode-integration/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/java-spring-barcode-setup/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/javascript-barcode-guide/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/on-premise-docker-containers/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/php-barcode-pipelines/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/python-barcode-generation/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/rest-api-documentation/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "developers/ruby-rails-barcode-integration/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "ean-13-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "ean-8-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "ean-vs-upc.html",
+        "lang": "ja"
+      },
+      {
+        "path": "editorial-guidelines.html",
+        "lang": "ja"
+      },
+      {
+        "path": "enterprise/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "enterprise/secure-bulk-barcode-generation/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "event-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "free-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "future/gs1-sunrise-2027-2d-barcode-migration/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "future/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "google8a2939e9b7d79b04.html",
+        "lang": "en"
+      },
+      {
+        "path": "gs1-128-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "high-resolution-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "how-to-create-barcode.html",
+        "lang": "en"
+      },
+      {
+        "path": "id-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "index.html",
+        "lang": "ja"
+      },
+      {
+        "path": "inventory-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "isbn-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "issn-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "itf-14-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "library-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "multiple-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "online-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "package-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "pdf417-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "printable-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "privacy.html",
+        "lang": "ja"
+      },
+      {
+        "path": "product-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "production/color-contrast-optimization/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "production/ink-bleed-compensation-bwr/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "production/minimum-dimension-scaling/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "production/perfect-barcode-print-optimization-guide/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "production/scannability-troubleshooting/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "production/thermal-printer-calibration/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "production/vector-vs-raster-barcode-formats/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "scannable-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "search.html",
+        "lang": "ja"
+      },
+      {
+        "path": "serial-number-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "shipping-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "sitemap.html",
+        "lang": "ja"
+      },
+      {
+        "path": "sku-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "symbologies/aztec/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/code-128/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/code-39/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/data-matrix/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/dpm-best-practices/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/ean-13/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/gs1-128/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/gs1-api/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/itf-14/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/pdf417/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/qr-code/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/ultimate-barcode-type-guide/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "symbologies/upc-a/index.html",
+        "lang": "en"
+      },
+      {
+        "path": "team.html",
+        "lang": "ja"
+      },
+      {
+        "path": "terms.html",
+        "lang": "ja"
+      },
+      {
+        "path": "ticket-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "upc-a-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "upc-e-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "warehouse-barcode-generator.html",
+        "lang": "ja"
+      },
+      {
+        "path": "what-is-barcode.html",
+        "lang": "ja"
+      }
     ]
   },
   "pillar_audit": {
@@ -407,7 +913,9 @@
     },
     "color_wavelength_facts": {
       "file": "production/color-contrast-optimization/index.html",
-      "missing_terms": []
+      "missing_terms": [
+        "red laser"
+      ]
     }
   },
   "asset_checks": {
@@ -456,6 +964,585 @@
     "barcode-basics.html": {
       "target": "/what-is-barcode.html",
       "is_redirect_or_canonicalized": true
+    }
+  },
+  "topical_authority": {
+    "verdict": {
+      "covers_100_percent_topical_authority": false,
+      "overall_assessment": "broad coverage with shallow support depth",
+      "reasons": [
+        "The site has broad barcode coverage, but a large share of the root taxonomy is generator-intent rather than deep editorial content.",
+        "Only a small set of editorial pages exceed 1,000 words, so many topic branches exist without full depth beneath them."
+      ]
+    },
+    "content_mix": {
+      "root_generator_pages": 57,
+      "guides_and_editorial_pages": 54,
+      "legacy_redirect_pages": 9,
+      "utility_pages": 9,
+      "substantial_editorial_pages_over_1000_words": 8
+    },
+    "section_depth": {
+      "(root)": {
+        "page_count": 83,
+        "generator_pages": 57,
+        "editorial_pages": 8,
+        "support_article_count": 0,
+        "support_articles_under_150_words": 0,
+        "support_articles_under_300_words": 0,
+        "average_words_per_page": 492.0,
+        "thin_support_share_under_300_words": 0.0
+      },
+      "compliance": {
+        "page_count": 10,
+        "generator_pages": 0,
+        "editorial_pages": 10,
+        "support_article_count": 8,
+        "support_articles_under_150_words": 0,
+        "support_articles_under_300_words": 0,
+        "average_words_per_page": 505.5,
+        "thin_support_share_under_300_words": 0.0
+      },
+      "developers": {
+        "page_count": 13,
+        "generator_pages": 0,
+        "editorial_pages": 12,
+        "support_article_count": 10,
+        "support_articles_under_150_words": 0,
+        "support_articles_under_300_words": 0,
+        "average_words_per_page": 393.6,
+        "thin_support_share_under_300_words": 0.0
+      },
+      "enterprise": {
+        "page_count": 2,
+        "generator_pages": 0,
+        "editorial_pages": 2,
+        "support_article_count": 0,
+        "support_articles_under_150_words": 0,
+        "support_articles_under_300_words": 0,
+        "average_words_per_page": 2467.5,
+        "thin_support_share_under_300_words": 0.0
+      },
+      "future": {
+        "page_count": 2,
+        "generator_pages": 0,
+        "editorial_pages": 2,
+        "support_article_count": 0,
+        "support_articles_under_150_words": 0,
+        "support_articles_under_300_words": 0,
+        "average_words_per_page": 2375.5,
+        "thin_support_share_under_300_words": 0.0
+      },
+      "production": {
+        "page_count": 7,
+        "generator_pages": 0,
+        "editorial_pages": 7,
+        "support_article_count": 5,
+        "support_articles_under_150_words": 0,
+        "support_articles_under_300_words": 0,
+        "average_words_per_page": 418.3,
+        "thin_support_share_under_300_words": 0.0
+      },
+      "symbologies": {
+        "page_count": 13,
+        "generator_pages": 0,
+        "editorial_pages": 13,
+        "support_article_count": 12,
+        "support_articles_under_150_words": 0,
+        "support_articles_under_300_words": 0,
+        "average_words_per_page": 570.2,
+        "thin_support_share_under_300_words": 0.0
+      }
+    },
+    "thin_sections": [],
+    "thinnest_support_articles": [
+      {
+        "path": "developers/ruby-rails-barcode-integration/index.html",
+        "section": "developers",
+        "word_count": 316
+      },
+      {
+        "path": "compliance/healthcare-hibcc-gs1-standards/index.html",
+        "section": "compliance",
+        "word_count": 326
+      },
+      {
+        "path": "developers/javascript-barcode-guide/index.html",
+        "section": "developers",
+        "word_count": 326
+      },
+      {
+        "path": "developers/php-barcode-pipelines/index.html",
+        "section": "developers",
+        "word_count": 328
+      },
+      {
+        "path": "developers/csharp-datamatrix-generation/index.html",
+        "section": "developers",
+        "word_count": 331
+      },
+      {
+        "path": "developers/excel-barcode-integration/index.html",
+        "section": "developers",
+        "word_count": 342
+      },
+      {
+        "path": "developers/java-spring-barcode-setup/index.html",
+        "section": "developers",
+        "word_count": 343
+      },
+      {
+        "path": "developers/rest-api-documentation/index.html",
+        "section": "developers",
+        "word_count": 343
+      },
+      {
+        "path": "developers/debugging-invalid-payloads/index.html",
+        "section": "developers",
+        "word_count": 348
+      },
+      {
+        "path": "developers/on-premise-docker-containers/index.html",
+        "section": "developers",
+        "word_count": 352
+      },
+      {
+        "path": "compliance/avoiding-retail-chargebacks/index.html",
+        "section": "compliance",
+        "word_count": 365
+      },
+      {
+        "path": "compliance/label-tolerance-testing/index.html",
+        "section": "compliance",
+        "word_count": 366
+      },
+      {
+        "path": "production/thermal-printer-calibration/index.html",
+        "section": "production",
+        "word_count": 367
+      },
+      {
+        "path": "production/ink-bleed-compensation-bwr/index.html",
+        "section": "production",
+        "word_count": 374
+      },
+      {
+        "path": "production/scannability-troubleshooting/index.html",
+        "section": "production",
+        "word_count": 378
+      },
+      {
+        "path": "production/minimum-dimension-scaling/index.html",
+        "section": "production",
+        "word_count": 380
+      },
+      {
+        "path": "developers/python-barcode-generation/index.html",
+        "section": "developers",
+        "word_count": 389
+      },
+      {
+        "path": "symbologies/aztec/index.html",
+        "section": "symbologies",
+        "word_count": 389
+      },
+      {
+        "path": "symbologies/itf-14/index.html",
+        "section": "symbologies",
+        "word_count": 389
+      },
+      {
+        "path": "symbologies/code-39/index.html",
+        "section": "symbologies",
+        "word_count": 396
+      }
+    ],
+    "strongest_editorial_pages": [
+      {
+        "path": "enterprise/secure-bulk-barcode-generation/index.html",
+        "section": "enterprise",
+        "word_count": 4659
+      },
+      {
+        "path": "future/gs1-sunrise-2027-2d-barcode-migration/index.html",
+        "section": "future",
+        "word_count": 4478
+      },
+      {
+        "path": "symbologies/ultimate-barcode-type-guide/index.html",
+        "section": "symbologies",
+        "word_count": 2111
+      },
+      {
+        "path": "how-to-create-barcode.html",
+        "section": "(root)",
+        "word_count": 1692
+      },
+      {
+        "path": "compliance/industry-barcode-standards-guide/index.html",
+        "section": "compliance",
+        "word_count": 1639
+      },
+      {
+        "path": "developers/barcode-generation-api-sdk-guide/index.html",
+        "section": "developers",
+        "word_count": 1625
+      },
+      {
+        "path": "barcode-format-guide.html",
+        "section": "(root)",
+        "word_count": 1537
+      },
+      {
+        "path": "barcode-use-cases.html",
+        "section": "(root)",
+        "word_count": 1475
+      }
+    ],
+    "recommended_pillars": [
+      {
+        "name": "Barcode Fundamentals and Education",
+        "status": "partial",
+        "priority": 1,
+        "current_assets": [
+          "what-is-barcode.html",
+          "how-to-create-barcode.html",
+          "barcode-types.html",
+          "barcode-format-guide.html",
+          "barcode-use-cases.html"
+        ],
+        "gaps": [
+          "barcode scanner types and how they decode symbols",
+          "barcode verification vs validation vs generation",
+          "check digits, quiet zones, and sizing fundamentals",
+          "decision guides for 1D vs 2D vs QR vs Data Matrix"
+        ]
+      },
+      {
+        "name": "Symbologies and Encoding Rules",
+        "status": "partial",
+        "priority": 2,
+        "current_assets": [
+          "symbologies/ultimate-barcode-type-guide/index.html",
+          "symbologies/code-128/index.html",
+          "symbologies/upc-a/index.html",
+          "symbologies/data-matrix/index.html",
+          "symbologies/qr-code/index.html"
+        ],
+        "gaps": [
+          "expand thin child pages into full spec-grade references",
+          "add missing deep dives for UPC-E, EAN-8, Codabar, ISBN, and ISSN",
+          "cover Micro QR, MaxiCode, and composite GS1 symbologies where relevant",
+          "publish more comparison pages beyond ean-vs-upc and code128-vs-code39"
+        ]
+      },
+      {
+        "name": "GS1, Standards, and Compliance",
+        "status": "partial",
+        "priority": 3,
+        "current_assets": [
+          "compliance/industry-barcode-standards-guide/index.html",
+          "compliance/amazon-fba-barcode-requirements/index.html",
+          "compliance/gs1-company-prefix-guide/index.html",
+          "compliance/healthcare-hibcc-gs1-standards/index.html"
+        ],
+        "gaps": [
+          "GTIN allocation rules, SSCC, GLN, and GS1 application identifiers",
+          "ISO/IEC 15415, 15416, and 29158 verification standards",
+          "UDI, DSCSA, EU FMD, and sector-specific compliance workflows",
+          "carrier and retailer label requirements beyond Amazon FBA"
+        ]
+      },
+      {
+        "name": "Printing, Scanning, and Verification",
+        "status": "weak",
+        "priority": 4,
+        "current_assets": [
+          "production/perfect-barcode-print-optimization-guide/index.html",
+          "production/thermal-printer-calibration/index.html",
+          "production/scannability-troubleshooting/index.html"
+        ],
+        "gaps": [
+          "scanner hardware selection and laser vs imager guidance",
+          "barcode verifier grading workflows and troubleshooting SOPs",
+          "label materials, adhesives, substrates, and placement rules",
+          "print QA checklists by printer type and environment"
+        ]
+      },
+      {
+        "name": "Developer APIs and Integrations",
+        "status": "weak",
+        "priority": 5,
+        "current_assets": [
+          "developers/barcode-generation-api-sdk-guide/index.html",
+          "developers/rest-api-documentation/index.html",
+          "developers/python-barcode-generation/index.html",
+          "developers/javascript-barcode-guide/index.html"
+        ],
+        "gaps": [
+          "real request/response examples and validation recipes",
+          "auth, rate limits, error catalogs, and retry behavior",
+          "SDK quickstarts that are more than thin overviews",
+          "platform guides for Shopify, WooCommerce, Excel, Word, ERP, and WMS flows"
+        ]
+      },
+      {
+        "name": "Industry Workflows and Use Cases",
+        "status": "partial",
+        "priority": 6,
+        "current_assets": [
+          "barcode-use-cases.html",
+          "inventory-barcode-generator.html",
+          "warehouse-barcode-generator.html",
+          "shipping-barcode-generator.html"
+        ],
+        "gaps": [
+          "editorial workflow guides to support generator landing pages",
+          "retail, healthcare, publishing, manufacturing, and field-service clusters",
+          "labeling SOPs for receiving, picking, packing, and traceability",
+          "role-based guides for operations managers, IT teams, and compliance leads"
+        ]
+      },
+      {
+        "name": "Enterprise Operations and Governance",
+        "status": "partial",
+        "priority": 7,
+        "current_assets": [
+          "enterprise/secure-bulk-barcode-generation/index.html",
+          "developers/on-premise-docker-containers/index.html"
+        ],
+        "gaps": [
+          "template governance, approvals, and audit trails",
+          "security architecture, PII handling, and on-prem deployment patterns",
+          "batch recovery, versioning, and observability for bulk generation",
+          "governance content for cross-team barcode ownership"
+        ]
+      },
+      {
+        "name": "2D Migration and the Future of Barcodes",
+        "status": "partial",
+        "priority": 8,
+        "current_assets": [
+          "future/gs1-sunrise-2027-2d-barcode-migration/index.html",
+          "symbologies/gs1-api/index.html"
+        ],
+        "gaps": [
+          "GS1 Digital Link implementation details",
+          "POS readiness and coexistence checklists for 1D plus 2D packaging",
+          "packaging redesign, governance, and rollout measurement playbooks",
+          "merchant adoption roadmaps for brands, retailers, and solution teams"
+        ]
+      }
+    ]
+  },
+  "duplication_audit": {
+    "verdict": {
+      "has_no_meaningful_duplication": false,
+      "overall_assessment": "high duplication risk",
+      "reasons": [
+        "Generator pages contain large near-duplicate clusters, which creates programmatic-page duplication risk."
+      ]
+    },
+    "generator_similarity": {
+      "pages_checked": 57,
+      "near_duplicate_threshold": 0.95,
+      "near_duplicate_pair_count": 1596,
+      "cluster_count": 1,
+      "largest_clusters": [
+        [
+          "1d-barcode-generator.html",
+          "2d-barcode-generator.html",
+          "asset-barcode-generator.html",
+          "aztec-barcode-generator.html",
+          "barcode-creator.html",
+          "barcode-generator-for-amazon.html",
+          "barcode-generator-for-excel.html",
+          "barcode-generator-for-pos.html",
+          "barcode-generator-for-shopify.html",
+          "barcode-generator-for-woocommerce.html",
+          "barcode-generator-for-word.html",
+          "barcode-generator-jpg.html",
+          "barcode-generator-pdf.html",
+          "barcode-generator-png.html",
+          "barcode-generator-svg.html",
+          "barcode-generator-vector.html",
+          "barcode-generator-with-logo.html",
+          "barcode-generator-with-number.html",
+          "barcode-generator-with-text.html",
+          "barcode-generator.html",
+          "barcode-image-generator.html",
+          "barcode-label-generator.html",
+          "barcode-maker.html",
+          "book-barcode-generator.html",
+          "bulk-barcode-generator.html",
+          "codabar-barcode-generator.html",
+          "code-128-barcode-generator.html",
+          "code-39-barcode-generator.html",
+          "coupon-barcode-generator.html",
+          "custom-barcode-generator.html",
+          "data-matrix-barcode-generator.html",
+          "ean-13-barcode-generator.html",
+          "ean-8-barcode-generator.html",
+          "event-barcode-generator.html",
+          "free-barcode-generator.html",
+          "gs1-128-barcode-generator.html",
+          "high-resolution-barcode-generator.html",
+          "id-barcode-generator.html",
+          "inventory-barcode-generator.html",
+          "isbn-barcode-generator.html",
+          "issn-barcode-generator.html",
+          "itf-14-barcode-generator.html",
+          "library-barcode-generator.html",
+          "multiple-barcode-generator.html",
+          "online-barcode-generator.html",
+          "package-barcode-generator.html",
+          "pdf417-barcode-generator.html",
+          "printable-barcode-generator.html",
+          "product-barcode-generator.html",
+          "scannable-barcode-generator.html",
+          "serial-number-barcode-generator.html",
+          "shipping-barcode-generator.html",
+          "sku-barcode-generator.html",
+          "ticket-barcode-generator.html",
+          "upc-a-barcode-generator.html",
+          "upc-e-barcode-generator.html",
+          "warehouse-barcode-generator.html"
+        ]
+      ],
+      "sample_pairs": [
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "2d-barcode-generator.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "asset-barcode-generator.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "aztec-barcode-generator.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-creator.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-for-amazon.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-for-excel.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-for-pos.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-for-shopify.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-for-woocommerce.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-for-word.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-jpg.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-pdf.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-png.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-svg.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-vector.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-with-logo.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-with-number.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator-with-text.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-generator.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-image-generator.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-label-generator.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "barcode-maker.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "book-barcode-generator.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "bulk-barcode-generator.html",
+          "similarity": 1.0
+        },
+        {
+          "path_a": "1d-barcode-generator.html",
+          "path_b": "codabar-barcode-generator.html",
+          "similarity": 1.0
+        }
+      ]
+    },
+    "editorial_similarity": {
+      "pages_checked": 54,
+      "near_duplicate_threshold": 0.9,
+      "near_duplicate_pair_count": 0,
+      "clusters": [],
+      "sample_pairs": []
     }
   }
 }

@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://barcode-generators.com/compliance/gs1-coupon-code-architecture/" />
   <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
+    <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
 </head>
 <body>
   <article>
@@ -45,6 +46,12 @@
         <li>Consider 2D signatures or cryptographic tokens inside 2D payloads for high-value coupons.</li>
       </ol>
       <p>Verify coupons with both simulated POS and actual retailer test environments before distribution.</p>
+    </section>
+
+    <section>
+      <h2>Governance steps before live retailer rollout</h2>
+      <p>Coupon barcodes become much easier to operate when the issuing team documents ownership of the offer file, redemption rules, and exception handling before the first campaign goes live. Marketing, trade-promotion, ecommerce, and POS teams should all agree on how the offer identifier is assigned, how cancellations are communicated, and which systems remain authoritative if a coupon is reissued or extended. Without that governance layer, technically valid coupon symbols can still create checkout confusion and reconciliation disputes.</p>
+      <p>Retail test packs should also include edge cases rather than only clean demo offers. Validate short-dated promotions, family-code restrictions, one-time-use logic, and duplicate redemption attempts in the same environment where stores or partners will process the offer. Those tests help confirm that the barcode architecture supports real redemption behavior instead of only passing a format check.</p>
     </section>
   </article>
   <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
