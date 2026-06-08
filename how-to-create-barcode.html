@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Create a Barcode: Step-by-Step Guide (2026)</title>
-  <meta name="description" content="Learn how to create a barcode in 5 simple steps. Covers UPC, EAN-13, Code 128, QR codes, and more. Free online tool, no software needed.">
+  <title>バーコードの作成方法: ステップバイステップ ガイド (2026)</title>
+  <meta name="description" content="5 つの簡単なステップでバーコードを作成する方法を学びます。 UPC、EAN-13、Code 128、QR コードなどをカバーします。無料のオンラインツールで、ソフトウェアは必要ありません。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://barcode-generators.com/how-to-create-barcode.html">
-  <meta property="og:title" content="How to Create a Barcode: Step-by-Step Guide (2026)">
-  <meta property="og:description" content="Learn how to create a barcode in 5 simple steps. Covers UPC, EAN-13, Code 128, QR codes, and more.">
+  <meta property="og:title" content="バーコードの作成方法: ステップバイステップ ガイド (2026)">
+  <meta property="og:description" content="5 つの簡単なステップでバーコードを作成する方法を学びます。 UPC、EAN-13、Code 128、QR コードなどをカバーします。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://barcode-generators.com/how-to-create-barcode.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
   <style>
     :root{--primary:#1a3c5e;--accent:#0e7c5b;--accent-light:#e6f7f2;--bg:#f9fafb;--surface:#fff;--text:#1a202c;--muted:#5a6a7e;--border:#e2e8f0;--radius:10px}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -65,167 +63,426 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Create a Barcode","description":"A step-by-step guide to creating a barcode online for retail, shipping, or any other purpose.","step":[{"@type":"HowToStep","name":"Choose the right barcode type","text":"Select the barcode symbology that matches your use case: UPC-A or EAN-13 for retail products, Code 128 for shipping labels, QR Code for URLs and consumer scanning."},{"@type":"HowToStep","name":"Enter your data","text":"Type the data you want to encode. Each barcode type has specific data format requirements."},{"@type":"HowToStep","name":"Set size and format options","text":"Choose the output format (PNG, SVG, PDF), set the minimum required size, and select bar and background colours."},{"@type":"HowToStep","name":"Generate and preview","text":"Click Generate to create your barcode. Preview it on screen and verify the data is correct before downloading."},{"@type":"HowToStep","name":"Download and use","text":"Download the barcode file. Embed it in your label design, product packaging, or document. Test-scan it before printing at scale."}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I create a barcode for free?","acceptedAnswer":{"@type":"Answer","text":"Use a free online barcode generator. Choose your barcode type, enter your data, click Generate, and download as PNG, SVG, or PDF. No software or account required."}},{"@type":"Question","name":"What data do I put in a barcode?","acceptedAnswer":{"@type":"Answer","text":"For UPC and EAN barcodes, encode your product's GTIN. For Code 128 shipping barcodes, encode your order or tracking number. For QR codes, encode a URL, contact details, WiFi credentials, or any text."}},{"@type":"Question","name":"Can I create a barcode for my product to sell in stores?","acceptedAnswer":{"@type":"Answer","text":"Yes, but for retail barcodes (UPC-A or EAN-13) you must first obtain a GS1 company prefix and register your product's GTIN with GS1. Once you have a valid GTIN, generate the barcode image free using an online tool."}},{"@type":"Question","name":"What file format should I download my barcode in?","acceptedAnswer":{"@type":"Answer","text":"SVG is best for print as it scales to any size without pixelation. PNG is best for digital use and documents. PDF is convenient for direct printing. Always use SVG or high-resolution PNG at at least 300 DPI for physical labels."}}]}</script>
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
+
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
-<body>
-<header>
-  <span class="logo">Barcode Generators</span>
-  <nav><a href="/barcode-generator.html">Generator</a><a href="/barcode-types.html">Barcode Types</a><a href="/what-is-barcode.html">What Is a Barcode?</a></nav>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
 </header>
 
+
+<header>
+  <span class="logo">バーコード作成 プロ</span>
+  <nav><a href="/barcode-generator.html">ジェネレータ</a><a href="/barcode-types.html">バーコードの種類</a><a href="/what-is-barcode.html">バーコードとは何ですか?</a></nav>
+
+        <nav class="top-nav" style="margin-top:1rem;">
+            <div class="nav-item">
+                <span>形式別 ▾</span>
+                <div class="dropdown">
+                    <a href="/ean-13-barcode-generator.html">1月13日</a>
+                    <a href="/qr-code-generator.html">QRコード</a>
+                    <a href="/code-128-barcode-generator.html">コード128</a>
+                    <a href="/upc-a-barcode-generator.html">UPC-A</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>用途別 ▾</span>
+                <div class="dropdown">
+                    <a href="/product-barcode-generator.html">商品</a>
+                    <a href="/inventory-barcode-generator.html">在庫管理</a>
+                    <a href="/shipping-barcode-generator.html">配送</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>出力形式 ▾</span>
+                <div class="dropdown">
+                    <a href="/barcode-generator-png.html">PNG</a>
+                    <a href="/barcode-generator-svg.html">SVG</a>
+                    <a href="/barcode-generator-pdf.html">PDF</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/barcode-generator-guide.html" style="text-decoration:none; color:inherit;">ガイド</a>
+            </div>
+        </nav>
+
+    </header>
+
 <div class="hero">
-  <p class="eyebrow">How-To Guide</p>
-  <h1>How to Create a Barcode</h1>
-  <p>A complete step-by-step guide to creating any barcode type — UPC, EAN-13, Code 128, QR codes, and more — online, in Excel, in Word, or programmatically.</p>
-  <a href="/barcode-generator.html" class="cta">Create a Barcode Now — Free &rarr;</a>
+  <p class="eyebrow">ハウツーガイド</p>
+  <h1>バーコードの作成方法</h1>
+  <p>UPC、EAN-13、Code 128、QR コードなどのバーコード タイプをオンライン、Excel、Word、またはプログラムで作成するための完全なステップバイステップ ガイド。</p>
+  <a href="/barcode-generator.html" class="cta">今すぐバーコードを作成 — 無料 →</a>
 </div>
 
 <div class="container">
-  <div class="breadcrumb"><a href="/">Home</a> &rsaquo; How to Create a Barcode</div>
+  <div class="breadcrumb"><a href="/">家</a> › バーコードの作成方法</div>
   <div class="toc">
-    <h2>In this guide</h2>
+    <h2>このガイドでは</h2>
     <ol>
-      <li><a href="#before-you-start">Before you start: choosing the right barcode type</a></li>
-      <li><a href="#online">How to create a barcode online (5 steps)</a></li>
-      <li><a href="#retail">How to create a retail barcode (UPC / EAN-13)</a></li>
-      <li><a href="#shipping">How to create a shipping barcode (Code 128)</a></li>
-      <li><a href="#qr">How to create a QR code</a></li>
-      <li><a href="#excel">How to create a barcode in Excel</a></li>
-      <li><a href="#word">How to create a barcode in Word</a></li>
-      <li><a href="#print">Printing and size requirements</a></li>
-      <li><a href="#faq">Frequently asked questions</a></li>
+      <li><a href="#before-you-start">始める前に: 適切なバーコード タイプの選択</a></li>
+      <li><a href="#online">オンラインでバーコードを作成する方法 (5 ステップ)</a></li>
+      <li><a href="#retail">小売バーコード (UPC / EAN-13) の作成方法</a></li>
+      <li><a href="#shipping">配送用バーコード (コード 128) を作成する方法</a></li>
+      <li><a href="#qr">QRコードの作成方法</a></li>
+      <li><a href="#excel">Excelでバーコードを作成する方法</a></li>
+      <li><a href="#word">Wordでバーコードを作成する方法</a></li>
+      <li><a href="#print">印刷とサイズの要件</a></li>
+      <li><a href="#faq">よくある質問</a></li>
     </ol>
   </div>
 
   <article>
-    <h2 id="before-you-start">Before you start: choose the right barcode type</h2>
-    <p>The single most important decision when creating a barcode is choosing the correct symbology. Using the wrong barcode type — for example, a QR code on a product meant for retail POS scanning — will result in a barcode that cannot be read by the intended system.</p>
+    <h2 id="before-you-start">始める前に: 適切なバーコードの種類を選択してください</h2>
+    <p>バーコードを作成する際の最も重要な決定は、正しいシンボルを選択することです。間違ったバーコード タイプ (小売 POS スキャン用の製品の QR コードなど) を使用すると、目的のシステムでバーコードを読み取ることができなくなります。</p>
     <table>
-      <thead><tr><th>Your goal</th><th>Use this barcode</th><th>Why</th></tr></thead>
+      <thead><tr><th>あなたの目標</th><th>このバーコードを使用してください</th><th>なぜ</th></tr></thead>
       <tbody>
-        <tr><td>Sell products in US/Canada retail stores</td><td>UPC-A</td><td>Required by virtually all North American retailers and POS systems</td></tr>
-        <tr><td>Sell products internationally / Europe</td><td>EAN-13</td><td>International retail standard; EAN scanners also read UPC</td></tr>
-        <tr><td>Shipping labels and logistics</td><td>Code 128 / GS1-128</td><td>Encodes alphanumeric data at high density; universal carrier support</td></tr>
-        <tr><td>URL, contact card, WiFi, payment</td><td>QR Code</td><td>Scannable by any smartphone camera; high data capacity</td></tr>
-        <tr><td>Small parts, electronics, pharma</td><td>Data Matrix</td><td>Encodes lots of data in a tiny space; can be laser-etched</td></tr>
-        <tr><td>Books and publishing</td><td>ISBN (EAN-13)</td><td>Required standard for books; obtain ISBN from national agency first</td></tr>
-        <tr><td>Outer shipping cartons / pallets</td><td>ITF-14</td><td>Survives printing on rough corrugated cardboard</td></tr>
-        <tr><td>Government ID, boarding pass, licence</td><td>PDF417</td><td>Mandated by AAMVA (licences) and IATA (boarding passes)</td></tr>
+        <tr><td>米国/カナダの小売店で製品を販売する</td><td>UPC-A</td><td>事実上すべての北米の小売業者と POS システムで必要</td></tr>
+        <tr><td>海外/ヨーロッパで製品を販売する</td><td>EAN-13</td><td>国際的な小売基準。 EAN スキャナは UPC も読み取ります</td></tr>
+        <tr><td>配送ラベルと物流</td><td>コード128 / GS1-128</td><td>英数字データを高密度でエンコードします。ユニバーサルキャリアサポート</td></tr>
+        <tr><td>URL、連絡先カード、WiFi、支払い</td><td>QRコード</td><td>スマートフォンのカメラでスキャン可能。高いデータ容量</td></tr>
+        <tr><td>小型部品、エレクトロニクス、製薬</td><td>データマトリックス</td><td>小さなスペースで大量のデータをエンコードします。レーザーエッチングできる</td></tr>
+        <tr><td>本と出版</td><td>ISBN (EAN-13)</td><td>書籍に必要な規格。まず国の代理店からISBNを取得します</td></tr>
+        <tr><td>輸送用外箱/パレット</td><td>ITF-14</td><td>粗い段ボールに印刷しても大丈夫</td></tr>
+        <tr><td>政府ID、搭乗券、免許証</td><td>PDF417</td><td>AAMVA (ライセンス) および IATA (搭乗券) により義務付けられています。</td></tr>
       </tbody>
     </table>
 
-    <h2 id="online">How to create a barcode online — 5 steps</h2>
-    <p>Creating a barcode online takes under a minute. You do not need to install any software.</p>
+    <h2 id="online">オンラインでバーコードを作成する方法 — 5 つのステップ</h2>
+    <p>オンラインでのバーコードの作成には 1 分もかかりません。ソフトウェアをインストールする必要はありません。</p>
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-content">
-        <h3>Open a free barcode generator</h3>
-        <p>Go to <a href="/barcode-generator.html">barcode-generators.com/barcode-generator.html</a>. No account or sign-up is required. The tool runs entirely in your browser.</p>
+        <h3>無料のバーコードジェネレーターを開く</h3>
+        <p>に行く <a href="/barcode-generator.html">barcode-generators.com/barcode-generator.html</a>。アカウントやサインアップは必要ありません。このツールは完全にブラウザ内で実行されます。</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-content">
-        <h3>Select your barcode type</h3>
-        <p>Choose the symbology from the dropdown: UPC-A, EAN-13, Code 128, QR Code, Data Matrix, or any other type. If you are unsure, refer to the table above or the <a href="/barcode-types.html">barcode types guide</a>.</p>
+        <h3>バーコードの種類を選択してください</h3>
+        <p>ドロップダウンからシンボルを選択します: UPC-A、EAN-13、Code 128、QR コード、データ マトリックス、またはその他のタイプ。不明な場合は、上の表を参照するか、 <a href="/barcode-types.html">バーコードの種類ガイド</a>.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-content">
-        <h3>Enter your data</h3>
-        <p>Type the value you want to encode. For UPC-A this is an 11-digit number (the generator calculates the 12th check digit automatically). For Code 128, any alphanumeric string. For a QR code, a URL, phone number, email, or any text up to 4,296 characters.</p>
+        <h3>データを入力してください</h3>
+        <p>エンコードする値を入力します。 UPC-A の場合、これは 11 桁の数値です (ジェネレータは 12 番目のチェック デジットを自動的に計算します)。コード 128 の場合は、任意の英数字文字列。 QR コードの場合は、URL、電話番号、電子メール、または最大 4,296 文字のテキスト。</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">4</div>
       <div class="step-content">
-        <h3>Set size, colour, and format options</h3>
-        <p>Choose your output format: SVG for professional print (infinitely scalable), PNG for digital use or documents, or PDF for direct printing. Set the bar colour (must be dark) and background colour (must be light). Do not use red bars — red does not absorb the red laser light used by most 1D scanners.</p>
+        <h3>サイズ、色、形式のオプションを設定する</h3>
+        <p>出力形式を選択します: プロフェッショナルな印刷用の SVG (無限に拡張可能)、デジタル用途またはドキュメント用の PNG、または直接印刷用の PDF。バーの色 (暗い必要があります) と背景の色 (明るい必要があります) を設定します。赤いバーは使用しないでください。赤は、ほとんどの 1D スキャナで使用される赤色レーザー光を吸収しません。</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">5</div>
       <div class="step-content">
-        <h3>Generate, preview, and download</h3>
-        <p>Click Generate. Preview the barcode on screen — check the human-readable number below the bars matches your intended data. Download the file. Before using it at scale, test-scan it with both a physical barcode scanner and a smartphone camera to confirm it reads correctly.</p>
+        <h3>生成、プレビュー、ダウンロード</h3>
+        <p>「生成」をクリックします。画面上でバーコードをプレビューします。バーの下にある人間が判読できる数字が目的のデータと一致していることを確認します。ファイルをダウンロードします。大規模に使用する前に、物理的なバーコード スキャナとスマートフォンのカメラの両方でテストスキャンして、正しく読み取れることを確認します。</p>
       </div>
     </div>
-    <div class="callout"><strong>Always test before printing at scale.</strong> Scan your generated barcode with a physical scanner or smartphone before sending 10,000 labels to print. A check digit error or wrong symbology will make every label unscannable.</div>
+    <div class="callout"><strong>拡大印刷する前に必ずテストしてください。</strong> 10,000 枚のラベルを印刷する前に、生成したバーコードを物理スキャナーまたはスマートフォンでスキャンします。チェック ディジット エラーまたは間違ったシンボル体系があると、すべてのラベルがスキャンできなくなります。</div>
 
-    <h2 id="retail">How to create a retail barcode (UPC-A or EAN-13)</h2>
-    <p>Retail barcodes are more involved than other types because the product number you encode must be globally unique and officially registered.</p>
-    <h3>Step 1 — Get a GS1 company prefix</h3>
-    <p>To create a legitimate UPC-A or EAN-13 barcode for retail sale, you must first obtain a GS1 company prefix from GS1 — the non-profit organisation that administers barcode numbers globally. GS1 charges an annual fee for company prefixes. Visit gs1.org or your country's GS1 member organisation to register. Do not purchase barcodes from third-party resellers who sell individual GTINs — major retailers check GS1 databases and can reject products whose GTINs are not registered to the brand.</p>
-    <h3>Step 2 — Assign a GTIN to each product</h3>
-    <p>Once you have your prefix, assign a unique item reference number to each distinct product (each size, colour, and variant needs its own number). Combine your company prefix with the item reference to form a GTIN-12 (for UPC-A) or GTIN-13 (for EAN-13).</p>
-    <h3>Step 3 — Generate the barcode image</h3>
-    <p>Enter your GTIN into the <a href="/upc-a-barcode-generator.html">UPC-A barcode generator</a> or <a href="/ean-13-barcode-generator.html">EAN-13 barcode generator</a>. The tool will calculate the check digit and render the barcode. Download as SVG for packaging artwork files.</p>
-    <h3>Step 4 — Check minimum size requirements</h3>
-    <p>A UPC-A barcode has a nominal size of 37.29mm x 25.91mm at 100% magnification. GS1 specifications allow a range from 80% to 200% of this size. Printing smaller than 80% risks scan failures at POS. Always verify the final printed barcode meets GS1 print quality requirements.</p>
+    <h2 id="retail">小売バーコード (UPC-A または EAN-13) を作成する方法</h2>
+    <p>小売バーコードは、エンコードする製品番号が世界的に一意であり、正式に登録されている必要があるため、他のタイプよりも複雑です。</p>
+    <h3>ステップ 1 — GS1 会社プレフィックスを取得する</h3>
+    <p>小売販売用の正規の UPC-A または EAN-13 バーコードを作成するには、まず GS1 (バーコード番号を世界的に管理する非営利団体) から GS1 企業プレフィックスを取得する必要があります。 GS1 では、会社のプレフィックスに対して年間料金がかかります。 gs1.org またはあなたの国の GS1 会員組織にアクセスして登録してください。個々の GTIN を販売するサードパーティの再販業者からバーコードを購入しないでください。大手小売業者は GS1 データベースをチェックし、GTIN がブランドに登録されていない製品を拒否する場合があります。</p>
+    <h3>ステップ 2 — 各製品に GTIN を割り当てる</h3>
+    <p>プレフィックスを取得したら、各製品に一意の商品参照番号を割り当てます (サイズ、色、バリエーションごとに独自の番号が必要です)。会社のプレフィックスと品目参照を組み合わせて、GTIN-12 (UPC-A の場合) または GTIN-13 (EAN-13 の場合) を形成します。</p>
+    <h3>ステップ 3 — バーコード画像の生成</h3>
+    <p>GTIN を入力してください <a href="/upc-a-barcode-generator.html">UPC-A バーコード ジェネレーター</a> または <a href="/ean-13-barcode-generator.html">EAN-13 バーコードジェネレーター</a>。このツールはチェック デジットを計算し、バーコードをレンダリングします。アートワーク ファイルをパッケージ化するために SVG としてダウンロードします。</p>
+    <h3>ステップ 4 — 最小サイズ要件を確認する</h3>
+    <p>UPC-A バーコードの公称サイズは、倍率 100% で 37.29 mm x 25.91 mm です。 GS1 仕様では、このサイズの 80% から 200% の範囲が許容されます。 80% 未満の印刷を行うと、POS でスキャンが失敗する危険があります。最終的に印刷されたバーコードが GS1 の印刷品質要件を満たしていることを必ず確認してください。</p>
 
-    <h2 id="shipping">How to create a shipping barcode (Code 128)</h2>
-    <p>Shipping barcodes are simpler than retail barcodes because you do not need to register your numbers with any authority — you define the data yourself.</p>
+    <h2 id="shipping">配送用バーコード (コード 128) を作成する方法</h2>
+    <p>配送用バーコードは、当局に番号を登録する必要がなく、自分でデータを定義できるため、小売用バーコードよりも簡単です。</p>
     <ol>
-      <li>Decide what data to encode: order number, tracking number, serial number, or a combination using GS1 Application Identifiers (if shipping to a major retailer)</li>
-      <li>Open the <a href="/code-128-barcode-generator.html">Code 128 barcode generator</a></li>
-      <li>Enter your alphanumeric data. Code 128 handles letters, numbers, and symbols</li>
-      <li>Download as SVG or high-resolution PNG</li>
-      <li>Place on your shipping label alongside the human-readable text version</li>
+      <li>どのデータをエンコードするかを決定します: 注文番号、追跡番号、シリアル番号、または GS1 アプリケーション ID を使用した組み合わせ (大手小売店に発送する場合)</li>
+      <li>を開きます <a href="/code-128-barcode-generator.html">Code 128 バーコード ジェネレーター</a></li>
+      <li>英数字データを入力します。 Code 128 は文字、数字、記号を処理します</li>
+      <li>SVG または高解像度 PNG としてダウンロード</li>
+      <li>配送ラベルに人間が読めるテキストバージョンと並べて貼り付けます</li>
     </ol>
-    <div class="warn"><strong>Shipping to major retailers?</strong> If you ship to Walmart, Target, Amazon, or similar large retailers, they likely require GS1-128 format (not plain Code 128) with specific Application Identifiers encoding your SSCC, GTIN, batch number, and expiry date. Check your retailer's routing guide before creating labels.</div>
+    <div class="warn"><strong>大手小売店への発送は可能ですか？</strong> Walmart、Target、Amazon、または同様の大規模小売店に発送する場合、SSCC、GTIN、バッチ番号、有効期限をエンコードする特定のアプリケーション識別子を含む GS1-128 形式 (プレーン コード 128 ではない) が必要になる可能性があります。ラベルを作成する前に、小売店の案内ガイドを確認してください。</div>
 
-    <h2 id="qr">How to create a QR code</h2>
-    <p>QR codes are the simplest barcode type to create because any text, URL, or data is valid — no registration or special numbering is required.</p>
-    <h3>What your QR code can encode</h3>
+    <h2 id="qr">QRコードの作成方法</h2>
+    <p>QR コードは、任意のテキスト、URL、またはデータが有効であるため、作成するのが最も簡単なバーコード タイプであり、登録や特別な番号付けは必要ありません。</p>
+    <h3>QR コードでエンコードできるもの</h3>
     <ul>
-      <li><strong>URL</strong> — links to a website, landing page, or product page</li>
-      <li><strong>Plain text</strong> — any message or information up to ~4,000 characters</li>
-      <li><strong>Email</strong> — opens a pre-addressed email draft when scanned</li>
-      <li><strong>SMS</strong> — opens a pre-addressed text message</li>
-      <li><strong>Phone number</strong> — initiates a call when scanned</li>
-      <li><strong>WiFi credentials</strong> — automatically connects the scanner's device to a WiFi network</li>
-      <li><strong>vCard</strong> — saves a contact card to the scanner's address book</li>
+      <li><strong>URL</strong> — Web サイト、ランディング ページ、または製品ページへのリンク</li>
+      <li><strong>プレーンテキスト</strong> — 最大 4,000 文字までのメッセージまたは情報</li>
+      <li><strong>電子メール</strong> — スキャン時にアドレス指定済みの電子メールの下書きを開きます</li>
+      <li><strong>SMS</strong> — 事前に宛先が指定されたテキストメッセージを開きます</li>
+      <li><strong>電話番号</strong> — スキャンされると通話を開始します</li>
+      <li><strong>WiFi認証情報</strong> — スキャナーのデバイスを WiFi ネットワークに自動的に接続します</li>
+      <li><strong>vカード</strong> — 連絡先カードをスキャナーのアドレス帳に保存します</li>
     </ul>
-    <h3>Error correction levels</h3>
-    <p>QR codes have four error correction levels: L (7% tolerance), M (15%, a good default), Q (25%, good for packaging), and H (30%, required if you add a logo inside the QR code). Higher levels make the code more damage-tolerant but reduce data capacity.</p>
-    <h3>Minimum QR code size</h3>
-    <p>A QR code must be at least 2cm x 2cm (approximately 0.8 inches) when printed for reliable smartphone scanning. For billboard or large-format printing, scale proportionally based on the scanning distance.</p>
+    <h3>誤り訂正レベル</h3>
+    <p>QR コードには 4 つのエラー修正レベルがあります。L (許容誤差 7%)、M (15%、適切なデフォルト)、Q (25%、パッケージングに適しています)、および H (30%、QR コード内にロゴを追加する場合に必要)。レベルが高くなると、コードの損傷耐性が高まりますが、データ容量は減少します。</p>
+    <h3>QRコードの最小サイズ</h3>
+    <p>スマートフォンを確実にスキャンするには、QR コードを印刷する際のサイズは少なくとも 2cm x 2cm (約 0.8 インチ) である必要があります。看板や大判印刷の場合は、スキャン距離に基づいて比例的に拡大縮小します。</p>
 
-    <h2 id="excel">How to create a barcode in Excel</h2>
-    <p>There are two ways to add barcodes to an Excel spreadsheet. The barcode font method works for Code 39 — install a free Code 39 font, enter your data in a cell with asterisks around it (="*"&A1&"*"), and apply the barcode font to that cell. For EAN-13 and UPC-A barcodes, the more reliable approach is to generate the barcode using the online tool, download as PNG, and insert it as an image via Insert &rarr; Pictures.</p>
+    <h2 id="excel">Excelでバーコードを作成する方法</h2>
+    <p>Excel スプレッドシートにバーコードを追加するには 2 つの方法があります。バーコード フォントの方法は Code 39 で機能します。無料の Code 39 フォントをインストールし、アスタリスクで囲まれたセル (="*"&amp;A1&amp;"*") にデータを入力し、そのセルにバーコード フォントを適用します。 EAN-13 および UPC-A バーコードの場合、より信頼性の高い方法は、オンライン ツールを使用してバーコードを生成し、PNG としてダウンロードし、[挿入] → [画像] で画像として挿入することです。</p>
 
-    <h2 id="word">How to create a barcode in Word</h2>
-    <p>The same two approaches apply in Microsoft Word: the barcode font method for simple Code 39 labels, or generating the barcode externally and inserting as an image via Insert &rarr; Picture. When resizing in Word, always maintain the aspect ratio — never stretch a barcode horizontally as this changes bar widths and makes it unscannable.</p>
+    <h2 id="word">Wordでバーコードを作成する方法</h2>
+    <p>同じ 2 つのアプローチが Microsoft Word にも適用されます。1 つは単純な Code 39 ラベルのバーコード フォント方法、もう 1 つはバーコードを外部で生成し、[挿入] → [図] を使用して画像として挿入する方法です。 Word でサイズを変更する場合は、常に縦横比を維持してください。バーコードを水平方向に引き伸ばさないでください。水平方向に引き伸ばすとバーの幅が変わり、スキャンできなくなります。</p>
 
-    <h2 id="print">Printing and size requirements</h2>
-    <p>A correctly generated barcode can still fail to scan if printed incorrectly. Follow these rules to ensure your printed barcodes are always scannable:</p>
-    <h3>Resolution</h3>
-    <p>Print at a minimum of <strong>300 DPI</strong>. For very small barcodes or barcodes with narrow bars (like Code 128 at high density), use 600 DPI or higher. Always use SVG or PDF source files for print, not JPEG which introduces compression artefacts that blur bar edges.</p>
-    <h3>Colours</h3>
-    <p>Bars must be dark and the background must be light. Avoid red bars (wrong wavelength for laser scanners), light-coloured bars, and dark backgrounds. Black bars on white is the most reliable combination.</p>
-    <h3>Quiet zones</h3>
-    <p>Every barcode requires blank space — called a quiet zone — on each side. For UPC-A and EAN-13, this is at least 2.31mm on each side at nominal size. Never allow packaging artwork, text, or graphics to encroach into the quiet zone. This is one of the most common causes of barcode scan failure on retail packaging.</p>
+    <h2 id="print">印刷とサイズの要件</h2>
+    <p>正しく生成されたバーコードでも、印刷が正しくないとスキャンに失敗する可能性があります。印刷されたバーコードを常にスキャンできるようにするには、次のルールに従ってください。</p>
+    <h3>解決</h3>
+    <p>最低でも印刷してください <strong>300 DPI</strong>。非常に小さいバーコード、または幅の狭いバーコード (高密度の Code 128 など) の場合は、600 DPI 以上を使用します。印刷には、バーのエッジをぼかす圧縮アーティファクトを引き起こす JPEG ではなく、常に SVG または PDF ソース ファイルを使用してください。</p>
+    <h3>色</h3>
+    <p>バーは暗く、背景は明るくなければなりません。赤いバー (レーザー スキャナーの波長が間違っている)、明るい色のバー、暗い背景は避けてください。白地に黒のバーは最も信頼性の高い組み合わせです。</p>
+    <h3>クワイエットゾーン</h3>
+    <p>すべてのバーコードには、両側にクワイエット ゾーンと呼ばれる空白スペースが必要です。 UPC-A および EAN-13 の場合、これは公称サイズで両側で少なくとも 2.31 mm です。パッケージのアートワーク、テキスト、またはグラフィックがクワイエット ゾーンに侵入しないようにしてください。これは、小売パッケージのバーコード スキャンが失敗する最も一般的な原因の 1 つです。</p>
 
     <div class="cta-box">
-      <h3>Ready to create your barcode?</h3>
-      <p>Free online generator. UPC-A, EAN-13, Code 128, QR Code, Data Matrix, PDF417, and 15+ more. Download as PNG, SVG, or PDF instantly.</p>
-      <a href="/barcode-generator.html">Open the Free Barcode Generator &rarr;</a>
+      <h3>バーコードを作成する準備はできましたか?</h3>
+      <p>無料のオンラインジェネレーター。 UPC-A、EAN-13、コード 128、QR コード、データ マトリックス、PDF417、および 15 以上。 PNG、SVG、または PDF としてすぐにダウンロードできます。</p>
+      <a href="/barcode-generator.html">無料のバーコードジェネレーターを開く→</a>
     </div>
 
-    <h2 id="faq">Frequently asked questions</h2>
-    <div class="faq-item"><div class="faq-q">How do I create a barcode for free?</div><div class="faq-a">Use a free online barcode generator. Choose your barcode type, enter your data, click Generate, and download as PNG, SVG, or PDF. No software or account needed.</div></div>
-    <div class="faq-item"><div class="faq-q">What data do I put in a barcode?</div><div class="faq-a">For UPC/EAN retail barcodes, encode your product's registered GTIN. For Code 128 shipping barcodes, encode your order or tracking number. For QR codes, encode a URL, contact card, WiFi details, or any text.</div></div>
-    <div class="faq-item"><div class="faq-q">Can I create a barcode for my product to sell in stores?</div><div class="faq-a">Yes — but for retail barcodes (UPC-A or EAN-13) you must first register a GS1 company prefix to obtain a legally recognised GTIN. Once you have a valid GTIN, generate the barcode image free using the online tool.</div></div>
-    <div class="faq-item"><div class="faq-q">What file format should I use for my barcode?</div><div class="faq-a">SVG for professional print (scales to any size without pixelation). PNG for digital use and documents at 300 DPI. PDF for direct printing. Never use JPEG.</div></div>
-    <div class="faq-item"><div class="faq-q">How do I test if my barcode is correct?</div><div class="faq-a">Scan the generated barcode with a smartphone camera and confirm the decoded value matches your intended data. For retail barcodes, also verify the GTIN is registered in the GS1 database.</div></div>
+    <h2 id="faq">よくある質問</h2>
+    <div class="faq-item"><div class="faq-q">無料でバーコードを作成するにはどうすればよいですか?</div><div class="faq-a">無料のオンライン バーコード ジェネレーターを使用します。バーコードのタイプを選択し、データを入力し、「生成」をクリックして、PNG、SVG、または PDF としてダウンロードします。ソフトウェアやアカウントは必要ありません。</div></div>
+    <div class="faq-item"><div class="faq-q">バーコードにはどのようなデータを入力すればよいですか?</div><div class="faq-a">UPC/EAN 小売バーコードの場合は、製品の登録済み GTIN をエンコードします。 Code 128 配送バーコードの場合は、注文番号または追跡番号をエンコードします。 QR コードの場合は、URL、連絡先カード、WiFi の詳細、または任意のテキストをエンコードします。</div></div>
+    <div class="faq-item"><div class="faq-q">店舗で販売するために商品のバーコードを作成できますか?</div><div class="faq-a">はい。ただし、小売バーコード (UPC-A または EAN-13) の場合は、法的に認められた GTIN を取得するために、最初に GS1 企業プレフィックスを登録する必要があります。有効な GTIN を取得したら、オンライン ツールを使用してバーコード イメージを無料で生成します。</div></div>
+    <div class="faq-item"><div class="faq-q">バーコードにはどのファイル形式を使用すればよいですか?</div><div class="faq-a">プロフェッショナルな印刷用の SVG (ピクセル化せずに任意のサイズに拡大縮小)。 300 DPI のデジタル使用およびドキュメント用の PNG。直接印刷用のPDF。 JPEG は決して使用しないでください。</div></div>
+    <div class="faq-item"><div class="faq-q">バーコードが正しいかどうかをテストするにはどうすればよいですか?</div><div class="faq-a">生成されたバーコードをスマートフォンのカメラでスキャンし、デコードされた値が目的のデータと一致することを確認します。小売バーコードの場合は、GTIN が GS1 データベースに登録されていることも確認してください。</div></div>
   </article>
 </div>
 
 <footer>
-  &copy; 2026 Barcode Generators &nbsp;|&nbsp;
-  <a href="/privacy.html">Privacy</a>
-  <a href="/terms.html">Terms</a>
-  <a href="/contact-us.html">Contact</a>
+  © 2026 バーコード ジェネレーター |&nbsp;
+  <a href="/privacy.html">プライバシー</a>
+  <a href="/terms.html">条項</a>
+  <a href="/contact-us.html">お問い合わせ</a>
 </footer>
-</body>
-</html>
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

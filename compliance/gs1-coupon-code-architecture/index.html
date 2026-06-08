@@ -1,60 +1,238 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="utf-8">
-  <title>GS1 Coupon Code Architecture — Implementing North American Retail Coupon Layouts</title>
-  <meta name="description" content="Designing GS1-compliant coupon barcodes, coupon limits, and redemption data structures for retailers.">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://barcode-generators.com/compliance/gs1-coupon-code-architecture/" />
+  <title>GS1 クーポン コード アーキテクチャ — 北米の小売クーポン レイアウトの実装</title>
+  <meta name="description" content="小売業者向けに、GS1 準拠のクーポン バーコード、クーポン制限、引き換えデータ構造を設計します。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://barcode-generators.com/compliance/gs1-coupon-code-architecture/">
   <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
+
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
-<body>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
+</header>
+
+
   <article>
-    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
-    <h1>GS1 Coupon Code Architecture — Implementing North American Retail Coupon Layouts</h1>
+    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">小売および物流バーコード コンプライアンス ガイド</a></div>
+    <h1>GS1 クーポン コード アーキテクチャ — 北米の小売クーポン レイアウトの実装</h1>
     <section>
-      <h2>Coupon barcode types and use-cases</h2>
-      <p>Retail coupons use a mix of linear and 2D barcodes depending on retailer requirements. In North America, UPC-A and GS1-128 are common for printed coupons; some retailers also accept or require 2D codes for mobile coupons to carry more complex redemption metadata. Choose the symbology that matches the retailer integration plan and supports required data fields.</p>
+      <h2>クーポンバーコードの種類と使用例</h2>
+      <p>小売クーポンでは、小売業者の要件に応じて、線形バーコードと 2D バーコードを組み合わせて使用​​します。北米では、印刷されたクーポンには UPC-A と GS1-128 が一般的です。一部の小売業者は、より複雑な引き換えメタデータを保持するために、モバイル クーポンの 2D コードを受け入れたり、要求したりする場合もあります。小売業者の統合計画に一致し、必要なデータ フィールドをサポートするシンボルを選択します。</p>
     </section>
 
     <section>
-      <h2>Data fields and AI mapping for coupons</h2>
-      <p>Coupon payloads commonly include these elements:</p>
+      <h2>クーポンのデータフィールドとAIマッピング</h2>
+      <p>クーポン ペイロードには通常、次の要素が含まれます。</p>
       <ul>
-        <li>Offer identifier (unique coupon ID)</li>
-        <li>Expiration date</li>
-        <li>Discount amount or percentage</li>
-        <li>Redemption rules (one-time use, SKU restrictions)</li>
-        <li>Issuing company ID (GS1 Company Prefix)</li>
+        <li>オファー識別子 (固有のクーポン ID)</li>
+        <li>有効期限</li>
+        <li>割引金額または割引率</li>
+        <li>引き換えルール (1 回限りの使用、SKU 制限)</li>
+        <li>発行会社ID（GS1 Company Prefix）</li>
       </ul>
-      <p>When using GS1-128, map these into Application Identifiers (AIs) or into a structured internal format agreed with the retailer. For variable-length fields, ensure proper FNC1 placement and, where necessary, use AI wrappers so back-office systems can parse redemption data reliably.</p>
+      <p>GS1-128 を使用する場合は、これらをアプリケーション識別子 (AI) または小売業者と合意した構造化された内部形式にマッピングします。可変長フィールドの場合は、FNC1 を適切に配置し、必要に応じて AI ラッパーを使用して、バックオフィス システムが引き換えデータを確実に解析できるようにします。</p>
     </section>
 
     <section>
-      <h2>Retailer-specific constraints and integration</h2>
-      <p>Each retailer may enforce different barcode dimensions, verification checks, and data format expectations. For example, grocery chains often require coupons to include an offer code that links to a specific SKU with a fixed-length field. Drugstores may require manufacturer IDs and specific expiration formatting. Work with your retail partners to obtain sample payloads and verification criteria.</p>
+      <h2>小売業者固有の制約と統合</h2>
+      <p>各小売業者は、異なるバーコード寸法、検証チェック、および期待されるデータ形式を適用する場合があります。たとえば、食料品店チェーンでは、多くの場合、固定長フィールドを持つ特定の SKU にリンクするオファー コードをクーポンに含めることが必要です。ドラッグストアでは、メーカー ID と特定の有効期限の形式が必要な場合があります。小売パートナーと協力して、サンプル ペイロードと検証基準を入手してください。</p>
     </section>
 
     <section>
-      <h2>Testing and fraud prevention</h2>
-      <p>Implement these controls to limit coupon fraud:</p>
+      <h2>テストと不正行為の防止</h2>
+      <p>クーポン詐欺を制限するには、次の制御を実装します。</p>
       <ol>
-        <li>Use unique, non-sequential offer IDs per campaign.</li>
-        <li>Include expiration and usage counters encoded where supported.</li>
-        <li>Maintain redemption logs and reconcile POS scans against issued offer lists.</li>
-        <li>Consider 2D signatures or cryptographic tokens inside 2D payloads for high-value coupons.</li>
+        <li>キャンペーンごとに一意の非連続のオファー ID を使用します。</li>
+        <li>サポートされている場合は、エンコードされた有効期限と使用量のカウンターを含めます。</li>
+        <li>引き換えログを管理し、POS スキャンを発行されたオファー リストと照合します。</li>
+        <li>高額クーポンの場合は、2D ペイロード内の 2D 署名または暗号トークンを検討してください。</li>
       </ol>
-      <p>Verify coupons with both simulated POS and actual retailer test environments before distribution.</p>
+      <p>クーポンを配布する前に、模擬 POS 環境と実際の小売店のテスト環境の両方でクーポンを検証します。</p>
     </section>
 
     <section>
-      <h2>Governance steps before live retailer rollout</h2>
-      <p>Coupon barcodes become much easier to operate when the issuing team documents ownership of the offer file, redemption rules, and exception handling before the first campaign goes live. Marketing, trade-promotion, ecommerce, and POS teams should all agree on how the offer identifier is assigned, how cancellations are communicated, and which systems remain authoritative if a coupon is reissued or extended. Without that governance layer, technically valid coupon symbols can still create checkout confusion and reconciliation disputes.</p>
-      <p>Retail test packs should also include edge cases rather than only clean demo offers. Validate short-dated promotions, family-code restrictions, one-time-use logic, and duplicate redemption attempts in the same environment where stores or partners will process the offer. Those tests help confirm that the barcode architecture supports real redemption behavior instead of only passing a format check.</p>
+      <h2>ライブ小売業者の展開前のガバナンス手順</h2>
+      <p>最初のキャンペーンが開始される前に、発行チームがオファー ファイルの所有権、引き換えルール、および例外処理を文書化すると、クーポン バーコードの操作がはるかに簡単になります。マーケティング、貿易促進、e コマース、POS の各チームは、オファー ID の割り当て方法、キャンセルの伝達方法、クーポンが再発行または延長された場合にどのシステムが権限を維持するかについて合意する必要があります。このガバナンス層がなければ、技術的に有効なクーポン シンボルが依然としてチェックアウトの混乱や調整の紛争を引き起こす可能性があります。</p>
+      <p>小売テスト パックには、クリーンなデモのみを提供するのではなく、エッジ ケースも含める必要があります。店舗またはパートナーがオファーを処理するのと同じ環境で、短期間のプロモーション、ファミリー コードの制限、1 回限りの使用ロジック、重複した引き換え試行を検証します。これらのテストは、バーコード アーキテクチャが形式チェックに合格するだけでなく、実際の引き換え動作をサポートしていることを確認するのに役立ちます。</p>
     </section>
   </article>
-  <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+  <div class="related"><strong>関連している：</strong> <a href="/compliance/industry-barcode-standards-guide/">小売および物流バーコード コンプライアンス ガイド</a></div>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,14 +245,62 @@
   "description": "Designing GS1-compliant coupon barcodes, coupon limits, and redemption data structures for retailers.",
   "author": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "dateModified": "2026-05-31"
 }
   </script>
-</body>
-</html>
+
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

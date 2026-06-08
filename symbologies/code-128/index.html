@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="utf-8">
-  <title>Code 128: Subsets A, B, and C with Modulo-103 Validation</title>
-  <meta name="description" content="Deep dive into Code 128 subsets, density optimization, and Modulo-103 checksum behavior for enterprise labels." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://barcode-generators.com/symbologies/code-128/" />
+  <title>コード 128: Modulo-103 検証によるサブセット A、B、および C</title>
+  <meta name="description" content="Code 128 のサブセット、密度の最適化、エンタープライズ ラベルの Modulo-103 チェックサムの動作について詳しく説明します。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://barcode-generators.com/symbologies/code-128/">
 <style>
     body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}
     h1,h2,h3{color:#0f3d6e}
@@ -22,50 +20,230 @@
     a:hover{text-decoration:underline}
   </style>
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
-</head>
-<body>
-  <article>
-    <p class="eyebrow">Supporting Guide</p>
-    <div class="crumbs"><a href="/symbologies/ultimate-barcode-type-guide/">Barcode Symbologies Guide</a></div>
-    <h1>Code 128: Subsets A, B, and C with Modulo-103 Validation</h1>
 
-    <p>Code 128 is the workhorse linear symbology for logistics because it packs a lot of information into a relatively narrow footprint while supporting a broad character set. The crucial implementation detail is that Code 128 is really three encoding modes living inside one standard: Subset A, Subset B, and Subset C. A generator that treats it as one undifferentiated alphabet usually leaves density on the table.</p>
-    <p>Subset A is optimized for uppercase characters and control codes, Subset B covers the printable ASCII range most business systems need, and Subset C compresses numeric data by encoding two digits per symbol. That Subset C behavior is why long numeric strings such as SSCC fragments, dates, and shipment IDs become dramatically shorter when the encoder switches modes intelligently.</p>
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+</head>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
+</header>
+
+
+  <article>
+    <p class="eyebrow">サポートガイド</p>
+    <div class="crumbs"><a href="/symbologies/ultimate-barcode-type-guide/">バーコード記号ガイド</a></div>
+    <h1>コード 128: Modulo-103 検証によるサブセット A、B、および C</h1>
+
+    <p>Code 128 は、幅広い文字セットをサポートしながら、比較的狭いフットプリントに多くの情報を詰め込むため、物流向けの主力線形シンボルです。実装の重要な詳細は、Code 128 が実際には 1 つの規格内に存在する 3 つのエンコード モードであるということです。サブセット A、サブセット B、サブセット C です。コード 128 を 1 つの未分化のアルファベットとして扱うジェネレーターは通常、密度を表に残します。</p>
+    <p>サブセット A は大文字と制御コード用に最適化されており、サブセット B はほとんどのビジネス システムが必要とする印刷可能な ASCII 範囲をカバーし、サブセット C はシンボルごとに 2 桁をエンコードすることで数値データを圧縮します。このサブセット C の動作により、エンコーダーがモードをインテリジェントに切り替えると、SSCC フラグメント、日付、出荷 ID などの長い数値文字列が大幅に短くなります。</p>
     <table>
-      <tr><th>Subset</th><th>Best for</th><th>Notes</th></tr>
-      <tr><td>A</td><td>Uppercase + control characters</td><td>Useful when non-printable controls or scanner commands are involved.</td></tr>
-      <tr><td>B</td><td>Mixed business text</td><td>Common default for names, SKUs, and human-oriented payloads.</td></tr>
-      <tr><td>C</td><td>Dense numeric strings</td><td>Encodes two digits per symbol for maximum compression.</td></tr>
-    </table>
-    <h2>Checksum behavior</h2>
-    <p>Every valid Code 128 symbol ends with a Modulo-103 check digit. The encoder starts with the numeric value of the selected start code, multiplies each following symbol by its position weight, sums the result, and takes the remainder when divided by 103. If your page or API claims to emit Code 128 without recalculating that check digit after subset switches, it is not a reliable encoder.</p>
-    <h2>Implementation guidance</h2>
+      <tbody><tr><th>サブセット</th><th>こんな方に最適</th><th>注意事項</th></tr>
+      <tr><td>A</td><td>大文字 + 制御文字</td><td>印刷不可能なコントロールまたはスキャナー コマンドが関係する場合に便利です。</td></tr>
+      <tr><td>B</td><td>混合ビジネステキスト</td><td>名前、SKU、人間向けのペイロードの共通のデフォルト。</td></tr>
+      <tr><td>C</td><td>密な数値文字列</td><td>最大の圧縮を実現するために、シンボルごとに 2 桁をエンコードします。</td></tr>
+    </tbody></table>
+    <h2>チェックサムの動作</h2>
+    <p>有効な Code 128 シンボルはすべて Modulo-103 チェック ディジットで終わります。エンコーダーは、選択された開始コードの数値から開始し、後続の各シンボルにその位置の重みを乗算し、その結果を合計し、103 で割ったときの剰余を取得します。ページまたは API が、サブセットの切り替え後にチェック デジットを再計算せずにコード 128 を出力すると主張する場合、それは信頼できるエンコーダーではありません。</p>
+    <h2>実施ガイダンス</h2>
     <ul>
-      <li>Prefer vector output so quiet zones and module widths stay exact during print scaling.</li>
-      <li>Reserve at least 10 × X quiet zones on both sides.</li>
-      <li>Switch to Subset C whenever long even-length numeric runs appear.</li>
-      <li>Validate scanner behavior after any logo, label, or BWR change.</li>
+      <li>印刷スケーリング中にクワイエット ゾーンとモジュール幅が正確に保たれるように、ベクトル出力を優先します。</li>
+      <li>両側に少なくとも 10 × X のクワイエット ゾーンを予約します。</li>
+      <li>長い偶数長の数値が出現するたびに、サブセット C に切り替えます。</li>
+      <li>ロゴ、ラベル、または BWR の変更後のスキャナーの動作を検証します。</li>
     </ul>
-    <div class="tool"><strong>Tool handoff:</strong> Open the <a href="/code-128-barcode-generator.html">live Code 128 generator</a> to test payload length, human-readable text, and SVG export settings.</div>
+    <div class="tool"><strong>ツールの受け渡し:</strong> を開きます <a href="/code-128-barcode-generator.html">ライブコード 128 ジェネレーター</a> ペイロードの長さ、人間が読めるテキスト、SVG エクスポート設定をテストします。</div>
 
 
     <section>
-      <h2>How to decide if this symbology fits the job</h2>
-      <p>Code 128: Subsets A, B, and C with Modulo-103 Validation is easiest to evaluate when you map it against four operational questions: what character set the payload needs, how much horizontal or square space is available, what scanners are already deployed, and whether the symbol must satisfy a retailer, GS1, or industry-specific standard. That decision frame keeps teams from choosing a familiar code type when a better technical fit exists.</p>
+      <h2>このシンボルが仕事に適しているかどうかを判断する方法</h2>
+      <p>コード 128: Modulo-103 検証を使用したサブセット A、B、および C は、ペイロードに必要な文字セット、利用可能な水平または正方形のスペースの量、既に導入されているスキャナー、およびシンボルが小売業者、GS1、または業界固有の標準を満たす必要があるかどうかという 4 つの運用上の質問にマッピングすると、最も簡単に評価できます。この決定フレームにより、より適切な技術的適合性が存在する場合に、チームが使い慣れたコード タイプを選択することがなくなります。</p>
       <ul>
-        <li>Start with payload rules: numeric-only, mixed text, binary data, or structured identifiers each point toward different symbologies.</li>
-        <li>Check the physical surface early so quiet zones, magnification, and scanner distance are part of the selection process.</li>
-        <li>Verify whether the use case is retail POS, internal logistics, direct part marking, or customer-facing mobile scanning.</li>
-        <li>Pair encoder validation with print validation because a technically correct symbol can still fail if geometry or contrast is poor.</li>
+        <li>ペイロード ルールから始めます。数値のみ、混合テキスト、バイナリ データ、または構造化識別子は、それぞれ異なるシンボルを指します。</li>
+        <li>クワイエット ゾーン、倍率、スキャナーの距離が選択プロセスの一部となるように、物理的な表面を早めにチェックしてください。</li>
+        <li>ユースケースが小売 POS、社内物流、部品の直接マーキング、または顧客対応のモバイル スキャンであるかどうかを確認します。</li>
+        <li>ジオメトリやコントラストが不十分な場合、技術的に正しいシンボルでも失敗する可能性があるため、エンコーダ検証と印刷検証を組み合わせてください。</li>
       </ul>
     </section>
     <section>
-      <h2>Common validation questions</h2>
-      <p>Deep dive into Code 128 subsets, density optimization, and Modulo-103 checksum behavior for enterprise labels. Before approving production artwork, confirm the exact character limits, checksum or error-correction behavior, scanner compatibility, and any human-readable formatting rules. Those checks prevent teams from discovering late in the process that the chosen barcode works in software but not in the real channel where it must be scanned.</p>
+      <h2>検証に関する一般的な質問</h2>
+      <p>Code 128 のサブセット、密度の最適化、エンタープライズ ラベルの Modulo-103 チェックサムの動作について詳しく説明します。プロダクションアートワークを承認する前に、正確な文字数制限、チェックサムまたはエラー修正の動作、スキャナーの互換性、および人間が判読できる書式設定ルールを確認してください。これらのチェックにより、チームは、選択したバーコードがソフトウェアでは機能するが、スキャンする必要がある実際のチャネルでは機能しないことをプロセスの後半で発見することを防ぎます。</p>
     </section>
 
-<section id="faq"><h2>FAQ</h2><h3>Why is Code 128 shorter than Code 39 for the same payload?</h3><p>Because Code 128 has a denser encoding model and can use Subset C to compress numeric data into paired symbols.</p><h3>When should I force Subset B instead of auto mode?</h3><p>Force Subset B when you know the payload is mixed printable text and you want predictable symbol structure for debugging or validation.</p></section>
-<div class="related"><strong>Related:</strong> <a href="/symbologies/ultimate-barcode-type-guide/">Ultimate Barcode Symbology Guide</a> | <a href="/code-128-barcode-generator.html">Code 128 Generator</a></div>
+<section id="faq"><h2>FAQ</h2><h3>同じペイロードでもコード 128 がコード 39 より短いのはなぜですか?</h3><p>Code 128 にはより高密度のエンコード モデルがあり、サブセット C を使用して数値データをペアのシンボルに圧縮できるためです。</p><h3>自動モードの代わりにサブセット B を強制する必要があるのはどのような場合ですか?</h3><p>ペイロードが印刷可能な混合テキストであることがわかっていて、デバッグまたは検証のために予測可能なシンボル構造が必要な場合は、サブセット B を強制します。</p></section>
+<div class="related"><strong>関連している：</strong> <a href="/symbologies/ultimate-barcode-type-guide/">究極のバーコード記号ガイド</a> | <a href="/code-128-barcode-generator.html">コード 128 ジェネレーター</a></div>
   </article>
   <script type="application/ld+json">
 {
@@ -79,11 +257,11 @@
   "description": "Deep dive into Code 128 subsets, density optimization, and Modulo-103 checksum behavior for enterprise labels.",
   "author": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "dateModified": "2026-05-31"
 }
@@ -112,5 +290,53 @@
   ]
 }
   </script>
-</body>
-</html>
+
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

@@ -1,44 +1,222 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="utf-8">
-  <title>Healthcare: HIBCC &amp; GS1 Standards — Building FDA-Compliant Device Tracking Pipelines</title>
-  <meta name="description" content="Guidance for FDA UDI, HIBCC formats, GS1-128 vs Data Matrix choices, and validation for medical device tracking.">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://barcode-generators.com/compliance/healthcare-hibcc-gs1-standards/" />
+  <title>ヘルスケア: HIBCC および GS1 規格 — FDA 準拠のデバイス追跡パイプラインの構築</title>
+  <meta name="description" content="FDA UDI、HIBCC フォーマット、GS1-128 とデータ マトリックスの選択、および医療機器追跡の検証に関するガイダンス。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://barcode-generators.com/compliance/healthcare-hibcc-gs1-standards/">
   <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
+
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
-<body>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
+</header>
+
+
   <article>
-    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
-    <h1>Healthcare: HIBCC &amp; GS1 Standards — Building FDA-Compliant Device Tracking Pipelines</h1>
+    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">小売および物流バーコード コンプライアンス ガイド</a></div>
+    <h1>ヘルスケア: HIBCC および GS1 規格 — FDA 準拠のデバイス追跡パイプラインの構築</h1>
     <section>
-      <h2>UDI basics and regulatory scope</h2>
-      <p>The FDA's UDI system requires that most medical devices distributed in the U.S. carry a Unique Device Identifier composed of a Device Identifier (DI) and Production Identifiers (PIs). The DI is usually a GTIN assigned by GS1 or an equivalent allocated under HIBCC. PIs include lot/batch, serial numbers, and expiration dates. Compliance requires both machine-readable and human-readable representations on label and packaging.</p>
+      <h2>UDI の基本と規制範囲</h2>
+      <p>FDA の UDI システムでは、米国内で流通するほとんどの医療機器に、機器識別子 (DI) と製造識別子 (PI) で構成される固有の機器識別子を搭載することが求められています。 DI は通常、GS1 によって割り当てられた GTIN、または HIBCC に基づいて割り当てられた同等のものです。 PI には、ロット/バッチ、シリアル番号、有効期限が含まれます。コンプライアンスを遵守するには、ラベルとパッケージに機械可読と人間可読の両方の表現が必要です。</p>
     </section>
 
     <section>
-      <h2>HIBCC vs GS1 approaches</h2>
-      <p>HIBCC provides a label standard favored by some segments of healthcare, while GS1's approach (using GTINs and Application Identifiers) is widely adopted in global supply chains. Key differences are identifier formats, AI usage, and industry registry practices. Choose the scheme that aligns with your customers and regulatory expectations — some hospitals mandate one or the other.</p>
+      <h2>HIBCC と GS1 のアプローチ</h2>
+      <p>HIBCC は医療の一部の分野で好まれるラベル標準を提供しますが、GS1 のアプローチ (GTIN とアプリケーション ID を使用) はグローバル サプライ チェーンで広く採用されています。主な違いは、識別子の形式、AI の使用法、業界レジストリの慣行です。顧客や規制当局の期待に沿ったスキームを選択してください。病院によっては、どちらか一方を義務付けている場合もあります。</p>
     </section>
 
     <section>
-      <h2>Encoding DI/PI into GS1-128 and Data Matrix</h2>
-      <p>GS1-128 (also called EAN-128) uses Application Identifiers (AIs) to structure data. Example payload: (01)GTIN(17)ExpDate(10)Lot(21)Serial. Variable-length AIs require FNC1 separator handling when they are followed by other fields. Data Matrix is preferred for small items where a compact 2D mark with ECC 200 provides resilience. Ensure encoder libraries output correct FNC1 placements and that human-readable interpretation uses parentheses per GS1 display rules.</p>
+      <h2>DI/PI を GS1-128 およびデータ マトリックスにエンコードする</h2>
+      <p>GS1-128 (EAN-128 とも呼ばれる) は、アプリケーション識別子 (AI) を使用してデータを構造化します。ペイロードの例: (01)GTIN(17)ExpDate(10)Lot(21)Serial。可変長 AI の後に他のフィールドが続く場合、FNC1 セパレータの処理が必要です。データ マトリックスは、ECC 200 を備えたコンパクトな 2D マークが復元力を提供する小型アイテムに適しています。エンコーダ ライブラリが正しい FNC1 配置を出力し、人間が判読できる解釈で GS1 表示ルールに従って括弧が使用されていることを確認します。</p>
     </section>
 
     <section>
-      <h2>Validation & sterilization testing</h2>
-      <p>Marks on surgical instruments or sterilized packaging must survive sterilization cycles (autoclave, gamma, EO). Test real-world resilience: heat, steam, chemical exposure, abrasion. Use DPM best practices for material-specific guidance and validate with industry-standard verifiers and the scanners used by your customers.</p>
+      <h2>検証および滅菌試験</h2>
+      <p>手術器具または滅菌包装のマークは、滅菌サイクル (オートクレーブ、ガンマ滅菌、EO) に耐えなければなりません。熱、蒸気、化学薬品への曝露、摩耗などの現実世界の復元力をテストします。 DPM のベスト プラクティスを材料固有のガイダンスに使用し、業界標準の検証ツールと顧客が使用するスキャナーで検証します。</p>
     </section>
 
     <section>
-      <h2>Audit readiness and regulatory documentation</h2>
-      <p>Maintain traceability logs linking production batches to GTINs, encoded payloads, and verification results. Store verification grade reports (ISO/IEC 15416/15415 outputs) and sample images as part of your device history record. This expedites audits and supports corrective actions if a recall is required.</p>
+      <h2>監査の準備と規制文書</h2>
+      <p>生産バッチを GTIN、エンコードされたペイロード、検証結果にリンクするトレーサビリティ ログを維持します。検証グレード レポート (ISO/IEC 15416/15415 出力) とサンプル画像をデバイス履歴記録の一部として保存します。これにより、監査が迅速化され、リコールが必要な場合の是正措置がサポートされます。</p>
     </section>
   </article>
-  <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+  <div class="related"><strong>関連している：</strong> <a href="/compliance/industry-barcode-standards-guide/">小売および物流バーコード コンプライアンス ガイド</a></div>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -51,14 +229,61 @@
   "description": "Guidance for FDA UDI, HIBCC formats, GS1-128 vs Data Matrix choices, and validation for medical device tracking.",
   "author": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "dateModified": "2026-05-31"
 }
   </script>
-</body>
-</html>
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

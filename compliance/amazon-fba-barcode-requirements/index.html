@@ -1,87 +1,265 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="utf-8">
-  <title>Amazon FBA Barcode Requirements — FNSKU Generation & Label Placement Policy</title>
-  <meta name="description" content="Full FNSKU generation, label layout, dimensions, and prevention of ASIN co-mingling for Amazon FBA.">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://barcode-generators.com/compliance/amazon-fba-barcode-requirements/" />
+  <title>Amazon FBA バーコード要件 — FNSKU 生成およびラベル配置ポリシー</title>
+  <meta name="description" content="Amazon FBA の完全な FNSKU 生成、ラベル レイアウト、寸法、ASIN の混在防止。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://barcode-generators.com/compliance/amazon-fba-barcode-requirements/">
   <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
+
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
-<body>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
+</header>
+
+
   <article>
-    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
-    <h1>Amazon FBA Barcode Requirements — FNSKU Generation & Label Placement Policy</h1>
+    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">小売および物流バーコード コンプライアンス ガイド</a></div>
+    <h1>Amazon FBA バーコード要件 — FNSKU 生成およびラベル配置ポリシー</h1>
     <section>
-      <h2>Introduction</h2>
-      <p>This guide explains exactly when Amazon requires an FNSKU label, how to generate compliant FNSKU barcodes, and how to layout, print, and verify labels to avoid inbound rejections and chargebacks. It is written for operations teams, small brand owners, and contract packagers preparing product shipments to Amazon fulfillment centers.</p>
+      <h2>導入</h2>
+      <p>このガイドでは、Amazon が FNSKU ラベルを必要とする場合、準拠した FNSKU バーコードを生成する方法、受信拒否やチャージバックを回避するためにラベルをレイアウト、印刷、検証する方法を正確に説明します。この本は、Amazon フルフィルメント センターへの商品発送を準備する運用チーム、小規模ブランド オーナー、および契約梱包業者向けに書かれています。</p>
     </section>
 
     <section>
-      <h2>When is an FNSKU required?</h2>
-      <p>Amazon uses FNSKUs as seller-specific inventory identifiers. Use an FNSKU when:</p>
+      <h2>FNSKU が必要になるのはどのような場合ですか?</h2>
+      <p>Amazon は、販売者固有の在庫識別子として FNSKU を使用します。次の場合に FNSKU を使用します。</p>
       <ul>
-        <li>Your offer is not linked to a manufacturer-provided GTIN that Amazon accepts for that ASIN.</li>
-        <li>Your account or listing requires Amazon-level tracking to prevent co-mingling (commonly for private label or used goods).</li>
-        <li>Amazon explicitly requests seller-applied FNSKU labels during shipment creation or removal packaging instructions.</li>
+        <li>あなたのオファーは、Amazon がその ASIN に対して受け入れるメーカー提供の GTIN にリンクされていません。</li>
+        <li>アカウントまたは出品には、混合（通常はプライベートブランドや中古品）を防ぐために Amazon レベルの追跡が必要です。</li>
+        <li>Amazon は、出荷品の作成または梱包の削除指示の際に、販売者が適用する FNSKU ラベルを明示的に要求します。</li>
       </ul>
-      <p>Note: Even when GTINs are used, Amazon may still accept or require a seller-applied label in certain programs or categories. Always check the Shipment Creation Workflow in Seller Central for the most current instructions.</p>
+      <p>注: GTIN が使用されている場合でも、Amazon は特定のプログラムまたはカテゴリで販売者が適用したラベルを受け入れたり、要求したりする場合があります。最新の手順については、セラーセントラルの出荷作成ワークフローを常にご確認ください。</p>
     </section>
 
     <section>
-      <h2>FNSKU label layout and dimensions</h2>
-      <h3>Required elements</h3>
+      <h2>FNSKUラベルのレイアウトと寸法</h2>
+      <h3>必須の要素</h3>
       <ul>
-        <li>Machine-readable barcode (FNSKU) using a supported symbology (usually Code 128 or UPC as specified per workflow).</li>
-        <li>Human-readable FNSKU string printed directly beneath the barcode.</li>
-        <li>Optional: Product title and condition text if Amazon requires it for the category.</li>
-        <li>Appropriate quiet zones around the barcode (see sizing below).</li>
+        <li>サポートされているシンボル (通常はワークフローごとに指定された Code 128 または UPC) を使用した機械可読バーコード (FNSKU)。</li>
+        <li>人間が判読できる FNSKU 文字列がバーコードのすぐ下に印刷されます。</li>
+        <li>オプション: 商品タイトルと条件テキスト (Amazon がカテゴリに必要とする場合)。</li>
+        <li>バーコードの周囲に適切なクワイエット ゾーンを設けます (下記のサイズを参照)。</li>
       </ul>
 
-      <h3>Barcode symbology and sizing</h3>
-      <p>Amazon accepts common linear symbologies; many sellers use Code 128 for FNSKU outputs because it supports alphanumeric strings and compact widths. Recommended default X-dimension for Code 128 FNSKU labels is 0.254 mm (0.010 in) for reliable scanning. Minimum recommended barcode height is 0.5 inches for small labels, but follow the category-specific guidance in Seller Central.</p>
+      <h3>バーコードのシンボルとサイズ設定</h3>
+      <p>Amazon は一般的な線形シンボルを受け入れます。多くの販売者は、英数字文字列とコンパクトな幅をサポートしているため、FNSKU 出力にコード 128 を使用しています。信頼性の高いスキャンのために、Code 128 FNSKU ラベルの推奨デフォルト X 寸法は 0.254 mm (0.010 インチ) です。小さいラベルの場合、バーコードの最小推奨高さは 0.5 インチですが、セラーセントラルのカテゴリ固有のガイダンスに従ってください。</p>
 
-      <h3>Quiet zones, margins, and print tolerances</h3>
-      <p>Maintain a quiet zone of at least 10 × X on both left and right sides for Code 128 outputs. For example, with X=0.254 mm, the quiet zone should be about 2.54 mm (~0.1 in). Avoid placing labels across edges, curves, seams, or over folds. Use vector output (SVG/EPS) at the exact physical size required by Amazon to prevent raster scaling artifacts.</p>
+      <h3>クワイエット ゾーン、マージン、および印刷許容差</h3>
+      <p>Code 128 出力の左右両側に少なくとも 10 × X のクワイエット ゾーンを維持します。たとえば、X=0.254 mm の場合、クワイエット ゾーンは約 2.54 mm (~0.1 インチ) になります。ラベルをエッジ、曲線、継ぎ目、または折り目の上に配置しないでください。ラスタースケーリングアーティファクトを防ぐために、Amazon が要求する正確な物理サイズでベクター出力 (SVG/EPS) を使用します。</p>
     </section>
 
     <section>
-      <h2>Export presets and vector outputs</h2>
-      <p>Always export FNSKU labels as vector files (SVG or EPS) when possible to guarantee line-width fidelity across printers. Recommended export presets:</p>
+      <h2>プリセットとベクトル出力をエクスポート</h2>
+      <p>プリンタ間での線幅の忠実性を保証するために、可能な場合は常に FNSKU ラベルをベクター ファイル (SVG または EPS) としてエクスポートしてください。推奨されるエクスポート プリセット:</p>
       <ul>
-        <li>SVG: no rasterization, units in millimeters, exact X-dimension encoded in CSS or comments.</li>
-        <li>PDF (vector): embed fonts and set page size to final sticker dimensions.</li>
-        <li>PNG: only for proofs; export at 600–1200 DPI at final physical size to avoid scaling errors.</li>
+        <li>SVG: ラスタライズなし、ミリメートル単位、CSS またはコメントでエンコードされた正確な X 次元。</li>
+        <li>PDF (ベクター): フォントを埋め込み、ページ サイズを最終的なステッカーのサイズに設定します。</li>
+        <li>PNG: プルーフのみ。スケーリング エラーを避けるために、最終的な物理サイズで 600 ～ 1200 DPI でエクスポートしてください。</li>
       </ul>
-      <p>Include a human-readable control string and a unique job ID in the printable area outside the barcode quiet zones to help trace label production batches.</p>
+      <p>ラベル製造バッチの追跡に役立つように、バーコード クワイエット ゾーンの外側の印刷可能領域に人間が判読できる制御文字列と一意のジョブ ID を含めます。</p>
     </section>
 
     <section>
-      <h2>Preventing co-mingling and brand controls</h2>
-      <p>To avoid co-mingling and protect inventory integrity:</p>
+      <h2>混合防止とブランド管理</h2>
+      <p>混合を避け、在庫の完全性を保護するには:</p>
       <ul>
-        <li>Use unique FNSKUs per seller if you want to prevent pooling under a shared ASIN.</li>
-        <li>Enroll in Amazon Brand Registry when possible to gain more control over listing content and brand protections.</li>
-        <li>Keep strict chain-of-custody documentation for printed labels and apply secure batch numbers to label prints.</li>
+        <li>共有 ASIN でのプールを防止したい場合は、販売者ごとに一意の FNSKU を使用してください。</li>
+        <li>可能な場合は Amazon ブランドレジストリに登録して、出品コンテンツとブランド保護をより詳細に制御できるようにします。</li>
+        <li>印刷されたラベルの保管管理文書を厳密に保管し、ラベル印刷に安全なバッチ番号を適用します。</li>
       </ul>
-      <p>If your product already has a manufacturer GTIN, verify ownership and resolve any conflicting listings in Seller Central before shipping to minimize the need for FNSKUs.</p>
+      <p>商品にすでにメーカー GTIN が設定されている場合は、FNSKU の必要性を最小限に抑えるために、出荷前に所有権を確認し、セラーセントラルで競合する出品を解決してください。</p>
     </section>
 
     <section>
-      <h2>Checklist & Verification</h2>
+      <h2>チェックリストと検証</h2>
       <ol>
-        <li>Confirm whether Amazon requires an FNSKU per ASIN in the Shipment Creation workflow.</li>
-        <li>Generate FNSKU as an exact string from Seller Central (do not transcribe manually).</li>
-        <li>Export label as SVG/PDF at the exact physical dimensions required.</li>
-        <li>Print proof at target printer and perform handheld and fixed-mount scans with representative scanners.</li>
-        <li>Verify quiet zones, barcode height, and human-readable text alignment.</li>
-        <li>Pack and apply labels avoiding seams, curves, and heat-sealed areas.</li>
+        <li>Amazon が出荷作成ワークフローで ASIN ごとに FNSKU を必要とするかどうかを確認します。</li>
+        <li>セラーセントラルから正確な文字列として FNSKU を生成します (手動で転記しないでください)。</li>
+        <li>必要な正確な物理的寸法でラベルを SVG/PDF としてエクスポートします。</li>
+        <li>ターゲット プリンターで校正刷りを印刷し、代表的なスキャナーでハンドヘルドおよび固定マウントのスキャンを実行します。</li>
+        <li>クワイエット ゾーン、バーコードの高さ、人間が判読できるテキストの配置を確認します。</li>
+        <li>継ぎ目、曲線、ヒートシール部分を避けてラベルを梱包して貼り付けます。</li>
       </ol>
-      <p>Common failures: low contrast prints from thermal transfer on glossy coated surfaces, truncated quiet zones due to bleed, and incorrect FNSKU values typed manually.</p>
+      <p>よくある問題: 光沢のあるコーティングされた表面上の熱転写による低コントラストのプリント、にじみによるクワイエット ゾーンの切り詰め、手動で入力された不正な FNSKU 値。</p>
     </section>
   </article>
-  <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+  <div class="related"><strong>関連している：</strong> <a href="/compliance/industry-barcode-standards-guide/">小売および物流バーコード コンプライアンス ガイド</a></div>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -94,14 +272,61 @@
   "description": "Full FNSKU generation, label layout, dimensions, and prevention of ASIN co-mingling for Amazon FBA.",
   "author": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "dateModified": "2026-05-31"
 }
   </script>
-</body>
-</html>
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

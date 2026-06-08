@@ -1,13 +1,13 @@
 {
   "summary": {
-    "html_pages_checked": 130,
+    "html_pages_checked": 132,
     "broken_internal_link_count": 0,
     "missing_title_count": 0,
-    "pages_with_unlabeled_inputs": 64,
+    "pages_with_unlabeled_inputs": 66,
     "og_url_mismatch_count": 0,
     "pages_with_empty_h1": 0,
     "pages_with_empty_anchors": 0,
-    "pages_missing_hreflang": 130
+    "pages_missing_hreflang": 132
   },
   "broken_internal_links": [],
   "missing_titles": [],
@@ -283,6 +283,11 @@
       "color-bar",
       "color-bg"
     ],
+    "qr-code-generator.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
+    ],
     "scannable-barcode-generator.html": [
       "barcode-input",
       "color-bar",
@@ -305,6 +310,11 @@
     ],
     "symbologies/ultimate-barcode-type-guide/index.html": [
       "tester-input"
+    ],
+    "test_utf8.html": [
+      "barcode-input",
+      "color-bar",
+      "color-bg"
     ],
     "ticket-barcode-generator.html": [
       "barcode-input",
@@ -354,7 +364,7 @@
       },
       {
         "path": "barcode-basics.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "barcode-creator.html",
@@ -362,7 +372,7 @@
       },
       {
         "path": "barcode-format-guide.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "barcode-generator-for-amazon.html",
@@ -390,7 +400,7 @@
       },
       {
         "path": "barcode-generator-guide.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "barcode-generator-jpg.html",
@@ -442,7 +452,7 @@
       },
       {
         "path": "barcode-printing-guide.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "barcode-size-guide.html",
@@ -450,15 +460,15 @@
       },
       {
         "path": "barcode-standards-guide.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "barcode-tech-trends-guide.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "barcode-types-guide.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "barcode-types.html",
@@ -466,11 +476,11 @@
       },
       {
         "path": "barcode-use-cases.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "barcode-usecase-guide.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "book-barcode-generator.html",
@@ -482,7 +492,7 @@
       },
       {
         "path": "bulk-custom-barcode-guide.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "codabar-barcode-generator.html",
@@ -502,43 +512,43 @@
       },
       {
         "path": "compliance/amazon-fba-barcode-requirements/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "compliance/avoiding-retail-chargebacks/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "compliance/gs1-company-prefix-guide/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "compliance/gs1-coupon-code-architecture/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "compliance/healthcare-hibcc-gs1-standards/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "compliance/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "compliance/industry-barcode-standards-guide/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "compliance/isbn-publishing-guide/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "compliance/label-tolerance-testing/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "compliance/outer-case-packaging-rules/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "contact-us.html",
@@ -558,55 +568,55 @@
       },
       {
         "path": "developers/api/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/barcode-generation-api-sdk-guide/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/csharp-datamatrix-generation/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/debugging-invalid-payloads/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/excel-barcode-integration/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/java-spring-barcode-setup/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/javascript-barcode-guide/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/on-premise-docker-containers/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/php-barcode-pipelines/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/python-barcode-generation/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/rest-api-documentation/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "developers/ruby-rails-barcode-integration/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "ean-13-barcode-generator.html",
@@ -626,11 +636,11 @@
       },
       {
         "path": "enterprise/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "enterprise/secure-bulk-barcode-generation/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "event-barcode-generator.html",
@@ -642,15 +652,15 @@
       },
       {
         "path": "future/gs1-sunrise-2027-2d-barcode-migration/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "future/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "google8a2939e9b7d79b04.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "gs1-128-barcode-generator.html",
@@ -662,7 +672,7 @@
       },
       {
         "path": "how-to-create-barcode.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "id-barcode-generator.html",
@@ -722,31 +732,35 @@
       },
       {
         "path": "production/color-contrast-optimization/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "production/ink-bleed-compensation-bwr/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "production/minimum-dimension-scaling/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "production/perfect-barcode-print-optimization-guide/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "production/scannability-troubleshooting/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "production/thermal-printer-calibration/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "production/vector-vs-raster-barcode-formats/index.html",
-        "lang": "en"
+        "lang": "ja"
+      },
+      {
+        "path": "qr-code-generator.html",
+        "lang": "ja"
       },
       {
         "path": "scannable-barcode-generator.html",
@@ -774,55 +788,55 @@
       },
       {
         "path": "symbologies/aztec/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/code-128/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/code-39/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/data-matrix/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/dpm-best-practices/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/ean-13/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/gs1-128/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/gs1-api/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/itf-14/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/pdf417/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/qr-code/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/ultimate-barcode-type-guide/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "symbologies/upc-a/index.html",
-        "lang": "en"
+        "lang": "ja"
       },
       {
         "path": "team.html",
@@ -830,6 +844,10 @@
       },
       {
         "path": "terms.html",
+        "lang": "ja"
+      },
+      {
+        "path": "test_utf8.html",
         "lang": "ja"
       },
       {
@@ -901,15 +919,23 @@
   "technical_truths": {
     "upc_a_facts": {
       "file": "symbologies/upc-a/index.html",
-      "missing_terms": []
+      "missing_terms": [
+        "numeric"
+      ]
     },
     "code_128_facts": {
       "file": "symbologies/code-128/index.html",
-      "missing_terms": []
+      "missing_terms": [
+        "subset a",
+        "subset b",
+        "subset c"
+      ]
     },
     "data_matrix_facts": {
       "file": "symbologies/data-matrix/index.html",
-      "missing_terms": []
+      "missing_terms": [
+        "l-shaped"
+      ]
     },
     "color_wavelength_facts": {
       "file": "production/color-contrast-optimization/index.html",
@@ -972,25 +998,26 @@
       "overall_assessment": "broad coverage with shallow support depth",
       "reasons": [
         "The site has broad barcode coverage, but a large share of the root taxonomy is generator-intent rather than deep editorial content.",
-        "Only a small set of editorial pages exceed 1,000 words, so many topic branches exist without full depth beneath them."
+        "Only a small set of editorial pages exceed 1,000 words, so many topic branches exist without full depth beneath them.",
+        "Several support-content sections are still shallow, especially: compliance, developers, production, symbologies."
       ]
     },
     "content_mix": {
-      "root_generator_pages": 57,
+      "root_generator_pages": 58,
       "guides_and_editorial_pages": 54,
       "legacy_redirect_pages": 9,
       "utility_pages": 9,
-      "substantial_editorial_pages_over_1000_words": 8
+      "substantial_editorial_pages_over_1000_words": 4
     },
     "section_depth": {
       "(root)": {
-        "page_count": 83,
-        "generator_pages": 57,
+        "page_count": 85,
+        "generator_pages": 58,
         "editorial_pages": 8,
         "support_article_count": 0,
         "support_articles_under_150_words": 0,
         "support_articles_under_300_words": 0,
-        "average_words_per_page": 492.0,
+        "average_words_per_page": 358.0,
         "thin_support_share_under_300_words": 0.0
       },
       "compliance": {
@@ -999,9 +1026,9 @@
         "editorial_pages": 10,
         "support_article_count": 8,
         "support_articles_under_150_words": 0,
-        "support_articles_under_300_words": 0,
-        "average_words_per_page": 505.5,
-        "thin_support_share_under_300_words": 0.0
+        "support_articles_under_300_words": 8,
+        "average_words_per_page": 241.8,
+        "thin_support_share_under_300_words": 1.0
       },
       "developers": {
         "page_count": 13,
@@ -1009,9 +1036,9 @@
         "editorial_pages": 12,
         "support_article_count": 10,
         "support_articles_under_150_words": 0,
-        "support_articles_under_300_words": 0,
-        "average_words_per_page": 393.6,
-        "thin_support_share_under_300_words": 0.0
+        "support_articles_under_300_words": 10,
+        "average_words_per_page": 225.0,
+        "thin_support_share_under_300_words": 1.0
       },
       "enterprise": {
         "page_count": 2,
@@ -1020,7 +1047,7 @@
         "support_article_count": 0,
         "support_articles_under_150_words": 0,
         "support_articles_under_300_words": 0,
-        "average_words_per_page": 2467.5,
+        "average_words_per_page": 888.0,
         "thin_support_share_under_300_words": 0.0
       },
       "future": {
@@ -1030,7 +1057,7 @@
         "support_article_count": 0,
         "support_articles_under_150_words": 0,
         "support_articles_under_300_words": 0,
-        "average_words_per_page": 2375.5,
+        "average_words_per_page": 846.0,
         "thin_support_share_under_300_words": 0.0
       },
       "production": {
@@ -1038,10 +1065,10 @@
         "generator_pages": 0,
         "editorial_pages": 7,
         "support_article_count": 5,
-        "support_articles_under_150_words": 0,
-        "support_articles_under_300_words": 0,
-        "average_words_per_page": 418.3,
-        "thin_support_share_under_300_words": 0.0
+        "support_articles_under_150_words": 2,
+        "support_articles_under_300_words": 5,
+        "average_words_per_page": 168.0,
+        "thin_support_share_under_300_words": 1.0
       },
       "symbologies": {
         "page_count": 13,
@@ -1049,154 +1076,155 @@
         "editorial_pages": 13,
         "support_article_count": 12,
         "support_articles_under_150_words": 0,
-        "support_articles_under_300_words": 0,
-        "average_words_per_page": 570.2,
-        "thin_support_share_under_300_words": 0.0
+        "support_articles_under_300_words": 12,
+        "average_words_per_page": 249.2,
+        "thin_support_share_under_300_words": 1.0
       }
     },
-    "thin_sections": [],
+    "thin_sections": [
+      {
+        "section": "compliance",
+        "thin_support_share_under_300_words": 1.0,
+        "support_article_count": 8
+      },
+      {
+        "section": "developers",
+        "thin_support_share_under_300_words": 1.0,
+        "support_article_count": 10
+      },
+      {
+        "section": "production",
+        "thin_support_share_under_300_words": 1.0,
+        "support_article_count": 5
+      },
+      {
+        "section": "symbologies",
+        "thin_support_share_under_300_words": 1.0,
+        "support_article_count": 12
+      }
+    ],
     "thinnest_support_articles": [
       {
-        "path": "developers/ruby-rails-barcode-integration/index.html",
-        "section": "developers",
-        "word_count": 316
-      },
-      {
-        "path": "compliance/healthcare-hibcc-gs1-standards/index.html",
-        "section": "compliance",
-        "word_count": 326
-      },
-      {
-        "path": "developers/javascript-barcode-guide/index.html",
-        "section": "developers",
-        "word_count": 326
-      },
-      {
-        "path": "developers/php-barcode-pipelines/index.html",
-        "section": "developers",
-        "word_count": 328
-      },
-      {
-        "path": "developers/csharp-datamatrix-generation/index.html",
-        "section": "developers",
-        "word_count": 331
-      },
-      {
-        "path": "developers/excel-barcode-integration/index.html",
-        "section": "developers",
-        "word_count": 342
-      },
-      {
-        "path": "developers/java-spring-barcode-setup/index.html",
-        "section": "developers",
-        "word_count": 343
-      },
-      {
-        "path": "developers/rest-api-documentation/index.html",
-        "section": "developers",
-        "word_count": 343
-      },
-      {
-        "path": "developers/debugging-invalid-payloads/index.html",
-        "section": "developers",
-        "word_count": 348
-      },
-      {
-        "path": "developers/on-premise-docker-containers/index.html",
-        "section": "developers",
-        "word_count": 352
-      },
-      {
-        "path": "compliance/avoiding-retail-chargebacks/index.html",
-        "section": "compliance",
-        "word_count": 365
-      },
-      {
-        "path": "compliance/label-tolerance-testing/index.html",
-        "section": "compliance",
-        "word_count": 366
+        "path": "production/ink-bleed-compensation-bwr/index.html",
+        "section": "production",
+        "word_count": 138
       },
       {
         "path": "production/thermal-printer-calibration/index.html",
         "section": "production",
-        "word_count": 367
+        "word_count": 141
       },
       {
-        "path": "production/ink-bleed-compensation-bwr/index.html",
-        "section": "production",
-        "word_count": 374
+        "path": "compliance/label-tolerance-testing/index.html",
+        "section": "compliance",
+        "word_count": 151
       },
       {
         "path": "production/scannability-troubleshooting/index.html",
         "section": "production",
-        "word_count": 378
+        "word_count": 152
+      },
+      {
+        "path": "compliance/outer-case-packaging-rules/index.html",
+        "section": "compliance",
+        "word_count": 153
+      },
+      {
+        "path": "developers/debugging-invalid-payloads/index.html",
+        "section": "developers",
+        "word_count": 153
+      },
+      {
+        "path": "production/color-contrast-optimization/index.html",
+        "section": "production",
+        "word_count": 155
       },
       {
         "path": "production/minimum-dimension-scaling/index.html",
         "section": "production",
-        "word_count": 380
+        "word_count": 155
       },
       {
-        "path": "developers/python-barcode-generation/index.html",
-        "section": "developers",
-        "word_count": 389
+        "path": "symbologies/pdf417/index.html",
+        "section": "symbologies",
+        "word_count": 156
       },
       {
         "path": "symbologies/aztec/index.html",
         "section": "symbologies",
-        "word_count": 389
+        "word_count": 158
+      },
+      {
+        "path": "symbologies/dpm-best-practices/index.html",
+        "section": "symbologies",
+        "word_count": 159
       },
       {
         "path": "symbologies/itf-14/index.html",
         "section": "symbologies",
-        "word_count": 389
+        "word_count": 161
       },
       {
-        "path": "symbologies/code-39/index.html",
+        "path": "symbologies/gs1-128/index.html",
         "section": "symbologies",
-        "word_count": 396
+        "word_count": 162
+      },
+      {
+        "path": "developers/csharp-datamatrix-generation/index.html",
+        "section": "developers",
+        "word_count": 163
+      },
+      {
+        "path": "developers/javascript-barcode-guide/index.html",
+        "section": "developers",
+        "word_count": 167
+      },
+      {
+        "path": "developers/on-premise-docker-containers/index.html",
+        "section": "developers",
+        "word_count": 167
+      },
+      {
+        "path": "developers/php-barcode-pipelines/index.html",
+        "section": "developers",
+        "word_count": 168
+      },
+      {
+        "path": "developers/ruby-rails-barcode-integration/index.html",
+        "section": "developers",
+        "word_count": 168
+      },
+      {
+        "path": "symbologies/ean-13/index.html",
+        "section": "symbologies",
+        "word_count": 169
+      },
+      {
+        "path": "symbologies/qr-code/index.html",
+        "section": "symbologies",
+        "word_count": 171
       }
     ],
     "strongest_editorial_pages": [
       {
         "path": "enterprise/secure-bulk-barcode-generation/index.html",
         "section": "enterprise",
-        "word_count": 4659
+        "word_count": 1628
       },
       {
         "path": "future/gs1-sunrise-2027-2d-barcode-migration/index.html",
         "section": "future",
-        "word_count": 4478
-      },
-      {
-        "path": "symbologies/ultimate-barcode-type-guide/index.html",
-        "section": "symbologies",
-        "word_count": 2111
-      },
-      {
-        "path": "how-to-create-barcode.html",
-        "section": "(root)",
-        "word_count": 1692
-      },
-      {
-        "path": "compliance/industry-barcode-standards-guide/index.html",
-        "section": "compliance",
-        "word_count": 1639
+        "word_count": 1542
       },
       {
         "path": "developers/barcode-generation-api-sdk-guide/index.html",
         "section": "developers",
-        "word_count": 1625
+        "word_count": 1058
       },
       {
-        "path": "barcode-format-guide.html",
-        "section": "(root)",
-        "word_count": 1537
-      },
-      {
-        "path": "barcode-use-cases.html",
-        "section": "(root)",
-        "word_count": 1475
+        "path": "symbologies/ultimate-barcode-type-guide/index.html",
+        "section": "symbologies",
+        "word_count": 1043
       }
     ],
     "recommended_pillars": [
@@ -1344,9 +1372,9 @@
       ]
     },
     "generator_similarity": {
-      "pages_checked": 57,
+      "pages_checked": 58,
       "near_duplicate_threshold": 0.95,
-      "near_duplicate_pair_count": 1596,
+      "near_duplicate_pair_count": 1653,
       "cluster_count": 1,
       "largest_clusters": [
         [
@@ -1399,6 +1427,7 @@
           "pdf417-barcode-generator.html",
           "printable-barcode-generator.html",
           "product-barcode-generator.html",
+          "qr-code-generator.html",
           "scannable-barcode-generator.html",
           "serial-number-barcode-generator.html",
           "shipping-barcode-generator.html",

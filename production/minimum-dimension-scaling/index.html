@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="utf-8">
-  <title>Minimum Dimension Scaling: Matching X-Dimension to Printer DPI</title>
-  <meta name="description" content="Guide to choosing X-dimensions and module sizes that survive real printer DPI limits." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://barcode-generators.com/production/minimum-dimension-scaling/" />
+  <title>最小寸法スケーリング: X 寸法をプリンターの DPI に一致させる</title>
+  <meta name="description" content="実際のプリンターの DPI 制限に耐えられる X 寸法とモジュール サイズを選択するためのガイド。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://barcode-generators.com/production/minimum-dimension-scaling/">
 <style>
     body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}
     h1,h2,h3{color:#0f3d6e}
@@ -22,45 +20,225 @@
     a:hover{text-decoration:underline}
   </style>
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
-</head>
-<body>
-  <article>
-    <p class="eyebrow">Supporting Guide</p>
-    <div class="crumbs"><a href="/production/perfect-barcode-print-optimization-guide/">Barcode Print Calibration Guide</a></div>
-    <h1>Minimum Dimension Scaling: Matching X-Dimension to Printer DPI</h1>
 
-    <p>Barcode quality starts with sizing that the printer can actually reproduce. If the selected X-dimension resolves into awkward fractional dots or anti-aliased scaling, the printed mark will drift from the intended geometry.</p>
-    <svg viewBox="0 0 220 72" xmlns="http://www.w3.org/2000/svg" aria-label="vector barcode example"><rect width="220" height="72" fill="#fff"/><rect x="14" y="10" width="4" height="52" fill="#111"/><rect x="24" y="10" width="8" height="52" fill="#111"/><rect x="40" y="10" width="3" height="52" fill="#111"/><rect x="52" y="10" width="7" height="52" fill="#111"/><rect x="66" y="10" width="4" height="52" fill="#111"/><rect x="78" y="10" width="10" height="52" fill="#111"/><rect x="96" y="10" width="4" height="52" fill="#111"/><rect x="108" y="10" width="6" height="52" fill="#111"/><rect x="122" y="10" width="3" height="52" fill="#111"/><rect x="134" y="10" width="8" height="52" fill="#111"/><rect x="148" y="10" width="4" height="52" fill="#111"/><rect x="160" y="10" width="7" height="52" fill="#111"/><rect x="174" y="10" width="5" height="52" fill="#111"/></svg>
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+</head>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
+</header>
+
+
+  <article>
+    <p class="eyebrow">サポートガイド</p>
+    <div class="crumbs"><a href="/production/perfect-barcode-print-optimization-guide/">バーコード印刷キャリブレーションガイド</a></div>
+    <h1>最小寸法スケーリング: X 寸法をプリンターの DPI に一致させる</h1>
+
+    <p>バーコードの品質は、プリンターが実際に再現できるサイズ設定から始まります。選択した X 次元が扱いにくい分数ドットやアンチエイリアス スケーリングに分解されると、印刷されたマークが意図したジオメトリからずれてしまいます。</p>
+    <svg viewBox="0 0 220 72" xmlns="http://www.w3.org/2000/svg" aria-label="ベクトルバーコードの例"><rect width="220" height="72" fill="#fff"></rect><rect x="14" y="10" width="4" height="52" fill="#111"></rect><rect x="24" y="10" width="8" height="52" fill="#111"></rect><rect x="40" y="10" width="3" height="52" fill="#111"></rect><rect x="52" y="10" width="7" height="52" fill="#111"></rect><rect x="66" y="10" width="4" height="52" fill="#111"></rect><rect x="78" y="10" width="10" height="52" fill="#111"></rect><rect x="96" y="10" width="4" height="52" fill="#111"></rect><rect x="108" y="10" width="6" height="52" fill="#111"></rect><rect x="122" y="10" width="3" height="52" fill="#111"></rect><rect x="134" y="10" width="8" height="52" fill="#111"></rect><rect x="148" y="10" width="4" height="52" fill="#111"></rect><rect x="160" y="10" width="7" height="52" fill="#111"></rect><rect x="174" y="10" width="5" height="52" fill="#111"></rect></svg>
     <table>
-      <tr><th>Printer DPI</th><th>Common starting point</th></tr>
-      <tr><td>203</td><td>10-12 mil for many linear labels</td></tr>
-      <tr><td>300</td><td>7-10 mil when substrate and scanner allow</td></tr>
-      <tr><td>600</td><td>Fine-detail work with careful validation</td></tr>
-    </table>
-    <p>Use integer-dot thinking where possible and validate the physical result instead of trusting CSS scaling.</p>
+      <tbody><tr><th>プリンターのDPI</th><th>共通の出発点</th></tr>
+      <tr><td>203</td><td>多くの直線ラベルの場合は 10 ～ 12 ミル</td></tr>
+      <tr><td>300</td><td>基板とスキャナーが許容する場合は 7 ～ 10 ミル</td></tr>
+      <tr><td>600</td><td>慎重な検証を伴う細かい作業</td></tr>
+    </tbody></table>
+    <p>可能な場合は整数ドット思考を使用し、CSS スケーリングを信頼する代わりに物理的な結果を検証します。</p>
 
 
     <section>
-      <h2>Operational QA checklist</h2>
-      <p>Minimum Dimension Scaling: Matching X-Dimension to Printer DPI should end with a repeatable print-and-verify routine, not a visual guess. Barcode failures often appear only after media changes, printer maintenance, darkness adjustments, or environmental shifts such as humidity and abrasion. A short written checklist keeps teams from re-learning the same lesson on every production run.</p>
+      <h2>運用QAチェックリスト</h2>
+      <p>最小寸法スケーリング: X 寸法とプリンター DPI の一致は、視覚的な推測ではなく、反復可能な印刷と検証ルーチンで終了する必要があります。バーコードの障害は、多くの場合、メディアの交換、プリンターのメンテナンス、濃度の調整、または湿度や摩耗などの環境の変化の後でのみ発生します。短い書面によるチェックリストにより、チームは本番稼働のたびに同じ教訓を再度学ぶことがなくなります。</p>
       <ul>
-        <li>Document the target printer, substrate, ribbon or ink setup, and intended scanner family before testing changes.</li>
-        <li>Record the chosen X-dimension, contrast assumptions, and acceptable verifier grade so operators know what “good” looks like.</li>
-        <li>Keep retained samples for each material profile and compare new runs against a known-good output when drift is suspected.</li>
-        <li>Retest after any speed, darkness, artwork scaling, adhesive, or stock change rather than assuming previous settings still apply.</li>
+        <li>変更をテストする前に、対象のプリンタ、素材、リボンまたはインクのセットアップ、対象のスキャナ ファミリを文書化します。</li>
+        <li>選択した X 次元、対照的な仮定、および許容可能な検証グレードを記録して、オペレーターが「良好」とはどのようなものかを認識できるようにします。</li>
+        <li>材料プロファイルごとにサンプルを保持し、ドリフトが疑われる場合は、新しい実行を既知の良好な出力と比較します。</li>
+        <li>以前の設定がまだ適用されていると仮定するのではなく、速度、暗さ、アートワークのスケーリング、接着剤、またはストックを変更した後は再テストしてください。</li>
       </ul>
     </section>
     <section>
-      <h2>Escalation points for print teams</h2>
-      <p>Guide to choosing X-dimensions and module sizes that survive real printer DPI limits. If a barcode scans on phone cameras but fails on lasers, if only one shift experiences failures, or if verifier grades degrade over time, treat that as a process-control problem and escalate early. The cheapest fix is almost always the one caught before thousands of labels are printed and applied.</p>
+      <h2>印刷チームのエスカレーション ポイント</h2>
+      <p>実際のプリンターの DPI 制限に耐えられる X 寸法とモジュール サイズを選択するためのガイド。バーコードが携帯電話のカメラではスキャンできてもレーザーでは失敗した場合、1 つのシフトのみで失敗が発生した場合、または検証者のグレードが時間の経過とともに低下した場合は、それをプロセス制御の問題として扱い、早期にエスカレーションします。最も安価な修正は、ほとんどの場合、何千枚ものラベルが印刷されて貼り付けられる前に修正されるものです。</p>
     </section>
     <section>
-      <h2>What to log after every production adjustment</h2>
-      <p>Teams should capture the exact setting change, the reason it was made, the operator on duty, and the resulting verifier or scanner outcome after each calibration pass. That simple record turns thermal, flexo, and digital barcode work into a controllable process instead of a trial-and-error routine. It also gives maintenance, quality, and procurement teams enough evidence to spot whether failures are being driven by hardware wear, material variation, or label design choices rather than by operator technique alone.</p>
+      <h2>毎回の生産調整後に何を記録するか</h2>
+      <p>チームは、各校正パスの後に、正確な設定変更、変更が行われた理由、勤務中のオペレーター、結果として得られる検証器またはスキャナーの結果を記録する必要があります。この単純な記録により、サーマル、フレキソ、デジタル バーコードの作業が、試行錯誤のルーチンではなく、制御可能なプロセスに変わります。また、メンテナンス、品質、調達チームに、故障の原因がオペレータの技術のみによるものではなく、ハードウェアの磨耗、材料の変化、またはラベルのデザインの選択によって引き起こされているかどうかを特定するための十分な証拠も提供します。</p>
     </section>
 
 
-<div class="related"><strong>Related:</strong> <a href="/production/perfect-barcode-print-optimization-guide/">Production Hub</a> | <a href="/barcode-printing-guide.html">Print Guide</a></div>
+<div class="related"><strong>関連している：</strong> <a href="/production/perfect-barcode-print-optimization-guide/">生産ハブ</a> | <a href="/barcode-printing-guide.html">印刷ガイド</a></div>
   </article>
   <script type="application/ld+json">
 {
@@ -74,14 +252,62 @@
   "description": "Guide to choosing X-dimensions and module sizes that survive real printer DPI limits.",
   "author": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "dateModified": "2026-05-31"
 }
   </script>
-</body>
-</html>
+
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

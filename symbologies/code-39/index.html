@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="utf-8">
-  <title>Code 39: Wide Characters, Full ASCII Extensions, and Legacy Logistics</title>
-  <meta name="description" content="Code 39 guide covering its classic character set, Full ASCII extensions, and why it still appears in legacy supply chains." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://barcode-generators.com/symbologies/code-39/" />
+  <title>コード 39: ワイド文字、フル ASCII 拡張子、およびレガシー ロジスティックス</title>
+  <meta name="description" content="Code 39 ガイドでは、その古典的な文字セット、フル ASCII 拡張機能、およびそれが依然として従来のサプライ チェーンに存在する理由について説明します。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://barcode-generators.com/symbologies/code-39/">
 <style>
     body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}
     h1,h2,h3{color:#0f3d6e}
@@ -22,41 +20,221 @@
     a:hover{text-decoration:underline}
   </style>
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
-</head>
-<body>
-  <article>
-    <p class="eyebrow">Supporting Guide</p>
-    <div class="crumbs"><a href="/symbologies/ultimate-barcode-type-guide/">Barcode Symbologies Guide</a></div>
-    <h1>Code 39: Wide Characters, Full ASCII Extensions, and Legacy Logistics</h1>
 
-    <p>Code 39 survives because it is simple, well understood, and widely supported in legacy industrial environments. Its downside is width. Every character consumes more horizontal space than denser symbologies such as Code 128, so long payloads quickly become awkward on small labels.</p>
-    <p>The base symbology supports uppercase letters, digits, and a small set of punctuation. Full ASCII extensions exist, but they expand the printed length even further because some characters are represented through multi-character combinations.</p>
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+</head>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
+</header>
+
+
+  <article>
+    <p class="eyebrow">サポートガイド</p>
+    <div class="crumbs"><a href="/symbologies/ultimate-barcode-type-guide/">バーコード記号ガイド</a></div>
+    <h1>コード 39: ワイド文字、フル ASCII 拡張子、およびレガシー ロジスティックス</h1>
+
+    <p>Code 39 が生き残っているのは、シンプルでよく理解されており、従来の産業環境で広くサポートされているためです。欠点は幅です。すべての文字は、Code 128 などの密度の高いシンボルよりも多くの水平スペースを消費するため、長いペイロードは小さなラベルではすぐに扱いにくくなります。</p>
+    <p>基本シンボルでは、大文字、数字、および少数の句読点がサポートされています。完全な ASCII 拡張子は存在しますが、一部の文字は複数の文字の組み合わせで表現されるため、印刷される長さはさらに長くなります。</p>
     <table>
-      <tr><th>Strength</th><th>Constraint</th></tr>
-      <tr><td>Simple legacy support</td><td>Large footprint</td></tr>
-      <tr><td>Readable on older hardware</td><td>Limited native character set</td></tr>
-      <tr><td>Useful for industrial IDs</td><td>Inefficient for long data</td></tr>
-    </table>
-    <div class="tool"><strong>Tool handoff:</strong> Compare Code 39 width against Code 128 in the <a href="/code-39-barcode-generator.html">Code 39 generator</a> and <a href="/code128-vs-code39.html">comparison page</a>.</div>
+      <tbody><tr><th>強さ</th><th>制約</th></tr>
+      <tr><td>シンプルなレガシーサポート</td><td>設置面積が大きい</td></tr>
+      <tr><td>古いハードウェアでも読み取り可能</td><td>限定されたネイティブ文字セット</td></tr>
+      <tr><td>産業用IDに便利</td><td>長いデータの場合は非効率的</td></tr>
+    </tbody></table>
+    <div class="tool"><strong>ツールの受け渡し:</strong> Code 39 の幅と Code 128 を比較します。 <a href="/code-39-barcode-generator.html">コード 39 ジェネレーター</a> そして <a href="/code128-vs-code39.html">比較ページ</a>.</div>
 
 
     <section>
-      <h2>How to decide if this symbology fits the job</h2>
-      <p>Code 39: Wide Characters, Full ASCII Extensions, and Legacy Logistics is easiest to evaluate when you map it against four operational questions: what character set the payload needs, how much horizontal or square space is available, what scanners are already deployed, and whether the symbol must satisfy a retailer, GS1, or industry-specific standard. That decision frame keeps teams from choosing a familiar code type when a better technical fit exists.</p>
+      <h2>このシンボルが仕事に適しているかどうかを判断する方法</h2>
+      <p>コード 39: ワイド文字、フル ASCII 拡張、およびレガシー ロジスティクスは、ペイロードに必要な文字セット、利用可能な水平方向または正方形のスペースの量、すでに導入されているスキャナ、およびシンボルが小売業者、GS1、または業界固有の標準を満たす必要があるかどうかという 4 つの運用上の質問にマッピングすると、最も簡単に評価できます。この決定フレームにより、より適切な技術的適合性が存在する場合に、チームが使い慣れたコード タイプを選択することがなくなります。</p>
       <ul>
-        <li>Start with payload rules: numeric-only, mixed text, binary data, or structured identifiers each point toward different symbologies.</li>
-        <li>Check the physical surface early so quiet zones, magnification, and scanner distance are part of the selection process.</li>
-        <li>Verify whether the use case is retail POS, internal logistics, direct part marking, or customer-facing mobile scanning.</li>
-        <li>Pair encoder validation with print validation because a technically correct symbol can still fail if geometry or contrast is poor.</li>
+        <li>ペイロード ルールから始めます。数値のみ、混合テキスト、バイナリ データ、または構造化識別子は、それぞれ異なるシンボルを指します。</li>
+        <li>クワイエット ゾーン、倍率、スキャナーの距離が選択プロセスの一部となるように、物理的な表面を早めにチェックしてください。</li>
+        <li>ユースケースが小売 POS、社内物流、部品の直接マーキング、または顧客対応のモバイル スキャンであるかどうかを確認します。</li>
+        <li>ジオメトリやコントラストが不十分な場合、技術的に正しいシンボルでも失敗する可能性があるため、エンコーダ検証と印刷検証を組み合わせてください。</li>
       </ul>
     </section>
     <section>
-      <h2>Common validation questions</h2>
-      <p>Code 39 guide covering its classic character set, Full ASCII extensions, and why it still appears in legacy supply chains. Before approving production artwork, confirm the exact character limits, checksum or error-correction behavior, scanner compatibility, and any human-readable formatting rules. Those checks prevent teams from discovering late in the process that the chosen barcode works in software but not in the real channel where it must be scanned.</p>
+      <h2>検証に関する一般的な質問</h2>
+      <p>Code 39 ガイドでは、その古典的な文字セット、フル ASCII 拡張機能、およびそれが依然として従来のサプライ チェーンに存在する理由について説明します。プロダクションアートワークを承認する前に、正確な文字数制限、チェックサムまたはエラー修正の動作、スキャナーの互換性、および人間が判読できる書式設定ルールを確認してください。これらのチェックにより、チームは、選択したバーコードがソフトウェアでは機能するが、スキャンする必要がある実際のチャネルでは機能しないことをプロセスの後半で発見することを防ぎます。</p>
     </section>
 
-<section id="faq"><h2>FAQ</h2><h3>Why does Code 39 look longer than Code 128?</h3><p>Because Code 39 is a less dense symbology and encodes each character with a wider pattern.</p></section>
-<div class="related"><strong>Related:</strong> <a href="/symbologies/ultimate-barcode-type-guide/">Ultimate Barcode Symbology Guide</a> | <a href="/code-39-barcode-generator.html">Code 39 Generator</a></div>
+<section id="faq"><h2>FAQ</h2><h3>コード 39 がコード 128 よりも長く見えるのはなぜですか?</h3><p>Code 39 は密度の低いシンボルであり、各文字をより幅広いパターンでエンコードするためです。</p></section>
+<div class="related"><strong>関連している：</strong> <a href="/symbologies/ultimate-barcode-type-guide/">究極のバーコード記号ガイド</a> | <a href="/code-39-barcode-generator.html">コード 39 ジェネレーター</a></div>
   </article>
   <script type="application/ld+json">
 {
@@ -70,11 +248,11 @@
   "description": "Code 39 guide covering its classic character set, Full ASCII extensions, and why it still appears in legacy supply chains.",
   "author": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "dateModified": "2026-05-31"
 }
@@ -95,5 +273,53 @@
   ]
 }
   </script>
-</body>
-</html>
+
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

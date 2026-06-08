@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja" data-theme="light">
-<head>
+<!DOCTYPE html><html lang="ja" data-theme="light"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>バーコードとは？仕組み・種類・使い方を徹底解説【2026年版】</title>
@@ -15,7 +13,7 @@
     <meta property="og:image" content="https://barcode-generators.com/og-image.jpg">
     <meta property="og:site_name" content="バーコード作成 プロ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"バーコードとは？仕組み・種類・使い方を徹底解説","description":"バーコードの定義、スキャナの仕組み、1次元・2次元の違い、JANコード・QRコード・Code 128など主要な種類と日本国内での活用事例を解説します。","author":{"@type":"Organization","name":"バーコード作成 プロ","url":"https://barcode-generators.com"},"publisher":{"@type":"Organization","name":"バーコード作成 プロ","url":"https://barcode-generators.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://barcode-generators.com/what-is-barcode.html"},"dateModified":"2026-05-31","inLanguage":"ja"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"バーコードとは何ですか？","acceptedAnswer":{"@type":"Answer","text":"バーコードとは、数字や文字などのデータを、光学スキャナが読み取れる視覚的なパターン（1次元の場合は縦縞模様、2次元の場合は方格状のドット）として表現したものです。スキャナがパターンを読み取り、デジタルデータに変換します。"}},{"@type":"Question","name":"1次元バーコードと2次元バーコードの違いは何ですか？","acceptedAnswer":{"@type":"Answer","text":"1次元バーコードはデータを横方向のバーの太さで表現し、最大約80文字程度を格納できます。2次元バーコードは縦横両方向にデータを格納するため、数千文字を扱えます。また、一部が汚れていても読み取れる誤り訂正機能があります。"}},{"@type":"Question","name":"バーコードスキャナはどのような仕組みで読み取りますか？","acceptedAnswer":{"@type":"Answer","text":"スキャナはレーザーやLEDの光をバーコードに当てます。黒いバーは光を吸収し、白いスペースは光を反射します。その光のパターンを光センサーが電気信号に変換し、デコーダーが元のデータに復号してPOSシステムや端末に送信します。"}},{"@type":"Question","name":"JANコードとEAN-13の違いは何ですか？","acceptedAnswer":{"@type":"Answer","text":"JANコード（Japanese Article Number）はEAN-13と完全に互換性のある規格で、日本国内ではこの名称が使われています。JANコードは日本の国コードである45または49で始まる13桁の番号です。"}},{"@type":"Question","name":"バーコードを無料で作成できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。当サイトのオンラインバーコード作成ツールを使えば、JANコード（EAN-13）・UPC-A・Code 128・QRコード・データマトリクスなど15種類以上のバーコードを無料で作成できます。アカウント登録は不要です。"}}]}</script>
     <style>
@@ -84,22 +82,237 @@
         @media(max-width:768px){main{padding:0 4%}.content-section{padding:1.5rem 1.25rem}.toc-box{min-width:100%}}
     </style>
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
+
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
-<body>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
+</header>
+
+
 <header>
     <a href="/" class="logo">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5v14"/><path d="M8 5v14"/><path d="M12 5v14"/><path d="M17 5v14"/><path d="M21 5v14"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5v14"></path><path d="M8 5v14"></path><path d="M12 5v14"></path><path d="M17 5v14"></path><path d="M21 5v14"></path></svg>
         バーコード作成 プロ
     </a>
-    <button class="toggle-btn" id="theme-toggle">🌙 ダークモード</button>
+    
+        
+
+        
+        <nav class="top-nav">
+            <div class="nav-item">
+                <span>形式別 ▾</span>
+                <div class="dropdown">
+                    <a href="/ean-13-barcode-generator.html">1月13日</a>
+                    <a href="/qr-code-generator.html">QRコード</a>
+                    <a href="/code-128-barcode-generator.html">コード128</a>
+                    <a href="/upc-a-barcode-generator.html">UPC-A</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>用途別 ▾</span>
+                <div class="dropdown">
+                    <a href="/product-barcode-generator.html">商品</a>
+                    <a href="/inventory-barcode-generator.html">在庫管理</a>
+                    <a href="/shipping-barcode-generator.html">配送</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>出力形式 ▾</span>
+                <div class="dropdown">
+                    <a href="/barcode-generator-png.html">PNG</a>
+                    <a href="/barcode-generator-svg.html">SVG</a>
+                    <a href="/barcode-generator-pdf.html">PDF</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/barcode-generator-guide.html" style="text-decoration:none; color:inherit;">ガイド</a>
+            </div>
+        </nav>
+
+        <button class="toggle-btn" id="theme-toggle">🌙 ダークモード</button>
 </header>
 <main>
-    <div class="breadcrumb"><a href="/">ホーム</a> &rsaquo; <a href="/barcode-types.html">バーコードの種類</a> &rsaquo; バーコードとは</div>
+    <div class="breadcrumb"><a href="/">ホーム</a> › <a href="/barcode-types.html">バーコードの種類</a> › バーコードとは</div>
     <section class="hero-section">
         <p class="eyebrow">バーコード基礎知識</p>
         <h1>バーコードとは？</h1>
         <p>仕組み・種類・日本での使い方をわかりやすく解説。JANコード・QRコード・Code 128など15種類以上の主要バーコードを網羅した完全ガイド。</p>
-        <a href="/barcode-generator.html" class="hero-cta">無料でバーコードを作成する &rarr;</a>
+        <a href="/barcode-generator.html" class="hero-cta">無料でバーコードを作成する →</a>
     </section>
     <section class="content-section">
         <div class="toc-box">
@@ -157,7 +370,7 @@
             <div class="card-grid">
                 <div class="card"><h4>JANコード（EAN-13）</h4><p>日本の小売商品に必須の13桁バーコード。国際規格EAN-13と完全互換。国コード45または49で始まる。</p></div>
                 <div class="card"><h4>UPC-A</h4><p>北米の小売商品に使用される12桁バーコード。北米向け輸出商品には必須。</p></div>
-                <div class="card"><h4>Code 128</h4><p>英数字を高密度でエンコードできる汎用1次元バーコード。物流・配送・業務管理に広く使用。</p></div>
+                <div class="card"><h4>コード128</h4><p>英数字を高密度でエンコードできる汎用1次元バーコード。物流・配送・業務管理に広く使用。</p></div>
                 <div class="card"><h4>ITF-14</h4><p>外装ケース・段ボール箱に使用される14桁バーコード。粗面への印刷に対応した太いバーが特徴。</p></div>
                 <div class="card"><h4>QRコード</h4><p>スマートフォンで読み取れる2次元バーコード。URL・連絡先・Wi-Fi設定など多様なデータを格納可能。</p></div>
                 <div class="card"><h4>データマトリクス</h4><p>極小スペースに大量データを格納できる2次元バーコード。電子部品・医薬品のダイレクトマーキングに使用。</p></div>
@@ -192,7 +405,7 @@
             <div class="cta-box">
                 <h3>今すぐ無料でバーコードを作成する</h3>
                 <p>JANコード・Code 128・QRコード・データマトリクスなど15種類以上に対応。PNG・SVG・PDFでダウンロード。アカウント登録不要。</p>
-                <a href="/barcode-generator.html">バーコード作成ツールを開く &rarr;</a>
+                <a href="/barcode-generator.html">バーコード作成ツールを開く →</a>
             </div>
 
             <h2 id="faq">よくある質問</h2>
@@ -208,7 +421,7 @@
     <div class="footer-top">
         <div class="footer-brand">
             <a href="/" class="logo">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5v14"/><path d="M8 5v14"/><path d="M12 5v14"/><path d="M17 5v14"/><path d="M21 5v14"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5v14"></path><path d="M8 5v14"></path><path d="M12 5v14"></path><path d="M17 5v14"></path><path d="M21 5v14"></path></svg>
                 バーコード作成 プロ
             </a>
             <p>無劣化のベクター生成と一括印刷に対応した完全無料オンラインバーコードジェネレーター。</p>
@@ -217,7 +430,7 @@
             <div class="link-col"><h4>基本ツール</h4><div class="link-list">
                 <a href="/barcode-generator.html">バーコード作成ツール</a>
                 <a href="/ean-13-barcode-generator.html">JANコード（EAN-13）</a>
-                <a href="/code-128-barcode-generator.html">Code 128</a>
+                <a href="/code-128-barcode-generator.html">コード128</a>
                 <a href="/upc-a-barcode-generator.html">UPC-A</a>
                 <a href="/2d-barcode-generator.html">QRコード</a>
                 <a href="/bulk-barcode-generator.html">一括作成</a>
@@ -235,14 +448,14 @@
                 <a href="/product-barcode-generator.html">商品バーコード</a>
                 <a href="/inventory-barcode-generator.html">在庫管理</a>
                 <a href="/shipping-barcode-generator.html">配送・物流</a>
-                <a href="/barcode-generator-for-amazon.html">Amazon用</a>
-                <a href="/barcode-generator-for-excel.html">Excel連携</a>
+                <a href="/barcode-generator-for-amazon.html">アマゾンの場合</a>
+                <a href="/barcode-generator-for-excel.html">Excel の接続性</a>
                 <a href="/book-barcode-generator.html">書籍（ISBN）</a>
             </div></div>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2026 バーコード作成 プロ. All Rights Reserved.</p>
+        <p>© 2026 バーコード作成 プロ. All Rights Reserved.</p>
         <div class="footer-legal">
             <a href="/privacy.html">プライバシーポリシー</a>
             <a href="/terms.html">利用規約</a>
@@ -257,5 +470,52 @@
         else{h.setAttribute("data-theme","light");this.innerHTML="🌙 ダークモード";}
     });
 </script>
-</body>
-</html>
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

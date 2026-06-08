@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results | Barcode-Generators.com</title>
+    <title>検索結果 | Barcode-Generators.com</title>
     <link rel="canonical" href="https://barcode-generators.com/search.html">
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/style.css"> <!-- Fallback -->
@@ -17,10 +15,42 @@
 </head>
 <body>
     <header>
-        <a href="/" style="text-decoration: none; font-size: 1.5rem; font-weight: 800; color: #0f172a;">Barcode Generators</a>
+        <a href="/" style="text-decoration: none; font-size: 1.5rem; font-weight: 800; color: #0f172a;">バーコード作成 プロ</a>
+    
+        <nav class="top-nav" style="margin-top:1rem;">
+            <div class="nav-item">
+                <span>形式別 ▾</span>
+                <div class="dropdown">
+                    <a href="/ean-13-barcode-generator.html">EAN-13 (JAN)</a>
+                    <a href="/qr-code-generator.html">QRコード</a>
+                    <a href="/code-128-barcode-generator.html">Code 128</a>
+                    <a href="/upc-a-barcode-generator.html">UPC-A</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>用途別 ▾</span>
+                <div class="dropdown">
+                    <a href="/product-barcode-generator.html">商品</a>
+                    <a href="/inventory-barcode-generator.html">在庫管理</a>
+                    <a href="/shipping-barcode-generator.html">配送</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>出力形式 ▾</span>
+                <div class="dropdown">
+                    <a href="/barcode-generator-png.html">PNG</a>
+                    <a href="/barcode-generator-svg.html">SVG</a>
+                    <a href="/barcode-generator-pdf.html">PDF</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/barcode-generator-guide.html" style="text-decoration:none; color:inherit;">ガイド</a>
+            </div>
+        </nav>
+
     </header>
     <main>
-        <h1>Search Results</h1><p>Search functionality is handled dynamically. You searched for: <span id="query"></span></p><script>document.getElementById("query").innerText = new URLSearchParams(window.location.search).get("q");</script>
+        <h1>検索結果</h1><p>Search functionality is handled dynamically. You searched for: <span id="query"></span></p><script>document.getElementById("query").innerText = new URLSearchParams(window.location.search).get("q");</script>
     </main>
-</body>
-</html>
+
+</body></html>

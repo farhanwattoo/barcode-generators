@@ -1,30 +1,256 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="utf-8">
-  <title>Developer Docs | Barcode Generators</title>
-  <meta name="description" content="Developer documentation hub for barcode APIs, SDKs, integrations, and on-premise deployment guidance." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://barcode-generators.com/developers/" />
+  <title>開発者向けドキュメント | Barcode Generators</title>
+  <meta name="description" content="バーコード API、SDK、統合、オンプレミス展開ガイダンスの開発者ドキュメント ハブ。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://barcode-generators.com/developers/">
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
+
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
-<body>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
+</header>
+
+
   <main style="max-width:900px;margin:32px auto;padding:0 18px;font-family:Arial,Helvetica,sans-serif;line-height:1.65;color:#1d2433;">
-    <h1>Developer Docs</h1>
-    <p>This section supports the main <a href="/developers/barcode-generation-api-sdk-guide/">Barcode Generation API &amp; SDK Guide</a> with implementation details for common languages, operational debugging, and deployment patterns.</p>
+    <h1>開発者向けドキュメント</h1>
+    <p>このセクションは主な機能をサポートします。 <a href="/developers/barcode-generation-api-sdk-guide/">バーコード生成 API および SDK ガイド</a> 共通言語、操作デバッグ、展開パターンの実装の詳細が含まれます。</p>
     <ul>
-      <li><a href="/developers/barcode-generation-api-sdk-guide/">API &amp; SDK Hub</a></li>
-      <li><a href="/developers/python-barcode-generation/">Python Barcode Generation</a></li>
-      <li><a href="/developers/javascript-barcode-guide/">JavaScript Barcode Guide</a></li>
-      <li><a href="/developers/php-barcode-pipelines/">PHP Barcode Pipelines</a></li>
-      <li><a href="/developers/java-spring-barcode-setup/">Java Spring Barcode Setup</a></li>
-      <li><a href="/developers/csharp-datamatrix-generation/">C# Data Matrix Generation</a></li>
-      <li><a href="/developers/ruby-rails-barcode-integration/">Ruby on Rails Integration</a></li>
-      <li><a href="/developers/excel-barcode-integration/">Excel Barcode Integration</a></li>
-      <li><a href="/developers/rest-api-documentation/">REST API Documentation</a></li>
-      <li><a href="/developers/debugging-invalid-payloads/">Debugging Invalid Payloads</a></li>
-      <li><a href="/developers/on-premise-docker-containers/">On-Premise Docker Containers</a></li>
+      <li><a href="/developers/barcode-generation-api-sdk-guide/">API と SDK ハブ</a></li>
+      <li><a href="/developers/python-barcode-generation/">Python バーコード生成</a></li>
+      <li><a href="/developers/javascript-barcode-guide/">JavaScript バーコード ガイド</a></li>
+      <li><a href="/developers/php-barcode-pipelines/">PHP バーコード パイプライン</a></li>
+      <li><a href="/developers/java-spring-barcode-setup/">Java Spring バーコードのセットアップ</a></li>
+      <li><a href="/developers/csharp-datamatrix-generation/">C# データ行列の生成</a></li>
+      <li><a href="/developers/ruby-rails-barcode-integration/">Ruby on Rails の統合</a></li>
+      <li><a href="/developers/excel-barcode-integration/">Excel バーコードの統合</a></li>
+      <li><a href="/developers/rest-api-documentation/">REST API ドキュメント</a></li>
+      <li><a href="/developers/debugging-invalid-payloads/">無効なペイロードのデバッグ</a></li>
+      <li><a href="/developers/on-premise-docker-containers/">オンプレミスの Docker コンテナ</a></li>
     </ul>
   </main>
-</body>
-</html>
+
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

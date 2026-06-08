@@ -1,50 +1,228 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="utf-8">
-  <title>Outer Case Packaging Rules — ITF-14 Calibration for Master Shipping Cartons</title>
-  <meta name="description" content="ITF-14 formatting, bearer bars, print tolerances, and verification for corrugated master cartons.">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://barcode-generators.com/compliance/outer-case-packaging-rules/" />
+  <title>外箱の梱包規則 — マスター輸送用カートンの ITF-14 校正</title>
+  <meta name="description" content="ITF-14 フォーマット、ベアラーバー、印刷公差、および段ボールマスターカートンの検証。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://barcode-generators.com/compliance/outer-case-packaging-rules/">
   <style>body{font-family:Arial,Helvetica,sans-serif;max-width:980px;margin:24px auto;padding:0 18px;color:#1f2937;line-height:1.68}h1,h2,h3{color:#0f3d6e}.crumbs,.related{background:#f7fafc;border:1px solid #dbe5f0;border-radius:12px;padding:14px 16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #dbe5f0;padding:8px;text-align:left;vertical-align:top}th{background:#f2f7fc}a{color:#0b4a7a;text-decoration:none}a:hover{text-decoration:underline}</style>
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
+
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
-<body>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
+</header>
+
+
   <article>
-    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
-    <h1>Outer Case Packaging Rules — ITF-14 Calibration for Master Shipping Cartons</h1>
+    <div class="crumbs"><a href="/compliance/industry-barcode-standards-guide/">小売および物流バーコード コンプライアンス ガイド</a></div>
+    <h1>外箱の梱包規則 — マスター輸送用カートンの ITF-14 校正</h1>
     <section>
-      <h2>ITF-14 structure and use-cases</h2>
-      <p>ITF-14 encodes GTIN-14 values for outer case identification and is optimized for printing on corrugated board. It uses Interleaved 2 of 5 encoding to pack numeric digits efficiently and typically includes bearer bars to protect against partial scans. Use ITF-14 for master cartons and pallet-level packaging where an omnidirectional 2D code is not required.</p>
+      <h2>ITF-14 の構造と使用例</h2>
+      <p>ITF-14 は、外装ケースを識別するために GTIN-14 値をエンコードし、段ボールへの印刷用に最適化されています。 Interleaved 2 of 5 エンコーディングを使用して数値を効率的にパックし、通常は部分的なスキャンから保護するベアラー バーが含まれています。全方向性 2D コードが必要ないマスター カートンおよびパレット レベルの梱包には ITF-14 を使用します。</p>
     </section>
 
     <section>
-      <h2>Bearer bar design and placement</h2>
-      <p>Bearer bars are thick horizontal bars printed above and below the ITF-14 symbol that ensure the scanner reads the full height of the code and prevent short scanning. Typical bearer bar width should be at least 2–3 times the height of the code's nominal bar height and extend beyond the code by a stable margin to prevent edge truncation. On corrugated, increase bearer bar thickness to compensate for surface irregularities.</p>
+      <h2>ベアラーバーのデザインと配置</h2>
+      <p>ベアラー バーは、ITF-14 シンボルの上下に印刷された太い水平バーで、スキャナがコードの高さ全体を確実に読み取り、ショート スキャンを防ぎます。一般的なベアラーバーの幅は、コードの公称バー高さの少なくとも 2 ～ 3 倍であり、エッジの切り詰めを防ぐために、安定したマージン分だけコードを超えて延長する必要があります。波形の場合は、表面の凹凸を補うためにベアラーバーの厚さを増やします。</p>
     </section>
 
     <section>
-      <h2>Printing processes: flexo, digital, thermal</h2>
-      <p>Corrugated printing methods differ in dot gain, ink spread, and registry accuracy. Flexographic printing can achieve high throughput but requires compensating for ink spread; thermal transfer provides sharp edges but adhesive labels can shift. When planning ITF-14 runs:</p>
+      <h2>印刷プロセス: フレキソ、デジタル、サーマル</h2>
+      <p>段ボール印刷方法は、ドットゲイン、インクの広がり、レジストリの精度が異なります。フレキソ印刷は高いスループットを実現できますが、インクの広がりを補正する必要があります。熱転写では鋭いエッジが得られますが、粘着ラベルがずれることがあります。 ITF-14 の実行を計画する場合:</p>
       <ul>
-        <li>Specify larger X-dimensions than for retail codes to tolerate substrate roughness.</li>
-        <li>Validate print density and contrast on actual corrugated stock.</li>
-        <li>Use overprinting and test sampling on production lines to confirm fidelity.</li>
+        <li>基板の粗さを許容するために、小売コードよりも大きな X 寸法を指定します。</li>
+        <li>実際の段ボール在庫で印刷濃度とコントラストを検証します。</li>
+        <li>生産ラインでオーバープリントとテストサンプリングを使用して、忠実度を確認します。</li>
       </ul>
     </section>
 
     <section>
-      <h2>Verification workflows</h2>
-      <p>Implement on-line verifiers where possible to reject prints outside specification before palletization. Use off-line verifier sampling to ensure continued compliance — sample sizes should reflect production volume and risk. Record verifier outputs and maintain a corrective action log for out-of-spec batches.</p>
+      <h2>検証ワークフロー</h2>
+      <p>可能な場合はオンライン検証機能を導入し、パレットに積み込む前に仕様外の印刷物を拒否します。継続的なコンプライアンスを確保するには、オフライン検証者のサンプリングを使用します。サンプルのサイズは、生産量とリスクを反映する必要があります。検証者の出力を記録し、規格外のバッチに対する修正アクションのログを維持します。</p>
     </section>
 
     <section>
-      <h2>Operational controls for corrugated lines</h2>
-      <p>Outer-case barcode performance is heavily influenced by process drift on corrugated lines, so carton teams should document more than the symbol artwork. Track board grade, print direction, compression risk during case erection, and any changes in ink viscosity or plate wear that can alter edge definition across a run. If multiple plants or suppliers print the same carton, build a shared reference profile so verifier targets, bearer-bar sizing, and placement tolerances remain consistent across locations.</p>
-      <p>It also helps to define hold-and-release rules before production begins. If verifier grades drop below the agreed threshold, operators should know whether to stop the line, quarantine affected cases, or relabel with a thermal-transfer backup process. That level of operational clarity prevents weak ITF-14 symbols from reaching palletization, distribution centers, or retailer receiving docks where remediation is much more expensive.</p>
+      <h2>波形ラインの運転管理</h2>
+      <p>アウターケースのバーコードのパフォーマンスは、波形ラインのプロセス ドリフトに大きく影響されるため、カートン チームはシンボルのアートワーク以上のものを文書化する必要があります。トラックボードのグレード、印刷方向、ケース組み立て時の圧縮リスク、および実行全体でエッジの定義を変える可能性があるインク粘度やプレートの摩耗の変化。複数の工場またはサプライヤーが同じカートンを印刷する場合は、検証対象、ベアラーバーのサイズ、および配置公差が場所間で一貫した状態を維持できるように、共有の参照プロファイルを構築します。</p>
+      <p>また、本番を開始する前にホールド アンド リリース ルールを定義するのにも役立ちます。検証者のグレードが合意されたしきい値を下回った場合、オペレーターはラインを停止するか、影響を受けるケースを隔離するか、または熱転写バックアッププロセスでラベルを付け直すかを知る必要があります。このレベルの運用の明確さにより、弱い ITF-14 シンボルが、修復にはるかに費用がかかるパレット積み、配送センター、または小売店の受け取りドックに到達するのを防ぎます。</p>
     </section>
   </article>
-  <div class="related"><strong>Related:</strong> <a href="/compliance/industry-barcode-standards-guide/">Retail & Logistics Barcode Compliance Guide</a></div>
+  <div class="related"><strong>関連している：</strong> <a href="/compliance/industry-barcode-standards-guide/">小売および物流バーコード コンプライアンス ガイド</a></div>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -57,14 +235,62 @@
   "description": "ITF-14 formatting, bearer bars, print tolerances, and verification for corrugated master cartons.",
   "author": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Barcode Generators"
+    "name": "バーコード作成 プロ"
   },
   "dateModified": "2026-05-31"
 }
   </script>
-</body>
-</html>
+
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

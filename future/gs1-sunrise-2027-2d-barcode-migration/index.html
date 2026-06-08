@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="utf-8">
-  <title>The GS1 Sunrise Transition Guide: Migrating Retail Packaging to 2D Barcodes [2026 Manual]</title>
-  <meta name="description" content="Prepare your brand for the 2D barcode transition. Understand GS1 Digital Link, QR and Data Matrix options, packaging impacts, and retail scanner readiness." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://barcode-generators.com/future/gs1-sunrise-2027-2d-barcode-migration/" />
+  <title>GS1 Sunrise 移行ガイド: 小売パッケージの 2D バーコードへの移行 [2026 年マニュアル]</title>
+  <meta name="description" content="2D バーコードへの移行に向けてブランドを準備します。 GS1 デジタル リンク、QR およびデータ マトリックスのオプション、パッケージングへの影響、および小売スキャナーの準備状況を理解します。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://barcode-generators.com/future/gs1-sunrise-2027-2d-barcode-migration/">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <style>
     :root {
@@ -275,92 +273,304 @@
     }
   </style>
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
+
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
-<body>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
+</header>
+
+
   <main class="wrap">
     <article>
       <header class="hero">
-        <span class="eyebrow">Future of Retail ID</span>
-        <h1>The GS1 Sunrise Transition Guide: Migrating Retail Packaging to 2D Barcodes</h1>
-        <p class="lead">The familiar UPC or EAN barcode is not disappearing overnight, but it is no longer enough for the data demands now surrounding modern products. Brands are being asked to support richer traceability, expiration handling, unit-level serialization, sustainability disclosures, and consumer-facing digital information without covering packaging in separate symbols. That pressure is driving the global move toward GS1-compliant 2D barcodes.</p>
-        <p class="lead">The critical timing point is the end of 2027. GS1 describes Sunrise 2027, also called Ambition 2027 in some retail guidance, as the industry goal by which retail point-of-sale systems should be capable of reading and processing defined GS1-compliant 2D barcodes in addition to existing linear barcodes. That wording matters. It is a transition milestone, not a promise that every checkout lane on Earth flips in one week, and not a reason to remove linear symbols prematurely.</p>
-        <div class="warning">Migration nuance matters: the strongest brand teams are planning for coexistence. In the near term, many products will still need a 1D barcode on-pack while retailers upgrade scanners, software, and operating procedures for 2D processing. Treat Sunrise 2027 as a strategic deadline for readiness, not as a justification for sudden one-code-only packaging before your retail partners are prepared.</div>
+        <span class="eyebrow">Retail ID の将来</span>
+        <h1>GS1 Sunrise 移行ガイド: 小売パッケージの 2D バーコードへの移行</h1>
+        <p class="lead">おなじみの UPC または EAN バーコードが一夜にして消えるわけではありませんが、現代の製品を取り巻くデータ需要にはもはや十分ではありません。ブランドは、パッケージを個別のシンボルで覆うことなく、より充実したトレーサビリティ、有効期限の処理、ユニットレベルのシリアル化、持続可能性の開示、消費者向けのデジタル情報をサポートすることが求められています。この圧力により、GS1 準拠の 2D バーコードへの世界的な動きが推進されています。</p>
+        <p class="lead">重要なタイミングは 2027 年末です。GS1 では、小売業の POS システムが既存のリニア バーコードに加えて定義された GS1 準拠の 2D バーコードを読み取り、処理できるようにするための業界目標として、Sunrise 2027 (一部の小売ガイダンスでは Ambition 2027 とも呼ばれます) について説明しています。その言葉遣いが重要です。これは移行のマイルストーンであり、地球上のすべてのレジ レーンが 1 週間以内に切り替わるという約束ではなく、線形シンボルを時期尚早に削除する理由でもありません。</p>
+        <div class="warning">移行のニュアンスは重要です。最も強力なブランド チームは共存を計画しています。短期的には、小売業者がスキャナー、ソフトウェア、操作手順を 2D 処理用にアップグレードする一方で、多くの製品には引き続き 1D バーコードがパッケージに含まれる必要があるでしょう。 2027 年のサンライズを、小売パートナーの準備が整う前に突然 1 コードのみのパッケージ化を正当化する理由としてではなく、準備を整えるための戦略的な期限として扱います。</div>
         <div class="chips">
-          <span class="chip">GS1 Sunrise 2027</span>
-          <span class="chip">GS1 Digital Link</span>
-          <span class="chip">2D at retail POS</span>
-          <span class="chip">QR and Data Matrix</span>
-          <span class="chip">Packaging redesign</span>
-          <span class="chip">Traceability planning</span>
+          <span class="chip">GS1 サンライズ 2027</span>
+          <span class="chip">GS1デジタルリンク</span>
+          <span class="chip">小売 POS の 2D</span>
+          <span class="chip">QR とデータ マトリックス</span>
+          <span class="chip">パッケージの再設計</span>
+          <span class="chip">トレーサビリティ計画</span>
         </div>
 
-        <nav class="toc" aria-label="Table of contents">
-          <h2>Contents</h2>
+        <nav class="toc" aria-label="目次">
+          <h2>コンテンツ</h2>
           <ol>
-            <li><a href="#compiler">GS1 Digital Link compiler</a></li>
-            <li><a href="#why-shift">Why the industry is replacing 1D-only thinking</a></li>
-            <li><a href="#limits">Physical and data limits of legacy linear codes</a></li>
-            <li><a href="#digital-link">GS1 Digital Link architecture</a></li>
-            <li><a href="#payload-design">Choosing the right 2D payload</a></li>
-            <li><a href="#comparison">1D legacy vs 2D next-gen layouts</a></li>
-            <li><a href="#packaging">Packaging and artwork migration</a></li>
-            <li><a href="#pos-readiness">Retail scanner and POS readiness</a></li>
-            <li><a href="#testing">Testing and exception management</a></li>
-            <li><a href="#rfid">RFID vs barcode logistics efficiency</a></li>
-            <li><a href="#regulations">Regulatory and disclosure horizon</a></li>
-            <li><a href="#governance">Resolver governance and content operations</a></li>
-            <li><a href="#roadmap">Migration roadmap through 2027</a></li>
-            <li><a href="#faq">FAQ regarding the transition</a></li>
-            <li><a href="#summary">Summary and next steps</a></li>
+            <li><a href="#compiler">GS1デジタルリンクコンパイラ</a></li>
+            <li><a href="#why-shift">業界が 1D のみの考え方を置き換える理由</a></li>
+            <li><a href="#limits">従来の線形コードの物理的制限とデータ制限</a></li>
+            <li><a href="#digital-link">GS1 デジタル リンク アーキテクチャ</a></li>
+            <li><a href="#payload-design">適切な 2D ペイロードの選択</a></li>
+            <li><a href="#comparison">1D レガシー レイアウトと 2D 次世代レイアウト</a></li>
+            <li><a href="#packaging">パッケージングとアートワークの移行</a></li>
+            <li><a href="#pos-readiness">小売店用スキャナーと POS の準備</a></li>
+            <li><a href="#testing">テストと例外管理</a></li>
+            <li><a href="#rfid">RFID とバーコードの物流効率の比較</a></li>
+            <li><a href="#regulations">規制と開示の対象期間</a></li>
+            <li><a href="#governance">リゾルバーのガバナンスとコンテンツの運用</a></li>
+            <li><a href="#roadmap">2027 年までの移行ロードマップ</a></li>
+            <li><a href="#faq">移行に関するよくある質問</a></li>
+            <li><a href="#summary">まとめと次のステップ</a></li>
           </ol>
         </nav>
-      </header>
+      
+        <nav class="top-nav" style="margin-top:1rem;">
+            <div class="nav-item">
+                <span>形式別 ▾</span>
+                <div class="dropdown">
+                    <a href="/ean-13-barcode-generator.html">1月13日</a>
+                    <a href="/qr-code-generator.html">QRコード</a>
+                    <a href="/code-128-barcode-generator.html">コード128</a>
+                    <a href="/upc-a-barcode-generator.html">UPC-A</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>用途別 ▾</span>
+                <div class="dropdown">
+                    <a href="/product-barcode-generator.html">商品</a>
+                    <a href="/inventory-barcode-generator.html">在庫管理</a>
+                    <a href="/shipping-barcode-generator.html">配送</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>出力形式 ▾</span>
+                <div class="dropdown">
+                    <a href="/barcode-generator-png.html">PNG</a>
+                    <a href="/barcode-generator-svg.html">SVG</a>
+                    <a href="/barcode-generator-pdf.html">PDF</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/barcode-generator-guide.html" style="text-decoration:none; color:inherit;">ガイド</a>
+            </div>
+        </nav>
+
+    </header>
 
       <section class="toolbox" id="compiler">
-        <h2>Interactive GS1 Digital Link Compiler</h2>
-        <p>This widget turns a legacy product identifier into a GS1 Digital Link-style URI structure and generates a QR preview. It is a planning aid rather than a full standards validator, but it helps packaging, retail, and web teams understand the main architectural idea: one scannable 2D carrier can present a standards-based identifier for business systems while also connecting a consumer to web content through a resolver.</p>
+        <h2>インタラクティブ GS1 デジタル リンク コンパイラ</h2>
+        <p>このウィジェットは、従来の製品 ID を GS1 Digital Link スタイルの URI 構造に変換し、QR プレビューを生成します。これは完全な標準検証ではなく計画支援ですが、パッケージング、小売、Web チームが主要なアーキテクチャのアイデアを理解するのに役立ちます。つまり、1 つのスキャン可能な 2D キャリアがビジネス システムに標準ベースの識別子を提示できると同時に、リゾルバーを介して消費者を Web コンテンツに接続できます。</p>
         <div class="tool-grid">
           <div>
             <div class="split">
               <div>
-                <label for="brand-domain">Brand or resolver domain</label>
-                <input id="brand-domain" type="url" value="https://id.yourbrand.com" />
+                <label for="brand-domain">ブランドまたはリゾルバ ドメイン</label>
+                <input id="brand-domain" type="url" value="https://id.yourbrand.com">
               </div>
               <div>
-                <label for="gtin">GTIN (13 or 14 digits)</label>
-                <input id="gtin" type="text" value="00614141999996" />
+                <label for="gtin">GTIN (13 桁または 14 桁)</label>
+                <input id="gtin" type="text" value="00614141999996">
               </div>
               <div>
-                <label for="serial">Serial or unit ID (AI 21)</label>
-                <input id="serial" type="text" value="A1B2C3" />
+                <label for="serial">シリアルまたはユニットID (AI 21)</label>
+                <input id="serial" type="text" value="A1B2C3">
               </div>
               <div>
-                <label for="lot">Batch or lot (AI 10)</label>
-                <input id="lot" type="text" value="LOT77" />
+                <label for="lot">バッチまたはロット (AI 10)</label>
+                <input id="lot" type="text" value="LOT77">
               </div>
               <div>
-                <label for="expiry">Expiration date YYMMDD (AI 17)</label>
-                <input id="expiry" type="text" value="271231" />
+                <label for="expiry">有効期限 YYMMDD (AI 17)</label>
+                <input id="expiry" type="text" value="271231">
               </div>
               <div>
-                <label for="campaign">Optional landing subpath</label>
-                <input id="campaign" type="text" value="" placeholder="promo or products/widget" />
+                <label for="campaign">オプションの着陸サブパス</label>
+                <input id="campaign" type="text" value="" placeholder="プロモーションまたは製品/ウィジェット">
               </div>
             </div>
             <div class="controls">
-              <button type="button" id="build-link">Build URI</button>
-              <button type="button" class="secondary" id="load-demo-link">Load Demo</button>
+              <button type="button" id="build-link">ビルドURI</button>
+              <button type="button" class="secondary" id="load-demo-link">デモをロードする</button>
             </div>
-            <div class="inline-note">GS1 Digital Link reminder: the path typically carries the primary key and any key qualifiers, while additional data attributes are commonly represented in the query string. For a GTIN-based item, that often means <code>/01/{gtin}</code> in the path, an optional serial qualifier such as <code>/21/{serial}</code>, and attributes like batch or expiry as query parameters.</div>
+            <div class="inline-note">GS1 Digital Link の注意事項: 通常、パスには主キーとキー修飾子が含まれますが、追加のデータ属性は通常クエリ文字列で表されます。 GTIN ベースのアイテムの場合、これは多くの場合、 <code>/01/{gtin}</code> パス内には、次のようなオプションのシリアル修飾子が含まれます。 <code>/21/{serial}</code>、クエリ パラメーターとしてバッチや有効期限などの属性を使用します。</div>
           </div>
           <aside class="card">
             <div class="qr-wrap">
-              <div id="qr-preview" aria-label="QR preview"></div>
+              <div id="qr-preview" aria-label="QRプレビュー"></div>
               <div>
-                <h3>Compiled URI</h3>
+                <h3>コンパイルされた URI</h3>
                 <pre id="uri-output">https://id.yourbrand.com/01/00614141999996/21/A1B2C3?10=LOT77&amp;17=271231</pre>
-                <h3>How systems read it</h3>
-                <p class="muted" id="resolver-output">POS and supply-chain software can extract the GTIN and qualifiers, while the resolver domain can direct smartphones to consumer content or product services.</p>
+                <h3>システムがそれを読み取る方法</h3>
+                <p class="muted" id="resolver-output">POS およびサプライ チェーン ソフトウェアは GTIN と修飾子を抽出でき、リゾルバー ドメインはスマートフォンを消費者コンテンツや製品サービスに誘導できます。</p>
               </div>
             </div>
           </aside>
@@ -368,297 +578,297 @@
       </section>
 
       <section class="section" id="why-shift">
-        <h2>Understanding the Shift: Why the Industry Is Replacing 1D-Only Thinking</h2>
-        <p>The barcode on retail packaging was originally optimized for one dominant task: point-of-sale product identification. It did that job brilliantly. A linear UPC or EAN symbol encodes the GTIN used for price lookup and inventory systems, and decades of retail infrastructure grew around that simple, universal scan. But the surrounding information environment has changed. Brands are now asked to provide origin, ingredients, safety content, recycling instructions, certifications, promotion flows, recall support, and increasingly precise traceability at the same time.</p>
-        <p>Trying to solve all of those use cases with separate labels creates clutter and inconsistency. One symbol for checkout, another for marketing, another for internal traceability, another for regulatory web links, and sometimes still another for warehouse-only purposes. That fragmentation increases artwork complexity and confuses both operators and consumers. The logic of the 2D transition is therefore not simply "more data fits in a smaller shape." The deeper value is that a single standards-based data carrier can serve multiple audiences without fragmenting the package.</p>
-        <p>GS1's retail migration work reflects this shift. By the end of 2027, the goal is that retail POS systems should be able to read and process a defined set of 2D barcodes with GS1 standards in addition to existing linear barcodes. That "in addition to" language is central. The industry is expanding the data carrier model, not pretending that legacy retail systems no longer exist. The most successful migration programs understand both realities at once: the future is richer data in 2D, and the present is a staged rollout that must keep selling product through today's stores.</p>
-        <p>Brand owners should also notice that the business case is broader than checkout. A 2D barcode can support traceability in the warehouse, consumer engagement on the shelf, and packaging simplification for future regulatory disclosures. In other words, the strongest return on migration does not come from scanning alone. It comes from turning the product identifier into a multi-channel information gateway.</p>
+        <h2>変化を理解する: 業界が 1D のみの考え方に取って代わる理由</h2>
+        <p>小売パッケージのバーコードはもともと、販売時点での製品識別という 1 つの主要なタスクのために最適化されていました。それは見事にその仕事をしてくれました。線形 UPC または EAN シンボルは、価格検索および在庫システムに使用される GTIN をエンコードしており、数十年にわたる小売インフラは、そのシンプルでユニバーサルなスキャンを中心に成長してきました。しかし、周囲の情報環境は変わりました。ブランドは現在、原産地、原材料、安全性内容、リサイクル指示、認証、プロモーションフロー、リコールサポート、そしてますます正確になるトレーサビリティを同時に提供するよう求められています。</p>
+        <p>個別のラベルを使用してこれらすべてのユースケースを解決しようとすると、乱雑さと不整合が生じます。 1 つはチェックアウト用、もう 1 つはマーケティング用、もう 1 つは内部トレーサビリティ用、もう 1 つは規制 Web リンク用、そして場合によってはさらに別の記号が倉庫専用の目的に使用されます。その断片化によりアートワークの複雑さが増し、オペレーターと消費者の両方が混乱します。したがって、2D トランジションのロジックは、単に「より多くのデータがより小さい形状に収まる」というものではありません。さらに深い価値は、パッケージを断片化することなく、単一の標準ベースのデータ キャリアで複数の視聴者にサービスを提供できることです。</p>
+        <p>GS1 の小売移行作業は、この変化を反映しています。 2027 年末までに、小売 POS システムが既存のリニア バーコードに加えて、GS1 標準で定義された 2D バーコードのセットを読み取って処理できるようにすることが目標です。 「それに加えて」という言葉が中心です。業界はデータ キャリア モデルを拡大しており、従来の小売システムはもう存在しないというふりをしているわけではありません。最も成功した移行プログラムは、両方の現実を同時に理解しています。将来は 2D のより豊富なデータであり、現在は、今日の店舗で製品を販売し続ける必要がある段階的な展開です。</p>
+        <p>ブランド所有者は、ビジネスケースがチェックアウトよりも広いことにも注意する必要があります。 2D バーコードは、倉庫でのトレーサビリティ、商品棚での消費者の関与、および将来の規制開示に備えたパッケージの簡素化をサポートできます。言い換えれば、移行に対する最大の利益はスキャンだけから得られるものではありません。これは、製品 ID をマルチチャネル情報ゲートウェイに変えることから生まれました。</p>
       </section>
 
       <section class="section" id="limits">
-        <h2>The Physical and Data Limits of Legacy Linear Barcodes</h2>
-        <p>Linear retail codes carry a single static identifier exceptionally well, but they are constrained by design. A traditional UPC or EAN symbol is wide rather than deep: it represents data through changing bar and space widths on one axis. That format is perfect for fast price lookup and mature laser-scanner environments, but it does not naturally hold multiple attributes such as serial numbers, lot numbers, or expiration dates inside the retail symbol the way modern traceability demands often require.</p>
-        <p>Packaging teams feel those constraints physically. Linear symbols need horizontal real estate and quiet zones that can be awkward on small, curved, or highly designed packaging. If the product also needs a consumer-facing QR code, the artwork begins to accumulate separate machine-readable graphics. That may work for a while, but it becomes fragile as more digital and disclosure use cases are added.</p>
-        <p>2D symbols change the geometry. Because they encode data in both dimensions, they can often store more information in a smaller footprint than a comparable 1D retail symbol plus separate auxiliary code. GS1's retail guidance also notes that 2D X-dimensions are governed differently than linear code sizes, which matters when packaging engineers begin resizing artwork for real-world print and scan conditions. The point is not that 2D is automatically tiny. The point is that it uses space more efficiently for richer payloads.</p>
-        <p>There is also a consumer-device reality. Generic smartphone cameras natively recognize QR codes far more consistently than they recognize many industrial matrix codes. That is one reason QR codes powered by GS1 are currently attractive for retail and consumer engagement scenarios, while GS1 DataMatrix remains especially strong where compact industrial marking and structured identification are priorities. The migration decision is therefore partly technical, partly operational, and partly human-interface design.</p>
+        <h2>従来のリニア バーコードの物理的およびデータの制限</h2>
+        <p>線形小売コードは単一の静的識別子を非常に適切に保持しますが、設計による制約があります。従来の UPC または EAN シンボルは、奥行きがあるというより幅が広く、1 つの軸上のバーとスペースの幅を変更することでデータを表します。この形式は、高速な価格検索や成熟したレーザー スキャナ環境には最適ですが、現代のトレーサビリティの需要でよく求められるように、小売シンボル内にシリアル番号、ロット番号、有効期限などの複数の属性を自然に保持するわけではありません。</p>
+        <p>パッケージング チームは、これらの制約を物理的に感じています。線形シンボルには水平方向のスペースとクワイエット ゾーンが必要ですが、小さいパッケージ、湾曲したパッケージ、またはデザイン性の高いパッケージでは扱いにくい場合があります。製品に消費者向けの QR コードも必要な場合、アートワークには別の機械可読グラフィックが蓄積され始めます。これはしばらくの間は機能するかもしれませんが、デジタルや開示のユースケースが増えるにつれて脆弱になります。</p>
+        <p>2D シンボルはジオメトリを変更します。これらはデータを両方の次元でエンコードするため、多くの場合、同等の 1D 小売シンボルと別個の補助コードよりも小さな設置面積に、より多くの情報を格納できます。 GS1 の小売ガイダンスでは、2D X 寸法は線形コード サイズとは異なる方法で管理されているとも述べています。これは、パッケージング エンジニアが実際の印刷およびスキャン条件に合わせてアートワークのサイズを変更し始めるときに重要です。重要なのは、2D が自動的に小さくなるということではありません。重要なのは、より豊富なペイロードのためにスペースをより効率的に使用できるということです。</p>
+        <p>消費者向けデバイスの現実もあります。一般的なスマートフォンのカメラは、多くの産業用マトリックス コードを認識するよりもはるかに安定して QR コードをネイティブに認識します。これが、GS1 を利用した QR コードが小売業や消費者エンゲージメントのシナリオにとって現在魅力的である理由の 1 つであり、コンパクトな工業用マーキングと構造化された識別が優先される場合には GS1 DataMatrix が特に強力なままです。したがって、移行の決定は、一部は技術的なものであり、一部は運用上のものであり、一部はヒューマン インターフェイスの設計によるものです。</p>
       </section>
 
       <section class="section" id="digital-link">
-        <h2>The GS1 Digital Link Architecture: Bridging Logistics and Consumers</h2>
-        <p>GS1 Digital Link is the bridge between product identification and the web. The basic idea is elegant: express GS1 identifiers in a standards-based web URI so that the same scan can support traditional business systems and digital content resolution. That is why the model is so important to Sunrise 2027 planning. It does not throw away the GTIN-centered world retailers already depend on. It extends it into a web-native format.</p>
+        <h2>GS1 デジタル リンク アーキテクチャ: 物流と消費者の橋渡し</h2>
+        <p>GS1 Digital Link は、製品識別と Web の間の架け橋です。基本的なアイデアは洗練されています。GS1 識別子を標準ベースの Web URI で表現することで、同じスキャンで従来のビジネス システムとデジタル コンテンツの解決をサポートできるようになります。だからこそ、このモデルは Sunrise 2027 計画にとって非常に重要です。これは、すでに依存している GTIN を中心とした世界の小売業者を放棄するものではありません。それを Web ネイティブ形式に拡張します。</p>
         <pre><code>https://id.yourbrand.com/01/00614141999996/21/A1B2C3?10=LOT77&amp;17=271231
 domain                   GTIN        serial      batch     expiry</code></pre>
-        <p>In practice, the structure is usually described in three layers. First, there is the brand or resolver domain, such as <code>id.yourbrand.com</code>. Second, there is the primary key path, commonly the GTIN encoded with AI 01. Third, there may be key qualifiers and additional data attributes. A serial number often appears as a key qualifier in the path, such as AI 21. Data attributes like lot or expiration often appear in the query string. That structure is useful because it preserves the product identity in a standards-aware format while allowing digital services to react intelligently to the scan.</p>
-        <h3>Why that matters operationally</h3>
-        <p>A warehouse scanner or POS system can still extract the product identification it needs. A consumer smartphone, meanwhile, can follow the same URI into a resolver or landing flow. The brand can direct that consumer to instructions, sustainability information, ingredients, warranty support, or market-specific content without reprinting the barcode every time the web experience changes. That is the central economic advantage of Digital Link: the identifier on-pack remains stable while the digital content behind it can evolve.</p>
-        <h3>One barcode, multiple audiences</h3>
+        <p>実際には、構造は通常 3 つの層で記述されます。まず、次のようなブランドまたはリゾルバ ドメインがあります。 <code>id.yourbrand.com</code>。 2 番目に、主キー パスがあり、通常は AI 01 でエンコードされた GTIN です。 3 番目に、キー修飾子と追加のデータ属性が存在する可能性があります。シリアル番号は、AI 21 など、パス内のキー修飾子として現れることがよくあります。ロットや有効期限などのデータ属性は、クエリ文字列に現れることがよくあります。この構造は、製品のアイデンティティを標準対応形式で保存しながら、デジタル サービスがスキャンにインテリジェントに反応できるようにするため、便利です。</p>
+        <h3>それが運用上重要な理由</h3>
+        <p>倉庫スキャナーや POS システムでも、必要な製品 ID を抽出できます。一方、消費者向けスマートフォンは、同じ URI をたどってリゾルバーまたはランディング フローに入ることができます。ブランドは、Web エクスペリエンスが変更されるたびにバーコードを再印刷することなく、消費者を説明書、持続可能性情報、原材料、保証サポート、または市場固有のコンテンツに誘導できます。これがデジタル リンクの中心的な経済的利点です。パック内の識別子は安定したままですが、その背後にあるデジタル コンテンツは進化する可能性があります。</p>
+        <h3>1 つのバーコードで複数の対象者に対応</h3>
         <div class="split">
           <div class="mini-card">
-            <h3>Supply-chain audience</h3>
-            <p>Retailers, distributors, and internal software care that the code carries a GTIN and optionally finer-grained identifiers or attributes that can improve traceability, recall precision, and automation.</p>
+            <h3>サプライチェーンの対象者</h3>
+            <p>小売業者、流通業者、および社内ソフトウェアは、コードに GTIN と、オプションでトレーサビリティ、リコール精度、および自動化を向上できるより詳細な識別子または属性が含まれていることを考慮します。</p>
           </div>
           <div class="mini-card">
-            <h3>Consumer audience</h3>
-            <p>Shoppers care that the same scan can reveal useful product information in a familiar web experience without needing a proprietary app or an extra marketing-only code on-pack.</p>
+            <h3>消費者視聴者</h3>
+            <p>買い物客は、独自のアプリやパッケージ上の追加のマーケティング専用コードを必要とせずに、同じスキャンで使い慣れた Web エクスペリエンスで有用な製品情報を明らかにできることに関心を持っています。</p>
           </div>
         </div>
-        <p>The architecture also reduces future packaging churn. Because the symbol points into a web-governed information model, brands can refresh content, add languages, change campaign destinations, or connect new service endpoints without changing the printed code itself. That is especially relevant when regulatory disclosure needs are still evolving and brands want flexibility without endless artwork revisions.</p>
+        <p>このアーキテクチャにより、将来のパッケージングのチャーンも軽減されます。このシンボルは Web で管理される情報モデルを指しているため、ブランドは印刷されたコード自体を変更することなく、コンテンツの更新、言語の追加、キャンペーンの目的地の変更、または新しいサービス エンドポイントの接続を行うことができます。これは、規制上の開示ニーズが依然として進化しており、ブランドがアートワークの修正を際限なく行うことなく柔軟性を求めている場合に特に重要です。</p>
       </section>
 
       <section class="section" id="payload-design">
-        <h2>Choosing the Right 2D Payload: More Data Is Not Always Better Data</h2>
-        <p>One of the most common planning mistakes is assuming that if a 2D symbol can hold more information, it should hold as much as possible. That approach creates oversized codes, inconsistent product behavior, and unnecessary complexity at checkout. A better migration mindset starts with the business question and only then selects the payload. In many retail programs, the minimum viable move is simply to carry the GTIN in a 2D carrier so POS systems can extract the same core identifier they already understand. Everything beyond that should earn its place.</p>
-        <p>Serial number, batch or lot, and expiration date are powerful additions when the use case justifies them. They support food safety, recall precision, unit-level traceability, and advanced consumer or service workflows. But those benefits come with design consequences: more encoded data means denser symbols, stricter print discipline, and more parsing requirements in store systems. Brands should therefore avoid a "more is always better" philosophy. The better standard is "encode the smallest set of data that creates real value for this product and channel."</p>
-        <p>Payload design also needs a hard line between what belongs in the symbol and what belongs behind the resolver. Market-specific promotions, localized instructions, or content experiments do not all need to be hard-encoded into the barcode itself. A stable identifier plus a well-governed resolver often gives more flexibility than stuffing campaign logic into the printed payload. The product remains identifiable everywhere, while the destination experience can vary by language, geography, device, or season without forcing a reprint.</p>
+        <h2>適切な 2D ペイロードの選択: データが多ければ多いほど良いデータになるとは限りません</h2>
+        <p>最も一般的な計画上の間違いの 1 つは、2D シンボルがより多くの情報を保持できるのであれば、可能な限り多くの情報を保持する必要があると想定することです。このアプローチでは、コードが大きすぎ、製品の動作に一貫性がなく、チェックアウト時に不必要に複雑になります。より良い移行の考え方は、ビジネス上の質問から始まり、その後で初めてペイロードを選択します。多くの小売プログラムでは、最低限実行可能な措置は、POS システムがすでに理解しているのと同じコア識別子を抽出できるように、GTIN を 2D キャリアで搬送することです。それを超えるものはすべてその場所を獲得する必要があります。</p>
+        <p>シリアル番号、バッチまたはロット、有効期限は、ユースケースが正当である場合に強力な追加機能となります。これらは、食品の安全性、リコールの精度、ユニットレベルのトレーサビリティ、および高度な消費者またはサービスのワークフローをサポートします。しかし、これらの利点には設計上の影響も伴います。エンコードされたデータが増えると、シンボルの密度が高まり、印刷規律が厳しくなり、店舗システムでの解析要件が増加します。したがって、ブランドは「多ければ多いほど良い」という哲学を避けるべきです。より良い標準は、「この製品とチャネルに真の価値を生み出す最小のデータセットをエンコードする」ことです。</p>
+        <p>ペイロード設計では、シンボル内に属するものとリゾルバーの背後に属するものとの間に明確な境界線も必要です。市場固有のプロモーション、ローカライズされた指示、コンテンツの実験などをすべてバーコード自体にハードエンコードする必要はありません。安定した識別子と適切に管理されたリゾルバーを使用すると、多くの場合、印刷されたペイロードにキャンペーン ロジックを詰め込むよりも柔軟性が高くなります。製品はどこにいても識別可能ですが、目的地でのエクスペリエンスは、再印刷を強制することなく、言語、地理、デバイス、または季節によって異なります。</p>
         <div class="split">
           <div class="mini-card">
-            <h3>Encode in the symbol when</h3>
+            <h3>シンボルをエンコードする場合</h3>
             <ul>
-              <li>The data is needed by scanners or business systems at the moment of capture</li>
-              <li>The value is essential for traceability, recall, or serialized service logic</li>
-              <li>The information must travel with the physical item independent of web access</li>
+              <li>データは、キャプチャの時点でスキャナーまたはビジネス システムによって必要とされます。</li>
+              <li>この値は、トレーサビリティ、リコール、またはシリアル化されたサービス ロジックに不可欠です。</li>
+              <li>情報は、Web アクセスに関係なく、物理的なアイテムとともに送信される必要があります</li>
             </ul>
           </div>
           <div class="mini-card">
-            <h3>Handle behind the resolver when</h3>
+            <h3>リゾルバの背後にあるハンドル</h3>
             <ul>
-              <li>The experience needs to change frequently without artwork updates</li>
-              <li>Content varies by market, language, or campaign</li>
-              <li>The user mostly needs information retrieval rather than encoded attributes</li>
+              <li>アートワークを更新せずにエクスペリエンスを頻繁に変更する必要がある</li>
+              <li>コンテンツは市場、言語、キャンペーンによって異なります</li>
+              <li>ユーザーは主に、エンコードされた属性ではなく情報の取得を必要とします。</li>
             </ul>
           </div>
         </div>
-        <p>That distinction keeps the barcode useful instead of bloated. It also makes organizational ownership clearer. Supply-chain teams can govern the encoded identifier model, while digital teams govern the content and services users reach after the scan.</p>
+        <p>この違いにより、バーコードは肥大化することなく有用な状態に保たれます。また、組織の所有権も明確になります。サプライチェーン チームはエンコードされた識別子モデルを管理でき、デジタル チームはスキャン後にユーザーがアクセスできるコンテンツとサービスを管理できます。</p>
       </section>
 
       <section class="section" id="comparison">
-        <h2>Technical Comparison: 1D Legacy vs. 2D Next-Gen Retail Layouts</h2>
-        <table aria-label="1D versus 2D comparison">
+        <h2>技術比較: 1D レガシーと 2D 次世代小売レイアウト</h2>
+        <table aria-label="1D と 2D の比較">
           <thead>
             <tr>
-              <th>Operational attribute</th>
-              <th>Legacy linear barcodes (UPC / EAN)</th>
-              <th>Next-gen 2D matrix codes with GS1 standards</th>
+              <th>操作属性</th>
+              <th>レガシー リニア バーコード (UPC / EAN)</th>
+              <th>GS1規格に準拠した次世代2次元マトリックスコード</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Data payload depth</td>
-              <td>Primarily a single product identifier such as GTIN</td>
-              <td>Can carry GTIN plus serial, batch, dates, and web-native Digital Link structures</td>
+              <td>データペイロードの深さ</td>
+              <td>主に GTIN などの単一の製品 ID</td>
+              <td>GTIN に加えてシリアル、バッチ、日付、および Web ネイティブのデジタル リンク構造を伝送可能</td>
             </tr>
             <tr>
-              <td>Physical footprint</td>
-              <td>Wide horizontal block with meaningful quiet-zone needs</td>
-              <td>Compact square or rectangular matrix, often more efficient for richer payloads</td>
+              <td>物理的な設置面積</td>
+              <td>有意義なクワイエットゾーンのニーズを備えた広い水平ブロック</td>
+              <td>コンパクトな正方形または長方形のマトリックス。多くの場合、より豊富なペイロードの方が効率的です。</td>
             </tr>
             <tr>
-              <td>Consumer smartphone scan</td>
-              <td>Usually not a native consumer interaction tool</td>
-              <td>QR-style 2D experience works naturally with phone cameras when QR Code is used</td>
+              <td>消費者向けスマートフォンのスキャン</td>
+              <td>通常、ネイティブの消費者対話ツールではありません</td>
+              <td>QR コードを使用すると、QR スタイルの 2D エクスペリエンスが携帯電話のカメラで自然に動作します</td>
             </tr>
             <tr>
-              <td>Point-of-sale hardware fit</td>
-              <td>Mature support on linear laser and imager systems</td>
-              <td>Requires 2D-capable imagers and software able to process GS1-compliant payloads</td>
+              <td>POS ハードウェアの適合</td>
+              <td>リニアレーザーおよびイメージャシステムの成熟したサポート</td>
+              <td>GS1 準拠のペイロードを処理できる 2D 対応のイメージャとソフトウェアが必要</td>
             </tr>
             <tr>
-              <td>Traceability depth</td>
-              <td>Often limited to product-level lookup</td>
-              <td>Supports finer-grained batch or unit-level workflows when data is encoded appropriately</td>
+              <td>トレーサビリティの深さ</td>
+              <td>多くの場合、製品レベルの検索に限定されます</td>
+              <td>データが適切にエンコードされている場合、よりきめの細かいバッチまたはユニットレベルのワークフローをサポートします。</td>
             </tr>
             <tr>
-              <td>Packaging flexibility</td>
-              <td>May require extra codes for web or campaign use cases</td>
-              <td>Can consolidate business and consumer functions into one standards-based symbol</td>
+              <td>包装の柔軟性</td>
+              <td>Web またはキャンペーンの使用例では追加のコードが必要になる場合があります</td>
+              <td>ビジネス機能と消費者機能を 1 つの標準ベースのシンボルに統合できます</td>
             </tr>
           </tbody>
         </table>
-        <p class="inline-note">Important caveat: "can" does not mean "automatically will." The business gains appear only if packaging, scanners, software parsing, resolver behavior, and content governance are all planned together.</p>
+        <p class="inline-note">重要な注意点: 「できる」は「自動的にそうする」という意味ではありません。ビジネス上の利益は、パッケージ化、スキャナー、ソフトウェア解析、リゾルバーの動作、コンテンツ ガバナンスがすべて一緒に計画されている場合にのみ現れます。</p>
       </section>
 
       <section class="section" id="packaging">
-        <h2>Packaging and Artwork Migration: Designing for a Coexistence Period</h2>
-        <p>Most migration pain shows up in packaging first. Creative teams may hear "replace UPC with QR" and assume the work is mostly visual. In reality, the artwork task is downstream of data strategy and retail readiness. Before packaging is redesigned, teams need to know which products will pilot 2D first, which retail partners can process the new symbols, whether dual-marking is required, what scan distances need to be supported, and whether the data payload will include only GTIN or richer fields such as lot, expiration, or serial.</p>
-        <p>For many brands, the first practical step is not full replacement. It is carving out intentional space for a future-ready 2D symbol while keeping the linear symbol in place during rollout. This is where the coexistence period pays off. The brand can validate print quality, lighting behavior, and checkout performance without disrupting existing retail operations. Packaging teams also gain time to standardize label zones and quiet spaces across SKUs rather than making rushed, inconsistent changes one product at a time.</p>
-        <h3>Artwork questions worth settling early</h3>
+        <h2>パッケージングとアートワークの移行: 共存期間に向けたデザイン</h2>
+        <p>移行の問題のほとんどは、最初にパッケージ化に現れます。クリエイティブ チームは、「UPC を QR に置き換える」と聞いて、作品のほとんどが視覚的なものであると考えるかもしれません。実際には、アートワークのタスクはデータ戦略と小売業の準備の下流にあります。パッケージを再設計する前に、チームはどの製品が最初に 2D を試験運用するか、どの小売パートナーが新しいシンボルを処理できるか、デュアルマーキングが必要かどうか、どのスキャン距離をサポートする必要があるか、データ ペイロードに GTIN のみが含まれるのか、それともロット、有効期限、シリアルなどのより豊富なフィールドが含まれるのかを把握する必要があります。</p>
+        <p>多くのブランドにとって、最初の実際的なステップは完全な交換ではありません。展開中に線形シンボルを所定の位置に維持しながら、将来に対応した 2D シンボル用に意図的なスペースを切り開いています。ここで共存期間が功を奏します。ブランドは、既存の小売業務を中断することなく、印刷品質、照明動作、チェックアウトのパフォーマンスを検証できます。また、パッケージング チームは、一度に製品ごとに性急で一貫性のない変更を加えるのではなく、SKU 全体でラベル ゾーンと静かなスペースを標準化する時間も得られます。</p>
+        <h3>アートワークに関する質問は早めに解決する価値があります</h3>
         <ul>
-          <li>Will the 2D symbol need to serve both checkout and smartphone engagement from day one?</li>
-          <li>Is QR Code powered by GS1 the best fit, or is Data Matrix more practical for space-constrained packaging?</li>
-          <li>Will certain channels still require a linear code in parallel for a defined period?</li>
-          <li>How will human-readable text and support copy be positioned so they do not create scan confusion?</li>
-          <li>Are multilingual or regional web experiences needed behind the resolver?</li>
+          <li>2D シンボルは、初日からチェックアウトとスマートフォンのエンゲージメントの両方に対応する必要がありますか?</li>
+          <li>GS1 を利用した QR コードが最適ですか? それとも、スペースに制約のあるパッケージングにはデータ マトリックスの方が実用的ですか?</li>
+          <li>特定のチャネルでは、定義された期間にわたってリニア コードを並行して使用する必要がありますか?</li>
+          <li>スキャン時の混乱を生じさせないように、人間が読めるテキストとサポートコピーをどのように配置するのでしょうか?</li>
+          <li>リゾルバーの背後に多言語または地域の Web エクスペリエンスが必要ですか?</li>
         </ul>
-        <p>Packaging teams should also coordinate with print engineering. A theoretically correct Digital Link payload still fails if module size, substrate, quiet zone, or contrast are wrong. That is why migration planning should connect creative, data, and production teams rather than treating the 2D symbol as a late-stage sticker addition.</p>
+        <p>パッケージング チームは印刷エンジニアリングとも連携する必要があります。理論的に正しいデジタル リンク ペイロードでも、モジュール サイズ、基板、クワイエット ゾーン、またはコントラストが間違っている場合は失敗します。そのため、移行計画では、2D シンボルを最終段階のステッカー追加として扱うのではなく、クリエイティブ、データ、制作チームを結び付ける必要があります。</p>
       </section>
 
       <section class="section" id="pos-readiness">
-        <h2>Retail Scanner and POS Readiness: Hardware Is Only Half the Story</h2>
-        <p>One of the easiest migration mistakes is assuming that a 2D-capable scanner alone solves the checkout problem. In reality, readiness requires at least three layers to align. The hardware must capture the symbol. The POS software must interpret the GS1 payload correctly. The store operating model must know what to do with the scan result, especially if extra attributes beyond GTIN are present.</p>
-        <p>Older red laser scanners are the clearest constraint because they were built for linear reflectance patterns, not 2D image grids. Those devices cannot read a QR or Data Matrix symbol in the way a 2D area imager can. But even after the hardware is upgraded, retailers still need software logic that can extract the GTIN or related identifiers from GS1-compliant 2D payloads without breaking existing price-lookup workflows. That is why GS1's migration work emphasizes both reading and processing.</p>
-        <p>Another practical issue is mixed-store reality. Chains often operate multiple generations of hardware, sometimes across franchise or regional environments. That means brand owners should not assume universal 2D acceptance just because a strategic retailer has announced support. Product teams need concrete rollout coordination, not abstract optimism.</p>
+        <h2>小売店用スキャナーと POS への対応: ハードウェアはまだ半分に過ぎません</h2>
+        <p>移行で最も起こりやすい間違いの 1 つは、2D 対応スキャナーだけでチェックアウトの問題が解決すると思い込むことです。実際には、準備を整えるには少なくとも 3 つの層が必要です。ハードウェアはシンボルをキャプチャする必要があります。 POS ソフトウェアは GS1 ペイロードを正しく解釈する必要があります。店舗運営モデルは、特に GTIN を超える追加の属性が存在する場合に、スキャン結果をどう処理するかを認識している必要があります。</p>
+        <p>古い赤色レーザー スキャナは、2D 画像グリッドではなく線形反射率パターン用に構築されているため、最も明確な制約があります。これらのデバイスは、2D エリア イメージャーのように QR またはデータ マトリックス シンボルを読み取ることができません。しかし、ハードウェアがアップグレードされた後でも、小売業者は既存の価格検索ワークフローを中断することなく、GS1 準拠の 2D ペイロードから GTIN または関連する識別子を抽出できるソフトウェア ロジックを依然として必要としています。そのため、GS1 の移行作業では読み取りと処理の両方が重視されます。</p>
+        <p>もう 1 つの実際的な問題は、混合店舗の現実です。チェーンは多くの場合、複数世代のハードウェアを運用しており、場合によってはフランチャイズ環境や地域環境全体で運用しています。つまり、ブランド所有者は、戦略的小売業者がサポートを発表したからといって、世界中で 2D が受け入れられると想定すべきではありません。製品チームには、抽象的な楽観主義ではなく、具体的な展開の調整が必要です。</p>
         <div class="split">
           <div class="mini-card">
-            <h3>Brand checklist</h3>
+            <h3>ブランドチェックリスト</h3>
             <ul>
-              <li>Confirm which retail partners are piloting or accepting 2D at POS</li>
-              <li>Understand whether dual-marking remains required</li>
-              <li>Test the exact symbol size and payload used on final packaging</li>
-              <li>Validate consumer routing and checkout extraction separately</li>
+              <li>どの小売パートナーが POS で 2D を試験運用または受け入れているかを確認する</li>
+              <li>デュアルマーキングが引き続き必要かどうかを理解する</li>
+              <li>最終的なパッケージングで使用される正確なシンボル サイズとペイロードをテストする</li>
+              <li>消費者ルーティングとチェックアウト抽出を個別に検証する</li>
             </ul>
           </div>
           <div class="mini-card">
-            <h3>Retailer checklist</h3>
+            <h3>小売業者のチェックリスト</h3>
             <ul>
-              <li>Upgrade to area imagers where needed</li>
-              <li>Update POS software to parse approved GS1 2D payloads</li>
-              <li>Train store operations on scan behavior and exception cases</li>
-              <li>Test private-label and supplier packaging before broad rollout</li>
+              <li>必要に応じてエリア イメージャーにアップグレード</li>
+              <li>承認された GS1 2D ペイロードを解析するために POS ソフトウェアを更新します</li>
+              <li>スキャン動作と例外ケースに基づいてストア操作をトレーニングします。</li>
+              <li>広範囲に展開する前にプライベートラベルとサプライヤーのパッケージをテストする</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section class="section" id="testing">
-        <h2>Testing and Exception Management Before You Touch the Full Portfolio</h2>
-        <p>Migration programs fail quietly when teams test only the happy path. A code that scans in a conference room demo can still fail on a glossy pouch under store lighting, on a curved can, at a self-checkout lane, or after a carton has been scuffed in distribution. That is why 2D planning needs a formal test matrix before any broad packaging conversion begins.</p>
-        <p>The first layer of testing is physical. Print the exact production artwork on the actual substrate with production-quality methods and validate the result under expected lighting and distance conditions. The second layer is systems testing. Verify that retailer or internal POS software extracts the expected GTIN and handles any additional attributes correctly. The third layer is digital testing. Make sure the resolver directs users to the right destination in different regions, on different devices, and after content updates.</p>
-        <p>Exception handling deserves the same rigor. Decide what should happen if a retailer scanner reads the 2D code but the POS software cannot yet process the richer payload. Decide what customer support should do if a consumer scan lands on the wrong market page because localization rules were incomplete. Decide how packaging teams will roll back if a resolver change breaks destination routing. Mature programs create these playbooks before launch so the first incident becomes a controlled drill instead of an improvised crisis.</p>
-        <h3>Recommended pilot test set</h3>
+        <h2>完全なポートフォリオに触れる前にテストと例外管理を行う</h2>
+        <p>チームが満足のいくパスのみをテストすると、移行プログラムは静かに失敗します。会議室のデモでスキャンしたコードは、店舗の照明の下で光沢のあるポーチ、湾曲した缶、セルフ レジのレーン、または配布中にカートンが傷ついた後では依然として失敗する可能性があります。そのため、2D 計画では、広範なパッケージングの変換を開始する前に正式なテスト マトリックスが必要です。</p>
+        <p>テストの最初の層は物理的なものです。生産品質の方法を使用して、実際の基材上に正確な生産アートワークを印刷し、予想される照明と距離の条件下で結果を検証します。 2 番目の層はシステム テストです。小売業者または社内 POS ソフトウェアが予想される GTIN を抽出し、追加の属性を正しく処理していることを確認します。 3 番目の層はデジタル テストです。コンテンツの更新後に、リゾルバーがユーザーをさまざまな地域、さまざまなデバイス上で正しい宛先に誘導するようにします。</p>
+        <p>例外処理にも同様の厳密さが必要です。小売店のスキャナが 2D コードを読み取っても、POS ソフトウェアがまだ豊富なペイロードを処理できない場合にどうするかを決定します。ローカリゼーション ルールが不完全であるために消費者がスキャンした結果、間違ったマーケット ページが表示された場合に、カスタマー サポートが何をすべきかを決定します。リゾルバーの変更により宛先ルーティングが中断された場合に、パッケージング チームがどのようにロールバックするかを決定します。成熟したプログラムは、開始前にこれらのプレイブックを作成するため、最初のインシデントは即席の危機ではなく、制御された訓練になります。</p>
+        <h3>推奨パイロットテストセット</h3>
         <ul>
-          <li>Multiple package materials and print methods</li>
-          <li>Handheld scanner, presentation scanner, and self-checkout scenarios</li>
-          <li>Older versus upgraded store hardware where possible</li>
-          <li>Consumer scans on iOS and Android default camera apps</li>
-          <li>Resolver behavior by country, language, and promotional state</li>
+          <li>複数のパッケージ素材と印刷方法</li>
+          <li>ハンドヘルド スキャナ、プレゼンテーション スキャナ、セルフ チェックアウトのシナリオ</li>
+          <li>可能な限り古い店舗ハードウェアとアップグレードされた店舗ハードウェア</li>
+          <li>iOS および Android のデフォルトのカメラ アプリで消費者がスキャン</li>
+          <li>国、言語、プロモーション州ごとのリゾルバーの動作</li>
         </ul>
-        <p>That test discipline may feel slower up front, but it is what prevents a pilot from becoming a packaging recall of its own.</p>
+        <p>そのテスト規律は最初は遅く感じるかもしれませんが、それがパイロットがそれ自身のパッケージングリコールになるのを防ぐものです。</p>
       </section>
 
       <section class="section" id="rfid">
-        <h2>RFID vs Barcode Logistics Efficiency: Replacement Myth vs Complementary Reality</h2>
-        <p>Whenever barcode evolution is discussed, the conversation eventually turns to RFID. That comparison is useful, but only if it is framed honestly. RFID and barcodes solve overlapping but not identical problems. RFID can be read without direct line of sight, multiple tags can be read simultaneously, and tag data can sometimes be rewritten. Those features make RFID powerful for specific logistics, inventory, and automation use cases.</p>
-        <p>Barcodes, meanwhile, remain dramatically cheaper to print, easier to deploy on consumer packaging, and already integrated into practically every retail workflow on the planet. A QR Code powered by GS1 or a GS1 DataMatrix symbol does not need a silicon tag, special radio infrastructure, or a completely different package construction. That cost and simplicity advantage is why 2D barcodes are such a strong bridge technology for the next phase of retail transformation.</p>
-        <table aria-label="RFID versus 2D barcode comparison">
+        <h2>RFID とバーコードの物流効率: 交換神話 vs 補完的な現実</h2>
+        <p>バーコードの進化が議論されると、必ず話題は RFID に移ります。この比較は役に立ちますが、それはそれが正直に構成されている場合に限られます。 RFID とバーコードは、重複する問題を解決しますが、同一ではありません。 RFID は直接視線を通さずに読み取ることができ、複数のタグを同時に読み取ることができ、場合によってはタグ データを書き換えることもできます。これらの機能により、RFID は特定の物流、在庫、自動化のユースケースに対して強力になります。</p>
+        <p>一方、バーコードは依然として印刷コストが大幅に安く、消費者向けパッケージへの展開が容易で、すでに地球上のほぼすべての小売ワークフローに統合されています。 GS1 または GS1 DataMatrix シンボルを利用した QR コードには、シリコン タグ、特別な無線インフラストラクチャ、またはまったく異なるパッケージ構造は必要ありません。このコストとシンプルさの利点が、2D バーコードが小売変革の次の段階への強力なブリッジ テクノロジーである理由です。</p>
+        <table aria-label="RFID と 2D バーコードの比較">
           <thead>
             <tr>
-              <th>Factor</th>
-              <th>2D barcodes with GS1 standards</th>
-              <th>RFID / EPC tags</th>
+              <th>要素</th>
+              <th>GS1規格の2次元バーコード</th>
+              <th>RFID/EPCタグ</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Line of sight</td>
-              <td>Usually required</td>
-              <td>Not required in many deployments</td>
+              <td>視線</td>
+              <td>通常は必須</td>
+              <td>多くの展開では必要ありません</td>
             </tr>
             <tr>
-              <td>Simultaneous reading</td>
-              <td>Typically one scan target at a time</td>
-              <td>Many tags can be read in a single pass</td>
+              <td>同時読み取り</td>
+              <td>通常、一度にスキャン対象は 1 つです</td>
+              <td>多くのタグを 1 回のパスで読み取ることができます</td>
             </tr>
             <tr>
-              <td>Unit cost on packaging</td>
-              <td>Very low printing cost</td>
-              <td>Higher due to tag and reader ecosystem</td>
+              <td>梱包単価</td>
+              <td>印刷コストが非常に低い</td>
+              <td>タグとリーダーのエコシステムにより高い</td>
             </tr>
             <tr>
-              <td>Consumer smartphone friendliness</td>
-              <td>High when QR is used</td>
-              <td>Limited and inconsistent for mainstream consumer packaging interactions</td>
+              <td>消費者のスマートフォンへのフレンドリーさ</td>
+              <td>QR使用時はHigh</td>
+              <td>主流の消費者向けパッケージングのインタラクションには制限があり、一貫性がありません</td>
             </tr>
             <tr>
-              <td>Retail POS readiness path</td>
-              <td>Aligned with Sunrise 2027 migration work</td>
-              <td>Useful in some sectors, but not the primary on-pack checkout transition path</td>
+              <td>Retail POS 準備パス</td>
+              <td>Sunrise 2027 の移行作業に合わせて</td>
+              <td>一部の分野では便利ですが、主要なオンパック チェックアウト移行パスではありません</td>
             </tr>
           </tbody>
         </table>
-        <p>The better strategic question is usually not "RFID or barcode?" but "Where does each technology create the most value?" Many organizations will continue to use barcodes on-pack for consumer and retail interoperability while using RFID deeper in the supply chain for speed and inventory visibility. Complementary design beats false either-or thinking.</p>
+        <p>より戦略的な質問は通常、「RFID ですか、バーコードですか?」ではありません。しかし、「それぞれのテクノロジーが最も価値を生み出すのはどこでしょうか?」多くの組織は、消費者と小売店の相互運用性のためにオンパックのバーコードを引き続き使用する一方、サプライチェーンのより深いところでは速度と在庫の可視性のために RFID を使用します。相補的なデザインは、誤った二者択一の考え方に打ち勝ちます。</p>
       </section>
 
       <section class="section" id="regulations">
-        <h2>Regulatory and Disclosure Horizon: Why 2D Migration Supports More Than Checkout</h2>
-        <p>One reason the 2D transition matters so much is that it aligns with a broader trend toward richer product disclosure. Regulators, marketplaces, and consumers all increasingly expect accessible information about composition, origin, safety, recyclability, and authenticity. The exact legal timelines differ by market and category, and they continue to evolve, so brands should verify jurisdiction-specific requirements before making claims. But the structural direction is clear: products need a better bridge between physical packaging and digital information.</p>
-        <p>That is where GS1 Digital Link becomes more than a scanner topic. A standards-based web identifier gives brands a flexible path to connect packaging to evolving disclosures without adding a new symbol for every new demand. Sustainability and circularity use cases are especially relevant here because they often depend on product-specific information that changes by market, language, or regulatory scheme. A dynamic resolver-backed model is far more adaptable than static packaging text alone.</p>
-        <p>It is also important to avoid overpromising. A 2D barcode does not automatically make a product compliant. The barcode is the access mechanism. The quality, accuracy, governance, and legal sufficiency of the underlying data still need process ownership. What 2D migration does is create a much stronger technical foundation for future disclosure and traceability workflows than a 1D-only package can provide.</p>
+        <h2>規制と開示の視野: 2D 移行がチェックアウト以上のものをサポートする理由</h2>
+        <p>2D への移行がそれほど重要である理由の 1 つは、これがより充実した製品開示を目指す広範な傾向と一致しているためです。規制当局、市場、消費者はいずれも、組成、原産地、安全性、リサイクル可能性、真正性に関するアクセス可能な情報をますます期待しています。正確な法的スケジュールは市場やカテゴリによって異なり、進化し続けているため、ブランドはクレームを行う前に管轄区域固有の要件を確認する必要があります。しかし、構造的な方向性は明らかです。製品には、物理​​的なパッケージングとデジタル情報の間のより良い橋渡しが必要です。</p>
+        <p>ここで、GS1 Digital Link は単なるスキャナーのトピックではなくなります。標準ベースの Web 識別子により、新しい需要のたびに新しいシンボルを追加することなく、パッケージングを進化する開示に結び付ける柔軟なパスがブランドに提供されます。持続可能性と循環性のユースケースは、市場、言語、または規制スキームによって変化する製品固有の情報に依存することが多いため、ここでは特に関連性があります。動的リゾルバーを利用したモデルは、静的なパッケージ化テキストのみよりもはるかに適応性が高くなります。</p>
+        <p>過度な約束を避けることも重要です。 2D バーコードによって、製品が自動的に準拠するわけではありません。バーコードはアクセスメカニズムです。基盤となるデータの品質、正確さ、ガバナンス、および法的十分性を確保するには、依然としてプロセスの所有権が必要です。 2D 移行によって実現されるのは、1D のみのパッケージが提供できるものよりも、将来の開示およびトレーサビリティのワークフローのためのより強力な技術基盤を作成することです。</p>
       </section>
 
       <section class="section" id="governance">
-        <h2>Resolver Governance and Content Operations: The Hidden Work After the Scan</h2>
-        <p>Once a 2D code points to a GS1 Digital Link URI, the printed symbol is only half the system. The other half is the resolver and content operation that sits behind it. This is where many organizations underestimate the work. They approve the barcode layout, but they do not assign ownership for destination rules, uptime expectations, localization, retirement policies, analytics boundaries, or emergency changes. The result is a technically correct barcode that leads into a poorly governed experience.</p>
-        <p>A practical governance model answers five questions. First, who owns the resolver domain and certificate lifecycle? Second, who approves destination logic when a scan might need to route differently by market or audience? Third, what uptime and monitoring standard applies to the digital endpoint? Fourth, how are content changes audited so that consumer and partner experiences can be traced over time? Fifth, what fallback behavior should occur if the preferred destination is unavailable?</p>
+        <h2>リゾルバーのガバナンスとコンテンツ操作: スキャン後の隠された作業</h2>
+        <p>2D コードが GS1 デジタル リンク URI を指すと、印刷されたシンボルはシステムの半分だけになります。残りの半分はリゾルバーとその背後にあるコンテンツ操作です。多くの組織がこの作業を過小評価しているのはこの点です。彼らはバーコード レイアウトを承認しますが、宛先ルール、稼働時間の期待、ローカリゼーション、廃止ポリシー、分析境界、または緊急の変更に対する所有権を割り当てません。その結果、技術的に正しいバーコードが作成され、エクスペリエンスの管理が不十分になります。</p>
+        <p>実践的なガバナンス モデルは 5 つの質問に答えます。まず、リゾルバー ドメインと証明書のライフサイクルは誰が所有するのでしょうか?次に、市場や対象者によってスキャンのルーティングが異なる場合、宛先ロジックを誰が承認するのでしょうか?第三に、デジタル エンドポイントにはどのような稼働時間と監視基準が適用されますか? 4 番目に、消費者とパートナーのエクスペリエンスを長期にわたって追跡できるように、コンテンツの変更はどのように監査されるのでしょうか?第 5 に、優先宛先が利用できない場合、どのようなフォールバック動作が発生する必要がありますか?</p>
         <p>These questions matter because the value proposition of Digital Link is precisely that the post-scan experience can change without reprinting packaging. That flexibility is powerful, but it also introduces operational responsibility. If a marketing team can change a destination instantly, there should be guardrails preventing them from accidentally breaking product-support content or redirecting a regulated information flow inappropriately. If a retailer or third-party app relies on the identifier for lookup, the resolver strategy should respect that ecosystem rather than assuming the scan is only for consumers.</p>
-        <p>The best organizations therefore treat resolver management like a real production service. They monitor latency, track broken destinations, document routing rules, version content changes, and separate routine campaign edits from high-risk compliance content. That discipline turns 2D migration from a packaging project into a reliable information architecture.</p>
+        <p>したがって、優れた組織は、リゾルバー管理を実際の運用サービスと同様に扱います。これらは、遅延を監視し、壊れた宛先を追跡し、ルーティング ルールを文書化し、コンテンツの変更をバージョンアップし、日常的なキャンペーン編集をリスクの高いコンプライアンス コンテンツから分離します。この規律により、パッケージング プロジェクトから 2D への移行が信頼性の高い情報アーキテクチャに変わります。</p>
       </section>
 
       <section class="section" id="roadmap">
-        <h2>Migration Roadmap: How to Prepare Between Now and the End of 2027</h2>
-        <p>The best migration plans move in stages. They do not attempt a portfolio-wide packaging redesign before the data, retail, and operations teams know what they are aiming for. A phased program also mirrors GS1's own guidance that not every advanced 2D capability must be live by the end of 2027 for progress to be meaningful.</p>
+        <h2>移行ロードマップ: 現在から 2027 年末までにどのように準備するか</h2>
+        <p>最適な移行計画は段階的に進められます。データ、小売、運用チームが何を目指しているかを理解する前に、ポートフォリオ全体のパッケージの再設計を試みることはありません。段階的プログラムは、進歩が意味のあるものになるためには、2027 年末までにすべての高度な 2D 機能が稼働する必要はないという GS1 独自のガイダンスも反映しています。</p>
         <div class="timeline">
           <div class="step-card">
-            <h3>Crawl</h3>
-            <p>Choose pilot SKUs, define the minimum payload, reserve artwork space, and test QR Code powered by GS1 or Data Matrix options with internal scanners and smartphones.</p>
+            <h3>クロール</h3>
+            <p>パイロット SKU を選択し、最小ペイロードを定義し、アートワーク スペースを予約し、内部スキャナーとスマートフォンを使用して GS1 またはデータ マトリックス オプションを利用した QR コードをテストします。</p>
           </div>
           <div class="step-card">
-            <h3>Walk</h3>
-            <p>Coordinate with retail partners, validate POS parsing behavior, add operational data such as batch or expiry where useful, and formalize resolver governance.</p>
+            <h3>歩く</h3>
+            <p>小売パートナーと調整し、POS 解析動作を検証し、必要に応じてバッチや有効期限などの運用データを追加し、リゾルバー ガバナンスを形式化します。</p>
           </div>
           <div class="step-card">
-            <h3>Run</h3>
-            <p>Scale across product lines, unify consumer and supply-chain journeys, and connect the symbol to broader traceability, recall, and disclosure programs.</p>
+            <h3>走る</h3>
+            <p>製品ライン全体に拡張し、消費者とサプライチェーンのプロセスを統合し、シンボルをより広範なトレーサビリティ、リコール、開示プログラムに結び付けます。</p>
           </div>
         </div>
-        <h3>Practical implementation order</h3>
+        <h3>実際の実装順序</h3>
         <ol>
-          <li>Inventory your current package codes: linear POS codes, marketing QR codes, warehouse labels, and any separate digital identifiers.</li>
-          <li>Decide which 2D carrier fits the use case: QR for broad consumer engagement, Data Matrix for constrained industrial or packaging contexts, or a mixed strategy by product category.</li>
-          <li>Define the minimum viable payload. Start with GTIN, then add qualifiers or attributes only when there is a clear business reason.</li>
-          <li>Stand up a resolver or destination strategy so digital experiences can be updated without changing the printed code.</li>
-          <li>Test on real packaging under real lighting, print, and checkout conditions.</li>
-          <li>Roll out by retailer, product family, or private-label segment rather than assuming global uniformity.</li>
+          <li>現在のパッケージ コードの一覧を作成します: リニア POS コード、マーケティング QR コード、倉庫ラベル、および個別のデジタル識別子。</li>
+          <li>どの 2D キャリアがユースケースに適合するかを決定します。広範な消費者エンゲージメント向けの QR、制約のある産業またはパッケージングのコンテキスト向けのデータ マトリックス、または製品カテゴリごとの混合戦略です。</li>
+          <li>実行可能な最小ペイロードを定義します。 GTIN から始めて、明確なビジネス上の理由がある場合にのみ修飾子または属性を追加します。</li>
+          <li>リゾルバーまたは宛先戦略を立てて、印刷されたコードを変更せずにデジタル エクスペリエンスを更新できるようにします。</li>
+          <li>実際の照明、印刷、チェックアウト条件下で実際のパッケージをテストします。</li>
+          <li>世界的な均一性を前提とするのではなく、小売業者、製品ファミリー、またはプライベート ラベルのセグメントごとに展開します。</li>
         </ol>
         <p>The teams that move earliest are not necessarily the ones that redesign every pack first. They are the ones that create clean data governance, resolver strategy, and testing discipline first, because those foundations let packaging scale later without rework.</p>
       </section>
 
       <section class="faq" id="faq">
-        <h2>Frequently Asked Questions Regarding the Transition</h2>
-        <details open>
-          <summary>Will legacy linear UPC codes stop working at store checkouts immediately?</summary>
-          <p>No. The retail transition is phased. GS1's Sunrise 2027 framing is about readiness by the end of 2027, and many products will still use hybrid or dual-marking approaches while retailers complete scanner and software upgrades.</p>
+        <h2>移行に関するよくある質問</h2>
+        <details open="">
+          <summary>従来の線形 UPC コードは店舗のレジですぐに機能しなくなりますか?</summary>
+          <p>いいえ。小売業への移行は段階的に行われます。 GS1 の Sunrise 2027 フレームワークは 2027 年末までに準備が整っており、小売業者がスキャナーとソフトウェアのアップグレードを完了する間、多くの製品は依然としてハイブリッドまたはデュアルマーキングのアプローチを使用する予定です。</p>
         </details>
         <details>
-          <summary>Do we need to update packaging designs now to prepare for the transition?</summary>
-          <p>In most cases, yes. Even if you are not replacing the linear symbol immediately, packaging templates should begin reserving intentional space for a 2D symbol, supporting quiet zones, and clear human-readable context.</p>
+          <summary>移行に備えて今すぐパッケージデザインを更新する必要がありますか?</summary>
+          <p>ほとんどの場合、そうです。線形シンボルをすぐに置き換えない場合でも、パッケージ化テンプレートでは、2D シンボル用に意図的なスペースを確保し、クワイエット ゾーンをサポートし、人間が判読できる明確なコンテキストを開始する必要があります。</p>
         </details>
         <details>
-          <summary>Can standard retail scanners process a 2D matrix?</summary>
-          <p>Older red laser scanners cannot. Retailers need 2D-capable area imagers plus software that can process the approved GS1 payload correctly at POS.</p>
+          <summary>標準的な小売店のスキャナは 2D マトリックスを処理できますか?</summary>
+          <p>古い赤色レーザー スキャナではできません。小売業者には、2D 対応のエリア イメージャと、承認された GS1 ペイロードを POS で正しく処理できるソフトウェアが必要です。</p>
         </details>
         <details>
-          <summary>What is a GS1 Digital Link in plain English?</summary>
-          <p>It is a standards-based web URI that expresses GS1 identifiers in a format that can be encoded in a barcode and also connected to online information or services. It links product identity and web experiences instead of treating them as separate worlds.</p>
+          <summary>GS1 デジタル リンクとは簡単に言うと何ですか?</summary>
+          <p>これは、バーコードでエンコードでき、オンライン情報やサービスに接続できる形式で GS1 識別子を表現する、標準ベースの Web URI です。製品アイデンティティと Web エクスペリエンスを別個の世界として扱うのではなく、それらを結び付けます。</p>
         </details>
         <details>
-          <summary>Should we choose QR Code or Data Matrix for retail packaging?</summary>
-          <p>For broad consumer engagement, QR Code powered by GS1 is often the easier choice because smartphone cameras already understand QR well. Data Matrix remains strong for compact or industrial contexts. The right choice depends on scan audience, size constraints, and retail readiness.</p>
+          <summary>小売パッケージには QR コードとデータ マトリックスのどちらを選択すべきでしょうか?</summary>
+          <p>スマートフォンのカメラは既に QR を十分に理解しているため、幅広い消費者エンゲージメントを実現するには、GS1 を利用した QR コードの方が簡単な選択となることがよくあります。 Data Matrix は、コンパクトまたは産業のコンテキストに対して引き続き強力です。正しい選択は、スキャン対象者、サイズの制約、および小売の準備状況によって異なります。</p>
         </details>
         <details>
-          <summary>Will RFID replace 2D barcodes in retail logistics?</summary>
-          <p>Not wholesale. RFID adds important capabilities such as no-line-of-sight and bulk reading, but 2D barcodes remain lower cost, easier to print on-pack, and central to the current retail POS transition. Many organizations will use both where each fits best.</p>
+          <summary>小売物流において RFID は 2D バーコードに取って代わるのでしょうか?</summary>
+          <p>卸売ではありません。 RFID は、見通し線なしや一括読み取りなどの重要な機能を追加しますが、2D バーコードは依然として低コストであり、パッケージへの印刷が容易であり、現在の小売 POS 移行の中心となります。多くの組織は、それぞれが最適な場合には両方を使用します。</p>
         </details>
       </section>
 
       <section class="summary" id="summary">
-        <h2>Summary: Treat 2027 as the Readiness Horizon, Not the First Day of Planning</h2>
-        <p>The global 2D shift is not just about replacing one graphic with another. It is about turning product identification into a richer, standards-based interface between supply chains, retailers, regulators, and consumers. GS1 Sunrise 2027 provides the timeline pressure. GS1 Digital Link provides the architectural bridge. Packaging, scanner readiness, data governance, and resolver strategy provide the execution reality.</p>
-        <p>If you are planning now, the smart next move is not a rushed all-SKU redesign. It is a controlled pilot: choose a representative product, build the minimum viable Digital Link payload, test it across packaging and retail conditions, and confirm how your content and data teams will govern what happens after the scan. That is how brands turn a looming industry transition into an advantage.</p>
+        <h2>概要: 2027 年を計画の初日ではなく準備期間として扱う</h2>
+        <p>世界的な 2D シフトは、単にあるグラフィックを別のグラフィックに置き換えるだけではありません。それは、製品識別を、サプライチェーン、小売業者、規制当局、消費者間の、より充実した標準ベースのインターフェースに変えることです。 GS1 Sunrise 2027 はタイムラインにプレッシャーを与えます。 GS1 Digital Link はアーキテクチャ上のブリッジを提供します。パッケージング、スキャナーの準備、データ ガバナンス、およびリゾルバー戦略により、実行の現実性が実現します。</p>
+        <p>今計画を立てている場合、賢明な次の行動は、急いですべての SKU を再設計することではありません。これは制御されたパイロットです。代表的な製品を選択し、実行可能な最小限のデジタル リンク ペイロードを構築し、パッケージングおよび小売条件全体でテストし、コンテンツ チームとデータ チームがスキャン後に何が起こるかをどのように管理するかを確認します。これが、ブランドが迫り来る業界の変革をアドバンテージに変える方法です。</p>
         <div class="action-links">
-          <a href="/future/">Back to future logistics hub</a>
-          <a href="/2d-barcode-generator.html">Try the 2D barcode generator</a>
-          <a href="/data-matrix-barcode-generator.html">Test Data Matrix generation</a>
-          <a href="/compliance/industry-barcode-standards-guide/">Retail compliance guide</a>
+          <a href="/future/">バック・トゥ・フューチャーの物流拠点</a>
+          <a href="/2d-barcode-generator.html">2D バーコードジェネレーターを試してみる</a>
+          <a href="/data-matrix-barcode-generator.html">テストデータマトリックスの生成</a>
+          <a href="/compliance/industry-barcode-standards-guide/">小売業のコンプライアンス ガイド</a>
         </div>
       </section>
     </article>
@@ -759,11 +969,11 @@ domain                   GTIN        serial      batch     expiry</code></pre>
     "description": "Prepare your brand for the 2D barcode transition. Understand GS1 Digital Link, QR and Data Matrix options, packaging impacts, and retail scanner readiness.",
     "author": {
       "@type": "Organization",
-      "name": "Barcode Generators"
+      "name": "バーコード作成 プロ"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Barcode Generators"
+      "name": "バーコード作成 プロ"
     },
     "dateModified": "2026-05-31"
   }
@@ -825,5 +1035,53 @@ domain                   GTIN        serial      batch     expiry</code></pre>
     ]
   }
   </script>
-</body>
-</html>
+
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

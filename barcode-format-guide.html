@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barcode Format Guide: PNG vs SVG vs PDF — Which to Use? (2026)</title>
-  <meta name="description" content="Complete barcode format guide. Learn when to use PNG, SVG, or PDF for your barcode, minimum DPI requirements, file size considerations, and how to avoid common format mistakes.">
+  <title>バーコード形式ガイド: PNG、SVG、PDF — どれを使用するか? (2026年)</title>
+  <meta name="description" content="完全なバーコード形式ガイド。バーコードに PNG、SVG、または PDF をいつ使用するか、最小 DPI 要件、ファイル サイズの考慮事項、よくある形式の間違いを回避する方法について説明します。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://barcode-generators.com/barcode-format-guide.html">
-  <meta property="og:title" content="Barcode Format Guide: PNG vs SVG vs PDF — Which to Use?">
-  <meta property="og:description" content="Learn when to use PNG, SVG, or PDF for your barcode, minimum DPI requirements, and how to avoid common format mistakes.">
+  <meta property="og:title" content="バーコード形式ガイド: PNG、SVG、PDF — どれを使用するか?">
+  <meta property="og:description" content="バーコードに PNG、SVG、PDF をいつ使用するか、DPI の最小要件、よくある形式の間違いを回避する方法について説明します。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://barcode-generators.com/barcode-format-guide.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
   <style>
     :root{--primary:#1a3c5e;--accent:#0e7c5b;--accent-light:#e6f7f2;--bg:#f9fafb;--surface:#fff;--text:#1a202c;--muted:#5a6a7e;--border:#e2e8f0;--radius:10px}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -71,146 +69,405 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Barcode Format Guide: PNG vs SVG vs PDF","description":"Learn which file format to use for your barcode — PNG for digital, SVG for professional print, PDF for direct printing — plus DPI requirements and common format mistakes to avoid.","author":{"@type":"Organization","name":"Barcode Generators"},"publisher":{"@type":"Organization","name":"Barcode Generators","url":"https://barcode-generators.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://barcode-generators.com/barcode-format-guide.html"},"dateModified":"2026-05-31"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best file format for a barcode?","acceptedAnswer":{"@type":"Answer","text":"SVG is the best format for professional print because it is a vector format that scales to any size without pixelation. PNG at 300 DPI or higher is the best choice for digital use, documents, and web display. PDF is convenient for direct printing workflows."}},{"@type":"Question","name":"What DPI do I need for a barcode?","acceptedAnswer":{"@type":"Answer","text":"A minimum of 300 DPI is required for reliable barcode scanning from printed labels. For very small barcodes with narrow bars such as compact Code 128, 600 DPI is recommended. Never use a barcode image at less than 200 DPI for print."}},{"@type":"Question","name":"Can I use a JPEG barcode for printing?","acceptedAnswer":{"@type":"Answer","text":"No. JPEG uses lossy compression that blurs the sharp edges of barcode bars, creating artefacts that cause scan failures. Always use SVG, PNG, or PDF for barcodes. Never use JPEG."}}]}</script>
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
+
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
-<body>
-<header>
-  <span class="logo">Barcode Generators</span>
-  <nav><a href="/barcode-generator.html">Generator</a><a href="/barcode-types.html">Barcode Types</a><a href="/barcode-size-guide.html">Size Guide</a></nav>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
 </header>
 
+
+<header>
+  <span class="logo">バーコード作成 プロ</span>
+  <nav><a href="/barcode-generator.html">ジェネレータ</a><a href="/barcode-types.html">バーコードの種類</a><a href="/barcode-size-guide.html">サイズガイド</a></nav>
+
+        <nav class="top-nav" style="margin-top:1rem;">
+            <div class="nav-item">
+                <span>形式別 ▾</span>
+                <div class="dropdown">
+                    <a href="/ean-13-barcode-generator.html">1月13日</a>
+                    <a href="/qr-code-generator.html">QRコード</a>
+                    <a href="/code-128-barcode-generator.html">コード128</a>
+                    <a href="/upc-a-barcode-generator.html">UPC-A</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>用途別 ▾</span>
+                <div class="dropdown">
+                    <a href="/product-barcode-generator.html">商品</a>
+                    <a href="/inventory-barcode-generator.html">在庫管理</a>
+                    <a href="/shipping-barcode-generator.html">配送</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>出力形式 ▾</span>
+                <div class="dropdown">
+                    <a href="/barcode-generator-png.html">PNG</a>
+                    <a href="/barcode-generator-svg.html">SVG</a>
+                    <a href="/barcode-generator-pdf.html">PDF</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/barcode-generator-guide.html" style="text-decoration:none; color:inherit;">ガイド</a>
+            </div>
+        </nav>
+
+    </header>
+
 <div class="hero">
-  <p class="eyebrow">Barcode Format Guide</p>
-  <h1>PNG vs SVG vs PDF: Which Barcode Format Should You Use?</h1>
-  <p>Choose the wrong file format and your barcode will fail to scan when printed. This guide explains exactly which format to use for every situation — packaging, labels, web, documents, and more.</p>
-  <a href="/barcode-generator.html" class="cta">Generate a Barcode Free &rarr;</a>
+  <p class="eyebrow">バーコードフォーマットガイド</p>
+  <h1>PNG、SVG、PDF: どのバーコード形式を使用する必要がありますか?</h1>
+  <p>間違ったファイル形式を選択すると、バーコードを印刷するときにスキャンできなくなります。このガイドでは、パッケージ、ラベル、Web、ドキュメントなど、あらゆる状況でどの形式を使用するべきかを正確に説明します。</p>
+  <a href="/barcode-generator.html" class="cta">無料でバーコードを生成 →</a>
 </div>
 
 <div class="container">
-  <div class="breadcrumb"><a href="/">Home</a> &rsaquo; Barcode Format Guide</div>
+  <div class="breadcrumb"><a href="/">家</a> › バーコード形式ガイド</div>
   <div class="toc">
-    <h2>In this guide</h2>
+    <h2>このガイドでは</h2>
     <ol>
-      <li><a href="#formats">The three barcode file formats: SVG, PNG, PDF</a></li>
-      <li><a href="#svg">SVG barcodes — professional print</a></li>
-      <li><a href="#png">PNG barcodes — digital and documents</a></li>
-      <li><a href="#pdf">PDF barcodes — direct printing</a></li>
-      <li><a href="#never-jpeg">Why you should never use JPEG</a></li>
-      <li><a href="#dpi">DPI requirements for barcode printing</a></li>
-      <li><a href="#by-use-case">Format by use case: quick reference</a></li>
-      <li><a href="#faq">Frequently asked questions</a></li>
+      <li><a href="#formats">3 つのバーコード ファイル形式: SVG、PNG、PDF</a></li>
+      <li><a href="#svg">SVG バーコード — プロフェッショナルな印刷物</a></li>
+      <li><a href="#png">PNG バーコード — デジタルおよびドキュメント</a></li>
+      <li><a href="#pdf">PDF バーコード — 直接印刷</a></li>
+      <li><a href="#never-jpeg">JPEGを決して使用してはいけない理由</a></li>
+      <li><a href="#dpi">バーコード印刷の DPI 要件</a></li>
+      <li><a href="#by-use-case">ユースケース別の形式: クイックリファレンス</a></li>
+      <li><a href="#faq">よくある質問</a></li>
     </ol>
   </div>
 
   <article>
-    <p>Generating a technically correct barcode is only half the job. If you download it in the wrong file format or at insufficient resolution, the printed result will be blurry, pixelated, or compressed — and the barcode will fail to scan. This guide explains the differences between SVG, PNG, and PDF barcode formats and tells you exactly which to use for your situation.</p>
+    <p>技術的に正しいバーコードを生成することは、仕事の半分に過ぎません。間違ったファイル形式でダウンロードしたり、解像度が不十分であったりすると、印刷結果がぼやけたり、ピクセル化されたり、圧縮されたりして、バーコードのスキャンに失敗します。このガイドでは、SVG、PNG、PDF バーコード形式の違いについて説明し、状況に応じてどれを使用するかを正確に示します。</p>
 
-    <h2 id="formats">The three barcode file formats: SVG, PNG, PDF</h2>
+    <h2 id="formats">3 つのバーコード ファイル形式: SVG、PNG、PDF</h2>
     <div class="format-grid">
       <div class="format-card svg">
         <span class="format-label">SVG</span>
-        <h3>Scalable Vector Graphics</h3>
-        <p>Mathematical description of shapes. Infinitely scalable — perfect at any size from a 1cm label to a billboard.</p>
-        <span class="pro">&#10003; Best for print</span>
-        <span class="pro">&#10003; No quality loss at any size</span>
-        <span class="pro">&#10003; Smallest file size</span>
-        <span class="con">&#10007; Not supported by all apps</span>
+        <h3>スケーラブルなベクター グラフィックス</h3>
+        <p>形状の数学的記述。無限に拡張可能 — 1cm のラベルから看板まで、あらゆるサイズに最適です。</p>
+        <span class="pro">✓ 印刷に最適</span>
+        <span class="pro">✓ どのようなサイズでも品質の低下はありません</span>
+        <span class="pro">✓ 最小のファイルサイズ</span>
+        <span class="con">✗ すべてのアプリでサポートされているわけではありません</span>
       </div>
       <div class="format-card png">
         <span class="format-label">PNG</span>
-        <h3>Portable Network Graphics</h3>
-        <p>Pixel-based image with lossless compression. Quality depends on the resolution it was generated at.</p>
-        <span class="pro">&#10003; Universal compatibility</span>
-        <span class="pro">&#10003; Lossless — no compression artefacts</span>
-        <span class="pro">&#10003; Supports transparency</span>
-        <span class="con">&#10007; Pixelates if scaled up</span>
+        <h3>ポータブルネットワークグラフィックス</h3>
+        <p>可逆圧縮によるピクセルベースの画像。品質は生成された解像度によって異なります。</p>
+        <span class="pro">✓ ユニバーサルな互換性</span>
+        <span class="pro">✓ ロスレス — 圧縮アーティファクトなし</span>
+        <span class="pro">✓ 透明性をサポート</span>
+        <span class="con">✗ 拡大するとピクセル化する</span>
       </div>
       <div class="format-card pdf-card">
         <span class="format-label">PDF</span>
-        <h3>Portable Document Format</h3>
-        <p>Print-ready document format. May contain vector or raster barcode depending on the generator.</p>
-        <span class="pro">&#10003; Ready to print directly</span>
-        <span class="pro">&#10003; Preserves exact dimensions</span>
-        <span class="con">&#10007; Harder to embed in other designs</span>
-        <span class="con">&#10007; Quality depends on source</span>
+        <h3>ポータブルドキュメントフォーマット</h3>
+        <p>印刷可能なドキュメント形式。ジェネレーターによっては、ベクターまたはラスター バーコードが含まれる場合があります。</p>
+        <span class="pro">✓ 直接印刷する準備ができています</span>
+        <span class="pro">✓ 正確な寸法を維持</span>
+        <span class="con">✗ 他のデザインに埋め込むのが難しい</span>
+        <span class="con">✗ 品質はソースに依存します</span>
       </div>
     </div>
 
-    <h2 id="svg">SVG barcodes — the best choice for professional print</h2>
-    <p>SVG (Scalable Vector Graphics) is a vector format, which means the barcode is described as mathematical shapes rather than pixels. A vector barcode has perfectly sharp, clean edges at any size — whether you print it at 2cm on a label or 2 metres on a banner. There is no pixelation, no blurring, no artefacts.</p>
-    <p>SVG is the correct choice for product packaging artwork supplied to a printer or packaging manufacturer, label design files used in Adobe Illustrator, Affinity Designer, or InDesign, any situation where the barcode may be scaled to different sizes, and retail packaging where GS1 print quality standards must be met.</p>
-    <div class="callout"><strong>Industry recommendation:</strong> Always supply SVG barcodes to packaging designers, label manufacturers, and print houses. A vector file guarantees the barcode remains crisp regardless of how it is reproduced.</div>
-    <h3>How to use an SVG barcode in design software</h3>
-    <p>All professional design tools support SVG. In Adobe Illustrator, use File &rarr; Place and select your SVG file. In Affinity Designer, drag and drop the SVG directly onto your canvas. In Canva, upload the SVG as a custom element. The barcode will be fully scalable and editable as a vector object.</p>
-    <h3>SVG barcodes on the web</h3>
-    <p>SVG barcodes can also be embedded directly in HTML pages using an img tag or inline SVG code. They render sharply on all screen densities including retina and high-DPI displays, and their file sizes are typically smaller than equivalent PNG files.</p>
+    <h2 id="svg">SVG バーコード — プロフェッショナルな印刷に最適な選択肢</h2>
+    <p>SVG (Scalable Vector Graphics) はベクトル形式であり、バーコードがピクセルではなく数学的形状として記述されることを意味します。ベクター バーコードは、ラベルに 2 cm で印刷する場合でも、バナーに 2 メートルで印刷する場合でも、どのサイズでも完全にシャープでクリーンなエッジを備えています。ピクセル化、ぼやけ、アーティファクトはありません。</p>
+    <p>SVG は、プリンターや包装メーカーに提供される製品パッケージのアートワーク、Adobe Illustrator、Affinity Designer、または InDesign で使用されるラベル デザイン ファイル、バーコードをさまざまなサイズに拡大縮小できる状況、および GS1 印刷品質基準を満たす必要がある小売パッケージには正しい選択です。</p>
+    <div class="callout"><strong>業界の推奨事項:</strong> 常に SVG バーコードをパッケージ デザイナー、ラベル メーカー、印刷会社に提供してください。ベクター ファイルでは、どのように再現されたとしてもバーコードが鮮明なままであることが保証されます。</div>
+    <h3>デザイン ソフトウェアで SVG バーコードを使用する方法</h3>
+    <p>すべてのプロフェッショナルなデザイン ツールは SVG をサポートしています。 Adobe Illustrator で、「ファイル」→「配置」を使用して SVG ファイルを選択します。 Affinity Designer で、SVG をキャンバスに直接ドラッグ アンド ドロップします。 Canva で、SVG をカスタム要素としてアップロードします。バーコードは完全にスケーラブルで、ベクトル オブジェクトとして編集可能です。</p>
+    <h3>Web 上の SVG バーコード</h3>
+    <p>SVG バーコードは、img タグまたはインライン SVG コードを使用して HTML ページに直接埋め込むこともできます。 Retina ディスプレイや高 DPI ディスプレイを含むすべての画面密度で鮮明にレンダリングされ、ファイル サイズは通常、同等の PNG ファイルよりも小さくなります。</p>
 
-    <h2 id="png">PNG barcodes — best for digital use and documents</h2>
-    <p>PNG (Portable Network Graphics) is a raster format — the image is made of pixels arranged in a grid. PNG uses lossless compression, meaning no image data is discarded when the file is saved, unlike JPEG. This makes PNG safe for barcodes as long as the image is generated at sufficient resolution.</p>
-    <p>PNG is the right choice for embedding barcodes in Word documents, Excel spreadsheets, and Google Docs, adding barcodes to emails and presentations, displaying barcodes on websites and apps, and barcode images that will be used at a fixed, known size.</p>
-    <h3>PNG resolution requirements</h3>
-    <p>The quality of a PNG barcode depends entirely on the resolution it was generated at. The minimum safe resolution for printing is <strong>300 DPI</strong>. At this resolution, a UPC-A barcode at 100% GS1 nominal size (37.29mm x 25.91mm) should be at least 440 x 306 pixels. For Code 128 or other high-density barcodes with narrow bars, generate at 600 DPI to ensure bar edges are crisp.</p>
-    <div class="warn"><strong>Never scale up a PNG barcode.</strong> If you generated a barcode at 150 DPI and then enlarge it in Word or Photoshop, the image becomes pixelated. The bars soften, lose their sharp edges, and the barcode will fail to scan. Always generate the PNG at the resolution you need from the start, or use SVG instead.</div>
+    <h2 id="png">PNG バーコード — デジタル使用およびドキュメントに最適</h2>
+    <p>PNG (Portable Network Graphics) はラスター形式で、画像はグリッド状に配置されたピクセルで構成されます。 PNG は可逆圧縮を使用します。つまり、JPEG とは異なり、ファイルの保存時に画像データが破棄されません。これにより、画像が十分な解像度で生成されている限り、PNG はバーコードに対して安全になります。</p>
+    <p>Word 文書、Excel スプレッドシート、Google ドキュメントへのバーコードの埋め込み、電子メールやプレゼンテーションへのバーコードの追加、Web サイトやアプリでのバーコードの表示、固定の既知のサイズで使用されるバーコード イメージには、PNG が最適です。</p>
+    <h3>PNG 解像度の要件</h3>
+    <p>PNG バーコードの品質は、生成された解像度に完全に依存します。印刷に安全な最小解像度は次のとおりです。 <strong>300 DPI</strong>。この解像度では、100% GS1 公称サイズ (37.29mm x 25.91mm) の UPC-A バーコードは少なくとも 440 x 306 ピクセルでなければなりません。 Code 128 または細いバーを含むその他の高密度バーコードの場合は、バーのエッジが鮮明になるように 600 DPI で生成します。</p>
+    <div class="warn"><strong>PNG バーコードを拡大しないでください。</strong> 150 DPI でバーコードを生成し、それを Word または Photoshop で拡大すると、画像がピクセル化されます。バーが柔らかくなり、鋭いエッジが失われ、バーコードのスキャンが失敗します。常に最初から必要な解像度で PNG を生成するか、代わりに SVG を使用してください。</div>
 
-    <h2 id="pdf">PDF barcodes — best for direct printing</h2>
-    <p>A PDF barcode file is a print-ready document containing your barcode at a defined physical size. PDF is the most convenient format when you want to print barcodes directly from your computer without needing to import them into a design application. Simply open the PDF and print at 100% scale — no resizing, no scaling, exact dimensions guaranteed.</p>
-    <p>PDF barcodes are useful for quick single-use printing without a design tool, sending barcodes to non-designers who need to print them immediately, and workflows that require a fixed-size print-ready file. A vector PDF (where the barcode is described as paths, not pixels) is equivalent in quality to SVG. Our barcode generator outputs vector PDFs for all 1D barcode types.</p>
+    <h2 id="pdf">PDF バーコード — 直接印刷に最適</h2>
+    <p>PDF バーコード ファイルは、定義された物理サイズでバーコードを含む印刷可能なドキュメントです。 PDF は、バーコードをデザイン アプリケーションにインポートすることなく、コンピューターから直接印刷する場合に最も便利な形式です。 PDF を開いて 100% の倍率で印刷するだけです。サイズ変更や拡大縮小は不要で、正確な寸法が保証されます。</p>
+    <p>PDF バーコードは、デザイン ツールを使用せずに簡単に使い捨てで印刷したり、すぐに印刷する必要があるデザイナー以外の人にバーコードを送信したり、固定サイズの印刷可能なファイルを必要とするワークフローに役立ちます。ベクター PDF (バーコードがピクセルではなくパスとして記述される) は、品質において SVG と同等です。当社のバーコード ジェネレーターは、すべての 1D バーコード タイプのベクター PDF を出力します。</p>
 
-    <h2 id="never-jpeg">Why you should never use JPEG for barcodes</h2>
-    <p>JPEG is a lossy compression format — it deliberately discards image data to reduce file size. This compression process introduces artefacts along high-contrast edges, which is exactly what barcode bars are. The sharp boundary between a black bar and a white space becomes blurred and smeared by JPEG compression, making bar widths inaccurate. A barcode scanner reads bar widths to decode data, so blurred edges mean incorrect decoding or outright scan failure.</p>
-    <p>Never use JPEG for barcodes under any circumstances. Always use SVG, PNG, or PDF. If someone sends you a JPEG barcode, reject it and request a PNG or SVG replacement.</p>
+    <h2 id="never-jpeg">バーコードに JPEG を決して使用してはいけない理由</h2>
+    <p>JPEG は非可逆圧縮形式であり、ファイル サイズを削減するために画像データを意図的に破棄します。この圧縮プロセスにより、高コントラストのエッジに沿ってアーティファクトが生じますが、これがまさにバーコード バーです。 JPEG 圧縮により、黒いバーと白いスペースの間の明確な境界がぼやけて不鮮明になり、バーの幅が不正確になります。バーコード スキャナはバーの幅を読み取ってデータをデコードするため、エッジがぼやけてしまうと、デコードが不正確になったり、スキャンが完全に失敗したりすることになります。</p>
+    <p>いかなる状況でもバーコードに JPEG を使用しないでください。常に SVG、PNG、または PDF を使用してください。誰かが JPEG バーコードを送ってきた場合は、それを拒否し、PNG または SVG の置き換えをリクエストしてください。</p>
 
-    <h2 id="dpi">DPI requirements for barcode printing</h2>
-    <p>DPI (dots per inch) determines how many ink dots your printer lays down per inch of paper. The more dots per inch, the finer the detail the printer can reproduce.</p>
+    <h2 id="dpi">バーコード印刷の DPI 要件</h2>
+    <p>DPI (ドット/インチ) は、プリンターが紙 1 インチあたりに配置するインク ドットの数を決定します。 1 インチあたりのドット数が多いほど、プリンターで再現できる細部がより細かくなります。</p>
     <table>
-      <thead><tr><th>DPI</th><th>Suitability</th><th>Notes</th></tr></thead>
+      <thead><tr><th>DPI</th><th>適合性</th><th>注意事項</th></tr></thead>
       <tbody>
-        <tr><td>72–96 DPI</td><td>Screen display only</td><td>Standard screen resolution. Never use for print.</td></tr>
-        <tr><td>150 DPI</td><td>Marginal — avoid for barcodes</td><td>May scan in ideal conditions but unreliable. Not GS1 compliant.</td></tr>
-        <tr><td>200 DPI</td><td>Minimum acceptable for some 1D barcodes</td><td>Use only for large barcodes printed at generous size. Risky.</td></tr>
-        <tr><td>300 DPI</td><td>Minimum recommended for all barcodes</td><td>Standard for label printing and packaging. Reliable for UPC/EAN.</td></tr>
-        <tr><td>600 DPI</td><td>Recommended for high-density barcodes</td><td>Required for compact Code 128, Data Matrix, and small QR codes.</td></tr>
-        <tr><td>1200+ DPI</td><td>Professional packaging and thermal printing</td><td>Used by industrial label printers. Maximum quality.</td></tr>
+        <tr><td>72～96 DPI</td><td>画面表示のみ</td><td>標準的な画面解像度。印刷には絶対に使用しないでください。</td></tr>
+        <tr><td>150 DPI</td><td>マージナル — バーコードの場合は避ける</td><td>理想的な条件でスキャンできる可能性がありますが、信頼性は高くありません。 GS1に準拠していません。</td></tr>
+        <tr><td>200 DPI</td><td>一部の 1D バーコードで許容される最小値</td><td>十分なサイズで印刷される大きなバーコードにのみ使用してください。危険です。</td></tr>
+        <tr><td>300 DPI</td><td>すべてのバーコードに推奨される最小値</td><td>ラベル印刷とパッケージングの標準。 UPC/EAN に対して信頼性があります。</td></tr>
+        <tr><td>600 DPI</td><td>高密度バーコードに推奨</td><td>コンパクトなコード 128、データ マトリックス、および小さな QR コードに必要です。</td></tr>
+        <tr><td>1200以上のDPI</td><td>プロフェッショナルなパッケージングと感熱印刷</td><td>産業用ラベルプリンターで使用されます。最高の品質。</td></tr>
       </tbody>
     </table>
-    <h3>Thermal label printers and DPI</h3>
-    <p>Thermal label printers — the type used in warehouses, retail stockrooms, and shipping departments — are rated by their print head resolution. Common ratings are 203 DPI, 300 DPI, and 600 DPI. A 203 DPI thermal printer is adequate for large Code 128 shipping barcodes on standard label stock. For small barcodes, Data Matrix codes, or labels that must meet GS1 verification grades, a 300 DPI or 600 DPI thermal printer is recommended.</p>
+    <h3>感熱ラベルプリンターとDPI</h3>
+    <p>感熱ラベル プリンタ (倉庫、小売在庫室、出荷部門で使用されるタイプ) は、プリント ヘッドの解像度によって評価されます。一般的な評価は 203 DPI、300 DPI、および 600 DPI です。 203 DPI のサーマル プリンタは、標準ラベル ストック上の大きな Code 128 出荷用バーコードに適しています。 GS1 検証グレードを満たす必要がある小さなバーコード、データ マトリックス コード、またはラベルの場合は、300 DPI または 600 DPI のサーマル プリンタをお勧めします。</p>
 
-    <h2 id="by-use-case">Format by use case — quick reference</h2>
+    <h2 id="by-use-case">ユースケース別のフォーマット - クイックリファレンス</h2>
     <table>
-      <thead><tr><th>Your use case</th><th>Best format</th><th>Minimum resolution</th></tr></thead>
+      <thead><tr><th>あなたのユースケース</th><th>最適なフォーマット</th><th>最小解像度</th></tr></thead>
       <tbody>
-        <tr><td>Product packaging artwork (to printer)</td><td>SVG</td><td>Vector — no DPI limit</td></tr>
-        <tr><td>Label design in Illustrator / Affinity</td><td>SVG</td><td>Vector — no DPI limit</td></tr>
-        <tr><td>Word or Excel document</td><td>PNG</td><td>300 DPI</td></tr>
-        <tr><td>Website or app display</td><td>SVG or PNG</td><td>SVG (any); PNG at screen resolution</td></tr>
-        <tr><td>Direct printing from computer</td><td>PDF</td><td>Vector PDF preferred</td></tr>
-        <tr><td>Thermal label printer</td><td>PNG or PDF</td><td>Match printer DPI (300+)</td></tr>
-        <tr><td>Email attachment for recipient to print</td><td>PDF</td><td>Vector PDF preferred</td></tr>
-        <tr><td>Canva or web design tool</td><td>PNG or SVG</td><td>PNG at 300 DPI; SVG preferred</td></tr>
-        <tr><td>Large-format print / banner</td><td>SVG</td><td>Vector — scales without limit</td></tr>
+        <tr><td>製品パッケージのアートワーク（印刷業者へ）</td><td>SVG</td><td>ベクター - DPI 制限なし</td></tr>
+        <tr><td>Illustrator / Affinity でのラベルデザイン</td><td>SVG</td><td>ベクター - DPI 制限なし</td></tr>
+        <tr><td>Word または Excel 文書</td><td>PNG</td><td>300 DPI</td></tr>
+        <tr><td>ウェブサイトまたはアプリの表示</td><td>SVG または PNG</td><td>SVG (任意);画面解像度での PNG</td></tr>
+        <tr><td>パソコンからのダイレクトプリント</td><td>PDF</td><td>ベクター PDF を推奨</td></tr>
+        <tr><td>感熱ラベルプリンター</td><td>PNG または PDF</td><td>プリンターの DPI に一致する (300+)</td></tr>
+        <tr><td>受信者が印刷できる電子メールの添付ファイル</td><td>PDF</td><td>ベクター PDF を推奨</td></tr>
+        <tr><td>CanvaまたはWebデザインツール</td><td>PNG または SVG</td><td>300 DPI の PNG。 SVG を推奨</td></tr>
+        <tr><td>大判プリント/バナー</td><td>SVG</td><td>ベクトル — 制限なくスケールします</td></tr>
       </tbody>
     </table>
 
     <div class="cta-box">
-      <h3>Generate your barcode in any format — free</h3>
-      <p>Download as SVG, PNG, or PDF. All 1D barcode types output as vector. 300 DPI and 600 DPI PNG available for all types. No account needed.</p>
-      <a href="/barcode-generator.html">Open the Free Barcode Generator &rarr;</a>
+      <h3>任意の形式でバーコードを生成 - 無料</h3>
+      <p>SVG、PNG、または PDF としてダウンロードします。すべての 1D バーコード タイプはベクトルとして出力されます。すべてのタイプで 300 DPI および 600 DPI PNG を使用できます。アカウントは必要ありません。</p>
+      <a href="/barcode-generator.html">無料のバーコードジェネレーターを開く→</a>
     </div>
 
-    <h2 id="faq">Frequently asked questions</h2>
-    <div class="faq-item"><div class="faq-q">What is the best file format for a barcode?</div><div class="faq-a">SVG is the best format for professional print because it is a vector format that scales to any size without pixelation. PNG at 300 DPI or higher is best for digital use, documents, and web display. PDF is convenient for direct printing workflows.</div></div>
-    <div class="faq-item"><div class="faq-q">What DPI do I need for a printed barcode?</div><div class="faq-a">A minimum of 300 DPI for reliable scanning. For high-density barcodes with narrow bars use 600 DPI. Never print a barcode below 200 DPI.</div></div>
-    <div class="faq-item"><div class="faq-q">Can I use a JPEG barcode for printing?</div><div class="faq-a">No. JPEG lossy compression blurs barcode bar edges, causing scan failures. Always use SVG, PNG, or PDF for barcodes.</div></div>
-    <div class="faq-item"><div class="faq-q">Can I scale up a PNG barcode?</div><div class="faq-a">No. Scaling up a raster PNG introduces pixelation and blurs bar edges. Generate the PNG at the exact resolution you need, or use SVG which scales without quality loss.</div></div>
-    <div class="faq-item"><div class="faq-q">What format should I send to a label printer?</div><div class="faq-a">Send SVG for the highest quality. If your label manufacturer requires a PDF, request confirmation that they accept vector PDFs. If only raster formats are accepted, supply PNG at 600 DPI or higher.</div></div>
+    <h2 id="faq">よくある質問</h2>
+    <div class="faq-item"><div class="faq-q">バーコードに最適なファイル形式は何ですか?</div><div class="faq-a">SVG は、ピクセル化せずに任意のサイズに拡大縮小できるベクター形式であるため、プロフェッショナルな印刷に最適な形式です。 300 DPI 以上の PNG は、デジタル用途、ドキュメント、Web 表示に最適です。 PDF は直接印刷のワークフローに便利です。</div></div>
+    <div class="faq-item"><div class="faq-q">印刷されたバーコードにはどの DPI が必要ですか?</div><div class="faq-a">信頼性の高いスキャンを実現するには、最低 300 DPI。バーの幅が狭い高密度バーコードの場合は、600 DPI を使用します。 200 DPI 未満のバーコードは決して印刷しないでください。</div></div>
+    <div class="faq-item"><div class="faq-q">JPEG バーコードを印刷に使用できますか?</div><div class="faq-a">いいえ、JPEG 非可逆圧縮によりバーコードのバーの端がぼやけ、スキャンの失敗が発生します。バーコードには常に SVG、PNG、または PDF を使用してください。</div></div>
+    <div class="faq-item"><div class="faq-q">PNG バーコードをスケールアップできますか?</div><div class="faq-a">いいえ。ラスター PNG を拡大するとピクセル化が発生し、バーのエッジがぼやけます。必要な正確な解像度で PNG を生成するか、品質を損なうことなく拡大縮小できる SVG を使用します。</div></div>
+    <div class="faq-item"><div class="faq-q">ラベルプリンターにはどのような形式で送信すればよいですか?</div><div class="faq-a">最高品質を得るには SVG を送信してください。ラベル メーカーが PDF を必要とする場合は、ベクター PDF を受け入れるかどうかの確認をリクエストしてください。ラスター形式のみが受け入れられる場合は、600 DPI 以上の PNG を指定してください。</div></div>
   </article>
 </div>
 
 <footer>
-  &copy; 2026 Barcode Generators &nbsp;|&nbsp;
-  <a href="/privacy.html">Privacy</a>
-  <a href="/terms.html">Terms</a>
-  <a href="/contact-us.html">Contact</a>
+  © 2026 バーコード ジェネレーター |&nbsp;
+  <a href="/privacy.html">プライバシー</a>
+  <a href="/terms.html">条項</a>
+  <a href="/contact-us.html">お問い合わせ</a>
 </footer>
-</body>
-</html>
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

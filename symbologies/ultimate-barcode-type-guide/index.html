@@ -1,67 +1,277 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="ja"><head>
   <meta charset="utf-8">
-  <title>The Ultimate Barcode Symbology Guide: Technical Specifications & Implementations【2026 Edition】</title>
-  <meta name="description" content="Master 1D and 2D barcode types. Compare data densities, character sets, and technical specifications for Code 128, UPC, Data Matrix, and more.">
+  <title>究極のバーコード記号ガイド: 技術仕様と実装【2026 年版】</title>
+  <meta name="description" content="1D および 2D バーコードの種類をマスターします。 Code 128、UPC、Data Matrix などのデータ密度、文字セット、技術仕様を比較します。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="James Smith <JamesSmith@barcode-generators.com>, Sana Malik <SanaMalik@barcode-generators.com>">
+
+
+<style data-site-chrome="">
+  .jp-site-fixed > header:not(.site-chrome) {
+    display: none !important;
+  }
+
+  .jp-site-fixed .top-nav,
+  .jp-site-fixed .modern-footer {
+    display: none !important;
+  }
+
+  .jp-site-fixed > footer:not(.site-footer) {
+    display: none !important;
+  }
+
+  .site-chrome {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #d9dee8;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-chrome__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-brand {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .site-nav a {
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.94rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: #e8eefc;
+    color: #1d4ed8 !important;
+    outline: none;
+  }
+
+  .site-footer {
+    margin-top: 4rem;
+    background: #0f172a;
+    color: #dbe4f3;
+  }
+
+  .site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer h2,
+  .site-footer h3 {
+    color: #ffffff;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+
+  .site-footer p {
+    margin: 0;
+    line-height: 1.65;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer li + li {
+    margin-top: 0.45rem;
+  }
+
+  .site-footer a {
+    color: #dbe4f3 !important;
+    text-decoration: none !important;
+  }
+
+  .site-footer a:hover,
+  .site-footer a:focus {
+    color: #93c5fd !important;
+    text-decoration: underline !important;
+    outline: none;
+  }
+
+  .site-footer__meta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .site-chrome__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .site-nav {
+      justify-content: flex-start;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .site-nav a {
+      padding-inline: 0.7rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
-<body>
+<body class="jp-site-fixed">
+
+<header class="site-chrome" aria-label="サイトヘッダー">
+  <div class="site-chrome__inner">
+    <a class="site-brand" href="/">バーコード作成プロ</a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="/">ホーム</a>
+      <a href="/barcode-generator.html">バーコード作成</a>
+      <a href="/qr-code-generator.html">QRコード作成</a>
+      <a href="/symbologies/ultimate-barcode-type-guide/">種類ガイド</a>
+      <a href="/compliance/industry-barcode-standards-guide/">規格と運用</a>
+      <a href="/developers/barcode-generation-api-sdk-guide/">開発者向け</a>
+      <a href="/search.html">検索</a>
+    </nav>
+  </div>
+</header>
+
+
   <article>
     <header>
-      <h1>The Ultimate Barcode Symbology Guide: Technical Specifications & Implementations【2026 Edition】</h1>
-      <p>This master reference explains the mechanics, constraints, and implementation details for the major barcode symbologies used in retail, logistics, manufacturing, and secure identification.</p>
-      <p><strong>Quick test:</strong> Use the Multi-Symbology Quick Tester below to validate a sample payload against supported symbologies before you read the specs.</p>
+      <h1>究極のバーコード記号ガイド: 技術仕様と実装【2026 年版】</h1>
+      <p>このマスター リファレンスでは、小売、物流、製造、安全な識別で使用される主要なバーコード シンボルの仕組み、制約、実装の詳細について説明します。</p>
+      <p><strong>簡単なテスト:</strong> 仕様を読む前に、以下のマルチシンボル クイック テスターを使用して、サポートされているシンボルに対してサンプル ペイロードを検証してください。</p>
       <!-- Multi-Symbology Quick Tester (widget placeholder) -->
       <div id="multi-symbology-tester">
         <form>
-          <label>Data string: <input type="text" id="tester-input" placeholder="Enter payload (e.g. 012345678905)"></label>
-          <button type="button" id="tester-run">Run Quick Check</button>
+          <label>データ文字列: <input type="text" id="tester-input" placeholder="ペイロードを入力してください (例: 012345678905)"></label>
+          <button type="button" id="tester-run">クイックチェックを実行する</button>
         </form>
-        <div id="tester-results">Widget output placeholder: supported symbologies and warnings.</div>
+        <div id="tester-results">ウィジェット出力プレースホルダー: サポートされているシンボルと警告。</div>
       </div>
       <nav>
-        <h2>Contents</h2>
+        <h2>コンテンツ</h2>
         <ol>
-          <li><a href="#core-physics">The Core Physics of Barcodes</a></li>
-          <li><a href="#code128">Code 128</a></li>
-          <li><a href="#upc-ean">UPC-A &amp; EAN-13</a></li>
-          <li><a href="#matrix-2d">Data Matrix vs. QR Codes</a></li>
-          <li><a href="#code39">Code 39</a></li>
-          <li><a href="#itf14">ITF-14 (Interleaved 2 of 5)</a></li>
-          <li><a href="#constraints-matrix">Complete Character Constraints Matrix</a></li>
+          <li><a href="#core-physics">バーコードの中核となる物理学</a></li>
+          <li><a href="#code128">コード128</a></li>
+          <li><a href="#upc-ean">UPC-A および EAN-13</a></li>
+          <li><a href="#matrix-2d">データマトリックスと QR コードの比較</a></li>
+          <li><a href="#code39">コード39</a></li>
+          <li><a href="#itf14">ITF-14 (インターリーブ 2/5)</a></li>
+          <li><a href="#constraints-matrix">完全な文字制約マトリックス</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#summary">Summary &amp; Action Loop</a></li>
+          <li><a href="#summary">サマリーとアクションのループ</a></li>
         </ol>
       </nav>
+    
+        <nav class="top-nav" style="margin-top:1rem;">
+            <div class="nav-item">
+                <span>形式別 ▾</span>
+                <div class="dropdown">
+                    <a href="/ean-13-barcode-generator.html">1月13日</a>
+                    <a href="/qr-code-generator.html">QRコード</a>
+                    <a href="/code-128-barcode-generator.html">コード128</a>
+                    <a href="/upc-a-barcode-generator.html">UPC-A</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>用途別 ▾</span>
+                <div class="dropdown">
+                    <a href="/product-barcode-generator.html">商品</a>
+                    <a href="/inventory-barcode-generator.html">在庫管理</a>
+                    <a href="/shipping-barcode-generator.html">配送</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>出力形式 ▾</span>
+                <div class="dropdown">
+                    <a href="/barcode-generator-png.html">PNG</a>
+                    <a href="/barcode-generator-svg.html">SVG</a>
+                    <a href="/barcode-generator-pdf.html">PDF</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="/barcode-generator-guide.html" style="text-decoration:none; color:inherit;">ガイド</a>
+            </div>
+        </nav>
+
     </header>
 
     <section id="core-physics">
-      <h2>The Core Physics of Barcodes: How Hardware Decodes Pixels and Lines</h2>
-      <p>Barcodes are fundamentally a machine-readable encoding system that maps symbolic width and spacing (or module values) into data. Linear (1D) barcodes represent information as sequences of bars and spaces with precise width ratios. Laser scanners read the reflected light intensity as they sweep a laser beam across the code. The scanner converts the analog reflectance curve into a digital waveform, measures element widths, and reconstructs the encoded values. Small deviations in element width, contrast, or quiet zone can flip bit boundaries and result in misreads.</p>
+      <h2>バーコードの核となる物理学: ハードウェアがピクセルとラインをデコードする方法</h2>
+      <p>バーコードは基本的に、記号の幅と間隔 (またはモジュール値) をデータにマッピングする機械可読エンコード システムです。線形 (1D) バーコードは、正確な幅比を持つバーとスペースのシーケンスとして情報を表します。レーザー スキャナは、コード上でレーザー ビームを走査しながら反射光の強度を読み取ります。スキャナはアナログ反射率曲線をデジタル波形に変換し、要素の幅を測定し、エンコードされた値を再構築します。要素の幅、コントラスト、またはクワイエット ゾーンの小さな偏差により、ビット境界が反転し、誤読が発生する可能性があります。</p>
 
-      <p>2D matrix codes (Data Matrix, QR, PDF417) are captured by area imagers — essentially a camera sensor that samples an image matrix. The imager performs geometric correction (deskew), binarization, and finder-pattern detection to locate timing cells and orientation. Error-correction codes such as Reed-Solomon (commonly ECC 200 for Data Matrix) allow for high survivability under partial damage: the decoder reconstructs missing data from parity symbols.</p>
+      <p>2D マトリックス コード (データ マトリックス、QR、PDF417) は、エリア イメージャー (基本的には画像マトリックスをサンプリングするカメラ センサー) によってキャプチャされます。イメージャは、幾何学的補正 (デスキュー)、二値化、およびファインダー パターン検出を実行して、タイミング セルと方向を特定します。リードソロモン (通常はデータ マトリックスの ECC 200) などのエラー訂正コードにより、部分的な損傷に対して高い生存性が可能になります。デコーダはパリティ シンボルから欠落したデータを再構築します。</p>
 
-      <p><strong>Operational note:</strong> barcode scanners are not tolerant of arbitrary visual changes. A barcode is a constrained typographic system where dimensions, quiet zones, contrast, and check digits are the 'grammar' the hardware expects. Even a 0.01 mm deviation at print time can cause problems at high-speed checkouts or in automated sorting lines.</p>
+      <p><strong>操作上の注意:</strong> バーコード スキャナは、任意の視覚的変更を許容しません。バーコードは、寸法、クワイエット ゾーン、コントラスト、およびチェック ディジットがハードウェアが期待する「文法」である制約された印刷システムです。印刷時のわずか 0.01 mm のずれでも、高速チェックアウトや自動仕分けラインでは問題が発生する可能性があります。</p>
     </section>
 
     <section id="code128">
-      <h2>1. Code 128 — The Enterprise Standard for High-Density Logistics</h2>
-      <p>Code 128 is a compact, high-density linear symbology widely used in shipping, logistics, and applications requiring alphanumeric payloads. Its flexibility comes from three code sets: A, B, and C. Each code set optimizes for specific characters and density. Code C encodes numeric data as pairs (two digits per code symbol), doubling numeric density.</p>
+      <h2>1. コード 128 — 高密度物流のための企業標準</h2>
+      <p>Code 128 は、輸送、物流、および英数字ペイロードを必要とするアプリケーションで広く使用されているコンパクトで高密度の線形シンボルです。その柔軟性は、A、B、C の 3 つのコード セットによってもたらされます。各コード セットは、特定の文字と密度に合わせて最適化されます。コード C は、数値データをペア (コード シンボルごとに 2 桁) としてエンコードし、数値密度を 2 倍にします。</p>
 
-      <h3>Structure and Encoding</h3>
-      <p>A typical Code 128 symbol includes: Start pattern (Start A/B/C), a sequence of data symbols (each representing a code value 0–106), a check digit (Modulo-103), and a stop pattern. Each symbol is represented by 11 modules divided into 3 bars and 3 spaces. The physical width is determined by module width (X-dimension) and number of symbols.</p>
+      <h3>構造とエンコーディング</h3>
+      <p>一般的な Code 128 シンボルには、スタート パターン (スタート A/B/C)、一連のデータ シンボル (それぞれコード値 0 ～ 106 を表す)、チェック デジット (モジュロ-103)、およびストップ パターンが含まれます。各シンボルは、3 つのバーと 3 つのスペースに分割された 11 個のモジュールで表されます。物理的な幅は、モジュール幅 (X 次元) とシンボルの数によって決まります。</p>
 
-      <h3>Code Sets</h3>
+      <h3>コードセット</h3>
       <ul>
-        <li><strong>Code Set A:</strong> Uppercase letters, control codes, and special characters.</li>
-        <li><strong>Code Set B:</strong> Uppercase and lowercase letters and standard printable ASCII.</li>
-        <li><strong>Code Set C:</strong> Numeric-only compressed mode: encodes pairs of digits as one symbol (high density for numeric strings).</li>
+        <li><strong>コードセットA:</strong> 大文字、制御コード、特殊文字。</li>
+        <li><strong>コードセットB:</strong> 大文字と小文字、および標準の印刷可能な ASCII。</li>
+        <li><strong>コードセットC：</strong> 数値専用圧縮モード: 数字のペアを 1 つのシンボルとしてエンコードします (数値文字列の場合は高密度)。</li>
       </ul>
 
-      <h3>Modulo-103 Check Digit</h3>
-      <p>The check digit calculation uses the numeric value of the start character and each data symbol. Compute the sum: (StartValue) + (1 * valueOfSymbol1) + (2 * valueOfSymbol2) + ... + (n * valueOfSymbolN). The check digit is the remainder of this sum divided by 103.</p>
+      <h3>Modulo-103 チェック デジット</h3>
+      <p>チェック ディジットの計算には、スタート キャラクタと各データ シンボルの数値が使用されます。合計を計算します: (StartValue) + (1 * valueOfSymbol1) + (2 * valueOfSymbol2) + ... + (n * valueOfSymbolN)。チェック ディジットは、この合計を 103 で割った余りです。</p>
 
       <pre><code>// Example: pseudo-calculation
 StartValue = 104 // (example for Start B)
@@ -70,81 +280,81 @@ sum = StartValue + 1*50 + 2*45 + 3*12
 check = sum % 103
 </code></pre>
 
-      <h3>Optimizing for Density</h3>
-      <p>When encoding long numeric sequences (dates, GTIN fragments), prefer switching to Code C for numeric pairs. A smart encoder should analyze the payload and switch code sets to maximize compactness. Many generator implementations offer automatic code set optimization; ensure your library handles mid-string switches and properly recalculates the check digit across set changes.</p>
+      <h3>密度の最適化</h3>
+      <p>長い数値シーケンス (日付、GTIN フラグメント) をエンコードする場合は、数値ペアについてはコード C に切り替えることを推奨します。スマート エンコーダはペイロードを分析し、コード セットを切り替えてコンパクトさを最大限に高める必要があります。多くのジェネレーター実装は、コード セットの自動最適化を提供します。ライブラリが文字列の途中での切り替えを処理し、セットの変更全体でチェック ディジットが適切に再計算されていることを確認してください。</p>
 
-      <h3>Implementation Considerations</h3>
+      <h3>実装に関する考慮事項</h3>
       <ul>
-        <li>Choose an X-dimension that meets scanner tolerance (common values: 0.19–0.33 mm).</li>
-        <li>Ensure quiet zones of at least 10 × X on both sides.</li>
-        <li>Render the barcode as vector SVG for scale-independent output when possible.</li>
+        <li>スキャナの公差 (一般的な値: 0.19 ～ 0.33 mm) を満たす X 寸法を選択します。</li>
+        <li>両側に少なくとも 10 × X のクワイエット ゾーンを確保します。</li>
+        <li>可能な場合は、スケールに依存しない出力のためにバーコードをベクター SVG としてレンダリングします。</li>
       </ul>
 
-      <p><em>Visual asset placeholder:</em> annotated Code 128 breakdown showing Start, data, check, and stop patterns.</p>
+      <p><em>ビジュアル アセット プレースホルダー:</em> 開始、データ、チェック、および停止パターンを示す注釈付きコード 128 の内訳。</p>
     </section>
 
     <section id="upc-ean">
-      <h2>2. UPC-A &amp; EAN-13 — The Foundations of Global Retail Distribution</h2>
-      <p>UPC-A and EAN-13 are the canonical retail symbologies used at point of sale. Both are numeric-only and designed for fast checkout scanning. UPC-A encodes 12 digits (including check digit) and is prevalent in North America. EAN-13 encodes 13 digits and is the international standard; the leftmost digit typically functions as a country or numbering system identifier.</p>
+      <h2>2. UPC-A および EAN-13 — 世界的な小売流通の基盤</h2>
+      <p>UPC-A と EAN-13 は、販売時点で使用される正規の小売シンボルです。どちらも数値のみで、チェックアウトを高速にスキャンできるように設計されています。 UPC-A は 12 桁 (チェック ディジットを含む) をエンコードし、北米で普及しています。 EAN-13 は 13 桁をエンコードし、国際標準です。左端の数字は通常、国または番号付けシステムの識別子として機能します。</p>
 
-      <h3>UPC-A Anatomy</h3>
-      <p>Layout: [Number System Digit (1)] [Manufacturer Code (5)] [Product Code (5)] [Check Digit (1)]. The check digit uses a Modulo-10 weighted scheme: sum of odd-position digits + 3 × sum of even-position digits; the smallest number to add to this sum to reach a multiple of 10 is the check digit.</p>
+      <h3>UPC-A の構造</h3>
+      <p>レイアウト：[数値体系桁(1)][メーカーコード(5)][製品コード(5)][チェックデジット(1)]。チェック ディジットは、奇数桁の合計 + 3 × 偶数桁の合計という、Modulo-10 加重スキームを使用します。 10 の倍数になるようにこの合計に加算する最小の数値がチェック ディジットです。</p>
 
-      <h3>EAN-13 Differences</h3>
-      <p>EAN-13 adds a 13th digit and uses similar guard patterns to UPC-A. When displayed in retail, EAN-13 and UPC-A are functionally interoperable in many POS systems, but encoding must be correct. A common error is trying to encode non-numeric characters or leading zeros incorrectly; these will cause the decoder to reject the code.</p>
+      <h3>EAN-13 の相違点</h3>
+      <p>EAN-13 は 13 桁目を追加し、UPC-A と同様のガード パターンを使用します。小売店で展示される場合、EAN-13 と UPC-A は多くの POS システムで機能的に相互運用可能ですが、エンコードが正しい必要があります。よくあるエラーは、数字以外の文字または先頭のゼロを誤ってエンコードしようとすることです。これらにより、デコーダはコードを拒否します。</p>
 
-      <h3>Practical Rules</h3>
+      <h3>実践的なルール</h3>
       <ul>
-        <li>Always supply the correct number of digits; do not attempt to pad or truncate programmatically unless you fully understand GTIN rules.</li>
-        <li>Maintain a quiet zone of at least 9 × X on both sides of the symbol.</li>
-        <li>Ensure the barcode height (including guard bars) meets POS scanner requirements; typical min height ~22.85 mm for UPC-A at nominal X-dimension but smaller heights are used in constrained spaces with validated print & scan tests.</li>
+        <li>常に正しい桁数を指定してください。 GTIN ルールを完全に理解していない限り、プログラムでパディングや切り詰めを行わないでください。</li>
+        <li>シンボルの両側に少なくとも 9 × X のクワイエット ゾーンを維持します。</li>
+        <li>バーコードの高さ (ガード バーを含む) が POS スキャナーの要件を満たしていることを確認します。公称 X 寸法での UPC-A の一般的な最小高さは約 22.85 mm ですが、検証済みの印刷およびスキャン テストにより、限られたスペースではこれより低い高さが使用されます。</li>
       </ul>
 
-      <p><em>Diagram:</em> side-by-side UPC-A and EAN-13 frames highlighting guard bars, left/right parity, and country code position.</p>
+      <p><em>図:</em> UPC-A と EAN-13 フレームを並べて表示し、ガード バー、左右のパリティ、および国コードの位置を強調表示します。</p>
     </section>
 
     <section id="matrix-2d">
-      <h2>3. Data Matrix vs. QR Codes — High-Density 2D Industrial Arrays</h2>
-      <p>Data Matrix and QR codes are matrix 2D symbologies that store data in a grid of dark/light modules. They differ in finder/timing patterns, ECC, and typical payload sizes. Data Matrix (ECC 200) is widely used in aerospace, medical, and electronics because it supports very small printed sizes while retaining resilience via Reed-Solomon error correction. QR codes are ubiquitous in consumer use cases and support larger visible logos and higher error-correction levels for branding.</p>
+      <h2>3. データ マトリックスと QR コード — 高密度 2D 産業用アレイ</h2>
+      <p>データ マトリックスと QR コードは、暗/明モジュールのグリッドにデータを保存するマトリックス 2D シンボルです。これらは、ファインダー/タイミング パターン、ECC、および一般的なペイロード サイズが異なります。データ マトリックス (ECC 200) は、リードソロモン誤り訂正による回復力を維持しながら、非常に小さな印刷サイズをサポートするため、航空宇宙、医療、電子機器で広く使用されています。 QR コードは消費者のユースケースで広く普及しており、ブランド化のためのより大きな目に見えるロゴとより高いエラー修正レベルをサポートしています。</p>
 
-      <h3>Data Matrix (ECC 200)</h3>
-      <p>Data Matrix uses a solid L-shaped finder (the "finder pattern") and timing pattern on the opposite sides. ECC 200 uses Reed-Solomon codes and supports up to 2335 alphanumeric characters in the largest sizes, or exhaustive binary payloads suitable for serialized identifiers. Data Matrix excels on small surfaces (down to ~2–3 mm module sizes in specialized printing) and direct part marking (DPM).</p>
+      <h3>データマトリックス (ECC 200)</h3>
+      <p>データ マトリックスは、ソリッド L 字型ファインダー (「ファインダー パターン」) と反対側のタイミング パターンを使用します。 ECC 200 はリードソロモン コードを使用し、最大サイズの最大 2335 文字の英数字、またはシリアル化された識別子に適した網羅的なバイナリ ペイロードをサポートします。 Data Matrix は、小さな表面 (特殊な印刷では最大 2 ～ 3 mm のモジュール サイズ) およびダイレクト パーツ マーキング (DPM) に優れています。</p>
 
-      <h3>QR Code Mechanics</h3>
+      <h3>QRコードの仕組み</h3>
       <p>QR codes use three square finder patterns in corners and an alignment/timing grid. Error correction levels (L, M, Q, H) let you trade capacity for resiliency; H (30% recovery) allows larger logos but reduces raw data capacity. QR's broad adoption makes it ideal for links, vCards, and consumer media.</p>
 
-      <h3>Damage &amp; Error Correction Comparison</h3>
-      <p>Under heavy abrasion tests, Data Matrix with ECC 200 often outperforms QR for extremely small marking areas because the ECC blocks are distributed differently and the finder pattern for Data Matrix facilitates more accurate geometric correction in some industrial imagers.</p>
+      <h3>ダメージとエラー訂正の比較</h3>
+      <p>激しい摩耗テストでは、ECC 200 を備えたデータ マトリックスは、非常に小さなマーキング領域で QR よりも優れたパフォーマンスを発揮することがよくあります。これは、ECC ブロックの分布が異なっており、一部の産業用イメージャーではデータ マトリックスのファインダー パターンにより、より正確な幾何学補正が容易になるためです。</p>
 
-      <p><em>Comparison chart placeholder:</em> recommended symbology by surface area, expected maximum recoverable damage percentage, and typical encoder library settings.</p>
+      <p><em>比較グラフのプレースホルダー:</em> 表面積別の推奨シンボル、予想される最大回復可能ダメージ率、一般的なエンコーダ ライブラリ設定。</p>
     </section>
 
     <section id="code39">
-      <h2>4. Code 39 — Legacy Reliability for Automotive &amp; Military Logistics</h2>
-      <p>Code 39 is an older, discrete symbology encoding 43 characters (0–9, A–Z, and seven special characters). Each character is represented by five bars and four spaces (9 elements) with a 3-of-9 wide-bar rule. Because each character is relatively wide, Code 39 is not space-efficient but remains popular for legacy systems, industrial use, and where simple encoding is required without the need for check digits.</p>
+      <h2>4. コード 39 — 自動車および軍事物流におけるレガシーの信頼性</h2>
+      <p>Code 39 は、43 文字 (0 ～ 9、A ～ Z、および 7 つの特殊文字) をエンコードする古い個別のシンボルです。各文字は、3/9 ワイド バー ルールに従って、5 つのバーと 4 つのスペース (9 要素) で表されます。各文字の幅が比較的広いため、Code 39 はスペース効率が良くありませんが、レガシー システム、産業用途、およびチェック ディジットを必要とせずに単純なエンコードが必要な場合には依然として人気があります。</p>
 
-      <h3>Full ASCII &amp; Extensions</h3>
-      <p>Code 39 can be extended via Full ASCII mode using pairs to represent the full 128 ASCII set, but this further increases width. For large text payloads, prefer Code 128 or 2D matrices.</p>
+      <h3>フル ASCII と拡張子</h3>
+      <p>コード 39 は、完全な 128 ASCII セットを表すペアを使用してフル ASCII モードで拡張できますが、これにより幅がさらに増加し​​ます。大きなテキスト ペイロードの場合は、Code 128 または 2D マトリックスを推奨します。</p>
 
-      <h3>Why Code 39 Survives</h3>
-      <p>Its simplicity, robust hardware support, and tolerance for lower-quality printing keep Code 39 in some automotive and military supply chains. However, expect wider printed footprints and verify scanner tolerance for narrow elements (N) and wide elements (W) proportions.</p>
+      <h3>コード 39 が生き残る理由</h3>
+      <p>そのシンプルさ、堅牢なハードウェア サポート、低品質印刷への耐性により、Code 39 は一部の自動車および軍事サプライ チェーンで使用されています。ただし、より広い印刷フットプリントを想定し、狭い要素 (N) と広い要素 (W) の比率に対するスキャナの許容誤差を確認してください。</p>
     </section>
 
     <section id="itf14">
-      <h2>5. ITF-14 (Interleaved 2 of 5) — Corrugated Packaging Optimization</h2>
-      <p>ITF-14 is designed for marking cartons and outer packaging. It is an interleaved numeric symbology that encodes digits in pairs: one digit contributes to bars, the paired digit to spaces. This interleaving results in compact numeric encoding and good readability for simple numeric strings (like GTIN-14). ITF-14 symbols often include bearer bars (heavy bars above and below the code) that prevent partial scans by ensuring the scanner reads the entire code and to protect against short scans caused by uneven carton edges.</p>
+      <h2>5. ITF-14 (Interleaved 2 of 5) — 段ボール包装の最適化</h2>
+      <p>ITF-14 は、カートンや外装パッケージにマーキングするために設計されています。これは、数字をペアでエンコードするインターリーブ数値シンボルです。1 つの数字はバーに寄与し、ペアの数字はスペースに寄与します。このインターリーブにより、数値エンコードがコンパクトになり、単純な数値文字列 (GTIN-14 など) が読みやすくなります。 ITF-14 シンボルにはベアラー バー (コードの上下にある太いバー) が含まれることが多く、スキャナーがコード全体を確実に読み取ることで部分的なスキャンを防止し、カートンの端の凹凸によって引き起こされるショート スキャンを防ぎます。</p>
 
-      <h3>Print Considerations</h3>
+      <h3>印刷に関する考慮事項</h3>
       <ul>
-        <li>Use thick bearer bars when printing on corrugated to reduce the risk of leading/trailing truncation in conveyor lines.</li>
-        <li>Validate flexographic or direct thermal printing tolerances; carton surfaces are rough and ink or thermal transfer behavior matters.</li>
-        <li>Minimum X-dimensions are typically larger than retail codes due to surface roughness.</li>
+        <li>段ボールに印刷する場合は、コンベア ラインで先頭/末尾が切り取られるリスクを軽減するために、厚いベアラー バーを使用します。</li>
+        <li>フレキソ印刷またはダイレクトサーマル印刷の許容誤差を検証します。カートンの表面は粗く、インクまたは熱転写の動作が問題になります。</li>
+        <li>最小 X 寸法は、表面の粗さのため、通常、小売コードよりも大きくなります。</li>
       </ul>
     </section>
 
     <section id="constraints-matrix">
-      <h2>Complete Barcode Character Constraints Reference Matrix</h2>
-      <p>The following table maps common symbologies to their payload capacities, character sets, primary industries, and native check digits. Use this as a quick copy-paste reference for generator validation logic.</p>
+      <h2>完全なバーコード文字制約参照マトリックス</h2>
+      <p>次の表は、一般的なシンボルをペイロード容量、文字セット、一次産業、およびネイティブ チェック ディジットにマッピングしています。これは、ジェネレーター検証ロジックの簡単なコピー＆ペーストのリファレンスとして使用してください。</p>
 
       <pre><code>| Symbology  | Max Payload (approx) | Character Set         | Primary Use-Case                | Native Check Digit |
 |------------|-----------------------|------------------------|---------------------------------|--------------------|
@@ -158,78 +368,78 @@ check = sum % 103
 | PDF417     | ~1,000 bytes (varies) | Binary / text          | IDs, boarding passes, documents | ECC / Reed-Solomon |
 </code></pre>
 
-      <p>Note: capacities vary with error correction levels, mode, and matrix size; treat these as engineering starting points, not hard limits.</p>
+      <p>注: 容量はエラー訂正レベル、モード、マトリックス サイズによって異なります。これらを厳密な制限ではなく、エンジニアリングの開始点として扱います。</p>
     </section>
 
     <section id="faq">
-      <h2>Frequently Asked Questions (FAQ)</h2>
+      <h2>よくある質問 (FAQ)</h2>
       <dl>
-        <dt>Why can't I encode lowercase letters in UPC-A?</dt>
-        <dd>UPC-A is strictly numeric by design for interoperability at POS systems. Encoding non-numeric data violates the symbology rules and will produce unreadable output on retail scanners.</dd>
+        <dt>UPC-A で小文字をエンコードできないのはなぜですか?</dt>
+        <dd>UPC-A は、POS システムでの相互運用性を考慮した設計により、厳密に数値化されています。数値以外のデータをエンコードするとシンボル規則に違反し、小売店のスキャナでは読み取れない出力が生成されます。</dd>
 
-        <dt>What is a quiet zone and how large must it be?</dt>
-        <dd>A quiet zone is an unprinted margin around the barcode required by decoders to detect symbol boundaries. For linear codes, a common minimum is 10 × X (the module width) on each side; for EAN/UPC often 9 × X is used. For 2D codes, quiet zone recommendations vary but are typically 1–2 modules around the symbol depending on the spec.</dd>
+        <dt>クワイエット ゾーンとは何ですか?また、その広さはどれくらいでなければなりませんか?</dt>
+        <dd>クワイエット ゾーンは、デコーダーがシンボル境界を検出するために必要な、バーコードの周囲の印刷されないマージンです。線形コードの場合、一般的な最小値は各辺で 10 × X (モジュール幅) です。 EAN/UPC の場合、多くの場合 9 × X が使用されます。 2D コードの場合、クワイエット ゾーンの推奨事項は異なりますが、通常は仕様に応じてシンボルの周囲に 1 ～ 2 つのモジュールです。</dd>
 
-        <dt>Can standard laser scanners decode a Data Matrix?</dt>
-        <dd>No — Data Matrix requires an area imager (camera-style scanner). Laser line scanners read linear reflectance patterns only and cannot reconstruct 2D matrix grids.</dd>
+        <dt>標準のレーザー スキャナはデータ マトリックスをデコードできますか?</dt>
+        <dd>いいえ — Data Matrix にはエリア イメージャ (カメラ スタイルのスキャナ) が必要です。レーザー ライン スキャナは線形反射率パターンのみを読み取り、2D マトリックス グリッドを再構成できません。</dd>
 
-        <dt>What happens if my check digit is wrong?</dt>
-        <dd>Decoders will typically reject the symbol as invalid or produce a checksum error. Check digits are a first-order integrity check that prevents misinterpretation of cut or smudged symbols.</dd>
+        <dt>チェックデジットが間違っている場合はどうなりますか?</dt>
+        <dd>デコーダは通常、シンボルを無効として拒否するか、チェックサム エラーを生成します。チェック ディジットは、カットまたは汚れたシンボルの誤解釈を防ぐ一次整合性チェックです。</dd>
 
-        <dt>Why does my Code 39 barcode look so long?</dt>
-        <dd>Code 39 encodes every character as a relatively wide pattern; for long alphanumeric strings it is space-inefficient. Consider Code 128 or a 2D symbology for long payloads.</dd>
+        <dt>Code 39 のバーコードが非常に長く見えるのはなぜですか?</dt>
+        <dd>Code 39 は、すべての文字を比較的広いパターンとしてエンコードします。長い英数字文字列の場合、スペース効率が悪くなります。長いペイロードの場合は、Code 128 または 2D シンボルを検討してください。</dd>
 
-        <dt>What is the difference between open-source and proprietary symbologies?</dt>
-        <dd>Open standards (e.g., GS1-managed encodings) have published specs and widespread scanner support. Proprietary symbologies may offer features but risk vendor lock-in; prefer standards for interoperability.</dd>
+        <dt>オープンソースのシンボルと独自のシンボルの違いは何ですか?</dt>
+        <dd>オープン スタンダード (例: GS1 マネージド エンコーディング) では仕様が公開されており、広範囲にわたるスキャナーがサポートされています。独自のシンボルは機能を提供する可能性がありますが、ベンダーロックインのリスクがあります。相互運用性のための標準を好みます。</dd>
 
-        <dt>When should I choose 2D over 1D?</dt>
-        <dd>Choose 2D when payload size exceeds comfortable linear width, when you need binary or compressed data, or when marking space is limited. For simple numeric product codes at POS, stay with 1D for compatibility.</dd>
+        <dt>1D ではなく 2D を選択する必要があるのはどのような場合ですか?</dt>
+        <dd>ペイロード サイズが快適な線形幅を超える場合、バイナリまたは圧縮データが必要な場合、またはマーキング スペースが限られている場合は、2D を選択してください。 POS での単純な数値の製品コードの場合は、互換性を確保するために 1D を使用してください。</dd>
 
-        <dt>How do I generate a GS1 Application Identifier (AI) code?</dt>
-        <dd>Use a GS1-aware encoder that formats application identifiers in parentheses in the human-readable field and encodes the AI meta-structure into the barcode payload (e.g., (01) for GTIN). Follow GS1 formatting rules and ensure correct AIs and field lengths.</dd>
+        <dt>GS1 アプリケーション識別子 (AI) コードを生成するにはどうすればよいですか?</dt>
+        <dd>GS1 対応エンコーダを使用して、アプリケーション識別子を人間が読めるフィールドの括弧内にフォーマットし、AI メタ構造をバーコード ペイロードにエンコードします (GTIN の場合は (01))。 GS1 フォーマット規則に従って、正しい AI とフィールド長を確保してください。</dd>
       </dl>
     </section>
 
     <section id="summary">
-      <h2>Summary: Choosing Your Symbology Architecture</h2>
-      <p>Use this quick decision tree:</p>
+      <h2>概要: シンボル アーキテクチャの選択</h2>
+      <p>このクイック デシジョン ツリーを使用します。</p>
       <ul>
-        <li>Retail product barcodes → <strong>UPC-A / EAN-13</strong></li>
-        <li>Industrial logistics and long alphanumeric IDs → <strong>Code 128</strong></li>
-        <li>Ultra-small surfaces or direct part marking → <strong>Data Matrix</strong></li>
-        <li>Consumer links/marketing → <strong>QR Code</strong></li>
+        <li>小売製品のバーコード → <strong>UPC-A / EAN-13</strong></li>
+        <li>産業物流と長い英数字 ID → <strong>コード128</strong></li>
+        <li>極小表面または部品への直接マーキング → <strong>データマトリックス</strong></li>
+        <li>消費者リンク/マーケティング → <strong>QRコード</strong></li>
       </ul>
 
-      <p><strong>Final Action Loop:</strong> Use the generator panel below to configure a production-ready Code 128 preset optimized for common shipping X-dimensions, or switch to Data Matrix presets for small parts. Export vector SVG for production and store validated payloads in a secure CSV for your print-run pipeline.</p>
+      <p><strong>最終アクション ループ:</strong> 以下のジェネレータ パネルを使用して、一般的な出荷 X 寸法に最適化された生産対応の Code 128 プリセットを構成するか、小型部品用のデータ マトリックス プリセットに切り替えます。実稼働用にベクター SVG をエクスポートし、印刷実行パイプライン用に検証済みのペイロードを安全な CSV に保存します。</p>
 
       <!-- Action panel placeholder -->
       <div id="action-panel">
-        <button id="generate-code128">Generate Code 128 Preset (Export SVG)</button>
-        <button id="generate-datamatrix">Generate Data Matrix Preset (Export SVG)</button>
+        <button id="generate-code128">Code 128 プリセットの生成 (SVG のエクスポート)</button>
+        <button id="generate-datamatrix">データ マトリックス プリセットの生成 (SVG のエクスポート)</button>
       </div>
 
 
-      <h3>Supporting Deep Dives</h3>
+      <h3>ディープダイブのサポート</h3>
       <ul>
-        <li><a href="/symbologies/code-128/">Code 128</a></li>
+        <li><a href="/symbologies/code-128/">コード128</a></li>
         <li><a href="/symbologies/upc-a/">UPC-A</a></li>
         <li><a href="/symbologies/ean-13/">EAN-13</a></li>
-        <li><a href="/symbologies/data-matrix/">Data Matrix</a></li>
-        <li><a href="/symbologies/qr-code/">QR Code</a></li>
-        <li><a href="/symbologies/code-39/">Code 39</a></li>
+        <li><a href="/symbologies/data-matrix/">データマトリックス</a></li>
+        <li><a href="/symbologies/qr-code/">QRコード</a></li>
+        <li><a href="/symbologies/code-39/">コード39</a></li>
         <li><a href="/symbologies/itf-14/">ITF-14</a></li>
         <li><a href="/symbologies/pdf417/">PDF417</a></li>
-        <li><a href="/symbologies/aztec/">Aztec</a></li>
+        <li><a href="/symbologies/aztec/">アステカ族</a></li>
         <li><a href="/symbologies/gs1-128/">GS1-128</a></li>
-        <li><a href="/symbologies/dpm-best-practices/">DPM Best Practices</a></li>
-        <li><a href="/symbologies/gs1-api/">GS1 APIs and Digital Link</a></li>
+        <li><a href="/symbologies/dpm-best-practices/">DPM のベスト プラクティス</a></li>
+        <li><a href="/symbologies/gs1-api/">GS1 APIとデジタルリンク</a></li>
       </ul>
 
-      <p>Related resources: <a href="/compliance/">Compliance Guide</a>, <a href="/developers/">Developer Docs</a>, <a href="/symbologies/code-128/">Code 128 Deep Dive</a>.</p>
+      <p>関連リソース: <a href="/compliance/">コンプライアンスガイド</a>, <a href="/developers/">開発者向けドキュメント</a>, <a href="/symbologies/code-128/">コード 128 の詳細</a>.</p>
     </section>
 
     <footer>
-      <p>Last updated: 2026</p>
+      <p>最終更新日: 2026</p>
     </footer>
   </article>
 
@@ -259,9 +469,9 @@ check = sum % 103
       "https://barcode-generators.com/assets/symbologies/code128-diagram.svg",
       "https://barcode-generators.com/assets/symbologies/matrix-comparison.svg"
     ],
-    "author": { "@type": "Person", "name": "Barcode Generators" },
+    "author": { "@type": "Person", "name": "バーコード作成 プロ" },
     "dateModified": "2026-05-29",
-    "publisher": { "@type": "Organization", "name": "Barcode Generators" }
+    "publisher": { "@type": "Organization", "name": "バーコード作成 プロ" }
   }
   </script>
 
@@ -281,5 +491,52 @@ check = sum % 103
     ]
   }
   </script>
-</body>
-</html>
+
+
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <section>
+        <h2>バーコード作成</h2>
+        <p>日本語で使えるバーコード作成・比較・運用ガイドをまとめたサイトです。</p>
+      </section>
+      <section>
+        <h3>主要ツール</h3>
+        <ul>
+          <li><a href="/barcode-generator.html">バーコード作成ツール</a></li>
+          <li><a href="/qr-code-generator.html">QRコード作成ツール</a></li>
+          <li><a href="/bulk-barcode-generator.html">一括バーコード作成</a></li>
+          <li><a href="/barcode-generator-png.html">PNG が貢献</a></li>
+          <li><a href="/barcode-generator-svg.html">SVG出力</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>ガイド</h3>
+        <ul>
+          <li><a href="/what-is-barcode.html">バーコードとは</a></li>
+          <li><a href="/how-to-create-barcode.html">作成方法</a></li>
+          <li><a href="/barcode-types.html">バーコードの種類</a></li>
+          <li><a href="/barcode-format-guide.html">ファイル形式ガイド</a></li>
+          <li><a href="/production/perfect-barcode-print-optimization-guide/">印字最適化ガイド</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>サイト情報</h3>
+        <ul>
+          <li><a href="/about-us.html">私たちについて</a></li>
+          <li><a href="/contact-us.html">お問い合わせ</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
+          <li><a href="/terms.html">利用規約</a></li>
+          <li><a href="/sitemap.html">サイトマップ</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 バーコード作成プロ</span>
+      <span><a href="/developers/">開発者向け</a> ・ <a href="/compliance/">コンプライアンス</a> ・ <a href="/future/">将来動向</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>
